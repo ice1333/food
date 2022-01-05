@@ -11,6 +11,6 @@ public class AdminDao {
 	SqlSessionTemplate sqlSession;
 	
 	public AdminVo login(AdminVo vo) {
-		return sqlSession.selectOne("admin.login");
+		return sqlSession.selectOne("admin.login",vo);
 	}
 }
