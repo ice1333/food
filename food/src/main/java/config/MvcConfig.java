@@ -34,16 +34,16 @@ public class MvcConfig implements WebMvcConfigurer{
 		reg.jsp("/WEB-INF/view/", ".jsp");
 	}
 	// DataSource 객체 등록
-		// DB접속정보 설정
-		@Bean(destroyMethod = "close")
-		public BasicDataSource dataSource() {
-			BasicDataSource ds = new BasicDataSource();
-			ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-			ds.setUrl("jdbc:mysql://15.164.94.120:3306/shop");
-			ds.setUsername("root");
-			ds.setPassword("root1234");
-			return ds;
-		}
+	// DB접속정보 설정
+	@Bean(destroyMethod = "close")
+	public BasicDataSource dataSource() {
+		BasicDataSource ds = new BasicDataSource();
+		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		ds.setUrl("jdbc:mysql://15.164.94.120:3306/shop");
+		ds.setUsername("root");
+		ds.setPassword("root1234");
+		return ds;
+	}
 		
 		// SqlSessionFactory
 		@Bean
