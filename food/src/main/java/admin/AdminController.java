@@ -22,10 +22,11 @@ public class AdminController {
 	@PostMapping("/admin/login.do")
 	public String loginProcess(Model model, AdminVo vo, HttpSession sess) {
 		if (service.login(vo, sess)) {
-			return "/admin/board/index";
+			model.addAttribute("url", "/res/admin/board/index.do");
+			return "include/return";
 		} else {
 			model.addAttribute("msg", "이메일, 비밀번호를 확인해 주세요");
-			model.addAttribute("url", "/admin/index.do");
+			model.addAttribute("url", "/res/admin/login.do");
 			return "include/return";
 		}
 	}

@@ -6,14 +6,16 @@
 <%@ include file="/WEB-INF/view/admin/include/headHtml.jsp" %>
 <script>
 function loginCheck(){
+	
+	
 	if ( $("#A_id").val().length < 1 ) {
 		alert("아이디를 입력해주세요.");
-		$("#A_id").val().focus();
+		$("#A_id").focus();
 		return false;
 	}
 	if ( $("#A_pw").val().length < 1 ) {
 		alert("비밀번호를 입력해주세요.");
-		$("#A_pw").val().focus(); 
+		$("#A_pw").focus(); 
 		return false;
 	} 
 	var f = document.board;
@@ -24,18 +26,18 @@ function loginCheck(){
 	   document.cookie = "cookie_userid=null;path=/;expires="+now;
 	}
 	return true;
-}
+ }
 
 function userid_chk() {
 	var f=document.board;
 	var useridname = CookieVal("cookie_userid");
 	
 	if (useridname=="null"){	
-		f.id.focus();
-		f.id.value="";
+		f.A_id.focus();
+		f.A_id.value="";
 	} else {
-		f.password.focus();
-		f.id.value=useridname;
+		f.A_pw.focus();
+		f.A_id.value=useridname;
 		f.reg.checked=true;
 	}
 }
