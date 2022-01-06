@@ -42,7 +42,13 @@ public class AdminController {
 	public String adminBoardWrite() {
 		return "admin/board/write";
 	}
-	
+	@GetMapping("/admin/logout.do")
+	public String logOut(Model model, HttpSession sess) {
+		model.addAttribute("msg", "로그아웃되었습니다.");
+		model.addAttribute("url", "/res/admin/login.do");
+		sess.invalidate();
+		return "include/return";
+	}
 	
 }
 
