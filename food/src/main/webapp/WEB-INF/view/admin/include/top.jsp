@@ -70,16 +70,17 @@ $(window).load(function(){
 		<div id="menu">
   			<ul class="menu">
   				<li><a href="<%=request.getContextPath()%>/admin/member/index.do" class="parent"><span>회원관리</span></a></li>
-				<li><a href="<%=request.getContextPath()%>/admin/product/index.do" class="parent"><span>상품관리</span></a></li>
-				<li><a href="<%=request.getContextPath()%>/admin/board/index.do" class="parent"><span>게시판</span></a>
+  				<li><a href="<%=request.getContextPath()%>/admin/member/index.do" class="parent"><span>공지사항관리</span></a></li>
+  				<li><a href="<%=request.getContextPath()%>/admin/member/index.do" class="parent"><span>매장관리</span></a></li>
+				<li><a href="<%=request.getContextPath()%>/admin/product/index.do" class="parent"><span>댓글관리</span></a></li>
+				<li><a href="<%=request.getContextPath()%>/admin/board/index.do" class="parent"><span>광고관리</span></a>
 					<div class="standard_left">
 					<ul>
-						<li><a href="<%=request.getContextPath()%>/admin/board/index.do"><span>공지사항</span></a></li>
-						<li><a href="<%=request.getContextPath()%>/admin/board/index.do"><span>Q&A</span></a></li>
+						<li><a href="<%=request.getContextPath()%>/admin/board/index.do"><span>광고문의</span></a></li>
+						<li><a href="<%=request.getContextPath()%>/admin/board/index.do"><span>광고설정</span></a></li>
 					</ul>
 					</div>
 				</li>
-				<li><a href="<%=request.getContextPath()%>/admin/admin/index.do" class="parent"><span>관리자관리</span></a></li>
 			</ul>
 		</div>
 		<!--//gnb-->
