@@ -49,6 +49,10 @@ public class AdminController {
 		sess.invalidate();
 		return "include/return";
 	}
+	@GetMapping("/admin/user/index.do")
+	public String userList() {
+		return "admin/board/user";
+	}
 	
 }
 

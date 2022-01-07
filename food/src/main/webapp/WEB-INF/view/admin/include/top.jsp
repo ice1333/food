@@ -69,7 +69,7 @@ $(window).load(function(){
 		
 		<div id="menu">
   			<ul class="menu">
-  				<li><a href="<%=request.getContextPath()%>/admin/member/index.do" class="parent"><span>회원관리</span></a></li>
+  				<li><a href="<%=request.getContextPath()%>/admin/user/index.do" class="parent"><span>회원관리</span></a></li>
   				<li><a href="<%=request.getContextPath()%>/admin/member/index.do" class="parent"><span>공지사항관리</span></a></li>
   				<li><a href="<%=request.getContextPath()%>/admin/member/index.do" class="parent"><span>매장관리</span></a></li>
 				<li><a href="<%=request.getContextPath()%>/admin/product/index.do" class="parent"><span>댓글관리</span></a></li>
