@@ -2,10 +2,6 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style type="text/css">
-.title {
-	text-align: center;
-}
 </style> 
 </head>
 <body> 
@@ -80,9 +76,6 @@
 							<div class="btn">
 								<div class="btnLeft">
 									<a class="btns" href="#" onclick=""><strong>삭제</strong> </a>
-								</div>
-								<div class="btnRight">
-									<a class="wbtn" href="write.do"><strong>등록</strong> </a>
 								</div>
 							</div>
 							<!--//btn-->
