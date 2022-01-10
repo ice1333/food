@@ -16,7 +16,7 @@ public class AdminServiceImpl implements AdminService {
 	public boolean login(AdminVo vo, HttpSession sess) {
 		AdminVo av = dao.login(vo);
 		if (av != null) { // 로그인 성공
-			sess.setAttribute("userInfo", av);
+			sess.setAttribute("adminInfo", av);
 			return true;
 		}
 		return false;
