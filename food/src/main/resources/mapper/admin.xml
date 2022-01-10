@@ -20,10 +20,10 @@
 			 <if test= "searchType != null and searchType != ''">
 			 	${searchType} LIKE '%${searchWord}%'
 			 </if>
-			 <if test="userno > 0">    
+			 <if test="u_no > 0">    
 			 	AND u_no = ${u_no}
 			 </if>
-		</where>
+		</where>     
 	</sql>
 	
 	<select id="count" resultType="int" parameterType="admin.UserVo">

@@ -56,12 +56,15 @@ public class UserVo extends CommonVo {
 	public void setU_tel(String u_tel) {
 		this.u_tel = u_tel;
 	}
-	public String getRegdate() {
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-		return sdf.format(this.u_regdate);
-	}
+//	public String getRegdate() {
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//		return sdf.format(this.u_regdate);
+//	}
 	public void setU_regdate(Timestamp u_regdate) {
 		this.u_regdate = u_regdate;
+	}
+	public Timestamp getU_regdate() {
+		return u_regdate;
 	}
 	public int getU_status() {
 		return u_status;
