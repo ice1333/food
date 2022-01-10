@@ -6,5 +6,28 @@
 		SELECT * FROM admin WHERE A_id = #{A_id} AND A_pw = md5(#{A_pw})
 	</select>
 
+	<select id="userList" parameterType="admin.UserVo" resultType="admin.UserVo">
+		SELECT * FROM user
+		ORDER BY u_regdate DESC    
+		LIMIT ${startIdx},10
+	</select>
 	
+	<sql id = "boardWhere">
+		<where>
+			<if test ="searchType ==''">   
+			 	(u_uemail LIKE '%${searchWord}%' OR u_status LIKE '%${searchWord}%')
+			 </if>
+			 <if test= "searchType != null and searchType != ''">
+			 	${searchType} LIKE '%${searchWord}%'
+			 </if>
+			 <if test="userno > 0">    
+			 	AND u_no = ${u_no}
+			 </if>
+		</where>
+	</sql>
+	
+	<select id="count" resultType="int" parameterType="admin.UserVo">
+		SELECT COUNT(*) FROM user
+		<include refid="boardWhere"/>
+	</select> 
 </mapper>

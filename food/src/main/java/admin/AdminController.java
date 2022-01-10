@@ -1,5 +1,8 @@
 package admin;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,6 +10,8 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+
+import util.CommonUtil;
 
 @Controller
 public class AdminController {
@@ -50,7 +55,20 @@ public class AdminController {
 		return "include/return";
 	}
 	@GetMapping("/admin/user/index.do")
-	public String userList() {
+	public String userList(Model model, HttpServletRequest req, UserVo vo) {
+		int totCount = service.count(vo);
+		int totPage = totCount / 10; //총페이지수 
+		if(totCount % 10 > 0) totPage++;
+		
+		int startIdx = (vo.getPage()-1)*10;
+		vo.setStartIdx(startIdx);
+		
+		
+		List<UserVo> list = service.selectList(vo);
+		model.addAttribute("list",list);
+		model.addAttribute("totPage",totPage);
+		model.addAttribute("totCount",totCount);
+		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
 		return "admin/board/user";
 	}
 	

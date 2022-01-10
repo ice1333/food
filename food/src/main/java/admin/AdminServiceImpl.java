@@ -1,5 +1,7 @@
 package admin;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,5 +20,15 @@ public class AdminServiceImpl implements AdminService {
 			return true;
 		}
 		return false;
+	}
+
+	@Override
+	public List<UserVo> selectList(UserVo vo) {
+		return dao.selectList(vo);
+	}
+
+	@Override
+	public int count(UserVo vo) {
+		return dao.count(vo);
 	}
 }

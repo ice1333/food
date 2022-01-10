@@ -31,8 +31,10 @@
 									<col class="w3" />
 									<col class="w4" />
 									<col class="w15" />
-									<col class="w15" />
 									<col class="w5" />
+									<col class="w5" />
+									<col class="w15" />
+									<col class="w15" />
 									<col class="w6" />
 								</colgroup>
 								<thead>
@@ -40,8 +42,10 @@
 										<th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" onClick="check(this, document.frm.no)"/></th>
 										<th scope="col">회원번호</th>
 										<th scope="col">이메일</th> 
-										<th scope="col">가입일</th> 
 										<th scope="col">이름</th> 
+										<th scope="col">성별</th> 
+										<th scope="col">전화번호</th> 
+										<th scope="col">가입일</th> 
 										<th scope="col" class="last">상태</th>
 									</tr>
 								</thead>
@@ -50,26 +54,33 @@
 										<td class="first"><input type="checkbox" name="no" id="no" value=""/></td>
 										<td>1</td>
 										<td class="email"><a href="view.do">hensu3846@gmail.com</a></td>
-										<td>2022-01.07</td>
 										<td>정현수</td>
+										<td>남</td>
+										<td>010-2492-3846</td>
+										<td>2022-01.07</td>
 										<td class="last">1</td>
 									</tr>
 									<tr>
 										<td class="first"><input type="checkbox" name="no" id="no" value=""/></td>
 										<td>1</td>
 										<td class="email"><a href="view.do">hensu3846@gmail.com</a></td>
-										<td>2022-01.07</td>
 										<td>정현수</td>
+										<td>남</td>
+										<td>010-2492-3846</td>
+										<td>2022-01.07</td>
 										<td class="last">1</td>
 									</tr>
 									<tr>
 										<td class="first"><input type="checkbox" name="no" id="no" value=""/></td>
 										<td>1</td>
 										<td class="email"><a href="view.do">hensu3846@gmail.com</a></td>
-										<td>2022-01.07</td>
 										<td>정현수</td>
+										<td>남</td>
+										<td>010-2492-3846</td>
+										<td>2022-01.07</td>
 										<td class="last">1</td>
 									</tr>
+									
 								</tbody>
 							</table>
 							</form>
