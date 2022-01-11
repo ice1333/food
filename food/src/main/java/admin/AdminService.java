@@ -11,4 +11,7 @@ public interface AdminService {
 	public List<UserVo> selectList(UserVo vo);
 	
 	public int count(UserVo vo);
+	
+	public int delete(UserVo vo);
+	
 }

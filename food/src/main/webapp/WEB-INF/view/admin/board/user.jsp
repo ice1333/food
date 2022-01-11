@@ -3,7 +3,22 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+<script type="text/javascript">
+	$(function(){ 
+		//전체선택 체크박스 클릭
+		$("#allChk").click(function(){
+			if($("#allChk").prop("checked")) { 
+				$("input[type=checkbox]").prop("checked",true); 
+				} else {  
+					$("input[type=checkbox]").prop("checked",false);
+				}
+		})
+	})
 
+	
+</script>
 </head>
 <body> 
 <div id="wrap">
@@ -60,7 +75,7 @@
 										<c:forEach var="vo" items="${list}" varStatus="status" >
 		                   <%//         	<tr onclick="location.href=view.do?boardno=${vo.boardno}">%>
 											<tr>
-												<td class="first"><input type="checkbox" name="no" id="no" value=""/></td>
+												<td class="first"><input type="checkbox" name="u_no" id="no" value=""/></td>
 												<td>${vo.u_no}</td>
 												<td class="email">${vo.u_uemail}</td>
 												<td>${vo.u_name }</td>
@@ -76,7 +91,7 @@
 							</form>
 							<div class="btn">
 								<div class="btnLeft">
-									<a class="btns" href="#" onclick=""><strong>삭제</strong> </a>
+									<a class="btns" href="javascript:del();"><strong>삭제</strong> </a>
 								</div>
 							</div>
 							<!--//btn-->

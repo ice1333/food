@@ -31,4 +31,8 @@
 		SELECT COUNT(*) FROM user
 		<include refid="boardWhere"/>
 	</select> 
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM user WHERE u_no=#{u_no}
+	</delete>
 </mapper>

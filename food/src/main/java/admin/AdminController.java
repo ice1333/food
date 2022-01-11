@@ -62,7 +62,7 @@ public class AdminController {
 		
 		int startIdx = (vo.getPage()-1)*10;
 		vo.setStartIdx(startIdx);
-		
+		 
 		
 		List<UserVo> list = service.selectList(vo);
 		model.addAttribute("list",list);
@@ -71,7 +71,18 @@ public class AdminController {
 		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
 		return "admin/board/user";
 	}
-	
+	@GetMapping("/admin/user/delete.do")
+	public String delete(Model model, UserVo vo) {
+		int r = service.delete(vo); 
+		if(r > 0) {
+			model.addAttribute("msg","정상적으로 삭제되었습니다.");
+			model.addAttribute("url","index.do"); // 성공 했을때 상세페이지 이동 
+		}else {
+			model.addAttribute("msg","삭제 오류");
+			model.addAttribute("url","view.do?boardno="+vo.getU_no()); //실패했을때 상세페이지 이동 
+		}
+		return "include/return";
+	}
 }
 
 

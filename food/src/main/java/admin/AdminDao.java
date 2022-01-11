@@ -15,10 +15,16 @@ public class AdminDao {
 	public AdminVo login(AdminVo vo) {
 		return sqlSession.selectOne("admin.login",vo);
 	}
+
 	public List<UserVo> selectList(UserVo vo) {
 		return sqlSession.selectList("admin.userList", vo);
 	}
+	
 	public int count(UserVo vo) {
 		return sqlSession.selectOne("admin.count",vo);
+	}
+	
+	public int delete(UserVo vo) {
+		return sqlSession.selectOne("admin.delete",vo);
 	}
 }

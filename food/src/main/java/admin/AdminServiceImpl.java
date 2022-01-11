@@ -31,4 +31,9 @@ public class AdminServiceImpl implements AdminService {
 	public int count(UserVo vo) {
 		return dao.count(vo);
 	}
+
+	@Override
+	public int delete(UserVo vo) {
+		return dao.delete(vo);
+	}
 }
