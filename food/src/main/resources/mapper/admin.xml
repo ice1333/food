@@ -8,6 +8,7 @@
 
 	<select id="userList" parameterType="admin.UserVo" resultType="admin.UserVo">
 		SELECT * FROM user
+		<include refid = "boardWhere"/>
 		ORDER BY u_regdate DESC    
 		LIMIT ${startIdx},10
 	</select>
