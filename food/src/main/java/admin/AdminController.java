@@ -55,9 +55,9 @@ public class AdminController {
 		sess.invalidate();
 		return "include/return";
 	}
-	@GetMapping("/admin/user/index.do")
+	@GetMapping("/admin/board/userList.do")
 	public String userList(Model model, HttpServletRequest req, UserVo vo) {
-		int totCount = service.count(vo);
+		int totCount = service.userCount(vo);
 		int totPage = totCount / 10; //총페이지수 
 		if(totCount % 10 > 0) totPage++;
 		
@@ -65,20 +65,48 @@ public class AdminController {
 		vo.setStartIdx(startIdx);
 		 
 		
-		List<UserVo> list = service.selectList(vo);
+		List<UserVo> list = service.userList(vo);
 		model.addAttribute("list",list);
 		model.addAttribute("totPage",totPage);
 		model.addAttribute("totCount",totCount);
 		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
-		return "admin/board/user";
+		return "admin/board/userList";
 	}
-	@RequestMapping("admin/delAjax.do")
-	public String delAjax(HttpServletRequest req, Model model, UserVo vo) {
+	@GetMapping("/admin/board/adminList.do")
+	public String adminList(Model model, HttpServletRequest req, AdminVo vo) {
+		int totCount = service.adminCount(vo);
+		int totPage = totCount / 10; //총페이지수 
+		if(totCount % 10 > 0) totPage++;
+		
+		int startIdx = (vo.getPage()-1)*10;
+		vo.setStartIdx(startIdx);
+		
+		
+		List<AdminVo> list = service.adminList(vo);
+		model.addAttribute("list",list);
+		model.addAttribute("totPage",totPage);
+		model.addAttribute("totCount",totCount);
+		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
+		return "admin/board/adminList";
+	}
+	@RequestMapping("admin/userDelAjax.do")
+	public String userdelAjax(HttpServletRequest req, Model model, UserVo vo) {
 		
 		String[] Msg = req.getParameterValues("valueArr");
 		int size = Msg.length;
 		for(int i=0; i<size; i++) {
-			service.delete(Msg[i]);
+			service.userDelete(Msg[i]);
+		}
+		return "include/result";
+	}
+
+	@RequestMapping("admin/adminDelAjax.do")
+	public String admindelAjax(HttpServletRequest req, Model model, UserVo vo) {
+		
+		String[] Msg = req.getParameterValues("valueArr");
+		int size = Msg.length;
+		for(int i=0; i<size; i++) {
+			service.adminDelete(Msg[i]);
 		}
 		return "include/result";
 	}

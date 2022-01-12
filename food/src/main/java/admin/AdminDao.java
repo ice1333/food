@@ -16,15 +16,26 @@ public class AdminDao {
 		return sqlSession.selectOne("admin.login",vo);
 	}
 
-	public List<UserVo> selectList(UserVo vo) {
+	public List<UserVo> userList(UserVo vo) {
 		return sqlSession.selectList("admin.userList", vo);
 	}
-	
-	public int count(UserVo vo) {
-		return sqlSession.selectOne("admin.count",vo);
+
+	public List<AdminVo> adminList(AdminVo vo) {
+		return sqlSession.selectList("admin.adminList", vo);
 	}
 	
-	public int delete(String u_no) {
-		return sqlSession.delete("admin.delete",u_no);
+	public int userCount(UserVo vo) {
+		return sqlSession.selectOne("admin.userCount",vo);
 	}
+	public int adminCount(AdminVo vo) {
+		return sqlSession.selectOne("admin.adminCount",vo);
+	}
+	
+	public int userDelete(String u_no) {
+		return sqlSession.delete("admin.userDelete",u_no);
+	}
+	public int adminDelete(String A_no) {
+		return sqlSession.delete("admin.adminDelete",A_no);
+	}
+	
 }

@@ -3,17 +3,38 @@
 <mapper namespace="admin"> <!-- mapper파일의 이름 -->
 	
 	<select id="login" parameterType="admin.AdminVo" resultType="admin.AdminVo">
-		SELECT * FROM admin WHERE A_id = #{A_id} AND A_pw = md5(#{A_pw})
+		SELECT * FROM admin WHERE a_id = #{a_id} AND a_pw = md5(#{a_pw})
 	</select>
 
 	<select id="userList" parameterType="admin.UserVo" resultType="admin.UserVo">
 		SELECT * FROM user
-		<include refid = "boardWhere"/>
+		<include refid = "userWhere"/>
 		ORDER BY u_regdate DESC    
 		LIMIT ${startIdx},10
 	</select>
+
+	<select id="adminList" parameterType="admin.AdminVo" resultType="admin.AdminVo">
+		SELECT * FROM admin
+		<include refid = "adminWhere"/>
+		ORDER BY a_regdate DESC    
+		LIMIT ${startIdx},10
+	</select>
 	
-	<sql id = "boardWhere">
+	<sql id = "adminWhere">
+		<where>
+			<if test ="searchType ==''">   
+			 	(a_id LIKE '%${searchWord}%' OR a_status LIKE '%${searchWord}%')
+			 </if>
+			 <if test= "searchType != null and searchType != ''">
+			 	${searchType} LIKE '%${searchWord}%'
+			 </if>
+			 <if test="a_no > 0">    
+			 	AND a_no = ${a_no}
+			 </if>
+		</where>     
+	</sql>
+	
+	<sql id = "userWhere">
 		<where>
 			<if test ="searchType ==''">   
 			 	(u_uemail LIKE '%${searchWord}%' OR u_status LIKE '%${searchWord}%')
@@ -27,12 +48,20 @@
 		</where>     
 	</sql>
 	
-	<select id="count" resultType="int" parameterType="admin.UserVo">
+	<select id="userCount" resultType="int" parameterType="admin.UserVo">
 		SELECT COUNT(*) FROM user
-		<include refid="boardWhere"/>
+		<include refid="userWhere"/>
+	</select> 
+
+	<select id="adminCount" resultType="int" parameterType="admin.AdminVo">
+		SELECT COUNT(*) FROM admin
+		<include refid="adminWhere"/>
 	</select> 
 	
-	<delete id="delete" >
+	<delete id="userDelete" >
 		DELETE FROM user WHERE u_no=#{u_no}
+	</delete>
+	<delete id="adminDelete" >
+		DELETE FROM admin WHERE a_no=#{a_no}
 	</delete>
 </mapper>

@@ -23,18 +23,34 @@ public class AdminServiceImpl implements AdminService {
 	}
 
 	@Override
-	public List<UserVo> selectList(UserVo vo) {
-		return dao.selectList(vo);
+	public List<UserVo> userList(UserVo vo) {
+		return dao.userList(vo);
+	}
+
+
+	@Override
+	public int userDelete(String u_no) {
+		return dao.userDelete(u_no);
 	}
 
 	@Override
-	public int count(UserVo vo) { 
-		return dao.count(vo); 
+	public int adminDelete(String A_no) {
+		return dao.adminDelete(A_no);
 	}
 
 	@Override
-	public int delete(String u_no) {
-		return dao.delete(u_no);
+	public List<AdminVo> adminList(AdminVo vo) {
+		return dao.adminList(vo);
+	}
+
+	@Override
+	public int userCount(UserVo vo) {
+		return dao.userCount(vo);
+	}
+
+	@Override 
+	public int adminCount(AdminVo vo) {
+		return dao.adminCount(vo);
 	}
 
 

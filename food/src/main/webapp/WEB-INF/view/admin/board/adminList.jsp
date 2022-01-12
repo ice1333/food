@@ -24,7 +24,7 @@
 		});
 	});
 	function del(){
-		var url ='/res/admin/delAjax.do';
+		var url ='/res/admin/adminDelAjax.do';
 		var valueArr = new Array();
 		var list= $("input[name='Rchk']");
 		for(var i=0; i<list.length; i++){
@@ -70,56 +70,53 @@
 		<div id="container">
 			<div id="content">
 				<div class="con_tit">
-					<h2>회원 - [목록]</h2>
+					<h2>관리자 - [목록]</h2>
 				</div>
 				<!-- //con_tit -->
 				<div class="con">
 					<!-- 내용 : s -->
 					<div id="bbs">
 						<div id="blist">
-							<p><span><strong>총 ${totCount }개</strong>  |  ${userVo.page }/${totPage }페이지</span></p>
+							<p><span><strong>총 ${totCount }개</strong>  |  ${adminVo.page }/${totPage }페이지</span></p>
 							<form name="frm" id="frm" action="process.do" method="post">
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" summary="관리자 관리목록입니다.">
 								<colgroup>
 									<col class="w3" />
 									<col class="w4" />
-									<col class="w15" />
+									<col class="w13" />
 									<col class="w5" />
-									<col class="w5" />
-									<col class="w15" />
-									<col class="w15" />
+									<col class="w13" />
+									<col class="w13" />
 									<col class="w6" />
 								</colgroup>
 								<thead>
 									<tr>
 										<th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" onClick="check(this, document.frm.no)"/></th>
-										<th scope="col">회원번호</th>
-										<th scope="col">이메일</th> 
+										<th scope="col">관리자번호</th>
+										<th scope="col">아이디</th> 
+										<th scope="col">등급</th> 
 										<th scope="col">이름</th> 
-										<th scope="col">성별</th> 
-										<th scope="col">전화번호</th> 
-										<th scope="col">가입일</th> 
+										<th scope="col">시작일</th> 
 										<th scope="col" class="last">상태</th>
 									</tr>
 								</thead>
 								<tbody>
 									<c:if test="${empty list}">
 			                            <tr>
-			                                <td class="first" colspan="8">등록된 글이 없습니다.</td>
+			                                <td class="first" colspan="7">등록된 글이 없습니다.</td>
 			                            </tr>
 									</c:if>	
 									<c:if test="${!empty list}">
 										<c:forEach var="vo" items="${list}" varStatus="status" >
 		                   <%//         	<tr onclick="location.href=view.do?boardno=${vo.boardno}">%>
 											<tr>
-												<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.u_no}"/></td>
-												<td>${vo.u_no}</td>
-												<td class="email">${vo.u_uemail}</td>
-												<td>${vo.u_name }</td>
-												<td>${vo.u_gender }</td>
-												<td>${vo.u_tel }</td>
-												<td>${vo.u_regdate }</td>
-												<td class="last">${vo.u_status }</td>
+												<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.a_no}"/></td>
+												<td>${vo.a_no}</td>
+												<td class="email">${vo.a_id}</td>
+												<td>${vo.a_rank }</td>
+												<td>${vo.a_name }</td>
+												<td>${vo.a_regdate }</td>
+												<td class="last">${vo.a_status }</td>
 											</tr>
 										</c:forEach>
 									</c:if>

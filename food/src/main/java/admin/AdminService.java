@@ -8,10 +8,16 @@ public interface AdminService {
 
 	public boolean login(AdminVo vo,HttpSession session);
 	
-	public List<UserVo> selectList(UserVo vo);
+	public List<UserVo> userList(UserVo vo);
 	
-	public int count(UserVo vo);
+	public List<AdminVo> adminList(AdminVo vo);
 	
-	public int delete(String u_no);
+	public int userCount(UserVo vo);
+	
+	public int adminCount(AdminVo vo);
+	
+	public int userDelete(String u_no);
+	
+	public int adminDelete(String A_no);
 	
 }
