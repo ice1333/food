@@ -12,6 +12,6 @@ public interface AdminService {
 	
 	public int count(UserVo vo);
 	
-	public int delete(UserVo vo);
+	public int delete(String u_no);
 	
 }

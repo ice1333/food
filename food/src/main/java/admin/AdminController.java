@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import util.CommonUtil;
 
@@ -19,7 +20,7 @@ public class AdminController {
 	@Autowired
 	AdminService service;
 	
-	@GetMapping("/admin/login.do")
+	@GetMapping("/admin/login.do")  
 	public String adminIndex() {
 		return "admin/index";
 	}
@@ -71,18 +72,15 @@ public class AdminController {
 		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
 		return "admin/board/user";
 	}
-	@GetMapping("/admin/user/delete.do")
-	public String delete(Model model, UserVo vo) {
-		int r = service.delete(vo); 
-		if(r > 0) {
-			model.addAttribute("msg","정상적으로 삭제되었습니다.");
-			model.addAttribute("url","index.do"); // 성공 했을때 상세페이지 이동 
-		}else {
-			model.addAttribute("msg","삭제 오류");
-			model.addAttribute("url","view.do?boardno="+vo.getU_no()); //실패했을때 상세페이지 이동 
+	@RequestMapping("admin/delAjax.do")
+	public String delAjax(HttpServletRequest req, Model model, UserVo vo) {
+		
+		String[] Msg = req.getParameterValues("valueArr");
+		int size = Msg.length;
+		for(int i=0; i<size; i++) {
+			service.delete(Msg[i]);
 		}
-		return "include/return";
+		return "include/result";
 	}
+	
 }
-
-

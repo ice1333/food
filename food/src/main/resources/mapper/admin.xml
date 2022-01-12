@@ -32,7 +32,7 @@
 		<include refid="boardWhere"/>
 	</select> 
 	
-	<delete id="delete" parameterType="int">
+	<delete id="delete" >
 		DELETE FROM user WHERE u_no=#{u_no}
 	</delete>
 </mapper>

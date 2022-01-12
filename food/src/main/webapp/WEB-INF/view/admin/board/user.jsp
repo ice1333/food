@@ -5,18 +5,55 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
-<script type="text/javascript">
-	$(function(){ 
-		//전체선택 체크박스 클릭
-		$("#allChk").click(function(){
-			if($("#allChk").prop("checked")) { 
-				$("input[type=checkbox]").prop("checked",true); 
-				} else {  
-					$("input[type=checkbox]").prop("checked",false);
+<script>
+	$(function(){ //전체선택 Rchk
+		var chk = document.getElementsByName("Rchk");
+		var row = chk.length;
+		$("input[name='allChk']").click(function(){ 
+			var c = $("input[name='Rchk']");
+			for (var i=0; i<c.length; i++){
+				c[i].checked = this.checked;
+			}
+		});
+		$("input[name='Rchk']").click(function(){
+			if($("input[name='Rchk']:checked").length == row) {
+				$("input[name='allChk']")[0].checked = true;
+			} else {
+				$("input[name='allChk']")[0].checked = false;
+			}
+		});
+	});
+	function del(){
+		var url ='/res/admin/delAjax.do';
+		var valueArr = new Array();
+		var list= $("input[name='Rchk']");
+		for(var i=0; i<list.length; i++){
+			if(list[i].checked){
+				valueArr.push(list[i].value);
+				console.log(list[i].value)
+			}
+		}
+	if (valueArr.length==0){
+		alert('하나 이상 선택하세요.')
+		} else {
+			var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+			$.ajax({
+				url: url,
+				type : 'POST',
+				traditional:true,
+				data : {
+					valueArr : valueArr
+				},
+				success: function(res){
+	                  alert("삭제 성공입니다.");
+	                  location.reload();
 				}
-		})
-	})
-
+			});
+		}
+	}
+	
+		
+	
 	
 </script>
 </head>
@@ -75,7 +112,7 @@
 										<c:forEach var="vo" items="${list}" varStatus="status" >
 		                   <%//         	<tr onclick="location.href=view.do?boardno=${vo.boardno}">%>
 											<tr>
-												<td class="first"><input type="checkbox" name="u_no" id="no" value=""/></td>
+												<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.u_no}"/></td>
 												<td>${vo.u_no}</td>
 												<td class="email">${vo.u_uemail}</td>
 												<td>${vo.u_name }</td>

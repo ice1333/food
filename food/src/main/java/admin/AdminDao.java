@@ -24,7 +24,7 @@ public class AdminDao {
 		return sqlSession.selectOne("admin.count",vo);
 	}
 	
-	public int delete(UserVo vo) {
-		return sqlSession.selectOne("admin.delete",vo);
+	public int delete(String u_no) {
+		return sqlSession.delete("admin.delete",u_no);
 	}
 }
