@@ -6,13 +6,13 @@ import java.text.SimpleDateFormat;
 import util.CommonVo;
 
 public class AdminVo extends CommonVo {
-	int a_no;
-	String a_id;
-	String a_pw;
-	int a_rank;
-	int a_status;
-	String a_name;
-	Timestamp a_regdate;
+	private int a_no;
+	private String a_id;
+	private String a_pw;
+	private int a_rank;
+	private int a_status;
+	private String a_name;
+	private Timestamp a_regdate;
 	public int getA_no() {
 		return a_no;
 	}

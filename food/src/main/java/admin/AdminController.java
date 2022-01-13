@@ -31,7 +31,7 @@ public class AdminController {
 			model.addAttribute("url", "/res/admin/board/index.do");
 			return "include/return";
 		} else {
-			model.addAttribute("msg", "이메일, 비밀번호를 확인해 주세요");
+			model.addAttribute("msg", "아이디, 비밀번호를 확인해 주세요");
 			model.addAttribute("url", "/res/admin/login.do");
 			return "include/return";
 		}
