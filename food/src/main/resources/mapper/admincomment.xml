@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="admincomment"> <!-- mapper파일의 이름 -->
+	
+	  <sql id = "admincommentWhere">
+		<where>
+			<if test ="searchType ==''">   
+			 	(a_id LIKE '%${searchWord}%' OR a_status LIKE '%${searchWord}%')
+			 </if>
+			 <if test= "searchType != null and searchType != ''">
+			 	${searchType} LIKE '%${searchWord}%'
+			 </if>
+			 <if test="a_no > 0">    
+			 	AND c_no = ${c_no}
+			 </if>
+		</where>     
+	</sql> 
+	
+	 <select id="selectList" resultType = "admincomment.AdminCommentVo" parameterType="admincomment.AdminCommentVo">
+		SELECT * FROM shop.adcomment
+		<include refid = "admincommentWhere"/>
+		ORDER BY c_regdate DESC    
+		LIMIT ${startIdx},10
+	</select>
+
+	<select id="count" resultType="int" parameterType="admincomment.AdminCommentVo">
+		SELECT count(*) FROM shop.adcomment
+		<include refid="admincommentWhere"/>
+	</select>   
+	
+</mapper>
