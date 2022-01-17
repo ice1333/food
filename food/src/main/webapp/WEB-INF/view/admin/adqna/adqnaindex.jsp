@@ -99,14 +99,14 @@
 							<form name="frm" id="frm" action="delAjax.do" method="post">
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" summary="관리자 관리목록입니다.">
 								<colgroup>
+									<col width="50px" class="w3" />
+									<col width="50px" class="w3" />
 									<col width="80px" class="w3" />
-									<col width="80px" class="w4" />
-									<col width="100px" class="w7" />
-									<col width="100px" class="w7" />
-									<col width="*" class="" />
-									<col width="100px" class="w10" />
-									<col width="80px" class="w5" />
-									<col width="80px" class="w6" />
+									<col width="50px" class="w3" />
+									<col width="500px" class="w10" />
+									<col width="50px" class="w3" />
+									<col width="50px" class="w3" />
+									<col width="50px" class="w3" />
 								</colgroup>
 								<thead>
 									<tr>
