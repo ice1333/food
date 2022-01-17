@@ -118,13 +118,15 @@
 							</table>
 							</form>
 							<div class="btn">
-								<div class="btnLeft">
+								<div class="btnRight">
 									<a class="btns" href="#" onclick=""><strong>삭제</strong> </a>
 								</div>
 							</div>
 							<!--//btn-->
 							<!-- 페이징 처리 -->
-							${PageArea }							
+							<div class='page'>
+							${PageArea }
+							</div>					
 							<!-- //페이징 처리 -->
 							<form name="searchForm" id="searchForm" action="index.do"  method="get">
 								<div class="search">
