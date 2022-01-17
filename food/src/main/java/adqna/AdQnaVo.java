@@ -15,8 +15,22 @@ public class AdQnaVo extends SearchVo{
 	private int a_no;
 	private String tablename;
 	private String status;
+	private String u_name;
+	private String u_uemail;
 	
 	
+	public String getU_name() {
+		return u_name;
+	}
+	public void setU_name(String u_name) {
+		this.u_name = u_name;
+	}
+	public String getU_uemail() {
+		return u_uemail;
+	}
+	public void setU_uemail(String u_uemail) {
+		this.u_uemail = u_uemail;
+	}
 	public String getStatus() {
 		return status;
 	}

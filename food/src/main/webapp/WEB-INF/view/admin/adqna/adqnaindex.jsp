@@ -101,6 +101,8 @@
 								<colgroup>
 									<col width="80px" class="w3" />
 									<col width="80px" class="w4" />
+									<col width="100px" class="w7" />
+									<col width="100px" class="w7" />
 									<col width="*" class="" />
 									<col width="100px" class="w10" />
 									<col width="80px" class="w5" />
@@ -110,6 +112,8 @@
 									<tr>
 										<th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" /></th>
 										<th scope="col">번호</th>
+										<th scope="col">이메일</th>
+										<th scope="col">이름</th>
 										<th scope="col">제목</th> 
 										<th scope="col">작성일</th> 
 										<th scope="col">작성자</th> 
@@ -127,6 +131,8 @@
 									<tr class="board_tr" data-adqna_no="${vo.adqna_no}" style="cursor:pointer;">
 										<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adqna_no}"/></td>
 										<td>${vo.adqna_no}</td>
+										<td>${vo.u_uemail}</td>
+										<td>${vo.u_name}</td>
 										<td class="title"><a href="adqnaview.do?adqna_no=${vo.adqna_no}">${vo.aq_title}</a></td>
 										<td><fmt:formatDate value="${vo.aq_regdate}" pattern="yyyy-MM-dd"/></td>
 										<td>${vo.u_no}</td>
