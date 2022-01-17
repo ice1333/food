@@ -88,28 +88,29 @@
 	
 	<!-- 삭제 -->
 	<delete id="delete">
-		DELETE FROM ad.adqna WHERE adqna_no=#{adqna_no}
+		DELETE FROM shop.adqna WHERE adqna_no=#{adqna_no}
 	</delete>
 	
 	<!-- 문의 글 삭제  -->
 	<delete id="adqnadelete">
-		DELETE FROM ad.adqna WHERE adqna_no=#{adqna_no}
+		DELETE FROM shop.adqna WHERE adqna_no=#{adqna_no}
 	</delete>
 	
 	<!-- 총갯수 (됫음)-->
 	<select id="adqnacount" resultType="int" parameterType="adqna.AdQnaVo">
-		SELECT COUNT(*) FROM ad.adqna
+		SELECT COUNT(*) FROM shop.adqna
 		<include refid="adqnaWhere"/>
 	</select>
 	
 	<!-- 누른글 상세페이지 -->
 	<select id="no_select" parameterType="int" resultType="adqna.AdQnaVo">
-		SELECT * FROM ad.adqna WHERE adqna_no = #{xxx} 
+		SELECT * FROM shop.adqna WHERE adqna_no = #{xxx} 
 	</select>
 	
 	<!-- 목록 -->
-	<select id="adqnalist" resultType="adqna.AdQnaVo" parameterType="adqna.AdQnaVo">
-		SELECT *, (SELECT u_name from user where u_no=adqna.u_no) u_no ,(SELECT COUNT(*) FROM ad.comment WHERE adqna_no=adqna.adqna_no) aq_status
+	<!-- name (SELECT u_name from user where u_no=adqna.u_no) u_no  -->
+	<select id="adqnalist" resultType="adqna.AdQnaVo" parameterType="adqna.AdQnaVo"> 
+		SELECT *,(SELECT COUNT(*) FROM shop.comment WHERE adqna_no=adqna.adqna_no) aq_status
 		From ad.adqna
 		<include refid="adqnaWhere"/>
 		ORDER BY aq_regdate DESC LIMIT ${startIdx},10
