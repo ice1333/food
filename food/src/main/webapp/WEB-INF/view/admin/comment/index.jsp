@@ -11,11 +11,57 @@
 		<!-- S T A R T :: headerArea-->
 		<%@ include file="/WEB-INF/view/admin/include/headHtml.jsp" %>
 		<%@ include file="/WEB-INF/view/admin/include/top.jsp" %>
-		<script>	
-		</script>
-		<!-- E N D :: headerArea--> 
+		<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 		
-		<!-- S T A R T :: containerArea-->
+		<script>
+	$(function(){ //전체선택 Rchk
+		var chk = document.getElementsByName("Rchk");
+		var row = chk.length;
+		$("input[name='allChk']").click(function(){ 
+			var c = $("input[name='Rchk']");
+			for (var i=0; i<c.length; i++){
+				c[i].checked = this.checked;
+			}
+		});
+		$("input[name='Rchk']").click(function(){
+			if($("input[name='Rchk']:checked").length == row) {
+				$("input[name='allChk']")[0].checked = true;
+			} else {
+				$("input[name='allChk']")[0].checked = false;
+			}
+		});
+	});
+	function del(){
+		var url ='/res/admin/userDelAjax.do';
+		var valueArr = new Array();
+		var list= $("input[name='Rchk']");
+		for(var i=0; i<list.length; i++){
+			if(list[i].checked){
+				valueArr.push(list[i].value);
+				console.log(list[i].value)
+			}
+		}
+	if (valueArr.length==0){
+		alert('하나 이상 선택하세요.')
+		} else {
+			var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+			$.ajax({
+				url: url,
+				type : 'POST',
+				traditional:true,
+				data : {
+					valueArr : valueArr
+				},
+				success: function(res){
+	                  alert("삭제 성공입니다.");
+	                  location.reload();
+				}
+			});
+		}
+	}
+		
+</script>
 		<div id="container">
 			<div id="content">
 				<div class="con_tit">
@@ -58,7 +104,7 @@
 									<c:if test="${!empty list}">
 										<c:forEach var="vo" items="${list}" varStatus="status" >
 												<tr>									
-													<td class="first"><input type="checkbox" name="checkbox" id="checkbox" value=""/></td>
+													<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adc_no }"/></td>
 													<td>${vo.u_no}</td>
 													<td>${vo.r_no}</td>
 													<td>${vo.u_name }</td>										
@@ -78,16 +124,17 @@
 							</div>
 							<!--//btn-->
 							<!-- 페이징 처리 -->
-							${pageArea }							
+							${PageArea }							
 							<!-- //페이징 처리 -->
-							<form name="searchForm" id="searchForm" action="index.do"  method="post">
+							<form name="searchForm" id="searchForm" action="index.do"  method="get">
 								<div class="search">
-									<select name="stype" title="검색을 선택해주세요">
-										<option value="all">전체</option>
-										<option value="title">이름</option>
-										<option value="contents">댓글내용</option>
+									<select  name="searchType" title="검색을 선택해주세요">
+										<option value="">전체</option>
+										<option value="u_name">작성자</option>
+										<option value="c_contents">댓글내용</option>
+										<option value="c_stars">별점</option>
 									</select>
-									<input type="text" name="sval" value="" title="검색할 내용을 입력해주세요" />
+									<input type="text" name="searchWord" value="" title="검색할 내용을 입력해주세요" />
 									<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />
 								</div>
 							</form>

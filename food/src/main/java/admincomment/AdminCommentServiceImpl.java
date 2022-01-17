@@ -12,6 +12,7 @@ public class AdminCommentServiceImpl implements AdminCommentService {
 	@Autowired
 	AdminCommentDao dao;
 
+
 	@Override
 	public List<AdminCommentVo> selectList(AdminCommentVo vo) {
 		return dao.selectList(vo);
@@ -20,6 +21,11 @@ public class AdminCommentServiceImpl implements AdminCommentService {
 	@Override
 	public int count(AdminCommentVo vo) {
 		return dao.count(vo);
+	}
+
+	@Override
+	public int admincommentDelete(String adc_no) {
+		return dao.sqlSession.delete(adc_no);
 	}
 	
 }
