@@ -77,7 +77,6 @@
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" summary="관리자 관리목록입니다.">
 								<colgroup>
 									<col class="w3" />
-									<col class="w6" />
 									<col class="w8" />
 									<col class="w8" />
 									<col class="w*" />
@@ -87,7 +86,6 @@
 								<thead>
 									<tr>
 										<th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" onClick="check(this, document.frm.no)"/></th>
-										<th scope="col">회원번호</th>
 										<th scope="col">상호번호</th>
 										<th scope="col">작성자</th> 
 										<th scope="col">댓글내용</th> 
@@ -105,7 +103,6 @@
 										<c:forEach var="vo" items="${list}" varStatus="status" >
 												<tr>									
 													<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adc_no }"/></td>
-													<td>${vo.u_no}</td>
 													<td>${vo.r_no}</td>
 													<td>${vo.u_name }</td>										
 													<td>${vo.c_contents }</td>
