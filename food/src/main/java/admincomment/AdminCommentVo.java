@@ -17,6 +17,8 @@ public class AdminCommentVo extends CommonVo{
 	private int adc_status;
 	
 	
+
+	
 	public int getAdc_no() {
 		return adc_no;
 	}

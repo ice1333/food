@@ -69,7 +69,7 @@ public class AdminController {
 		model.addAttribute("list",list);
 		model.addAttribute("totPage",totPage);
 		model.addAttribute("totCount",totCount);
-		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
+		model.addAttribute("pageArea",CommonUtil.getPageArea("userList.do", vo.getPage(), totPage, 10));
 		return "admin/board/userList";
 	}
 	@GetMapping("/admin/board/adminList.do")
@@ -86,7 +86,7 @@ public class AdminController {
 		model.addAttribute("list",list);
 		model.addAttribute("totPage",totPage);
 		model.addAttribute("totCount",totCount);
-		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
+		model.addAttribute("pageArea",CommonUtil.getPageArea("adminList.do", vo.getPage(), totPage, 10));
 		return "admin/board/adminList";
 	}
 	@RequestMapping("admin/userDelAjax.do")

@@ -20,5 +20,8 @@ public class AdminCommentDao {
 		return sqlSession.selectList("admincomment.selectList",vo);
 	}
 	
+	public int admincommentDelete(String adc_no) {
+		return sqlSession.delete("admin.adminDelete",adc_no);
+	}
 	
 }
