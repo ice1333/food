@@ -1,0 +1,198 @@
+@charset "utf-8";
+
+*{
+		box-sizing:border-box;
+		max-width:100%;
+		margin:0;
+		padding:0;
+	}
+	.wrap{
+		width:100%;
+		margin:0 auto;
+	}
+	.sub .sub_title{
+	text-align:center;
+	font-size:32px;
+	margin:40px 40px 40px 40px;
+	}
+	h3 {
+    display: block;
+    font-size: 1.17em;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+	}
+	p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 1em;
+    margin-inline-end: 1em;
+	}
+	.sub .size {
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    padding: 20px 20px;
+	}
+	.size {
+    position: relative;
+	}
+	div {
+    display: block;
+	}
+	.bbs {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    min-width: 1500px;
+    clear: both;
+    padding-bottom: 10px;
+	}
+	.bbs .view {
+    width: 100%;
+    border-top: 2px solid #221f1f;
+	}
+	.bbs .view .title > dl {
+    width: 100%;
+    padding: 20px;
+    border-bottom: 1px solid #221f1f;
+    background: #eeeff0;
+	}
+	.bbs .view .title > dl > dt {
+    font-size: 18px;
+    color: #000;
+    font-weight: bold;
+	}
+	dl, ul, ol, menu, li {
+    list-style: none;
+    vertical-align: middle;
+	}
+	.bbs .view .title > dl > dd {
+    display: inline-block;
+    font-size: 14px;
+    color: #999;
+    margin-top: 5px;
+	}
+	dd {
+    display: block;
+    margin-inline-start: 0px;
+	}
+	.bbs .view .cont {
+	padding:20px;
+    min-height: 200px;
+    border-bottom: 1px solid #e4e4e4;
+	}
+	.bbs .view .file {
+    padding: 10px 20px;
+    overflow: hidden;
+    border-bottom: 1px solid #e4e4e4;
+	}
+	.bbs .view .file dt {
+    float: left;
+    width: 80px;
+    color: #999;
+	}
+	.btnSet {
+    position: relative;
+    margin: 20px 0;
+    text-align: center;
+    overflow: hidden;
+	}
+	a:link {
+    color: #000;
+    text-decoration: none;
+	}
+	.btn {
+	background: url(/img/admin/btn_bg.gif) no-repeat 100% 0;
+    font-size: 14px;
+    text-decoration: none !important;
+    white-space: nowrap;
+    display: inline-block;
+    vertical-align: baseline;
+    position: relative;
+    cursor: pointer;
+    padding: 4px 20px;
+    min-width: 64px;
+    border: 2px solid #221f1f;
+    margin: 0 2px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+	}
+	table {
+    width: 100%;
+    border-collapse: collapse;
+	}
+	.board_write {
+    border-top: 2px solid #221f1f;
+    border-bottom: 1px solid #000000;
+	}
+	table{
+	display: table;
+    border-collapse: separate;
+    box-sizing: border-box;
+    text-indent: initial;
+    border-spacing: 2px;
+    border-color: grey;
+	}
+	.board_write td {
+    padding: 10px;
+    border-bottom: 1px solid #ebebeb;
+    font-size: 15px;
+    color: #2f3134;
+    font-weight: 300;
+    box-sizing: border-box;
+	}
+	.board_write tr:last-child th, .board_write tr:last-child td {
+    border-bottom: 1px solid #dadada;
+	}
+	td {
+    display: table-cell;
+    vertical-align: inherit;
+	}
+	.board_write td textarea {
+    width: 100%;
+    height: 200px;
+    box-sizing: border-box;
+	}
+	.bbs .list {
+    border-collapse: collapse;
+    border-spacing: 0;
+    box-sizing: border-box;
+	}
+	.bbs .list td {
+    text-align: center;
+    padding: 10px 10px 10px 5px;
+    border-bottom: 1px solid #d9d9d9;
+	}
+	.bbs .list td.txt_l{
+		text-align: left;
+		
+	}
+	p1{
+	margin:0;
+	display: block;
+    border-bottom: 2px solid #000000;
+	}
+	.con_tit {
+    width: 100%;
+    height: 56px;
+    background:url(/ad/img/admin/con_tit_bg.gif) repeat-x left top;
+	}
+	.list .dellight{
+	float:right;
+	display: inline-block;
+    padding-right: 4px;
+    background: url(/ad/img/admin/btn_bg.gif) no-repeat 100% 0;
+    font-size: 11px;
+    color: #797979;
+    line-height: 26px;
+    word-spacing: -1px;
+    text-decoration: none !important;
+    white-space: nowrap;
+    color: #797979 !important;
+	}

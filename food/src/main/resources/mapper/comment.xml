@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="comment"> <!-- mapper파일의 이름 -->
+
+
+		
+	<select id="adqselectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
+		SELECT * FROM comment WHERE adqna_no=#{adqna_no} AND tablename=#{tablename} 
+		ORDER BY regdate DESC
+		 
+	</select>
+	
+	<insert id="adqcominsert" parameterType="comment.CommentVo">
+		INSERT INTO comment (
+		tablename, content, adqna_no , regdate , a_no 
+		) values(
+		#{tablename}, #{content}, #{adqna_no} , NOW() ,#{a_no} 
+		)
+	</insert>
+	
+	 <!-- <select id="selectOne2" parameterType="int" resultType="chap07.BoardVo2">
+		SELECT boardno as num, title as subject, content as article, writer as author, regdate FROM board WHERE boardno = #{xxx}
+	</select> -->
+	
+	
+	<delete id="adqdelete" parameterType="int">
+		DELETE FROM comment WHERE c_no=#{c_no}
+	</delete>
+	
+	<!-- <select id="" resultType="" parameterType="">  지금은 ad.comment 유저쪽 생기면 유저테이블에서 이름가져와야댐
+		select u_name from ad.comment where tablename=#{tablename} and adqna_no=#{adqna_no}
+	</select> -->
+	
+	<!--  해당 댓글을 카운트해서 0보다 크면 답변완료 0보다 작으면 답변대기 
+	<select id="aqstatus" resultType="int" parameterType="comment.CommentVo">
+		select count(c_no) from ad.comment  
+		where tablename=#{tablename} and adqna_no=#{adqna_no}
+	</select>-->
+	
+	
+
+</mapper>
