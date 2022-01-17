@@ -181,13 +181,13 @@
 	.con_tit {
     width: 100%;
     height: 56px;
-    background:url(/ad/img/admin/con_tit_bg.gif) repeat-x left top;
+    background:url(/res/img/admin/con_tit_bg.gif) repeat-x left top;
 	}
 	.list .dellight{
 	float:right;
 	display: inline-block;
     padding-right: 4px;
-    background: url(/ad/img/admin/btn_bg.gif) no-repeat 100% 0;
+    background: url(/res/img/admin/btn_bg.gif) no-repeat 100% 0;
     font-size: 11px;
     color: #797979;
     line-height: 26px;

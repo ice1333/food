@@ -26,7 +26,7 @@
 	
 	 function goSave(){
 		$.ajax({
-			url:'/ad/comment/adqcominsert.do',
+			url:'/res/comment/adqcominsert.do',
 			type:'get',
 			data:$("#frm").serialize(), // serialize() 값을 넣어준다
 			success:function(){
@@ -39,7 +39,7 @@
 	}
 	function commentList(tablename, adqna_no){
 	$.ajax({
-		url:'/ad/comment/adqlist.do',
+		url:'/res/comment/adqlist.do',
 		data:{tablename:tablename, adqna_no:adqna_no},
 			success:function(res) {
 				$("#commentArea").html(res);
@@ -52,7 +52,7 @@
 	function goDel(c_no){
 		if(confirm('댓글을 삭제하시겠습니까?')){
 			$.ajax({
-				url:"/ad/comment/adqdelete.do",
+				url:"/res/comment/adqdelete.do",
 				data:{c_no:c_no},
 				success:function(res){
 					if(res.trim()=='1'){
@@ -88,7 +88,7 @@
 	                        <dl class="file">
 	                            <dt>첨부파일 </dt>
 	                            <dd>
-	                            <a href="/ad/common/download.jsp?path=/upload/&org=${vo.aq_filename_org}&real=${vo.aq_filename_real}" 
+	                            <a href="/res/common/download.jsp?path=/upload/&org=${vo.aq_filename_org}&real=${vo.aq_filename_real}" 
 	                            target="_blank">${vo.aq_filename_org} </a></dd>
 	                        </dl>
 	                       

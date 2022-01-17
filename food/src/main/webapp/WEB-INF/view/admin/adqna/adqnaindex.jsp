@@ -4,7 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-<link href="<%=request.getContextPath()%>/ad/css/admin/index.css" rel="stylesheet" type="text/css" />
+<link href="<%=request.getContextPath()%>/css/admin/index.css" rel="stylesheet" type="text/css" />
 
 <html>
 <head>
@@ -27,7 +27,7 @@
 		});
 	});
 	function del(){
-		var url ='/ad/admin/delAjax.do';
+		var url ='/res/admin/delAjax.do';
 		var valueArr = new Array();
 		var list= $("input[name='Rchk']");
 		for(var i=0; i<list.length; i++){
@@ -131,8 +131,8 @@
 										<td><fmt:formatDate value="${vo.aq_regdate}" pattern="yyyy-MM-dd"/></td>
 										<td>${vo.u_no}</td>
 										<td class="last"><c:choose>
-										<c:when test="${vo.aq_status == 0}">답변대기</c:when>
-										<c:when test="${vo.aq_status >= 1}">답변완료</c:when>
+										<c:when test="${vo.status == 0}">답변대기</c:when>
+										<c:when test="${vo.status >= 1}">답변완료</c:when>
 										</c:choose></td>
 										
 										
@@ -149,7 +149,7 @@
 							</div>
 							<!--//btn-->
 							<!-- 페이징 처리 -->
-							${pageArea }
+							${pageArea}
 							<!-- //페이징 처리 -->
 							<form name="searchForm" id="searchForm" action="adqnaindex.do"  method="get">
 								<div class="search">
@@ -159,7 +159,7 @@
 										<option value="aq_contents" <c:if test="${param.searchType == 'aq_contents'}">selected</c:if>>내용</option>
 									</select>
 									<input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
-									<input type="image" src="/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
+									<input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
 								</div>
 							</form>
 							<!-- //search --> 

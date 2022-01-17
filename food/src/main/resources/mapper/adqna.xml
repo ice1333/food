@@ -110,8 +110,8 @@
 	<!-- 목록 -->
 	<!-- name (SELECT u_name from user where u_no=adqna.u_no) u_no  -->
 	<select id="adqnalist" resultType="adqna.AdQnaVo" parameterType="adqna.AdQnaVo"> 
-		SELECT *,(SELECT COUNT(*) FROM shop.comment WHERE adqna_no=adqna.adqna_no) aq_status
-		From ad.adqna
+		SELECT *, (SELECT COUNT(*) FROM shop.comment WHERE adqna_no=adqna.adqna_no) status
+		From shop.adqna
 		<include refid="adqnaWhere"/>
 		ORDER BY aq_regdate DESC LIMIT ${startIdx},10
 	</select>

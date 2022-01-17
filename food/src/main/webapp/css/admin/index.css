@@ -10,9 +10,9 @@
     padding: 0px;
 	margin: 0 auto;
 	margin-top:15px;
-    background: url(/project/img/admin/con_tit_bg.gif) repeat-x left top;
+    background: url(/res/img/admin/con_tit_bg.gif) repeat-x left top;
 } 
-h3 {
+#content h3 {
 	text-align: center;
     font-size: 32px;
     margin: 0 0 15px 0;
@@ -84,7 +84,7 @@ table {
     padding: 13px 2px;
     border-bottom: 1px solid #ccced0;
     font-size: 12px;
-    background: url(/project/img/admin/blist_td_line.gif) repeat-y;
+    background: url(/res/img/admin/blist_td_line.gif) repeat-y;
 }
 #bbs #blist table thead {
     width: 100%;
@@ -159,7 +159,7 @@ input:not([type="image" i]) {
 #bbs #blist table tbody td {
     padding: 13px 2px;
     text-align: center;
-    background: url(/project/img/admin/blist_td_line.gif) repeat-y left top;
+    background: url(/res/img/admin/blist_td_line.gif) repeat-y left top;
     border-bottom: 1px solid #cccdd0;
 }
 td{
