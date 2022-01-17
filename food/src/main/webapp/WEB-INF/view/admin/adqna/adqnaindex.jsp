@@ -5,7 +5,26 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <link href="<%=request.getContextPath()%>/css/admin/index.css" rel="stylesheet" type="text/css" />
+<style>
+.paging{
+position: relative;
+    width: 100%;
+    display: block;
+    margin: 0 0 0 0px;
+    padding: 20px 0 0 0;
+    text-align: center;
+    clear: both;
+    color: #656668;
+    font-size: 12px;
+}
 
+.paging li{
+    position: relative;
+    display: inline-block;
+    padding: 5px 6px;
+    color: #f60029;
+}
+</style>
 <html>
 <head>
 <script>
@@ -99,14 +118,14 @@
 							<form name="frm" id="frm" action="delAjax.do" method="post">
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" summary="관리자 관리목록입니다.">
 								<colgroup>
-									<col width="50px" class="w3" />
-									<col width="50px" class="w3" />
-									<col width="80px" class="w3" />
-									<col width="50px" class="w3" />
-									<col width="500px" class="w10" />
-									<col width="50px" class="w3" />
-									<col width="50px" class="w3" />
-									<col width="50px" class="w3" />
+									<col width="2.5%"/>
+									<col width="2.5%"/>
+									<col width="5%"/>
+									<col width="2.5%"/>
+									<col width="20%"/>
+									<col width="5%"/>
+									<col width="2.5%"/>
+									<col width="2.5%"/>
 								</colgroup>
 								<thead>
 									<tr>
@@ -123,7 +142,7 @@
 								<tbody>
 								<c:if test="${empty list}">
 									<tr>
-		                                <td class="first" colspan="4">등록된 글이 없습니다.</td>
+		                                <td class="first" colspan="8">등록된 글이 없습니다.</td>
 		                            </tr>
 								</c:if>
 								<c:if test="${!empty list}">

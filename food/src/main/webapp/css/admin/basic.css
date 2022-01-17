@@ -2,7 +2,7 @@
 
 
 *{margin:0; padding:0;}
-body, div, ul, li, dl, dt, dd, ol, p, h1, h2, h3, h4, h5, h6, form, img, span, table, tr, td, select, input, textarea, option{margin:0; padding:0;}
+body, div, ul, dl, dt, dd, ol, p, h1, h2, h3, h4, h5, h6, form, img, span, table, tr, td, select, input, textarea, option{margin:0; padding:0;}
 
 
 body{font:13px/1.5 '나눔고딕', NanumGothic, 'Nanum Gothic'; color:#6a6d6f;}
@@ -23,7 +23,9 @@ table{border-collapse:collapse; border-spacing:0; border:0;}
 
 input,textarea,select{font-family:inherit; font-size:inherit; font-weight:inherit;}
 
-ul,ol,dl{list-style:none;}
+ul,ol,dl{list-style:none;
+}
+
 
 textarea{overflow:auto;} 
 
@@ -46,5 +48,4 @@ hr{display:none; clear:both;}
 .skip{position:absolute; width:1px; height:1px; border:1px; top:-5000em; overflow:hidden;}
 .disno{display:none;}
 .hidden{display:none;}
-
 

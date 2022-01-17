@@ -373,7 +373,8 @@ a:hover.sbtn{color:#2e2e2e !important; text-decoration:none;}
 
 
 /*page*/
-#bbs .page{position:relative; width:100%; display:block; margin:0 0 0 0px; padding:20px 0 0 0; text-align:center; clear:both; color:#656668; font-size:12px;}
+#bbs .page{position:relative; width:100%; display:block; margin:0 0 0 0px; padding:20px 0 0 0; text-align:center; clear:both; color:#656668; font-size:12px; list-style:none; text-decoration: none;}
+#bbs .page li{position:relative; display:inline-block;}
 #bbs .page a{position:relative; display:inline-block; padding:5px 6px;  text-decoration: none; color:#656668;}
 #bbs .page strong{position:relative; display:inline-block; padding:5px 6px;  text-decoration:underline; color:#f60029;}
 #bbs .page .next{position:relative; display:inline-block; padding:7px 3px; margin:0 10px; vertical-align:top; color:#797979; font-size:11px;}

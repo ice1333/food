@@ -332,6 +332,7 @@ select {
 }
 .page >li{
 list-style:none;
+text-align:center;
 position: relative;
 display: inline-block;
 padding: 5px 6px;
