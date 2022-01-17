@@ -131,7 +131,7 @@
 							<!--//btn-->
 							<!-- 페이징 처리 -->
 								 ${pageArea }
-							<form name="searchForm" id="searchForm" action="index.do"  method="get">
+							<form name="searchForm" id="searchForm" action="adminList.do"  method="get">
 								<div class="search">
 									<select name="searchType" title="검색을 선택해주세요">
 										<option value="">전체</option>
