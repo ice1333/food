@@ -189,6 +189,7 @@
 .pagenate li a.board.last {background:#f3f3f3 url('/img/ico_last.png') no-repeat center center;}
 .pagenate li a.current {color:#fff; background-color:#221f1f; font-weight:bold;  border:1px solid #221f1f;}
 
+
 /* 마이페이지 탭 */
 .mypage_tab {width:100%; position:relative; padding:10px 0; padding-bottom:10px;}
 .mypage_tab_bottom {clear:both; height:10px;}

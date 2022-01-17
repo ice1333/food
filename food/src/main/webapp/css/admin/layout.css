@@ -106,7 +106,8 @@ div#menu ul a:hover span {
 div#menu .bg{
     color: #FFFFFF;
     background:#f25533;
-}
+} 
+ 
 
 div#menu li { background: url(/res/img/admin/nav_separator.png) top left no-repeat;}
 div#menu li.last span{

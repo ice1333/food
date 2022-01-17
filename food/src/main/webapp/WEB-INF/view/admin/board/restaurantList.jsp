@@ -1,12 +1,8 @@
 <%@ page contentType="text/html; charset=utf-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<style type="text/css">
-.title {
-	text-align: center;
-}
-</style> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
 </head>
 <body> 
 <div id="wrap">
@@ -19,9 +15,9 @@
 		
 		<!-- S T A R T :: containerArea-->
 		<div id="container">
-			<div id="content">
+			<div id="content">    
 				<div class="con_tit">
-					<h2>회원 - [목록]</h2>
+					<h2>매장관리 - [목록]</h2>
 				</div>
 				<!-- //con_tit -->
 				<div class="con">
@@ -35,45 +31,42 @@
 									<col class="w3" />
 									<col class="w4" />
 									<col class="w15" />
-									<col class="w15" />
-									<col class="w5" />
+									<col class="" />
+									<col class="w10" />
+									<col class="w10" />
 									<col class="w6" />
 								</colgroup>
 								<thead>
 									<tr>
 										<th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" onClick="check(this, document.frm.no)"/></th>
-										<th scope="col">회원번호</th>
-										<th scope="col">이메일</th> 
-										<th scope="col">가입일</th> 
-										<th scope="col">이름</th> 
+										<th scope="col">상호번호</th>
+										<th scope="col">상호명</th>
+										<th scope="col">주소</th>
+										<th scope="col">업태</th> 
+										<th scope="col">작성일</th> 
 										<th scope="col" class="last">상태</th>
 									</tr>
 								</thead>
 								<tbody>
-									<tr>
-										<td class="first"><input type="checkbox" name="no" id="no" value=""/></td>
-										<td>1</td>
-										<td class="email"><a href="view.do">hensu3846@gmail.com</a></td>
-										<td>2022-01.07</td>
-										<td>정현수</td>
-										<td class="last">1</td>
-									</tr>
-									<tr>
-										<td class="first"><input type="checkbox" name="no" id="no" value=""/></td>
-										<td>1</td>
-										<td class="email"><a href="view.do">hensu3846@gmail.com</a></td>
-										<td>2022-01.07</td>
-										<td>정현수</td>
-										<td class="last">1</td>
-									</tr>
-									<tr>
-										<td class="first"><input type="checkbox" name="no" id="no" value=""/></td>
-										<td>1</td>
-										<td class="email"><a href="view.do">hensu3846@gmail.com</a></td>
-										<td>2022-01.07</td>
-										<td>정현수</td>
-										<td class="last">1</td>
-									</tr>
+									<c:if test="${empty list}">
+			                            <tr>
+			                                <td class="first" colspan="7">등록된 글이 없습니다.</td>
+			                            </tr>
+			                        </c:if>
+			                        <c:if test="${!empty list}">
+										<c:forEach var="vo" items="${list}" varStatus="status" >
+		                   <%//         	<tr onclick="location.href=view.do?boardno=${vo.boardno}">%>
+											<tr>
+												<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.r_no}"/></td>
+												<td>${vo.r_no}</td>
+												<td class="email">${vo.r_name}</td>
+												<td>${vo.r_address }</td>
+												<td>${vo.r_foodtype }</td>
+												<td>${vo.r_regdate }</td>
+												<td class="last">${vo.r_status }</td>
+											</tr>
+										</c:forEach>
+									</c:if>
 								</tbody>
 							</table>
 							</form>
@@ -97,9 +90,9 @@
 							<form name="searchForm" id="searchForm" action="index.do"  method="post">
 								<div class="search">
 									<select name="stype" title="검색을 선택해주세요">
-										<option value="all">전체</option>
-										<option value="title">제목</option>
-										<option value="contents">내용</option>
+										<option value="">전체</option>
+										<option value="r_name">상호명</option>
+										<option value="r_status">상태</option>
 									</select>
 									<input type="text" name="sval" value="" title="검색할 내용을 입력해주세요" />
 									<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />

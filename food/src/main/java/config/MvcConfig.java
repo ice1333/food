@@ -17,7 +17,7 @@ import org.springframework.web.servlet.config.annotation.ViewResolverRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration // spring 설정파일
-@ComponentScan(basePackages = {"admin"})
+@ComponentScan(basePackages = {"admin,restaurant,admincomment"})
 @EnableWebMvc // spring mvc 활성화
 @EnableTransactionManagement // 트랜잭션 활성화 
 public class MvcConfig implements WebMvcConfigurer{
@@ -39,7 +39,7 @@ public class MvcConfig implements WebMvcConfigurer{
 	public BasicDataSource dataSource() {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://15.164.94.120:3306/shop");
+		ds.setUrl("jdbc:mysql://15.164.165.171:3306/shop");
 		ds.setUsername("root");
 		ds.setPassword("root1234");
 		return ds;
