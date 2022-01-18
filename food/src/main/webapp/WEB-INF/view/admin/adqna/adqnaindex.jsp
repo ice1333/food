@@ -151,7 +151,7 @@ position: relative;
 										<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adqna_no}"/></td>
 										<td>${vo.adqna_no}</td>
 										<td>${vo.u_uemail}</td>
-										<td>${vo.u_name}</td>
+										<td>${vo.u_name}</td>   
 										<td class="title"><a href="adqnaview.do?adqna_no=${vo.adqna_no}">${vo.aq_title}</a></td>
 										<td><fmt:formatDate value="${vo.aq_regdate}" pattern="yyyy-MM-dd"/></td>
 										<td>${vo.u_no}</td>

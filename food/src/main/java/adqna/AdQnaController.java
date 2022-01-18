@@ -21,7 +21,7 @@ public class AdQnaController {
 
 	@Autowired
 	AdQnaService adqnaService;
-	@Autowired
+	@Autowired   
 	CommentService cmService;	
 	
 	//관리자 광고 문의 페이지
