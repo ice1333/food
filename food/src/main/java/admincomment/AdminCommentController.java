@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.UserVo;
+import adqna.AdQnaVo;
 import util.CommonUtil;
 
 
@@ -42,15 +43,21 @@ public class AdminCommentController {
 		return "admin/comment/index";
 	}
 	
-	@RequestMapping("comment/admincommentDelAjax.do")
-	public String userdelAjax(HttpServletRequest req, Model model, UserVo vo) {
+	@RequestMapping("admin/admincommentdelAjax.do")
+	public String delAjax(HttpServletRequest req, Model model, AdminCommentVo vo) {
 		
 		String[] Msg = req.getParameterValues("valueArr");
 		int size = Msg.length;
 		for(int i=0; i<size; i++) {
-			service.admincommentDelete(null);
+			service.adcdelete(Msg[i]);
 		}
-		return "include/result";
+		return "admin/include/result";
+	}
+	
+	@GetMapping("admin/comment/delete.do") 
+	public String delete(Model model, AdminCommentVo vo) {
+		model.addAttribute("vo",service.delete(vo));
+		return "admin/comment/index";
 	}
 
 }	

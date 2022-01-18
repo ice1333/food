@@ -26,9 +26,13 @@
 	<select id="count" resultType="int" parameterType="admincomment.AdminCommentVo">
 		SELECT count(*) FROM shop.adcomment
 		<include refid="admincommentWhere"/>
-	</select>   
+	</select>
 	
-	<delete id="admincommentDelete" >
+	<delete id="delete">
+		DELETE FROM shop.adcomment WHERE adc_no=#{adc_no}
+	</delete>
+	
+	<delete id="adcdelete">
 		DELETE FROM shop.adcomment WHERE adc_no=#{adc_no}
 	</delete>
 	

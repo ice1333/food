@@ -24,8 +24,13 @@ public class AdminCommentServiceImpl implements AdminCommentService {
 	}
 
 	@Override
-	public int admincommentDelete(String adc_no) {
-		return dao.sqlSession.delete(adc_no);
+	public int delete(AdminCommentVo vo) {
+		return dao.delete(vo);
+	}
+
+	@Override
+	public int adcdelete(String adc_no) {
+		return dao.adcdelete(adc_no);
 	}
 	
 }
