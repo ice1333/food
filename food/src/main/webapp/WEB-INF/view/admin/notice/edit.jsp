@@ -25,7 +25,7 @@ $(function() {
 		fCreator: "createSEditor2"
 	});
 });
-function goSave3() {
+function goSave4() {
 	if($("#n_title").val()==''){
 		alert("제목을 입력하세요");
 		$("#n_title").focus();
@@ -34,6 +34,15 @@ function goSave3() {
 	oEditors.getById['n_content'].exec("UPDATE_CONTENTS_FIELD",[]);
 	$("#frm").submit();	
 }
+$(function(){
+	$("#frm").ajaxForm({
+		url:'noticeupdate.do',
+		success:function(res) {
+			alert('정상적으로 수정되었습니다.');
+			location.href='noticeview.do?n_no=${data.n_no}';
+		}
+	});
+});
 </script>
 </head>
 <body> 
@@ -47,14 +56,15 @@ function goSave3() {
 		<div id="container">
 			<div id="content">
 				<div class="con_tit">
-					<h2>공지사항 - [쓰기]</h2>
+					<h2>공지사항 - [수정]</h2>
 				</div>
 				<!-- //con_tit -->
 				<div class="con">
 					<!-- 내용 : s -->
 					<div id="bbs">
 						<div id="bread">
-							<form method="post" name="frm" id="frm" action="noticeinsert.do" enctype="multipart/form-data">
+							<form method="post" name="frm" id="frm" action="noticeupdate.do" enctype="multipart/form-data">
+							<input type="hidden" name="n_no" value="${data.n_no }">
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" summary="관리자 관리 기본내용입니다.">
 								<colgroup>
 									<col width="10%" />
@@ -66,21 +76,22 @@ function goSave3() {
 								</colgroup>
 								<tbody>
 									<tr>
-										<th scope="row"><label for="">*제목</label></th>
+										<th scope="row"><label for="n_title">*제목</label></th>
 										<td colspan="10">
-											<input type="text" id="n_title" name="n_title" class="w100" title="제목을 입력해주세요" />	
+											<input type="text" id="n_title" name="n_title" class="w100" title="제목을 입력해주세요" value="${data.n_title }"/>	
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label for="">*내용</label></th>
+										<th scope="row"><label for="n_content">*내용</label></th>
 										<td colspan="10">
-											<textarea id="n_content" name="n_content" title="내용을 입력해주세요" style="width:100%;"></textarea>	
+											<textarea id="n_content" name="n_content" title="내용을 입력해주세요" style="width:100%;">${data.n_content }</textarea>	
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label for="">첨부파일</label></th>
+										<th scope="row"><label for="file">첨부파일</label></th>
 										<td colspan="10">
-											<input type="file" id="file" name="file" class="w100" title="첨부파일을 업로드 해주세요." />	
+			                            	<input type="checkbox" name="delCheck" value="1">기존파일삭제(${data.n_fileorg })<br>
+											<input type="file" id="file" name="file" class="w100" title="첨부파일을 업로드 해주세요." value="${data.n_fileorg }"/>	
 										</td>
 									</tr>
 								</tbody>
@@ -92,7 +103,7 @@ function goSave3() {
 									<a class="btns" href="noticeindex.do"><strong>목록</strong></a>
 								</div>
 								<div class="btnRight">
-									<a class="btns" style="cursor:pointer;" href="javascript:goSave3();"><strong>저장</strong></a>
+									<a class="btns" style="cursor:pointer;" href="javascript:goSave4();"><strong>저장</strong></a>
 								</div>
 							</div>
 							<!--//btn-->

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="notice">
+	
+	<!-- 코드의 중복을 줄이기 위해 -->
+	<sql id="noticeWhere">
+		<where>
+				<if test="searchType == '' ">
+					(n_title LIKE '%${searchWord}%' OR n_content LIKE '%${searchWord}%')
+				</if>
+				<if test="searchType != null and searchType !=''">
+					${searchType} LIKE '%${searchWord}%'
+				</if>
+				<if test="n_no > 0">
+					AND n_no = ${n_no}
+				</if>		
+			</where>
+	</sql>
+	
+	<select id="count" resultType="int" parameterType="notice.NoticeVo">
+		SELECT COUNT(*) FROM notice
+		<include refid="noticeWhere"/>
+	</select>
+	
+	<select id="selectList" resultType="notice.NoticeVo" parameterType="notice.NoticeVo">
+		SELECT * FROM notice
+		<include refid="noticeWhere"/>
+		ORDER BY n_regdate DESC		
+		LIMIT ${startIdx}, 10
+	</select>
+	
+	<insert id="insert" parameterType="notice.NoticeVo">
+		INSERT INTO notice (
+			n_title, n_content, n_regdate, n_readcount,  n_fileorg, n_filereal ,a_no
+		) values(
+			#{n_title}, #{n_content}, NOW(), #{n_readcount}, #{n_fileorg}, #{n_filereal}, #{a_no}
+		) 
+	</insert>
+	
+	<select id="selectOne" parameterType="int" resultType="notice.NoticeVo">
+		SELECT * FROM notice WHERE n_no = #{xxx}
+	</select>
+	
+	<update id="updateN_readcount" parameterType="int">
+		UPDATE notice SET n_readcount=n_readcount+1 WHERE n_no=#{n_no}
+	</update>
+	
+	<update id="update" parameterType="notice.NoticeVo">
+		UPDATE notice SET 
+			n_title=#{n_title} 
+			, n_content=#{n_content} 
+			<if test="n_fileorg != null">
+			, n_fileorg=#{n_fileorg}
+			, n_filereal=#{n_filereal}
+			</if>
+		WHERE n_no = #{n_no}
+	</update>
+	
+	<delete id="delete" parameterType="int">
+		DELETE FROM notice WHERE n_no = #{n_no} 
+	</delete>
+	
+	<delete id="checkDelete">
+		DELETE FROM notice WHERE n_no=#{n_no}
+	</delete>
+	
+	
+	
+
+</mapper>
