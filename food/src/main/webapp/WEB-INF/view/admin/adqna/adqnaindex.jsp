@@ -129,7 +129,7 @@
 										<th scope="col">이름</th>
 										<th scope="col">제목</th> 
 										<th scope="col">작성일</th> 
-										<th scope="col">작성자</th> 
+										<th scope="col">회원번호</th> 
 										<th scope="col" class="last">답변상태</th>
 									</tr>
 								</thead>

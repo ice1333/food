@@ -15,52 +15,51 @@
 		<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 		
 		<script>
-	$(function(){ //전체선택 Rchk
-		var chk = document.getElementsByName("Rchk");
-		var row = chk.length;
-		$("input[name='allChk']").click(function(){ 
-			var c = $("input[name='Rchk']");
-			for (var i=0; i<c.length; i++){
-				c[i].checked = this.checked;
-			}
-		});
-		$("input[name='Rchk']").click(function(){
-			if($("input[name='Rchk']:checked").length == row) {
-				$("input[name='allChk']")[0].checked = true;
-			} else {
-				$("input[name='allChk']")[0].checked = false;
-			}
-		});
-	});
-	function del(){
-		var url ='/res/admin/userDelAjax.do';
-		var valueArr = new Array();
-		var list= $("input[name='Rchk']");
-		for(var i=0; i<list.length; i++){
-			if(list[i].checked){
-				valueArr.push(list[i].value);
-				console.log(list[i].value)
-			}
-		}
-	if (valueArr.length==0){
-		alert('하나 이상 선택하세요.')
-		} else {
-			var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
-			$.ajax({
-				url: url,
-				type : 'POST',
-				traditional:true,
-				data : {
-					valueArr : valueArr
-				},
-				success: function(res){
-	                  alert("삭제 성공입니다.");
-	                  location.reload();
+		$(function(){ //전체선택 Rchk
+			var chk = document.getElementsByName("Rchk");
+			var row = chk.length;
+			$("input[name='allChk']").click(function(){ 
+				var c = $("input[name='Rchk']");
+				for (var i=0; i<c.length; i++){
+					c[i].checked = this.checked;
 				}
 			});
-		}
-	}
-		
+			$("input[name='Rchk']").click(function(){
+				if($("input[name='Rchk']:checked").length == row) {
+					$("input[name='allChk']")[0].checked = true;
+				} else {
+					$("input[name='allChk']")[0].checked = false;
+				}
+			});
+		});
+		function del(){
+			var url ='/res/admin/admincommentdelAjax.do';
+			var valueArr = new Array();
+			var list= $("input[name='Rchk']");
+			for(var i=0; i<list.length; i++){
+				if(list[i].checked){
+					valueArr.push(list[i].value);
+					console.log(list[i].value)
+				}
+			}
+		if (valueArr.length==0){
+			alert('하나 이상 선택하세요.')
+			} else {
+				var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+				$.ajax({
+					url: url,
+					type : 'POST',
+					traditional:true,
+					data:{
+						valueArr : valueArr
+					},
+					success:function(){
+							alert("삭제 성공입니다.");
+							location.reload();
+					}
+				});
+			}
+		}	
 </script>
 		<div id="container">
 			<div id="content">
@@ -116,7 +115,7 @@
 							</form>
 							<div class="btn">
 								<div class="btnRight">
-									<a class="btns" href="#" onclick=""><strong>삭제</strong> </a>
+									<a href="javascript:del();" class="btns"><strong>삭제</strong> </a>
 								</div>
 							</div>
 							<!--//btn-->

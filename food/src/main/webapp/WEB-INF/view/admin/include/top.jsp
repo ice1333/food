@@ -14,7 +14,7 @@ function OpenWinCount(URL,width,height) {
 
 $(window).load(function(){
 	// 1depth 메뉴들
-	var parent = $(".parent");               
+	var parent = $(".parent");
 	
 	//현재 주소
 	// 주소중 manage이후 폴더 경로 자르기 ex) /admin/board/index.jsp -> board
@@ -77,7 +77,7 @@ $(window).load(function(){
 					</ul>
 					</div>
 				</li>
-  				<li><a href="<%=request.getContextPath()%>/admin/board/userList.do" class="parent"><span>공지사항관리</span></a></li>
+  				<li><a href="<%=request.getContextPath()%>/admin/noticeindex.do" class="parent"><span>공지사항관리</span></a></li>
   				<li><a href="<%=request.getContextPath()%>/admin/board/restaurantList.do" class="parent"><span>매장관리</span></a>
 					<div class="standard_left">
 					<ul>
@@ -86,6 +86,10 @@ $(window).load(function(){
 					</ul>
 					</div>
 				</li>
+  				<li><a href="<%=request.getContextPath()%>/admin/noticeindex.do" class="parent"><span>공지사항관리</span></a></li>
+  				<li><a href="<%=request.getContextPath()%>/admin/board/restaurantList.do" class="parent"><span>매장관리</span></a></li>
+  				<li><a href="<%=request.getContextPath()%>/admin/noticeindex.do" class="parent"><span>공지사항관리</span></a></li>
+  				<li><a href="<%=request.getContextPath()%>/admin/board/restaurantList.do" class="parent"><span>매장관리</span></a></li>
 				<li><a href="<%=request.getContextPath()%>/admin/comment/index.do" class="parent"><span>댓글관리</span></a></li>
 				<li><a href="<%=request.getContextPath()%>/admin/adqnaindex.do" class="parent"><span>광고관리</span></a>
 					<div class="standard_left">
