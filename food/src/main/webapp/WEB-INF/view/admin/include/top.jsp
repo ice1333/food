@@ -68,7 +68,7 @@ $(window).load(function(){
 		<!-- util : e --> 
 		
 		<div id="menu">
-  			<ul class="menu">
+  			<ul class="menu"> 
 				<li><a href="<%=request.getContextPath()%>/admin/board/userList.do" class="parent"><span>회원,관리자 관리</span></a>
 					<div class="standard_left">
 					<ul>
