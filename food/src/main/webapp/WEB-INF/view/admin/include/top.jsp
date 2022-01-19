@@ -95,7 +95,7 @@ $(window).load(function(){
 					<div class="standard_left">
 					<ul>
 						<li><a href="<%=request.getContextPath()%>/admin/adqnaindex.do"><span>광고문의</span></a></li>
-					</ul>
+					</ul>  
 					</div>
 				</li>
 			</ul> 
