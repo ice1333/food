@@ -2,8 +2,13 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
 <%@ include file="/WEB-INF/view/admin/include/headHtml.jsp" %>
-
+<script>
+	function goSave() {
+		$("#frm").submit();
+	}
 </script>
 </head>
 <body> 
@@ -24,7 +29,7 @@
 					<!-- 내용 : s -->
 					<div id="bbs">
 						<div id="bread">
-							<form method="post" name="frm" id="frm" action="" enctype="multipart/form-data">
+							<form method="post" name="frm" id="frm" action="/res/restaurant/insert.do" enctype="multipart/form-data">
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" summary="관리자 관리 기본내용입니다.">
 								<colgroup>
 									<col width="10%" />
@@ -38,67 +43,79 @@
 									<tr>
 										<th scope="row"><label for="">*상호명</label></th>
 										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label for="">*상세주소</label></th>
-										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label for="">*전화번호</label></th>
-										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label for="">*메인메뉴</label></th>
-										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label for="">*영업시간</label></th>
-										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label for="">*휴일</label></th>
-										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label for="">*주차여부</label></th>
-										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
-										</td>
-									</tr>
-									<tr>
-										<th scope="row"><label for="">*1인평균가격</label></th>
-										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
+											<input type="text" id="title" name="r_name" class="w100" title="제목을 입력해주세요" />	
 										</td>
 									</tr>
 									<tr>
 										<th scope="row"><label for="">*지역구</label></th>
 										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
+											<input type="text" id="title" name="r_zipcode" class="w100" title="제목을 입력해주세요" />	
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="">*상세주소</label></th>
+										<td colspan="10">
+											<input type="text" id="title" name="r_address" class="w100" title="제목을 입력해주세요" />	
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="">*전화번호</label></th>
+										<td colspan="10">
+											<input type="text" id="title" name="r_tel" class="w100" title="제목을 입력해주세요" />	
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="">*메인메뉴</label></th>
+										<td colspan="10">
+											<input type="text" id="title" name="r_menu" class="w100" title="제목을 입력해주세요" />	
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="">*영업시간</label></th>
+										<td colspan="10">
+											<input type="text" id="title" name="r_week" class="w100" title="제목을 입력해주세요" />	
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="">*브레이크타임</label></th>
+										<td colspan="10">
+											<input type="text" id="title" name="r_breaktime" class="w100" title="제목을 입력해주세요" />	
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="">*휴일</label></th>
+										<td colspan="10">
+											<input type="text" id="title" name="r_holiday" class="w100" title="제목을 입력해주세요" />	
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="">*주차여부</label></th>
+										<td colspan="10">
+											<input type="text" id="title" name="r_parking" class="w100" title="제목을 입력해주세요" />	
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="">*1인평균가격</label></th>
+										<td colspan="10">
+											<input type="text" id="title" name="r_price" class="w100" title="제목을 입력해주세요" />	
 										</td>
 									</tr>
 									<tr>
 										<th scope="row"><label for="">*업태</label></th>
 										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
+											<input type="text" id="title" name="r_foodtype" class="w100" title="제목을 입력해주세요" />	
 										</td>
 									</tr>
 									<tr>
-										<th scope="row"><label for="">*메뉴</label></th>
+										<th scope="row"><label for="">*사이드메뉴</label></th>
 										<td colspan="10">
-											<input type="text" id="title" name="title" class="w100" title="제목을 입력해주세요" />	
+											<input type="text" id="title" name="r_side" class="w100" title="제목을 입력해주세요" />	
+										</td>
+									</tr>
+									<tr>
+										<th scope="row"><label for="">*관리자번호</label></th>
+										<td colspan="10">
+											<input type="text" id="title" name="a_no" class="w100" title="제목을 입력해주세요" />	
 										</td>
 									</tr>
 									<tr>
@@ -116,7 +133,7 @@
 									<a class="btns" href="index.do"><strong>목록</strong></a>
 								</div>
 								<div class="btnRight">
-									<a class="btns" style="cursor:pointer;"><strong>저장</strong></a>
+									<a class="btns" style="cursor:pointer;" onclick="goSave()"><strong>저장</strong></a>
 								</div>
 							</div>
 							<!--//btn-->

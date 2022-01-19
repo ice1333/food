@@ -30,5 +30,20 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public List<RestaurantQnaVo> restaurantQnaList(RestaurantQnaVo vo) {
 		return dao.restaurantQnaList(vo);
 	}
+
+	@Override
+	public int restaurantDelete(String r_no) {
+		return dao.restaurantDelete(r_no);
+	}
+
+	@Override
+	public int requestDelete(String rqna_no) {
+		return dao.requestDelete(rqna_no);
+	}
+
+	@Override
+	public int restinsert(RestaurantVo vo) {
+		return dao.restinsert(vo);
+	}
 	
 }

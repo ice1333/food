@@ -2,12 +2,16 @@ package restaurant;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import admin.UserVo;
 import util.CommonUtil;
 
 @Controller
@@ -53,6 +57,38 @@ public class RestaurantController {
 		model.addAttribute("totCount",totCount);
 		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
 		return "admin/board/requestList";
+	}
+	@RequestMapping("admin/restaurantDelAjax.do")
+	public String userdelAjax(HttpServletRequest req, Model model, UserVo vo) {
+		
+		String[] Msg = req.getParameterValues("valueArr");
+		int size = Msg.length;
+		for(int i=0; i<size; i++) {
+			service.restaurantDelete(Msg[i]);
+		}
+		return "include/result";
+	}
+
+	@RequestMapping("admin/requestDelAjax.do")
+	public String admindelAjax(HttpServletRequest req, Model model, UserVo vo) {
+		
+		String[] Msg = req.getParameterValues("valueArr");
+		int size = Msg.length;
+		for(int i=0; i<size; i++) {
+			service.requestDelete(Msg[i]);
+		}
+		return "include/result";
+	}
+	
+	@PostMapping("/restaurant/insert.do")
+	public String insert(RestaurantVo vo, HttpServletRequest req) {
+		if (service.restinsert(vo) > 0) {
+			req.setAttribute("msg", "정상적으로 등록되었습니다.");
+			req.setAttribute("url", "/res/admin/board/requestList.do");
+		} else {
+			req.setAttribute("msg", "등록실패");
+		}
+		return "include/return";
 	}
 	
 }

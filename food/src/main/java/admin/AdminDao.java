@@ -37,5 +37,5 @@ public class AdminDao {
 	public int adminDelete(String A_no) {
 		return sqlSession.delete("admin.adminDelete",A_no);
 	}
-	
+		
 }

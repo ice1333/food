@@ -83,4 +83,19 @@
 			</otherwise>
 		</choose>
 	</select>
+	<delete id="restaurantDelete" >
+		DELETE FROM restaurant WHERE r_no=#{r_no}
+	</delete>
+	<delete id="requestDelete" >
+		DELETE FROM restqna WHERE rqna_no=#{rqna_no}
+	</delete>
+	<insert id="insert" parameterType="restaurant.RestaurantVo">
+		INSERT INTO 
+		restaurant 
+		 (
+			r_name, r_zipcode, r_address, r_tel, r_menu, r_week, r_breaktime, r_holiday, r_parking, r_price, r_foodtype, r_side, a_no,r_regdate
+		) VALUES (
+			#{r_name},#{r_zipcode},#{r_address},#{r_tel},#{r_menu},#{r_week},#{r_breaktime},#{r_holiday}, #{r_parking}, #{r_price}, #{r_foodtype},#{r_side},#{a_no},NOW()
+		)
+	</insert>
 </mapper>

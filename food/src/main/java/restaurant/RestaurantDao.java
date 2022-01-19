@@ -26,4 +26,13 @@ public class RestaurantDao {
 	public List<RestaurantQnaVo> restaurantQnaList(RestaurantQnaVo vo) {
 		return sqlSession.selectList("restaurant.restaurantQnaList", vo);
 	}
+	public int restaurantDelete(String r_no) {
+		return sqlSession.delete("restaurant.restaurantDelete",r_no);
+	}
+	public int requestDelete(String rqna_no) {
+		return sqlSession.delete("restaurant.requestDelete",rqna_no);
+	}
+	public int restinsert(RestaurantVo vo) {
+		return sqlSession.insert("restaurant.insert", vo);
+	}
 }

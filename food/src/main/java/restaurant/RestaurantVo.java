@@ -20,7 +20,7 @@ public class RestaurantVo extends CommonVo{
 	private String r_foodtype;
 	private String r_side;
 	private String r_event;
-	private int r_zipcode;
+	private String r_zipcode;
 	private int r_readcount;
 	private int r_wishcount;
 	private int r_stars;
@@ -28,18 +28,6 @@ public class RestaurantVo extends CommonVo{
 	private Timestamp r_regdate;
 	private int r_status;
 	
-	public int getR_status() {
-		return r_status;
-	}
-	public void setR_status(int r_status) {
-		this.r_status = r_status;
-	}
-	public Timestamp getR_regdate() {
-		return r_regdate;
-	}
-	public void setR_regdate(Timestamp r_regdate) {
-		this.r_regdate = r_regdate;
-	}
 	public int getR_no() {
 		return r_no;
 	}
@@ -124,10 +112,10 @@ public class RestaurantVo extends CommonVo{
 	public void setR_event(String r_event) {
 		this.r_event = r_event;
 	}
-	public int getR_zipcode() {
+	public String getR_zipcode() {
 		return r_zipcode;
 	}
-	public void setR_zipcode(int r_zipcode) {
+	public void setR_zipcode(String r_zipcode) {
 		this.r_zipcode = r_zipcode;
 	}
 	public int getR_readcount() {
@@ -154,10 +142,17 @@ public class RestaurantVo extends CommonVo{
 	public void setA_no(int a_no) {
 		this.a_no = a_no;
 	}
-	public void setStartIdx(int startIdx) {
-		
+	public Timestamp getR_regdate() {
+		return r_regdate;
 	}
-	public int getPage() {
-		return 0;
+	public void setR_regdate(Timestamp r_regdate) {
+		this.r_regdate = r_regdate;
 	}
+	public int getR_status() {
+		return r_status;
+	}
+	public void setR_status(int r_status) {
+		this.r_status = r_status;
+	}
+	
 }
