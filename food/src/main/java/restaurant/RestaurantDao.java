@@ -20,4 +20,10 @@ public class RestaurantDao {
 	public int restaurantCount(RestaurantVo vo) {
 		return sqlSession.selectOne("restaurant.restaurantCount",vo);
 	}
+	public int restaurantQnaCount(RestaurantQnaVo vo) {
+		return sqlSession.selectOne("restaurant.restaurantQnaCount",vo);
+	}
+	public List<RestaurantQnaVo> restaurantQnaList(RestaurantQnaVo vo) {
+		return sqlSession.selectList("restaurant.restaurantQnaList", vo);
+	}
 }

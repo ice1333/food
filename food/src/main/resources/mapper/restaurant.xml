@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="restaurant"> <!-- mapper파일의 이름 -->
+	<!-- 레스토랑 목록 조회 -->
 	<select id="restaurantList" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
 		SELECT * FROM restaurant
-		<include refid = "restaurantWhere"/>
+		<!--  <include refid = "restaurantWhere"/>-->
+		<where>
+			<if test ="searchType ==''">   
+			 	(r_name LIKE '%${searchWord}%' OR r_status LIKE '%${searchWord}%')
+			 </if>
+			 <if test= "searchType != null and searchType != ''">
+			 	${searchType} LIKE '%${searchWord}%'
+			 </if>
+			 <if test="r_no > 0">    
+			 	AND r_no = ${r_no}
+			 </if>
+		</where>  
 		ORDER BY r_regdate DESC    
 		LIMIT ${startIdx},10
 	</select>
@@ -24,5 +36,51 @@
 	<select id="restaurantCount" resultType="int" parameterType="restaurant.RestaurantVo">
 		SELECT COUNT(*) FROM restaurant
 		<include refid="restaurantWhere"/>
-	</select> 
+	</select>
+	
+	<select id="restaurantQnaList" parameterType="restaurant.RestaurantQnaVo" resultType="restaurant.RestaurantQnaVo">
+		SELECT 
+		       rqna_no
+		     , rqna_title
+		     , rqna_contents
+		     , rqna_filename_org
+		     , rqna_filename_real
+		     , rqna_regdate
+		     , rqna_status
+		     , u_no
+		     , a_no
+		FROM restqna
+		WHERE 1 = 1
+		<choose>
+			<when test='searchType == "title"'>
+			  AND rqna_title LIKE '%${searchWord}%'
+			</when>
+			<when test='searchType == "contents"'>
+			 AND rqna_contents LIKE '%${searchWord}%'
+			</when>
+			<otherwise>
+			 AND (rqna_title LIKE '%${searchWord}%' or rqna_contents LIKE '%${searchWord}%')
+			</otherwise>
+		</choose>
+		ORDER BY rqna_regdate DESC    
+		LIMIT ${startIdx},10
+	</select>
+	
+	<!-- 레스토랑 목록 카운트 -->
+	<select id="restaurantQnaCount" resultType="int" parameterType="restaurant.RestaurantQnaVo">
+		SELECT COUNT(*) /*restaurantQna.xml - restaurantCount :: 레스토랑 목록 카운트*/ 
+		FROM restqna
+		WHERE 1 = 1
+		<choose>
+			<when test='searchType == "title"'>
+			  AND rqna_title LIKE '%${searchWord}%'
+			</when>
+			<when test='searchType == "contents"'>
+			 AND rqna_contents LIKE '%${searchWord}%'
+			</when>
+			<otherwise>
+			 AND (rqna_title LIKE '%${searchWord}%' or rqna_contents LIKE '%${searchWord}%')
+			</otherwise>
+		</choose>
+	</select>
 </mapper>

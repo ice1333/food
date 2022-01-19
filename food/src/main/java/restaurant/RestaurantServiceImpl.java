@@ -20,5 +20,15 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public int restaurantCount(RestaurantVo vo) {
 		return dao.restaurantCount(vo);
 	}
+
+	@Override
+	public int restaurantQnaCount(RestaurantQnaVo vo) {
+		return dao.restaurantQnaCount(vo);
+	}
+
+	@Override
+	public List<RestaurantQnaVo> restaurantQnaList(RestaurantQnaVo vo) {
+		return dao.restaurantQnaList(vo);
+	}
 	
 }

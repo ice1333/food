@@ -8,4 +8,7 @@ public interface RestaurantService {
 	
 	public int restaurantCount(RestaurantVo vo);
 	
+	public int restaurantQnaCount(RestaurantQnaVo vo);
+
+	public List<RestaurantQnaVo> restaurantQnaList(RestaurantQnaVo vo);
 }

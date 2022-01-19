@@ -154,4 +154,10 @@ public class RestaurantVo extends CommonVo{
 	public void setA_no(int a_no) {
 		this.a_no = a_no;
 	}
+	public void setStartIdx(int startIdx) {
+		
+	}
+	public int getPage() {
+		return 0;
+	}
 }

@@ -16,6 +16,7 @@ public class CommonVo {
 		page = 1;
 	}
 	
+	
 //	public String getSearchWord() {
 //		return this.searchWord.toUpperCase();
 //	}
