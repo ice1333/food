@@ -110,7 +110,7 @@
 										<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.rqna_no}"/></td>
 										<td>${vo.rqna_no}</td>
 										<td>${vo.u_uemail}</td>
-										<td class="title"><a href="requestView.do?rqna_no=${vo.rqna_no}">${vo.rqna_title}</a></td>
+										<td class="title"><a href="/res/admin/requestView.do?rqna_no=${vo.rqna_no}">${vo.rqna_title}</a></td>
 										<td>${vo.rqna_contents}</td>
 										<td><fmt:formatDate value="${vo.rqna_regdate}" pattern="yyyy-MM-dd"/></td>
 										<td>${vo.u_name}</td>
