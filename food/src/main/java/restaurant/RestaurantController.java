@@ -10,8 +10,11 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import admin.UserVo;
+import comment.CommentService;
+import comment.CommentVo;
 import util.CommonUtil;
 
 @Controller
@@ -19,6 +22,8 @@ public class RestaurantController {
 
 	@Autowired
 	RestaurantService service; 
+	@Autowired   
+	CommentService cmService;
 	
 	@GetMapping("/admin/board/restaurantList.do")
 	public String restaurantList(RestaurantVo vo, Model model) {
@@ -89,6 +94,16 @@ public class RestaurantController {
 			req.setAttribute("msg", "등록실패");
 		}
 		return "include/return";
+	}
+	
+	@GetMapping("admin/requestView.do")
+	public String requestview(Model model,@RequestParam int rqna_no ) {
+		model.addAttribute("vo",RestaurantQnaVo.no_select(rqna_no));
+		CommentVo cv = new CommentVo();
+		cv.setAdqna_no(rqna_no);
+		cv.setTablename("restqna");
+		model.addAttribute("list",cmService.adqselectList(cv));
+		return "admin/board/requestView";
 	}
 	
 }

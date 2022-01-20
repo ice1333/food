@@ -45,5 +45,10 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public int restinsert(RestaurantVo vo) {
 		return dao.restinsert(vo);
 	}
+
+	@Override
+	public RestaurantQnaVo no_select(int rqna_no) {
+		return dao.no_select(rqna_no);
+	}
 	
 }

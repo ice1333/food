@@ -17,4 +17,6 @@ public interface RestaurantService {
 	public int requestDelete(String rqna_no);
 	
 	public int restinsert(RestaurantVo vo);
+	
+	RestaurantQnaVo no_select(int rqna_no);
 }

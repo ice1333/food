@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import admin.UserVo;
+import adqna.AdQnaVo;
 
 @Repository
 public class RestaurantDao {
@@ -34,5 +35,8 @@ public class RestaurantDao {
 	}
 	public int restinsert(RestaurantVo vo) {
 		return sqlSession.insert("restaurant.insert", vo);
+	}
+	public RestaurantQnaVo no_select(int rqna_no) {
+		return sqlSession.selectOne("rqna.no_select",rqna_no);
 	}
 }

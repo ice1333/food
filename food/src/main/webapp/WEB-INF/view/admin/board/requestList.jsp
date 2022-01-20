@@ -79,9 +79,9 @@
 								<colgroup>
 									<col width="2.5%"/>
 									<col width="2.5%"/>
-									<col width="5%"/>
-									<col width="2.5%"/>
-									<col width="20%"/>
+									<col width="6.5%"/>
+									<col width="6%"/>
+									<col width="15%"/>
 									<col width="5%"/>
 									<col width="2.5%"/>
 									<col width="2.5%"/>
@@ -110,7 +110,7 @@
 										<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.rqna_no}"/></td>
 										<td>${vo.rqna_no}</td>
 										<td>${vo.u_uemail}</td>
-										<td class="title"><a href="requestList.do?rqna_no=${vo.rqna_no}">${vo.rqna_title}</a></td>
+										<td class="title"><a href="requestView.do?rqna_no=${vo.rqna_no}">${vo.rqna_title}</a></td>
 										<td>${vo.rqna_contents}</td>
 										<td><fmt:formatDate value="${vo.rqna_regdate}" pattern="yyyy-MM-dd"/></td>
 										<td>${vo.u_name}</td>

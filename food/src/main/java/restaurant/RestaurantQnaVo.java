@@ -105,4 +105,7 @@ public class RestaurantQnaVo extends CommonVo{
 	public int getPage() {
 		return 0;
 	}
+	public static Object no_select(int rqna_no) {
+		return null;
+	}
 }
