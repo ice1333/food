@@ -13,6 +13,6 @@ public class UserController {
 	
 	@GetMapping("user/list.do")
 	public String list() {
-		return "user/restrantlist";
+		return "user/restaurantlist";
 	}
 }
