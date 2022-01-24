@@ -73,9 +73,37 @@ public class AdQnaController {
 		return "admin/adqna/adqnaindex";
 	}
 	
+	@GetMapping("adqna/index.do")
+	public String index(Model model, HttpServletRequest req, AdQnaVo vo) {
+		int totCount = adqnaService.adqnacount(vo); //총갯수
+		int totPage = totCount / 10;		//총페이지
+		if (totCount % 10 > 0 ) totPage++; 
+		
+		int startIdx = (vo.getPage()-1)*10;
+		vo.setStartIdx(startIdx);
+		
+		List<AdQnaVo> list = adqnaService.selectList(vo);
+		model.addAttribute("list",list);
+		model.addAttribute("totPage", totPage);
+		model.addAttribute("totCount",totCount);
+		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
+		return "adqna/index";
+		
+	}
 	
+	@GetMapping("adqna/edit.do")
+	public String edit() {
+		return "adqna/edit";
+	}
 	
+	@GetMapping("adqna/view.do")
+	public String view() {
+		return "adqna/view";
+	}
 	
-	
+	@GetMapping("adqna/write.do")
+	public String write() {
+		return "adqna/write";
+	}
 	
 }
