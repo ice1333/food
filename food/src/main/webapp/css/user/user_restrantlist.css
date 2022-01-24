@@ -1,0 +1,74 @@
+		.container{
+            height: 1650px;
+        }
+
+        .container > .lcontent {
+            width: 70%;
+            height: 1650px;
+            /* background-color: blueviolet; */
+            float: left;
+        }
+        .container > .lcontent > .inner_wrap {
+            padding: 0 120px;
+            /* background-color: violet; */
+        }
+        .container > .lcontent > .inner_wrap > .search_info {
+            padding: 20px 0;
+            font-size: 24px;
+            color: blueviolet;
+            font-weight: bold;
+        }
+        .container > .lcontent > .inner_wrap > .search_list_restarants {
+            /* background-color: blue; */
+            /* height: 400px; */
+            
+        }
+        .container > .lcontent > .inner_wrap > .search_list_restarants > .list_restarants {
+            /* padding: 0 20px; */
+        }
+        .container > .lcontent > .inner_wrap > .search_list_restarants > .list_restarants > .list_restrants2 > .restrant {
+            float: left;
+            width: 410px;
+            /* background-color: brown; */
+            /* border:1px solid white; */
+            padding: 0 25px 25px 25px;
+        }
+        h3 {
+            display: inline-block;
+            overflow: hidden;
+            color: black;
+            margin-right: 5px ;
+        }
+        strong {
+            color: blueviolet;
+        }
+        
+        .container > .rcontent {
+            width: 30%;
+            float: left;
+            height: 1650px;
+        }
+        ul, li {
+            list-style: none;
+        }
+        a {
+            text-decoration: none;
+        }
+        img {
+            height: 240px; 
+            width: 360px;
+            object-fit: cover;
+        }
+        /* 페이징처리 */
+        .pagenate {width:100%; clear:both;}
+        .pagenate {text-align:center; margin:20px auto 0;}
+        .pagenate li {display:inline-block;}
+        .pagenate li:first-child { margin-left:0px; }
+        .pagenate li a{display:inline-block; text-decoration:none; padding:0; width:30px; height:30px; line-height:30px; border:1px solid #c7c8cc; box-sizing:border-box; margin-left:-1px; vertical-align:middle;}
+        .pagenate li a:hover{background:#f6f6f6; font-weight:bold; text-decoration:none !important;}
+        .pagenate li a.board { text-indent:-9999em; margin-left:4px; }
+        .pagenate li a.board.first {background:#f3f3f3 url('/img/ico_first.png') no-repeat center center;}
+        .pagenate li a.board.prev {margin-right:30px; background:#efefef url('/img/ico_prev.png') no-repeat center center;}
+        .pagenate li a.board.next {margin-left:30px; background:#efefef url('/img/ico_next.png') no-repeat center center;}
+        .pagenate li a.board.last {background:#f3f3f3 url('/img/ico_last.png') no-repeat center center;}
+        .pagenate li a.current {color:#fff; background-color:#221f1f; font-weight:bold;  border:1px solid #221f1f;}
