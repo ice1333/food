@@ -16,7 +16,7 @@ $(function() {
 			bUseModeChanger : true,			// 모드 탭(Editor | HTML | TEXT) 사용 여부 (true:사용/ false:사용하지 않음)
 			fOnBeforeUnload : function(){
 				
-			}
+			} 
 		}, //boolean
 		fOnAppLoad : function(){
 			//예제 코드
