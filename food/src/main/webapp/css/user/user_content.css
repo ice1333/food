@@ -1,0 +1,133 @@
+@import url(https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css);
+    
+    
+   /*컨테이너 시작 */
+       /* 여기는 폰트 */
+    @font-face {
+        font-family: 'KOTRA_BOLD-Bold';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10-21@1.1/KOTRA_BOLD-Bold.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    @font-face {
+        font-family: 'ACCchildrenheartOTF-Regular';
+        src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2112-2@1.0/ACCchildrenheartOTF-Regular.woff') format('woff');
+        font-weight: normal;
+        font-style: normal;
+    }
+    /* 여기는 폰트 끝 */
+    .container {
+        width:1200px;
+        margin: 15px auto;
+        overflow: hidden; 
+    }
+    h2 {
+        margin-top: 50px;
+        color: mediumorchid;
+        text-align: left;
+        font-family: 'KOTRA_BOLD-Bold';
+    }
+    .container > .shop {
+        text-align: center;
+    }
+    .visual .swiper {
+        width: 1550px;
+        height:350px;
+        margin-top: 50px;
+    }
+    .visual .swiper .swiper-slide {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+    }
+    .mainad>.visual>.mySwiper>.swiper-button-next{
+        right: 170px;
+        color: #dbdbdb
+    }
+    
+    .mainad>.visual>.mySwiper>.swiper-button-prev{
+        left: 60px;
+        color: #dbdbdb;
+    }
+    .container > .shop > .mySwiper2 > .swiper-button-next{
+        right: 10px;
+        color: #dbdbdb;
+    }
+    
+    .container > .shop > .mySwiper2 > .swiper-button-prev{
+        left: 10px;
+        color: #dbdbdb;
+    }
+    .shop .swiper {
+        width: 1200px;
+        height: 290px;
+    }
+    .shop .swiper .swiper-slide {
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: cover;
+        width: 422px;
+        height: 235px;            
+    }
+    .imgtitle {
+        position: absolute;
+        top:50%;
+        left:50%;
+        transform: translate(-50%, -50%);                                                                   
+        font-size:23px;
+        font-weight: bold;
+        color: #ffffff;
+        z-index: 2;
+        text-align: center;
+        width: 300px;
+        font-family: 'ACCchildrenheartOTF-Regular';
+    }
+    .imgtitle2 {
+        position: absolute;
+        top: 60%;
+        left:50%;
+        transform: translate(-50%, -50%);                                                                   
+        font-size:12px;
+        color: #ffffff;
+        z-index: 1;
+        text-align: center;
+        width: 300px;
+        overflow: hidden;
+        font-family: 'ACCchildrenheartOTF-Regular';
+    }
+    /*컨테이너 끝 */
+    /*컨테이너 시작2 */
+    .container2 {
+        width: 100%;
+        height: 960px;
+        /* background-color: blueviolet; */
+        float: left;
+    }
+    .container2 > .inner_wrap > .search_info {
+        padding: 20px 0;
+        font-size: 24px;
+        color: mediumorchid;
+        font-weight: bold;
+        font-family: 'KOTRA_BOLD-Bold';
+    }
+    .container2 > .inner_wrap > .search_list_restarants > .list_restarants > .list_restrants2 > .restrant {
+        float: left;
+        width: 300px;
+        padding: 0 25px 25px 25px;
+    }
+    h3 {
+        display: inline-block;
+        overflow: hidden;
+        color: black;
+        margin-right: 5px ;
+        font-family: 'ACCchildrenheartOTF-Regular';
+    }
+    strong {
+        color: blueviolet;
+    }
+    .container2 > .inner_wrap > .search_list_restarants > .list_restarants > .list_restrants2 > .restrant > .thumb img {
+        width: 260px;
+        height: 150px; 
+        object-fit: cover;
+    }
+    /*컨테이너 끝2 */

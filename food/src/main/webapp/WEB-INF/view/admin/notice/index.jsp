@@ -15,7 +15,7 @@
 			for (var i=0; i<c.length; i++){
 				c[i].checked = this.checked;
 			}
-		});
+		}); 
 		$("input[name='Rchk']").click(function(){
 			if($("input[name='Rchk']:checked").length == row) {
 				$("input[name='allChk']")[0].checked = true;
