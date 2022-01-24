@@ -10,4 +10,9 @@ public class UserController {
 	public String main() {
 		return "user/main";
 	}
+	
+	@GetMapping("user/list.do")
+	public String list() {
+		return "user/restrantlist";
+	}
 }
