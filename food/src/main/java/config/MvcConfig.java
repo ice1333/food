@@ -31,8 +31,8 @@ public class MvcConfig implements WebMvcConfigurer{
 	// view 설정
 	@Override
 	public void configureViewResolvers(ViewResolverRegistry reg) {
-		reg.jsp("/WEB-INF/view/", ".jsp");
-	}
+		reg.jsp("/WEB-INF/view/", ".jsp");   
+	} 
 	// DataSource 객체 등록
 	// DB접속정보 설정
 	@Bean(destroyMethod = "close")
