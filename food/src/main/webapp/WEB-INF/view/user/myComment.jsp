@@ -21,8 +21,7 @@
 <body>
 <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
     <div class="wrap">
-    	
-        <div class="container">
+        <div class="container" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden;">
             <div class="menulist">
                 <h2 class="menu_title">마이페이지</h2>
                 <div class="inner_sub">
@@ -35,7 +34,7 @@
                 </div>
             </div>
             <div class="main">
-                <div class="content">
+                <div class="content" >
                     <div class="sub">
                         <div class="size">
                         
