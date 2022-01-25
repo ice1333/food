@@ -32,6 +32,9 @@
     }
     #container{
      display: flex;
+     width: 1200px;
+     top:50px;
+     margin: 15px auto; overflow: hidden;
     }
     #main {
     border-bottom: 1px solid #f7f7f7;
@@ -259,11 +262,7 @@
     
     #container {
         position: relative;
-        width: 100%;
-        height: 100%;
-        z-index: 100;
-        color: #2d2f34;
-        max-width: 1200px;
+		width: 1200px; top:50px; margin: 15px auto; overflow: hidden;       
     }
     .menulist{
         float:left;
@@ -370,6 +369,7 @@
     }
     .wrap .container{
         display:flex;
+        width: 1200px; top:50px; margin: 15px auto; overflow: hidden;
     }
     ul,li {
         list-style: none;
