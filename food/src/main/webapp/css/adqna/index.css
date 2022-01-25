@@ -42,7 +42,7 @@
 }
 p {
     display: block;
-	border-bottom:2px solid #000000;
+	
     /* margin-block-start: 1em;
     margin-block-end: 1em;
     margin-inline-start: 0px;
@@ -414,7 +414,7 @@ line-height:20px;
 }
 #container{
     width:1200px;
-    
+    display:flex;
 }
 
 .pagenate {width:100%; clear:both;}

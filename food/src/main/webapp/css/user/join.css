@@ -3,6 +3,7 @@
     margin:0;
     padding:0;
     box-sizing: border-box;
+    clear:both;
     }
     .wrap {
     width:100%;
@@ -193,9 +194,6 @@
     }
     p {
         display: block;
-        line-height:15px;
-        margin-block-start: 1em;
-        margin-block-end: 1em;
         margin-inline-start: 0px;
         margin-inline-end: 0px;
     }

@@ -230,8 +230,8 @@ a:link {
     font-family: 'KOTRA_BOLD-Bold';
     max-width: 1200px
 }
-.footer > .size > .info > p {
-    line-height: 15px;  
+.footer > .foter_size > .info > p {
+    line-height: 25px;  
 }
 .sns_area {
     position:absolute;

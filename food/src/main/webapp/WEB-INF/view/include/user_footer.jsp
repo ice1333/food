@@ -11,7 +11,7 @@
     <div class="footerlogo">
         <span class="footertitle">&nbsp;맛집게</span>
     </div>
-    <div class="size">
+    <div class="foter_size">
         <div class="info">  
             <br>
             <p>&nbsp;&nbsp;&nbsp;&nbsp;회사명 : ㈜안병길과아이들</p>

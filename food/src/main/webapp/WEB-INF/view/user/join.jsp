@@ -105,9 +105,9 @@
                                     
                                                     <input type="text" name="addr1"id="addr1" value="" label="주소" style="margin-bottom:12px;">
                                                 </div>
-                                                <div id="selectAddressSub">
+                                                <div id="selectAddressSub" style="padding-bottom:15px;">
                                                     <input type="text" name="addr2" id="addr2" value="" class="byteTotext" placeholder="나머지 주소를 입력해주세요">
-                                                    <p id="delivery"></p>
+                                                    
                                                 </div>
                                                 <a href="" id="addressSearch" class="btn default" onclick="">주소검색</a>
                                             </td>
