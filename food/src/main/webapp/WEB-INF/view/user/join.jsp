@@ -128,15 +128,17 @@
                                         </tr>
                                 </tbody>
                             </table>
-                            <div id="formSubmit" class="form_footer">
-                                <button type="button" class="btn active btn_join" onclick="">가입하기</button>
+                            <div id="formSubmit" class="abc">
+                                <button type="button" class="btn active btn_join" onclick="" style="height:56px;">가입하기</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+            </div>
          </div>
          <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
-    </div>        
+    </div> 
+           
 </body>
 </html>

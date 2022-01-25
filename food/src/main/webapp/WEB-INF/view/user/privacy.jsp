@@ -12,7 +12,7 @@
 <body>
     <div class="wrap">
     <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
-        <div class="container" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden;">
+        <div class="container" style="width: 1200px; top:50px; margin: 40px auto; overflow: hidden;">
             <div class="menulist">
                 <h2 class="menu_title">마이페이지</h2>
                 <div class="inner_sub">

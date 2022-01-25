@@ -193,6 +193,7 @@
     }
     p {
         display: block;
+        line-height:15px;
         margin-block-start: 1em;
         margin-block-end: 1em;
         margin-inline-start: 0px;
@@ -232,11 +233,12 @@
         border-radius: 100%;
         vertical-align: -7px;
     }
-    .member_join .form_footer {
+    .member_join .abc {
         padding-top: 40px;
         text-align: center;
+        margin-bottom:50px;
     }
-    .member_join .form_footer .btn_join {
+    .member_join .abc .btn_join {
         width: 240px;
         height: 56px;
         font-size: 16px;
