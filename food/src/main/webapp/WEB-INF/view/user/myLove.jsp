@@ -21,7 +21,7 @@
 <body>
 <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
     <div class="wrap">
-        <div class="container" >
+        <div class="container">
             <div class="menulist">
                 <h2 class="menu_title">마이페이지</h2>
                 <div class="inner_sub">
@@ -29,19 +29,19 @@
                         <li><a href="">최근 본 매장</a></li>
                         <li><a href="">찜 목록</a></li>
                         <li><a href="">개인 정보 수정</a></li>
-                        <li><a href="">내가 쓴 댓글</a></li>
+                        <li><a href="">업장 등록</a></li>
                     </ul>
                 </div>
             </div>
             <div class="main">
-                <div class="content" >
+                <div class="content">
                     <div class="sub">
                         <div class="size">
                         
                                 <div class="type_form member_join">
                                 <form name="frm" id="frm" action="insert.do" method="post" enctype="multipart/form-data">
-                                <p class="page_sub"><span class="ico">내가 쓴 댓글</span>
-                                    <select class="searchType" name="searchType" title="검색을 선택해주세요">
+                                <p class="page_sub"><span class="ico">최근 본 매장</span>지난 1주일간의 클릭 한 매장 조회가 가능합니다
+                                    <select name="searchType" title="검색을 선택해주세요">
                                         <option value="">전체</option>
                                         <option value="">최근 1달</option>
                                         <option value="">최근 2달</option>
@@ -50,35 +50,28 @@
                                 </p>
                                     <table class="tbl_comm">
                                         <tbody>
-                                            <th class="thead">매장 정보</th>
-                                            <th class="thead">댓글 내용</th>
-                                            <th class="thead">작성일</th>
-                                            <th class="thead">별점</th>
-                                            <tr class="commentList">
-                                                <td>현수네</td>
-                                                <td>맛없어요</td>
-                                                <td>2022-01-24</td>
-                                                <td>⭐️5</td>
+                                            <tr>
+                                                <td  rowspan="3"><input class="picture" type="image" src="./img/foodphoto2.png"></td>
+                                                <td class="title">진심 <span class="star" > 4.58⭐️</span></td>
+                                                <td class="time">10:56AM</td>
                                             </tr>
-                                            <tr class="commentList">
-                                                <td>현수네</td>
-                                                <td>맛없어요</td>
-                                                <td>2022-01-24</td>
-                                                <td>⭐️5</td>
+                                            <tr>
+                                                <td class="tilteExplain">주소 어쩌고 저쩌고</td>    
                                             </tr>
-                                            <tr class="commentList">
-                                                <td>현수네</td>
-                                                <td>맛없어요</td>
-                                                <td>2022-01-24</td>
-                                                <td>⭐️5</td>
+                                            <tr>
+                                                <td class="tilteExplain">간단한 가게 설명 어쩌고 저쩌고</td>
                                             </tr>
-                                            <tr class="commentList">
-                                                <td>현수네</td>
-                                                <td>맛없어요</td>
-                                                <td>2022-01-24</td>
-                                                <td>⭐️5</td>
+                                            <tr>
+                                                <td  rowspan="3"><input class="picture" type="image" src="./img/menu1.jpg"></td>
+                                                <td class="title">진심 &nbsp; &nbsp; &nbsp; 4.58⭐️</td>
+                                                <td class="time">10:56AM</td>
                                             </tr>
-                                            
+                                            <tr>
+                                                <td class="tilteExplain">주소 어쩌고 저쩌고</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="tilteExplain">간단한 가게 설명 어쩌고 저쩌고</td>
+                                            </tr>
                                         </tbody>
                                     </table>
                                 </form>
@@ -88,7 +81,6 @@
                 </div>
             </div>
         </div>
-        
     </div>
     
     <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>      
