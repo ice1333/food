@@ -11,7 +11,7 @@
 	
     <div id="wrap">
         <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
-        <div id="canvas" style="margin-top:50px; padding:50px 0px 0px 470px;" >
+        <div id="canvas" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden;">
             <!-- S T A R T :: headerArea-->
             
             <!-- E N D :: headerArea--> 

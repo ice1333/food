@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,13 +9,15 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no">
     <meta name="keywords" content="">
     <meta name="description" content="">
+   <link rel="stylesheet" href="/res/css/user/user_common.css"/>
+    <link href="<%=request.getContextPath()%>/css/user/join.css" rel="stylesheet" type="text/css"/>
     <title>회원가입</title>
 </head>
 
 <body>
     <div class="wrap">
-
-
+	
+	<%@ include file="/WEB-INF/view/include/user_header.jsp" %>
         <div class="main">
             <div class="content">
                 <div class="sub">
@@ -132,6 +136,7 @@
                 </div>
             </div>
          </div>
+         <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
     </div>        
 </body>
 </html>
