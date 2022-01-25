@@ -14,11 +14,11 @@
     <div class="size">
         <div class="info">  
             <br>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;㈜ 안병길과아이들</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;주소:Anfield Rd, Anfield, Liverpool L4 OTH 영국</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;대표이사:안병길</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;사업자 등록번호:123-12-123456</p>
-            <p>&nbsp;&nbsp;&nbsp;&nbsp;고객선터:02-456-1234</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;회사명 : ㈜안병길과아이들</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;주소 : Anfield Rd, Anfield, Liverpool L4 OTH 영국</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;대표이사 : 안병길</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;사업자 : 등록번호:123-12-123456</p>
+            <p>&nbsp;&nbsp;&nbsp;&nbsp;고객선터 : 02-456-1234</p>
         </div>
         <div class="sns_area">
             <a href=""><img src="/res/img/user/insta_ico.png"></a>

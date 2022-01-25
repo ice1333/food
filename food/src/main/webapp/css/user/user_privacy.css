@@ -1,0 +1,333 @@
+@charset "UTF-8";
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    }
+    .wrap {
+    width:100%;
+    margin : 0 auto;
+    }
+    
+    body{
+        height:100%;
+    }
+    .sub{
+        width:100%;
+        position:relative;
+        margin-top: 80px;    
+    }
+    .sub> .size > .image_text{
+        float:right;
+    }
+    div{
+        display:block;
+    }
+    body,input,textarea{
+        line-height:1;
+        letter-spacing: -.05em;
+        color: #4c4c4c;
+        font-size: 12px;
+        max-width: 100%;
+    }
+    #container{
+    
+    }
+    #main {
+    border-bottom: 1px solid #f7f7f7;
+    }
+    #content {
+    min-width: 1050px;
+    padding-bottom: 60px;
+    }
+    .member_join{
+    width:640px;
+    margin:0 auto;
+    }
+    .page_sub {
+        
+        font-size: 12px;
+        color: #666;
+        line-height: 17px;
+        text-align: right;
+    }
+    .page_sub .ico {
+        padding-right: 2px;
+        color: #ee6a7b;
+    }
+    .tbl_comm {
+        width: 100%;
+        border-top: 2px solid #333;
+    }
+    table{
+        border-collapse: collapse;
+        border-spacing: 0;
+        display: table;
+        border-color: grey;
+    }
+    tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+    }
+    tr {
+        display: table-row;
+        vertical-align: inherit;
+        border-color: inherit;
+    }
+    .member_join .tbl_comm .fst th {
+        padding-top: 29px;
+    }
+    td,th{
+        padding:0;
+    }
+    th {
+        display: table-cell;
+        vertical-align: inherit;
+        font-weight: bold;
+        text-align: -internal-center;
+    }
+    .member_join th {
+        width: 159px;
+        padding: 20px 0 0 20px;
+        font-weight: 700;
+        font-size: 14px;
+        color: #333;
+        line-height: 20px;
+        vertical-align: top;
+        text-align: left;
+    }
+    .member_join th .ico {
+        color: #ee6a7b;
+    }
+    .member_join .tbl_comm .fst td {
+        padding-top: 19px;
+    }
+    .member_join td {
+        padding: 10px 0;
+        border-top: 0;
+        font-size: 14px;
+        vertical-align: top;
+        text-align: left;
+    }
+    .member_join input[type=text], .member_join input[type=password] {
+        width: 332px;
+    }
+    input[type=password] {
+        height: 44px;
+        padding: 0 14px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        color: #333;
+        line-height: 20px;
+        border-radius: 3px;
+        background: #fff;
+        outline: none;
+        vertical-align: top;
+    }
+    .member_join input[type=text]{
+        width:332px;
+    }
+    .screen_out {
+        display: block;
+        overflow: hidden;
+        position: absolute;
+        left: -9999px;
+        width: 1px;
+        height: 1px;
+        font-size: 0;
+        line-height: 0;
+        text-indent: -9999px;
+    }
+    .type_form textarea, .type_form input[type=text], .type_form input[type=password] {
+        height: 44px;
+        padding: 0 14px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        color: #333;
+        line-height: 20px;
+        border-radius: 3px;
+        background: #fff;
+        outline: none;
+        vertical-align: top;
+    }
+    .type_form .btn.default {
+        border: 1px solid #e494ff;
+        background-color: #fff;
+        color: #e494ff;
+    }
+    .member_join .btn {
+        display: inline-block;
+        width: 120px;
+        margin-left: 5px;
+        vertical-align: top;
+    }
+    .type_form .btn {
+        
+        height: 44px;
+        border: 0;
+        border-radius: 3px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 40px;
+        text-align: center;
+        outline: none;
+    }
+    a {
+        background-color: transparent;
+        text-decoration: none;
+        color: inherit;
+    }
+    .member_join .txt_guide {
+        width: 332px;
+    }
+    .type_form .txt_guide {
+        display: none;
+        padding: 10px 0 9px;
+        font-size: 12px;
+        color: #666;
+        line-height: 18px;
+        word-break: break-all;
+        letter-spacing: -.1px;
+        clear: both;
+    }
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    .type_form .txt_guide .txt {
+        display: block;
+    }
+    .member_join .field_phone .phone_num input[type=text] {
+        margin: 0;
+    }
+    .member_join .select_sex label {
+        display: inline-block;
+        padding: 10px 52px 10px 0;
+        vertical-align: top;
+    }
+    .type_form label {
+        font-size: 14px;
+        line-height: 22px;
+    }
+    label{
+        cursor:default;
+    }
+    .type_form input[type=radio] {
+        position: absolute;
+        z-index: -1;
+        opacity: 0;
+    }
+    .type_form input[type=radio]+.ico {
+        display: inline-block;
+        position: relative;
+        width: 24px;
+        height: 24px;
+        margin-right: 12px;
+        border: 1px solid #ddd;
+        background-color: #fff;
+        border-radius: 100%;
+        vertical-align: -7px;
+    }
+    .member_join .form_footer {
+        padding-top: 40px;
+        text-align: center;
+    }
+    .member_join .form_footer .btn_join {
+        width: 240px;
+        height: 56px;
+        font-size: 16px;
+        line-height: 54px;
+    }
+    .type_form .btn.active {
+        border: 1px solid #e6a0ff;
+        background-color: #e8a2ff;
+        color: #fff;
+    }
+    
+    #container {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        color: #2d2f34;
+        max-width: 1200px;
+    }
+    .menulist{
+        float:left;
+        width:200px;
+        flex:none;
+        padding-top:57px;
+    }
+    .menulist .menu_title{
+        padding: 20px 0px 10px 1px;
+        font-weight: 700;
+        font-size: 28px;
+        line-height: 35px;
+        color: #333;
+        letter-spacing: -1px;
+    }
+    .menulist .menu_title .inner_sub{
+        border: 1px solid #000000;
+        border-bottom: 0;
+    }
+    
+    .menulist .menu_title .inner_sub .adlist {
+        border-bottom: 1px solid #000000;
+        border:1px solid #eef0f7;
+    }
+    .menulist .menu_title .inner_sub >li.on a{
+    background-color: #fafafa;
+    display:block;
+    overflow:hidden;
+    line-height:20px;
+    }
+    .menulist .menu_title .inner_sub >li a:hover{
+        background-color: #fafafa;
+        
+    }
+    #adlist{
+        box-sizing: border-box;
+        border:1px solid #f2f2f2;
+        display:list-item;
+        background: #fafafa;
+    }
+    #adlist > li {
+        border-bottom:1px solid #f2f2f2;
+        padding: 14px 0 16px 20px;
+        
+        
+    }
+    #adlist > li > a{ 
+        display:block;
+        font-weight: 700;
+        color:#f79dff;
+        background: #fafafa url(img/btn_next.svg) no-repeat 130px;
+    }
+    .inner_sub{
+        padding: 10px 10px 10px 10px;
+    }
+    .size{
+    float:left;
+    
+    }
+    .size .sub_title{
+    
+    }
+    h2.menu_title{
+        
+    }
+    .btn active btn_jointwo{
+        border: 1px solid #e6a0ff;
+        background-color: #e8a2ff;
+        color: #e6a0ff;
+    }
+    .wrap .container{
+        display:flex;
+    }
+    ul,li {
+        list-style: none;
+    }
