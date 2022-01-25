@@ -41,7 +41,7 @@ public class MvcConfig implements WebMvcConfigurer{
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
 		ds.setUrl("jdbc:mysql://15.165.161.89:3306/shop");
 		ds.setUsername("root");
-		ds.setPassword("123456789");
+		ds.setPassword("root1234");
 		return ds;
 	}
 		
