@@ -6,6 +6,23 @@
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <link href="<%=request.getContextPath()%>/css/adqna/write.css" rel="stylesheet" type="text/css"/>
 <link href="<%=request.getContextPath()%>/css/user/user_common.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="<%=request.getContextPath()%>/smarteditor/js/HuskyEZCreator.js"></script>
+<script src="/res/js/common.js"></script>
+<script>
+var oEditors;
+$(function(){
+	oEditors = setEditor("aq_contents");
+});
+function Save() {
+	if($("#aq_title").val()==''){
+		alert("제목을 입력해주세요");
+		$("#aq_title").focus();
+		return;
+	}
+	oEditors.getById['aq_contents'].exec("UPDATE_CONTENTS_FIELD",[]);
+	$("#frm").submit();	
+}
+</script>
 <html>
 <body> 
 	
@@ -55,7 +72,7 @@
                                                                         </tr>
                                                                         <tr>
                                                                             <th scope="row">작성자</th>
-                                                                            <td><input type="text"/> </td>
+                                                                            <td>${vo.u_name}</td>
                                                                         </tr>
                                                                         <tr class="etcArea">
                                                                             <td colspan="4">
@@ -72,7 +89,7 @@
                                                                                     </li>
                                                                                     <li class="file">
                                                                                         <strong class="th">첨부파일</strong>
-                                                                                        <span class="td"><input type="file" id="file" name="file" title="첨부파일을 올려주세요"/></span>
+                                                                                        <span class="td"><input multiple="multiple"type="file" id="file" name="file" title="첨부파일을 올려주세요"/></span>
                                                                                     
                                                                                     </li>
                                                                                 </ul>
@@ -101,7 +118,7 @@
                                     <div class="btnRight">
                                         <a href="" class="btns"><strong>목록</strong></a>
                                         <a href="" class="btns"><strong>수정</strong></a>
-                                        <a href="location.href" class="btns" ><strong>저장</strong> </a>
+                                        <a href="javascript:Save()" class="btns" ><strong>저장</strong> </a>
                                     </div>
                                 </div>
                                 <!--//btn-->

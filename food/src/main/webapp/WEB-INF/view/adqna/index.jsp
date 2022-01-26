@@ -68,7 +68,7 @@
                                         <c:forEach var="vo" items="${list}" varStatus="status">
                                         <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
                                             <td>${vo.adqna_no}</td>   
-                                            <td class="title"><a href="adqnaview.do?adqna_no=${vo.adqna_no}">${vo.aq_title }</a></td>
+                                            <td class="title"><a href="view.do?adqna_no=${vo.adqna_no}">${vo.aq_title }</a></td>
                                             <td class="writer">${vo.u_name }</td>
                                             <td><fmt:formatDate value="${vo.aq_regdate}" pattern="yyyy-MM-dd"/></td>
                                             <td class="last"><c:choose>
@@ -83,20 +83,20 @@
                                 </form>
                                 <div class="btn">
                                     <div class="btnRight">
-                                        <a href="location.href" class="btns" ><strong>글작성</strong> </a>
+                                    	
+                                        <a href="write.do" class="btns" ><strong>글작성</strong> </a>
                                     </div>
                                 </div>
                                 <!--//btn-->
                                 <!-- 페이징 처리 -->
                                 ${pageArea}
                                 <!-- //페이징 처리 -->
-                                <form name="searchForm" id="searchForm" action="adqnaindex.do"  method="get">
+                                <form name="searchForm" id="searchForm" action="index.do"  method="get">
                                     <div class="search">
                                         <select id="stype" name="searchType" title="검색분류 선택">
                                             <option value="">전체</option>
-                                            <option value="제목" <c:if test="${param.searchType == '같'}">selected</c:if>>제목</option>
-                                            <option value="내용" <c:if test="${param.searchType == '같'}">selected</c:if>>내용</option>
-                                            <option value="답변대기" <c:if test="${param.searchType == '같'}">selected</c:if>>답변대기</option>
+                                            <option value="aq_title" <c:if test="${param.searchType == 'aq_title'}">selected</c:if>>제목</option>
+                                            <option value="aq_contents" <c:if test="${param.searchType == 'aq_contents'}">selected</c:if>>내용</option>
                                         </select>
                                         <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
                                         <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />

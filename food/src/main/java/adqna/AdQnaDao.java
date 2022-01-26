@@ -43,4 +43,9 @@ public class AdQnaDao {
 		return sst.delete("adqna.adqnadelete", adqna_no);
 	}
 	
+	//사용자 업데이트
+	public AdQnaVo adqnaOne(int adqna_no) {
+		return sst.selectOne("adqna.adqnaOne",adqna_no);
+	}
+	
 }

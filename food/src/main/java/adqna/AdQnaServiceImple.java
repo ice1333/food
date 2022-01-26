@@ -42,6 +42,14 @@ public class AdQnaServiceImple implements AdQnaService {
 	}
 
 	
+	@Override
+	public AdQnaVo edit(int adqna_no) {
+		return adqnaDao.adqnaOne(adqna_no);
+	}
+
+	
+
+	
 
 
 }

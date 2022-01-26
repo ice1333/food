@@ -4,10 +4,26 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script src="/res/js/common.js"></script>
 <link href="<%=request.getContextPath()%>/css/adqna/view.css" rel="stylesheet" type="text/css"/>
 <link href="<%=request.getContextPath()%>/css/user/user_common.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="<%=request.getContextPath()%>/smarteditor/js/HuskyEZCreator.js"></script>
 <script>
-    
+var oEditors;
+$(function(){
+	oEditors = setEditor("aq_contents");
+});
+function Save() { 
+	if($("#aq_title").val()==''){
+		alert("제목을 입력하세요");
+		$("#aq_title").focus();
+		return;
+	}
+	oEditors.getById['aq_contents'].exec("UPDATE_CONTENTS_FIELD",[]);
+	$("#frm").submit();	
+}
+
+
 function getCheckboxValue(event)  {
   let result = '';
   if(event.target.checked)  {
@@ -20,6 +36,11 @@ function getCheckboxValue(event)  {
     = result;
 }
 
+$(function(){
+    if($('input').is(":checked") == true){
+        
+    }
+});
 </script>
 
 
@@ -67,24 +88,24 @@ function getCheckboxValue(event)  {
                                                                     <tbody>
                                                                         <tr>
                                                                             <th scope="row" style="border:none;">제목</th>
-                                                                            <td>&nbsp&nbsp&nbsp[맛지게] 맛지게</td>
+                                                                            <td>${vo.aq_title}</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <th scope="row">작성자</th>
-                                                                            <td>&nbsp&nbsp&nbsp전창혁</td>
+                                                                            <td>${vo.u_name}</td>
                                                                         </tr>
                                                                         <tr>
                                                                             <th scope="row" id='result' style="padding: 10pxpx 2px 10px 2px;"></th>
-                                                                            <td><input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)"/>메인
-                                                                                <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)"/>사이드
-                                                                                <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)"/>메인,사이드</td>
+                                                                            <td><input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)" /><c:if test="checked">checked</c:if>메인
+                                                                                <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)" /><c:if test="checked">checked</c:if>사이드
+                                                                                <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)" /><c:if test="checked">checked</c:if>메인,사이드</td>
                                                                         </tr>
                                                                         <tr class="etcArea">
                                                                             <td colspan="2">
                                                                                 <ul>
                                                                                     <li class="date">
                                                                                         <strong class="th">작성일</strong>
-                                                                                        <span class="td">2022-01-19</span>
+                                                                                        <span class="td">${vo.aq_regdate}</span>
                                                                                     </li>
                                                                                     <li class="file">
                                                                                         <strong class="th">첨부파일</strong>
@@ -98,7 +119,10 @@ function getCheckboxValue(event)  {
                                                             </td>
                                                         </tr>
                                                         <tr>
-                                                            <td align="right" class="eng" style="padding:5px;"></td>
+                                                            <td align="right" class="eng" style="padding:5px;">
+                                                             <textarea id="aq_contents" name="aq_contents" style="width:100%; height:100%">${vo.aq_contents}</textarea>
+                                                             </td>
+                                                          
                                                         </tr>
                                                     </tbody>
                                                 </table>
@@ -112,9 +136,9 @@ function getCheckboxValue(event)  {
                                 </div>
                                 <div class="btn">
                                     <div class="btnRight">
-                                        <a href="" class="btns"><strong>목록</strong></a>
-                                        <a href="" class="btns"><strong>수정</strong></a>
-                                        <a href="location.href" class="btns" ><strong>저장</strong> </a>
+                                        <a href="index.do" class="btns"><strong>목록</strong></a>
+                                        <a href="edit.do?adqna_no=${vo.adqna_no}" class="btns"><strong>수정</strong></a>
+                                        <a href="javascript:save();" class="btns" ><strong>저장</strong> </a>
                                     </div>
                                 </div>
                                 <!--//btn-->
@@ -130,7 +154,7 @@ function getCheckboxValue(event)  {
                     </div>
                     <!--//con -->
                 </div>
-                <div>커멘트 에어리어</div>
+                <div id="commentArea"></div>
                 <!--//content -->
             </div>
             <!--//container --> 

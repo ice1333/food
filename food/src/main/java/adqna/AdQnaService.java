@@ -20,4 +20,7 @@ public interface AdQnaService {
 	//상세
 	AdQnaVo no_select(int adqna_no);
 	
+	//사용자 업데이트
+	AdQnaVo edit(int adqna_no);
+	
 }
