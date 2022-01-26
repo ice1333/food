@@ -155,4 +155,33 @@ public class NoticeController {
 		}
 		return "include/result";
 	}
+	
+	//사용자
+	@GetMapping("/user/noticeindex.do")
+	public String index2(Model model, HttpServletRequest req, NoticeVo vo) {
+		
+		int totCount = noticeService.count(vo); //총개수
+		int totPage = totCount / 10; //총페이지수
+		if(totCount % 10 > 0) totPage++;
+				
+		int startIdx = (vo.getPage()-1) * 10;
+		vo.setStartIdx(startIdx);
+		
+		
+		List<NoticeVo> list = noticeService.selectList(vo);
+		model.addAttribute("list", list);
+		model.addAttribute("totPage", totPage);
+		model.addAttribute("totCount",totCount);
+		model.addAttribute("PageArea",CommonUtil.getPageArea("noticeindex.do", vo.getPage(), totPage, 10));
+		
+		return "notice/index";
+	}
+	@GetMapping("/user/noticeview.do")
+	public String view2(Model model,@RequestParam int n_no) {
+		model.addAttribute("data", noticeService.view2(n_no));
+		return "notice/view";
+	}
+	
+	
+	
 }
