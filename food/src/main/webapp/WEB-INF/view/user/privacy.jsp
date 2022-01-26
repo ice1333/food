@@ -1,18 +1,18 @@
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=yes">
-    <meta name="format-detection" content="telephone=no, address=no, email=no">
-    <meta name="keywords" content="">
-    <meta name="description" content="">
+<%@ page language="java" 
+    pageEncoding="utf-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+	<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+    <link href="<%=request.getContextPath()%>/css/user/user_common.css" rel="stylesheet" type="text/css"/>
+    <link href="<%=request.getContextPath()%>/css/user/user_privacy.css" rel="stylesheet" type="text/css"/>
     <title>회원가입</title>
 </head>
-
+<html>
 <body>
     <div class="wrap">
-        <div class="container">
+    <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
+        <div class="container" style="width: 1200px; top:50px; margin: 40px auto; overflow: hidden;">
             <div class="menulist">
                 <h2 class="menu_title">마이페이지</h2>
                 <div class="inner_sub">
@@ -109,7 +109,7 @@
                                                         </div>
                                                         <div id="selectAddressSub">
                                                             <input type="text" name="addr2" id="addr2" value="" class="byteTotext" placeholder="나머지 주소를 입력해주세요">
-                                                            <p id="delivery"></p>
+                                                            
                                                         </div>
                                                         <a href="" id="addressSearch" class="btn default" onclick="">주소검색</a>
                                                     </td>
@@ -129,7 +129,7 @@
                                                 </tr>
                                         </tbody>
                                     </table>
-                                    <div id="formSubmit" class="form_footer">
+                                    <div id="formSubmit" class="abc">
                                         <button type="button" class="btn default" onclick="" style="width: 240px;
                                         height: 56px;
                                         font-size: 16px;
@@ -138,11 +138,12 @@
                                     </div>
                                 </form>
                             </div>
-                            
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>      
+                    	</div>
+                	</div>
+            	</div>
+        	</div>
+    	</div>
+    <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
+   </div>      
 </body>
 </html>

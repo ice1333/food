@@ -1,4 +1,3 @@
-@charset "UTF-8";
 * {
     margin:0;
     padding:0;
@@ -7,6 +6,7 @@
     .wrap {
     width:100%;
     margin : 0 auto;
+
     }
     
     body{
@@ -24,14 +24,17 @@
         display:block;
     }
     body,input,textarea{
-        
+        line-height:1;
         letter-spacing: -.05em;
         color: #4c4c4c;
         font-size: 12px;
         max-width: 100%;
     }
     #container{
-    
+     display: flex;
+     width: 1200px;
+     top:50px;
+     margin: 15px auto; overflow: hidden;
     }
     #main {
     border-bottom: 1px solid #f7f7f7;
@@ -50,15 +53,23 @@
         color: #666;
         line-height: 17px;
         text-align: right;
+        
     }
     .page_sub .ico {
         padding-right: 2px;
-        color: #ee6a7b;
+        
+        font-size: 20px;
+        float: left ;
+        
+    }
+    .searchType{
+        float: right ;
     }
     .tbl_comm {
         width: 100%;
         border-top: 2px solid #333;
     }
+    
     table{
         border-collapse: collapse;
         border-spacing: 0;
@@ -74,9 +85,10 @@
         display: table-row;
         vertical-align: inherit;
         border-color: inherit;
+        
     }
     .member_join .tbl_comm .fst th {
-        padding-top: 29px;
+        
     }
     td,th{
         padding:0;
@@ -89,13 +101,13 @@
     }
     .member_join th {
         width: 159px;
-        padding: 20px 0 0 20px;
+        background-color: silver;
         font-weight: 700;
         font-size: 14px;
         color: #333;
         line-height: 20px;
         vertical-align: top;
-        text-align: left;
+        text-align: center;
     }
     .member_join th .ico {
         color: #ee6a7b;
@@ -191,7 +203,13 @@
         letter-spacing: -.1px;
         clear: both;
     }
-    
+    p {
+        display: block;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
     .type_form .txt_guide .txt {
         display: block;
     }
@@ -226,11 +244,11 @@
         border-radius: 100%;
         vertical-align: -7px;
     }
-    .member_join .abc {
+    .member_join .form_footer {
         padding-top: 40px;
         text-align: center;
     }
-    .member_join .abc .btn_join {
+    .member_join .form_footer .btn_join {
         width: 240px;
         height: 56px;
         font-size: 16px;
@@ -244,11 +262,7 @@
     
     #container {
         position: relative;
-        width: 100%;
-        height: 100%;
-        z-index: 100;
-        color: #2d2f34;
-        max-width: 1200px;
+		width: 1200px; top:50px; margin: 15px auto; overflow: hidden;       
     }
     .menulist{
         float:left;
@@ -306,6 +320,7 @@
     }
     .size{
     float:left;
+    padding-top:25px;
     
     }
     .size .sub_title{
@@ -314,15 +329,56 @@
     h2.menu_title{
         
     }
-    .btn active btn_jointwo{
-        border: 1px solid #e6a0ff;
-        background-color: #e8a2ff;
-        color: #e6a0ff;
+    .content{
+        font-size: 45px;
+        color: violet;
+    }
+    .explain {
+        color: silver;
+        font-size: 25px;
+        padding-left: 20px;
+    }
+    
+    .picture{
+        width:100%;
+        height: 150px;
+        padding-right: 20px;
+    }
+    .title{
+        font-size: 30px;
+    }
+    .tilteExplain{
+        color: silver;
+        font-size: 20px;
+    }
+    .time{
+        text-align: right;
+        padding-right: 100px;
+        color: silver;
+        font-size: 15px;
+    }
+    hr {
+        width: 100%;
+    }
+    select{
+        width: 10%;
+        text-align: right;
+    }
+    .star{
+        margin-left: 10px;
     }
     .wrap .container{
         display:flex;
+        width: 1200px; top:50px; margin: 15px auto; overflow: hidden;
     }
     ul,li {
         list-style: none;
+    }
+
+    
+    .commentList td{
+        text-align: center;  
+        border-bottom: 1px solid black;  
+        color: black;
     }
     

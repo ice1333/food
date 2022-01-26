@@ -56,5 +56,6 @@ public class UserController {
 	public String adqnawrite() {
 		return "adqna/write";
 	}
+	
 }
 	

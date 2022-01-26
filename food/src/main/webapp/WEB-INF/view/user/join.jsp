@@ -1,3 +1,5 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -7,13 +9,15 @@
     <meta name="format-detection" content="telephone=no, address=no, email=no">
     <meta name="keywords" content="">
     <meta name="description" content="">
+   <link rel="stylesheet" href="/res/css/user/user_common.css"/>
+    <link href="<%=request.getContextPath()%>/css/user/join.css" rel="stylesheet" type="text/css"/>
     <title>회원가입</title>
 </head>
 
 <body>
     <div class="wrap">
-
-
+	
+	<%@ include file="/WEB-INF/view/include/user_header.jsp" %>
         <div class="main">
             <div class="content">
                 <div class="sub">
@@ -101,9 +105,9 @@
                                     
                                                     <input type="text" name="addr1"id="addr1" value="" label="주소" style="margin-bottom:12px;">
                                                 </div>
-                                                <div id="selectAddressSub">
+                                                <div id="selectAddressSub" style="padding-bottom:15px;">
                                                     <input type="text" name="addr2" id="addr2" value="" class="byteTotext" placeholder="나머지 주소를 입력해주세요">
-                                                    <p id="delivery"></p>
+                                                    
                                                 </div>
                                                 <a href="" id="addressSearch" class="btn default" onclick="">주소검색</a>
                                             </td>
@@ -124,14 +128,17 @@
                                         </tr>
                                 </tbody>
                             </table>
-                            <div id="formSubmit" class="form_footer">
-                                <button type="button" class="btn active btn_join" onclick="">가입하기</button>
+                            <div id="formSubmit" class="abc">
+                                <button type="button" class="btn active btn_join" onclick="" style="height:56px;">가입하기</button>
                             </div>
                         </form>
                     </div>
                 </div>
             </div>
+            </div>
          </div>
-    </div>        
+         <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
+    </div> 
+           
 </body>
 </html>
