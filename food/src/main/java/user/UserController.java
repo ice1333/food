@@ -26,6 +26,10 @@ public class UserController {
 	public String searchidpwd() {
 		return "user/searchPwd";
 	}
+	@GetMapping("user/notice.do")
+	public String notice() {
+		return "user/notice";
+	}
 	//수연 페이지 끝 
 	
 	@GetMapping("user/join.do")
