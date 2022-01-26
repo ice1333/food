@@ -96,7 +96,7 @@ $(function(){
                                                                         </tr>
                                                                         <tr>
                                                                             <th scope="row" id='result' style="padding: 10pxpx 2px 10px 2px;"></th>
-                                                                            <td><input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)" /><c:if test="checked">checked</c:if>메인
+                                                                            <td> <input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)" /><c:if test="checked">checked</c:if>메인
                                                                                 <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)" /><c:if test="checked">checked</c:if>사이드
                                                                                 <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)" /><c:if test="checked">checked</c:if>메인,사이드</td>
                                                                         </tr>
