@@ -50,6 +50,18 @@ public class NoticeDao {
 		return sqlSessionTemplate.delete("notice.checkDelete", n_no);
 	}
 	
-	
+	// 유저
+	public int count2(NoticeVo vo) {
+		return sqlSessionTemplate.selectOne("notice.count2", vo);
+	}
+	public List<NoticeVo> selectList2(NoticeVo vo) {
+		return sqlSessionTemplate.selectList("notice.selectList2",vo);
+	}
+	public NoticeVo selectOne2(int n_no) {
+		return sqlSessionTemplate.selectOne("notice.selectOne2", n_no);		
+	}
+	public int updateN_readcount2(int n_no) {
+		return sqlSessionTemplate.update("notice.updateN_readcount2", n_no);		
+	}
 
 }
