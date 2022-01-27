@@ -10,8 +10,9 @@
     <title>Document</title>
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    
+    <link rel="stylesheet" href="/res/css/user/user_common.css"/>
     <link rel="stylesheet" href="/res/css/user/user_restaurant.css"/>
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <link rel="stylesheet" href="/res/css/user/user_hensuMypage.css"/>
@@ -31,7 +32,7 @@
                        <h2 class="menu_title">내정보</h2>
                        <div class="inner_sub">
                            <ul id="adlist">
-                               <li><a href="">최근 본 맨장</a></li>
+                               <li><a href="">최근 본 매장</a></li>
                                <li><a href="">찜 목록</a></li>
                                <li><a href="">개인 정보 수정</a></li>
                                <li><a href="">내가 쓴 댓글</a></li>
@@ -44,19 +45,27 @@
                        <div class="con_tit">
                            <h3 class="con_title">찜목록</h3>
                        </div>
+                       <select id="con_searchlist" name="searchType" title="검색을 선택해주세요">
+                                        <option value="">전체</option>
+                                        <option value="">최근 1달</option>
+                                        <option value="">최근 2달</option>
+                                        <option value="">최근 3달</option>
+                       </select>
                        <!-- 내용 : s -->
                        <div id="bbs">
                            <div id="blist">
                                <form name="frm" id="frm" action="delAjax.do" method="post">
                                <table width="60%" border="0" cellspacing="0" cellpadding="0" summary="">
                                    <colgroup>
-                                       <col width="7%"/>
-                                       <col width="20%"/>
-                                       <col width="*%"/>
-                                       <col width="7%"/>
+                                   	   <col class="w1"/>
+                                       <col width="w1"/>
+                                       <col width="w5"/>
+                                       <col width="w5"/>
+                                       <col width="w3"/>
                                    </colgroup>
                                    <thead>
                                        <tr>
+                                       	   <th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" onClick="check(this, document.frm.no)"/></th>
                                            <th scope="col">순번</th>
                                            <th scope="col">상호</th>
                                            <th scope="col">상호내용</th>
@@ -72,11 +81,12 @@
                                    <c:if test="${!empty list}">
                                        <c:forEach var="vo" items="${list}" varStatus="status">
                                        <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
+                                       	   <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adc_no }"/></td>
                                            <td>1</td>
                                            <td id="blist_img">
                                                <img id="blist_img_size" src="img/section_1.jpg" >
                                             </td>   
-                                           <td class="title">상호명 : <br>업태 : </td>
+                                           <td class="title">상호명 : ㅇㄹ <br>업태 : ㅇㄹ </td>
                                            <td class="last">⭐️ 5.0<c:choose>						
                                        </c:choose></td>
                                        </tr>

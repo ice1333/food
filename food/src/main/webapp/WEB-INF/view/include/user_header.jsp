@@ -18,7 +18,7 @@
         </span>
     </a>
     <label class="headersearch">
-        <input type="text" class="headersearchinput" placeholder="검색어를 입력해주세요.">
+        <input id="headersearchinput" type="text" class="headersearchinput" placeholder="검색어를 입력해주세요.">
     </label>
     <button class="header_searchbutton"></button> 
     <ul class="headermenulist">
