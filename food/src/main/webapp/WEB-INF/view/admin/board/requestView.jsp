@@ -73,7 +73,7 @@
         	<div class="sub">
 	            <div class="size">
 	            	<div class="con_tit">
-	                	<h3 class="sub_title">광고 문의</h3>
+	                	<h3 class="sub_title">매장등록요청</h3>
 	                </div>
 	                <div class="bbs">
 						<p1></p1>

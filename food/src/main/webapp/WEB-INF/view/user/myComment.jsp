@@ -13,8 +13,7 @@
     <link rel="stylesheet" href="/res/css/user/user_restaurant.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    
-<link rel="stylesheet" href="/res/css/user/user_hensuMypage.css"/>
+	<link rel="stylesheet" href="/res/css/user/user_hensuMypage.css"/>
 
 <title>Insert title here</title>
 </head>

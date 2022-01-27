@@ -106,4 +106,12 @@ public class RestaurantController {
 		return "admin/board/requestView";
 	}
 	
+	
+	// zz
+	
+	
+	
+	
+	
+	
 }
