@@ -52,6 +52,18 @@ public class AdQnaServiceImple implements AdQnaService {
 		return adqnaDao.adqnaName(u_name);
 	}
 
+	@Override // 사용자 업데이트
+	public int adqnaUpdate(AdQnaVo vo) {
+		return adqnaDao.adqnaUpdate(vo);
+	}
+
+	@Override // 사용자 광고 등록
+	public int adqnainsert(AdQnaVo vo) {
+		return adqnaDao.adqnainsert(vo);
+	}
+	
+	
+
 	
 
 	

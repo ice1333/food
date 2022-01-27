@@ -128,20 +128,21 @@
 	<!-- 사용자가 광고문의글 작성-->
 	<insert id="adqnainsert" parameterType="adqna.AdQnaVo">
 		INSERT INTO shop.adqna (
-		aq_title ,aq_contents , aq_regdate , aq_status , u_no , aq_filename_org , aq_filename_real
+		aq_title ,aq_contents , aq_regdate , aq_status , u_no , filename_org , filename_real
 		) values (
-		#{aq_title} , #{aq_contents} , NOW() , #{aq_status} , #{u_no} , #{aq_filename_org} , #{aq_filename_real}
+		#{aq_title} , #{aq_contents} , NOW() , #{aq_status} , #{u_no} , #{filename_org} , #{filename_real}
 		)
 	</insert>
 	
 	<!-- 사용자가 광고문의글 업데이트 -->
-	<update id="adqnaUpdate" parameterType="adqna.AdQnaVo"> 사용자가? 업데이트 
+	<update id="adqnaUpdate" parameterType="adqna.AdQnaVo"> 
 		UPDATE shop.adqna SET
 		 aq_title = #{aq_title},
 		 aq_contents = #{aq_contents}
+		 
 		 <if test="filename_org !=null">
-		 , aq_filename_org=#{aq_filename_org}
-		 , aq_filename_real=#{aq_filename_real}
+		 , filename_org=#{filename_org}
+		 , filename_real=#{filename_real}
 		 </if>
 		WHERE adqna_no=#{adqna_no}
 	</update>
@@ -154,6 +155,7 @@
 	<select id="adqnaName" parameterType="String" resultType="adqna.AdQnaVo">
 		SELECT u_name FROM shop.user WHERE u_no=#{u_no}
 	</select>
+	
 	
 	
 	

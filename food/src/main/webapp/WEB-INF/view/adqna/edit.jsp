@@ -34,6 +34,7 @@ function Save() {
 	oEditors.getById['aq_contents'].exec("UPDATE_CONTENTS_FIELD",[]);
 	$("#frm").submit();	
 }
+
 </script>
 
 <body> 
@@ -102,10 +103,11 @@ function Save() {
                                                                                         <strong class="th">첨부파일</strong>
                                                                                         <span class="td">
                                                                                             <input type="file" id="file" name="file" title="첨부파일을 올려주세요"/>
-                                                                                            <input type="checkbox" name="" value="1">기존파일삭제
-                                                                                        </span>
-                                                                                    
-                                                                                    </li>
+                                                                                            <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org}&real=${vo.filename_real}" 
+																							target="_blank">${vo.filename_org } </a></span></li>
+																						<li>
+                                                                                            <input type="checkbox" name="delCheck" value="1">기존파일삭제(${vo.filename_org})
+                                                                                        </li>
                                                                                 </ul>
                                                                             </td>
                                                                         </tr>
@@ -130,8 +132,8 @@ function Save() {
                                 </div>
                                 <div class="btn">
                                     <div class="btnRight">
-                                        <a href="" class="btns"><strong>목록</strong></a>
-                                        <a href="location.href" class="btns" ><strong>저장</strong> </a>
+                                        <a href="index.do" class="btns"><strong>목록</strong></a>
+                                        <a href="javascript:Save()" class="btns" ><strong>저장</strong> </a>
                                     </div>
                                 </div>
                                 <!--//btn-->

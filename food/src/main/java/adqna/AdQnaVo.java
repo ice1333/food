@@ -7,8 +7,8 @@ public class AdQnaVo extends SearchVo{
 	private int adqna_no;
 	private String aq_title;
 	private String aq_contents;
-	private String aq_filename_org;
-	private String aq_filename_real;
+	private String filename_org;
+	private String filename_real;
 	private Timestamp aq_regdate;
 	private String aq_status;
 	private int u_no;
@@ -67,17 +67,18 @@ public class AdQnaVo extends SearchVo{
 	public void setAq_contents(String aq_contents) {
 		this.aq_contents = aq_contents;
 	}
-	public String getAq_filename_org() {
-		return aq_filename_org;
+	
+	public String getFilename_org() {
+		return filename_org;
 	}
-	public void setAq_filename_org(String aq_filename_org) {
-		this.aq_filename_org = aq_filename_org;
+	public void setFilename_org(String filename_org) {
+		this.filename_org = filename_org;
 	}
-	public String getAq_filename_real() {
-		return aq_filename_real;
+	public String getFilename_real() {
+		return filename_real;
 	}
-	public void setAq_filename_real(String aq_filename_real) {
-		this.aq_filename_real = aq_filename_real;
+	public void setFilename_real(String filename_real) {
+		this.filename_real = filename_real;
 	}
 	public Timestamp getAq_regdate() {
 		return aq_regdate;

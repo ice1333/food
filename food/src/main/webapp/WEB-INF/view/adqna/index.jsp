@@ -66,7 +66,7 @@
                                     </c:if>
                                     <c:if test="${!empty list}">
                                         <c:forEach var="vo" items="${list}" varStatus="status">
-                                        <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
+                                        <tr class="board_tr" data-adqna_no="adqna_no" style="cursor:pointer;">
                                             <td>${vo.adqna_no}</td>   
                                             <td class="title"><a href="view.do?adqna_no=${vo.adqna_no}">${vo.aq_title }</a></td>
                                             <td class="writer">${vo.u_name}</td>

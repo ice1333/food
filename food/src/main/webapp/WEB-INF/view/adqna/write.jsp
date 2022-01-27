@@ -22,6 +22,18 @@ function Save() {
 	oEditors.getById['aq_contents'].exec("UPDATE_CONTENTS_FIELD",[]);
 	$("#frm").submit();	
 }
+
+function getCheckboxValue(event)  {
+	  let result = '';
+	  if(event.target.checked)  {
+	    result = event.target.value;
+	  }else {
+	    result = '';
+	  }
+	  
+	  document.getElementById('result').innerText
+	    = result;
+	}
 </script>
 <html>
 <body> 
@@ -72,8 +84,9 @@ function Save() {
                                                                         </tr>
                                                                         <tr>
                                                                             <th scope="row">작성자</th>
-                                                                            <td>${vo.u_name}</td>
+                                                                            <td>${userInfo.u_name}</td>
                                                                         </tr>
+                                                                        
                                                                         <tr class="etcArea">
                                                                             <td colspan="4">
                                                                                 <ul>
@@ -81,9 +94,12 @@ function Save() {
                                                                                         <strong class="th" id='result'></strong>
                                                                                         <span class="td" style="padding:0;">
                                                                                         <p> &nbsp신청 항목의 유형을 하나만 골라주세요.</p>
-                                                                                        <input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)"/>메인
-                                                                                        <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)"/>사이드
-                                                                                        <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)"/>메인,사이드
+																						<select id="" name="" title="분류 선택">
+																						<option value="[메인과사이드]]" >메인과 사이드</option>
+																						<option value="[메인]"<c:if test="">selected</c:if>>메인</option>
+																						<option value="[사이드]"<c:if test="">selected</c:if>>사이드</option>
+																						
+																						</select>
                                                                                         
                                                                                         </span>
                                                                                     </li>
@@ -116,8 +132,7 @@ function Save() {
                                 </div>
                                 <div class="btn">
                                     <div class="btnRight">
-                                        <a href="" class="btns"><strong>목록</strong></a>
-                                        <a href="" class="btns"><strong>수정</strong></a>
+                                        <a href="index.do" class="btns"><strong>목록</strong></a>
                                         <a href="javascript:Save()" class="btns" ><strong>저장</strong> </a>
                                     </div>
                                 </div>

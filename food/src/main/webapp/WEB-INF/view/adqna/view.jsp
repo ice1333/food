@@ -41,6 +41,20 @@ $(function(){
         
     }
 });
+function del(){
+	if(confirm("삭제하시겠습니까?")){
+	 $.ajax({
+		url: 'Udelete.do',
+		type: 'get',
+		data:{adqna_no:${vo.adqna_no}},
+		success:function(){
+			alert('정상적으로 삭제되었습니다.');
+			location.href="index.do";
+		}
+	}); 
+
+	}
+} 	 
 </script>
 
 
@@ -109,7 +123,9 @@ $(function(){
                                                                                     </li>
                                                                                     <li class="file">
                                                                                         <strong class="th">첨부파일</strong>
-                                                                                        <span class="td"><input type="file" id="file" name="file" title="첨부파일을 올려주세요"/></span>
+                                                                                        
+                                                                                         <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org}&real=${vo.filename_real}" 
+																							target="_blank">${vo.filename_org } </a>
                                                                                     </li>
                                                                                 </ul>
                                                                             </td>
@@ -138,7 +154,7 @@ $(function(){
                                     <div class="btnRight">
                                         <a href="index.do" class="btns"><strong>목록</strong></a>
                                         <a href="edit.do?adqna_no=${vo.adqna_no}" class="btns"><strong>수정</strong></a>
-                                        <a href="javascript:save();" class="btns" ><strong>저장</strong> </a>
+                                        <a href="javascript:del()" class="btns"><strong>삭제</strong></a>
                                     </div>
                                 </div>
                                 <!--//btn-->
