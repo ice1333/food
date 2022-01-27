@@ -150,6 +150,10 @@
 		SELECT * From shop.adqna WHERE adqna_no = #{x}
 	</select>
 	
+	<!--  유저 이름 가져오기 -->
+	<select id="adqnaName" parameterType="String" resultType="adqna.AdQnaVo">
+		SELECT u_name FROM shop.user WHERE u_no=#{u_no}
+	</select>
 	
 	
 	

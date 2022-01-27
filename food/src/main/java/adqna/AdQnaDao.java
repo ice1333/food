@@ -48,4 +48,9 @@ public class AdQnaDao {
 		return sst.selectOne("adqna.adqnaOne",adqna_no);
 	}
 	
+	//유저이름가져오기
+	public AdQnaVo adqnaName(String u_name) {
+		return sst.selectOne("adqna.adqnaName",u_name);
+	}
+	
 }

@@ -23,4 +23,7 @@ public interface AdQnaService {
 	//사용자 업데이트
 	AdQnaVo edit(int adqna_no);
 	
+	//유저이름 가져오기
+	AdQnaVo adqnaName(String u_no);
+	
 }

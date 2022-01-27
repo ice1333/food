@@ -46,6 +46,11 @@ public class AdQnaServiceImple implements AdQnaService {
 	public AdQnaVo edit(int adqna_no) {
 		return adqnaDao.adqnaOne(adqna_no);
 	}
+	
+	@Override // 유저이름가져오기
+	public AdQnaVo adqnaName(String u_name) {
+		return adqnaDao.adqnaName(u_name);
+	}
 
 	
 

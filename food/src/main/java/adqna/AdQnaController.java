@@ -1,5 +1,6 @@
 package adqna;
 
+import java.io.File;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 //관리자에는 목록이랑 상세 -
 import org.springframework.web.multipart.MultipartFile;
 
+import admin.UserVo;
 import comment.CommentService;
 import comment.CommentVo;
 import util.CommonUtil;
@@ -76,6 +78,12 @@ public class AdQnaController {
 		return "admin/adqna/adqnaindex";
 	}
 	
+	
+	
+	
+	
+	
+	
 	@GetMapping("adqna/index.do")
 	public String index(Model model, HttpServletRequest req, AdQnaVo vo) {
 		int totCount = adqnaService.adqnacount(vo); //총갯수
@@ -97,7 +105,7 @@ public class AdQnaController {
 	
 	@GetMapping("adqna/edit.do")
 	public String edit(Model model,@RequestParam int adqna_no) {
-		model.addAttribute("vo",adqnaService.edit(adqna_no));
+		model.addAttribute("vo",adqnaService.no_select(adqna_no));
 		return "adqna/edit";
 	}
 	
@@ -108,19 +116,54 @@ public class AdQnaController {
 	}
 	
 	@GetMapping("adqna/write.do")
-	public String write() {
+	public String write(Model model,HttpSession sess,AdQnaVo vo) {
+//		UserVo uv= (UserVo)sess.getAttribute("userInfo");
+//		
+//		int u_no=uv.getU_no();
+//		String u_name=uv.getU_name();
+//		
+//		vo.setU_no(u_no);
+//		vo.setU_name(u_name);
+//		model.addAttribute("vo",uv.getU_name());
 		return "adqna/write";
 	}
 	
 	
 	@PostMapping("adqna/insert.do")
 	public String insert(HttpServletRequest req, MultipartFile file,HttpSession ses) {
+		
 	return "";	
 	}
 	
 	@PostMapping("adqna/update.do")
-	public String update() {
+	public String update(Model model, HttpSession sess,MultipartFile file,HttpServletRequest req,AdQnaVo vo) {
+		if(req.getParamter("delCheck")!=null) {
+			AdQnaVo av = adqnaService.edit(vo.getAdqna_no());
+			File f = new File(req.getRealPath("/upload/")+av.getAq_filename_real());
+			f.delete();
+			vo.setAq_filename_org("");
+			vo.setAq_filename_real("");
+		}
+		if (file!=null&&!file.isEmpty()) {
+			try {
+				String path = req.getRealPath("/upload/");
+				String filename = file.getOriginalFilename();
+				String ext = filename.substring(filename.lastIndexOf(".")); // 뒤에서부터 . 까지 잘라옴(.jpg)
+				String filename_real = System.currentTimeMillis() + ext;
+				//
+				file.transferTo(new File(path+filename_real)); // 경로에 파일을 저장 서버에저장할떄 한글로저장x
+				vo.setFilename_org(filename);
+				vo.setFilename_real(filename_real);
+			} catch (Exception e) {
+				System.out.println(e.getMessage());
+			}
+		}
 		return "";
+	}
+	
+	@GetMapping("adqna/delete.do")
+	public String userdelete() {
+		return"";
 	}
 	
 }

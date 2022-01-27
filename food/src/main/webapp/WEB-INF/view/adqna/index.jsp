@@ -69,7 +69,7 @@
                                         <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
                                             <td>${vo.adqna_no}</td>   
                                             <td class="title"><a href="view.do?adqna_no=${vo.adqna_no}">${vo.aq_title }</a></td>
-                                            <td class="writer">${vo.u_name }</td>
+                                            <td class="writer">${vo.u_name}</td>
                                             <td><fmt:formatDate value="${vo.aq_regdate}" pattern="yyyy-MM-dd"/></td>
                                             <td class="last"><c:choose>
 										<c:when test="${vo.status == 0}">답변대기</c:when>
