@@ -14,7 +14,7 @@ public class UserService {
 	public boolean login(UserVo vo, HttpSession sess) {
 		UserVo uv = dao.login(vo);
 		if (uv != null) { // 로그인 성공
-			sess.setAttribute("adminInfo", uv);
+			sess.setAttribute("userInfo", uv);
 			return true;
 		}
 		return false;

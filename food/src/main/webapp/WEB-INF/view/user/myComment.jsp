@@ -34,7 +34,7 @@
                                 <li><a href="">최근 본 맨장</a></li>
                                 <li><a href="">찜 목록</a></li>
                                 <li><a href="">개인 정보 수정</a></li>
-                                <li><a href="">내가 쓴 댓글</a></li>
+                                <li><a href="/food/user/mypage/myComment">내가 쓴 댓글</a></li>
                             </ul>
                         </div>
                 </div>
@@ -72,10 +72,10 @@
                                     <c:if test="${!empty list}">
                                         <c:forEach var="vo" items="${list}" varStatus="status">
                                         <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
-                                            <td>${vo.r_name}</td>   
-                                            <td class="title">${vo.c_contents}</td>
-                                            <td><fmt:formatDate value="${vo.c_regdate}" pattern="yyyy-MM-dd"/></td>
-                                            <td class="last">${vo.c_stars}<c:choose>						
+                                            <td>${list.r_name}</td>   
+                                            <td class="title">${list.content}</td>
+                                            <td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd"/></td>
+                                            <td class="last">${list.stars}<c:choose>						
 										</c:choose></td>
                                         </tr>
                                         </c:forEach>
@@ -97,8 +97,8 @@
                                         <select id="stype" name="searchType" title="검색분류 선택">
                                             <option value="">전체</option>
                                             <option value="제목" <c:if test="${param.searchType == '같'}">selected</c:if>>제목</option>
-                                            <option value="내용" <c:if test="${param.searchType == '같'}">selected</c:if>>내용</option>
-                                            <option value="답변대기" <c:if test="${param.searchType == '같'}">selected</c:if>>답변대기</option>
+                                            <option value="댓글내용" <c:if test="${param.searchType == '같'}">selected</c:if>>내용</option>
+                                            <option value="별점" <c:if test="${param.searchType == '같'}">selected</c:if>>답변대기</option>
                                         </select>
                                         <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
                                         <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
