@@ -150,7 +150,7 @@ public class AdQnaController {
 				String filename = file.getOriginalFilename();
 				String ext = filename.substring(filename.lastIndexOf(".")); // 뒤에서부터 . 까지 잘라옴(.jpg)
 				String filename_real = System.currentTimeMillis() + ext;
-				//
+				// 
 				file.transferTo(new File(path+filename_real)); // 경로에 파일을 저장 서버에저장할떄 한글로저장x
 				vo.setFilename_org(filename);
 				vo.setFilename_real(filename_real);
