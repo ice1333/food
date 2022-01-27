@@ -33,8 +33,8 @@
 	                </fieldset>
 	                <div class="btnSet clear">
 	                    <div>
-	                        <a href="join.do" class="btn">이메일 찾기</a> 
-	                        <a href="searchId.do" class="btn">비밀번호 찾기</a>
+	                        <a href="searchid.do" class="btn">이메일 찾기</a> 
+	                        <a href="searchpwd.do" class="btn">비밀번호 찾기</a>
 	                    </div>
 	                </div>
 	            </div>

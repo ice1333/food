@@ -316,7 +316,7 @@
             </div>
             </div>
             <div class="quickMenu">
-                <div><img src="/res/img/user/ad.png"></div>
+                <div><a href="http://jg.tjoeun.co.kr/"><img src="/res/img/user/ad.png"></div></a>
                 <div><img src="/res/img/user/quick_05.jpg" style="cursor:pointer; width: 70px;height: auto; margin-left: 19px;" class="goTop"></div>
             </div>
             <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>   

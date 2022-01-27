@@ -39,6 +39,13 @@ public class UserController {
 			return "include/return";
 		}
 	}
+	@GetMapping("/user/logout.do")
+	public String logOut(Model model, HttpSession sess) {
+		model.addAttribute("msg", "로그아웃되었습니다.");
+		model.addAttribute("url", "/res/user/login.do");
+		sess.invalidate();
+		return "include/return";
+	}
 	@GetMapping("user/searchid.do")
 	public String searchid() {
 		return "user/searchId";

@@ -25,7 +25,6 @@
                         <div class="inner_sub">
                             <ul id="adlist">
                                 <li><a href="">공지사항</a></li>
-                                <li><a href="">찜 목록</a></li>
                                 <li><a href="">광고 문의</a></li>
                                 <li><a href="">오시는 길</a></li>
                             </ul>
