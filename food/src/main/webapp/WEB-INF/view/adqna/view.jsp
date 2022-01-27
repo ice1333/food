@@ -54,7 +54,15 @@ function del(){
 	}); 
 
 	}
-} 	 
+}
+$(document).ready(function() {
+	 $('input[type="checkbox"][name="checkmain"]').click(function(){
+	  if($(this).prop('checked')){
+	     $('input[type="checkbox"][name="checkmain"]').prop('checked',false);
+	     $(this).prop('checked',true);
+	    }
+	   });
+	 });
 </script>
 
 

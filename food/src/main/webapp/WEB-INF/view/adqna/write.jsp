@@ -34,6 +34,16 @@ function getCheckboxValue(event)  {
 	  document.getElementById('result').innerText
 	    = result;
 	}
+
+$(document).ready(function() {
+ $('input[type="checkbox"][name="checkmain"]').click(function(){
+  if($(this).prop('checked')){
+     $('input[type="checkbox"][name="checkmain"]').prop('checked',false);
+     $(this).prop('checked',true);
+    }
+   });
+ });
+   
 </script>
 <html>
 <body> 
@@ -92,14 +102,11 @@ function getCheckboxValue(event)  {
                                                                                 <ul>
                                                                                     <li class="date">
                                                                                         <strong class="th" id='result'></strong>
-                                                                                        <span class="td" style="padding:0;"> 
+                                                                                        <span class="td" style="padding:0;">
                                                                                         <p> &nbsp신청 항목의 유형을 하나만 골라주세요.</p>
-																						<select id="" name="" title="분류 선택">
-																						<option value="[메인과사이드]]" >메인과 사이드</option>
-																						<option value="[메인]"<c:if test="">selected</c:if>>메인</option>
-																						<option value="[사이드]"<c:if test="">selected</c:if>>사이드</option>
-																						
-																						</select>
+                                                                                        <input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test="${this.checked}">checked</c:if>메인
+                                                                                        <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test=""></c:if>사이드
+                                                                                        <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test=""></c:if>메인,사이드
                                                                                         
                                                                                         </span>
                                                                                     </li>

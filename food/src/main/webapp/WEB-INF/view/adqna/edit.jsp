@@ -34,6 +34,14 @@ function Save() {
 	oEditors.getById['aq_contents'].exec("UPDATE_CONTENTS_FIELD",[]);
 	$("#frm").submit();	
 }
+$(document).ready(function() {
+	 $('input[type="checkbox"][name="checkmain"]').click(function(){
+	  if($(this).prop('checked')){
+	     $('input[type="checkbox"][name="checkmain"]').prop('checked',false);
+	     $(this).prop('checked',true);
+	    }
+	   });
+	 });
 
 </script>
 
