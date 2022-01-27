@@ -92,7 +92,7 @@ function getCheckboxValue(event)  {
                                                                                 <ul>
                                                                                     <li class="date">
                                                                                         <strong class="th" id='result'></strong>
-                                                                                        <span class="td" style="padding:0;">
+                                                                                        <span class="td" style="padding:0;"> 
                                                                                         <p> &nbsp신청 항목의 유형을 하나만 골라주세요.</p>
 																						<select id="" name="" title="분류 선택">
 																						<option value="[메인과사이드]]" >메인과 사이드</option>
