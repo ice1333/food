@@ -47,18 +47,7 @@
     height: 33px;  
 }
 .headerfilter {
-    display: flex;
-    display: -webkit-box;
-    display: -webkit-flex;
-    flex-direction: row;
-    -webkit-box-direction: normal;
-    -webkit-box-orient: horizontal;
-    align-items: center;
-    -webkit-align-items: center;
-    -webkit-box-align: center;
-    height: 25px;
-    width: 25px;
-    margin-right: -23px;
+    
 }
 .headersearch {
     display: flex;
@@ -73,7 +62,7 @@
     flex: 1;
     -webkit-flex: 1;
     min-width: 0;
-    padding-left: 32px;
+    margin-left: 32px;
 }
 .headersearchinput {
     flex: 1;
@@ -210,6 +199,157 @@ button {
 a:link {
         text-decoration: none;
 }
+.popupr{
+	display: flex;
+    display: -webkit-box;
+    display: -webkit-flex;
+    flex-direction: row;
+    -webkit-box-direction: normal;
+    -webkit-box-orient: horizontal;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    margin-right: -23px;
+}
+.modal-btn-box button{
+        display:inline-block;
+        width:150px;
+        height:50px;
+        background-color:#ffffff;
+        border:1px solid #e1e1e1;
+        cursor:pointer;
+        padding-top:8px;
+    }
+.popup-wrap{
+    background-color:rgba(0,0,0,.3);
+    justify-content:center;
+    align-items:center;
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    bottom:0;
+    display:none;
+    padding:15px;
+}
+.popup{
+     width:100%;
+     max-width:1000px;
+     max-height: 900px;
+     background-color:white;
+     border-radius:10px;
+     overflow:hidden;
+     background-color:mediumorchid;
+     box-shadow: 5px 10px 10px 1px rgba(0,0,0,.3);
+ }
+ .popup-head{
+     width:100%;
+     height:50px;
+     display:flex;
+     align-items:center;
+     justify-content:center;
+ }
+ .head-title {
+     font-size: 30px;
+     font-style: italic;
+     font-weight: 700;
+     letter-spacing: -3px;
+     text-align: center;
+ }
+ .popup-body{
+     width:100%;
+     background-color:#ffffff;
+ }
+ .body-content{
+     width:100%;
+     height: 500px;
+     padding:30px;
+ }
+ .body-titlebox{
+     text-align:center;
+     width:100%;
+     height:40px;
+     margin-bottom:10px;
+ }
+ 
+ .popup-foot{
+     width:100%;
+     height:50px;
+ }
+ .pop-btn{
+     display:inline-flex;
+     width:50%;
+     height:100%;
+     float:left;
+     justify-content:center;
+     align-items:center;
+     color:#ffffff;
+     cursor:pointer;
+ }
+ .pop-btn.confirm{
+     border-right:1px solid mediumorchid;
+ }
+ .f_container {
+     height: 150px;
+     width: 950px;
+     background-color: white;
+     float: left;
+ }
+ .f_container >.price_wrap > .price_info {
+     padding: 10px 0;
+     font-size: 20px;
+     color: black;
+     font-weight: bold;
+     text-align: left;
+ }
+ .f_container >.price_wrap > .price_box > .price_text{
+     margin: 0 50px;
+     float: left;
+ }
+ #price {
+     margin-top: -55px;
+ }
+ ul, li {
+     list-style-type: none;
+ }
+ .f_container2 {
+     height: 150px;
+     width: 950px;
+     background-color: white;
+     float: left;
+ }
+ .f_container2 >.food_wrap > .food_info {
+     padding: 10px 0;
+     font-size: 20px;
+     color: black;
+     font-weight: bold;
+     text-align: left;
+ }
+ .f_container2 >.food_wrap > .food_box > .food_text {
+     margin: 0 30px;
+     float: left;
+ }
+ .f_container3 {
+     height: 150px;
+     width: 950px;
+     background-color: white;
+     float: left;
+ }
+ .f_container3 >.park_wrap > .park_info {
+     padding: 10px 0;
+     font-size: 20px;
+     color: black;
+     font-weight: bold;
+     text-align: left;
+ }
+ .f_container3 >.park_wrap > .park_box > .park_text{
+     margin: 0 110px;
+     float: left;
+ }
+ #park {
+     margin-top: -55px;
+ }
+
 /* �빐�뜑�걹 */ 
 
 /* �뫖�꽣 �떆�옉 */

@@ -36,7 +36,10 @@ public class RestaurantDao {
 	public int restinsert(RestaurantVo vo) {
 		return sqlSession.insert("restaurant.insert", vo);
 	}
-	public RestaurantQnaVo no_select(int rqna_no) {
-		return sqlSession.selectOne("rqna.no_select",rqna_no);
+	public RestaurantQnaVo selectonno_selecte(int rqna_no) {
+		return sqlSession.selectOne("restaurant.no_select",rqna_no);
+	}
+	public RestaurantVo selectone(int rqna_no) {
+		return sqlSession.selectOne("restaurant.shopDetail",rqna_no);
 	}
 }

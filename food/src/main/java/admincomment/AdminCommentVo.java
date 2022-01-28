@@ -47,13 +47,13 @@ public class AdminCommentVo extends CommonVo{
 	public void setAdc_status(int adc_status) {
 		this.adc_status = adc_status;
 	}
+	
 	public String getR_name() {
 		return r_name;
 	}
 	public void setR_name(String r_name) {
 		this.r_name = r_name;
 	}
-	
 	public String getContent() {
 		return content;
 	}

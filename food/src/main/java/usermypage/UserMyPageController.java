@@ -21,9 +21,10 @@ public class UserMyPageController {
 	@Autowired
 	AdminCommentService service;
 	
-//	@GetMapping("user/mypage/myComment")
+	@GetMapping("user/mypage/myComment")
 	public String userList1(UserVo uvo, HttpSession sess, Model model, AdminCommentVo vo) {
 		vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+		System.out.println("uvo :"+uvo.getU_no());
 		
 		int totCount = service.count(vo);
 		int totPage = totCount / 10; //총페이지수 
@@ -34,15 +35,12 @@ public class UserMyPageController {
 		
 		List<AdminCommentVo> list = service.selectList(vo);
 		model.addAttribute("list",list);
-		model.addAttribute("totPage",totPage);	
+		model.addAttribute("totPage",totPage);		
 		model.addAttribute("totCount",totCount);
 		model.addAttribute("PageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
 		
 		return "user/myComment";		
 	}
 	
-	@GetMapping("user/mypage/myComment")
-	public String userList() {
-		return "user/myComment";
-	}
+	
 }

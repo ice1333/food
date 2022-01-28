@@ -4,8 +4,10 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script src="/res/js/user_common.js"></script>
 <link href="<%=request.getContextPath()%>/css/adqna/view.css" rel="stylesheet" type="text/css"/>
 <link href="<%=request.getContextPath()%>/css/user/user_common.css" rel="stylesheet" type="text/css"/>
+
 <script>
     
 function getCheckboxValue(event)  {
@@ -37,7 +39,7 @@ function getCheckboxValue(event)  {
                         <h2 class="menu_title">고객센터</h2>
                         <div class="inner_sub">
                             <ul id="adlist">
-                                <li><a href="">공지사항</a></li>
+                                <li><a href="<%=request.getContextPath()%>/user/noticeindex.do">공지사항</a></li>
                                 <li><a href="">광고문의</a></li>
                             </ul>
                         </div>

@@ -1,7 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -30,10 +29,10 @@
                         <h2 class="menu_title">내정보</h2>
                         <div class="inner_sub">
                             <ul id="adlist">
-                                <li><a href="">최근 본 맨장</a></li>
+                                <li><a href="">최근 본 매장</a></li>
                                 <li><a href="">찜 목록</a></li>
                                 <li><a href="">개인 정보 수정</a></li>
-                                <li><a href="/food/user/mypage/myComment">내가 쓴 댓글</a></li>
+                                <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
                             </ul>
                         </div>
                 </div>
@@ -49,13 +48,15 @@
                                 <form name="frm" id="frm" action="delAjax.do" method="post">
                                 <table width="60%" border="0" cellspacing="0" cellpadding="0" summary="">
                                     <colgroup>
-                                        <col width="10%"/>
-                                        <col width="*%"/>
-                                        <col width="7%"/>
+                                    	<col width="3%" />
+                                        <col width="15%"/>
+                                        <col width="45%"/>
+                                        <col width="20%"/>
                                         <col width="7%"/>
                                     </colgroup>
                                     <thead>
                                         <tr>
+                                        <th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" onClick="check(this, document.frm.no)"/></th>
                                             <th scope="col">상호명</th>
                                             <th scope="col">댓글내용</th>
                                             <th scope="col">작성일</th>
@@ -69,13 +70,13 @@
                                         </tr>
                                     </c:if>
                                     <c:if test="${!empty list}">
-                                        <c:forEach var="vo" items="${list}" varStatus="status">
-                                        <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
+                                        <c:forEach var="list" items="${list}" varStatus="status">
+                                        <tr class="board_tr" style="cursor:pointer;">
+                                        	<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.adc_no }"/></td>
                                             <td>${list.r_name}</td>   
                                             <td class="title">${list.content}</td>
                                             <td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd"/></td>
-                                            <td class="last">${list.stars}<c:choose>						
-										</c:choose></td>
+                                            <td class="last">${list.stars}</td>
                                         </tr>
                                         </c:forEach>
                                     </c:if>
