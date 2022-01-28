@@ -15,7 +15,7 @@ public class ShopMainController {
 	@Autowired
 	RestaurantService service; 
 	
-	@GetMapping("shop/shopmain")
+	@GetMapping("shop/shopmain.do")
 	public String main(Model model, @RequestParam int r_no) {
 		RestaurantVo vo = new RestaurantVo();
 		

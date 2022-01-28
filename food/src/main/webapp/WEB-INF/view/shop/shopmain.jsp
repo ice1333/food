@@ -101,11 +101,8 @@
           <button class="fix" style="float: right;">수정/문의 하기</button>
         </div>
         <div class="no1__right">
-         <%--  	<%  MapUtil mapUtil = new MapUtil();
-          	RestaurantService vo = new RestaurantService();
-          	%>
-       		<%= mapUtil.getMap( )%>
-       		--%>
+       		${MapUtil.getMap(data.r_address,data.r_name) }
+       		
         </div>
       </div>
 
