@@ -27,7 +27,7 @@ function getCheckboxValue(event)  {
     <div id="wrap">
     <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
         <!-- canvas -->
-        <div id="canvas" style="margin-top:50px; padding:50px 0px 0px 470px;" >
+        <div id="canvas" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden;">
             <!-- S T A R T :: headerArea-->
             
             <!-- E N D :: headerArea--> 
@@ -47,7 +47,7 @@ function getCheckboxValue(event)  {
                     <div class="con">
                         <div class="con_tit">
                             <h2 class="con_title">공지사항</h2>
-                            <p class="tit_sub">공지사항을 확인해주세요.</p>
+                            <p class="tit_sub">공지사항을 확인하세요.</p>
                         </div>
                         <!-- 내용 : s -->
                         <div id="bbs">
@@ -65,24 +65,23 @@ function getCheckboxValue(event)  {
                                                                     <tbody>
                                                                         <tr>
                                                                             <th scope="row" style="border:none;">제목</th>
-                                                                            <td>&nbsp&nbsp&nbsp${data.n_title}</td>
+                                                                            <td>${data.n_title}</td>
                                                                         </tr>
                                                                         <tr>
-                                                                            <th scope="row" style="border:none;">내용</th>
-                                                                            <td>&nbsp&nbsp&nbsp${data.n_content}</td>
+                                                                            <th scope="row">내용</th>
+                                                                            <td>${data.n_content}</td>
                                                                         </tr>
+                                                                       
                                                                         <tr class="etcArea">
                                                                             <td colspan="2">
                                                                                 <ul>
                                                                                     <li class="date">
                                                                                         <strong class="th">작성일</strong>
-                                                                                        <span class="td" style="pattern="yyyy-MM-dd;">${data.n_regdate}</span>
+                                                                                        <span class="td" >${data.n_regdate}</span>
                                                                                     </li>
                                                                                     <li class="file">
                                                                                         <strong class="th">첨부파일</strong>
-                                                                                        <span class="td"><a href="/res/common/download.jsp?path=/upload/&org=${data.n_fileorg}&real=${data.n_filereal}" 
-																							target="_blank">${data.n_fileorg } </a>
-																							<input type="file" id="file" name="file" title="첨부파일을 올려주세요"/></span>
+                                                                                        <span class="td"><input type="file" id="file" name="file" title="첨부파일을 올려주세요"/></span>
                                                                                     </li>
                                                                                 </ul>
                                                                             </td>
@@ -106,8 +105,8 @@ function getCheckboxValue(event)  {
                                 </div>
                                 <div class="btn">
                                     <div class="btnRight">
-                                        <a href="" class="btns"><strong>목록</strong></a>
-                                   
+                                        <a href="noticeindex.do" class="btns"><strong>목록</strong></a>
+                                        
                                     </div>
                                 </div>
                                 <!--//btn-->
@@ -123,7 +122,6 @@ function getCheckboxValue(event)  {
                     </div>
                     <!--//con -->
                 </div>
-                
                 <!--//content -->
             </div>
             <!--//container --> 

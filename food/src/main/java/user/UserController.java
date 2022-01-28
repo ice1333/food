@@ -30,32 +30,5 @@ public class UserController {
 	public String notice() {
 		return "user/notice";
 	}
-	//수연 페이지 끝 
-	
-	@GetMapping("user/join.do")
-	public String join() {
-		return "user/join";
-	}
-	@GetMapping("user/privacy.do")
-	public String privacy() {
-		return "user/privacy";
-	}
-	@GetMapping("user/adqnaindex.do")
-	public String adqnaindex() {
-		return "adqna/index";
-	}
-	@GetMapping("user/adqnaedit.do")
-	public String adqnaedit() {
-		return "adqna/edit";
-	}
-	@GetMapping("user/adqnaview.do")
-	public String adqnaview() {
-		return "adqna/view";
-	}
-	@GetMapping("user/adqnawrite.do")
-	public String adqnawrite() {
-		return "adqna/write";
-	}
-	
 }
 	
