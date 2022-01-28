@@ -39,4 +39,9 @@ public class RestaurantDao {
 	public RestaurantQnaVo no_select(int rqna_no) {
 		return sqlSession.selectOne("rqna.no_select",rqna_no);
 	}
+	public RestaurantVo selectone(int r_no) {
+		return sqlSession.selectOne("restaurant.shopDetail",r_no);
+	}
+	
+	
 }

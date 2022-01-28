@@ -19,4 +19,6 @@ public interface RestaurantService {
 	public int restinsert(RestaurantVo vo);
 	
 	RestaurantQnaVo no_select(int rqna_no);
+	
+	public RestaurantVo selectone(int r_no);
 }

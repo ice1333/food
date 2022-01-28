@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
@@ -43,44 +44,56 @@
                 조회수 찜횟수 별점
               </tr>
             </thead>
-            <tbody >
-              <tr>
-                <th>주소</th>
-                <td>서울시 강서구 등촌2동</td>
-              </tr>
-              <tr>
-                <th>전화번호</th>
-                <td>02-1234-5678</td>
-              </tr>
-              <tr>
-                <th>음식 종류</th>
-                <td>포차</td>
-              </tr>
-              <tr>
-                <th>가격대</th>
-                <td>15000원</td>
-              </tr>
-              <tr>
-                <th>영업시간</th>
-                <td>17:00~22:00</td>
-              </tr>
-              <tr>
-                <th>쉬는시간</th>
-                <td>없음</td>
-              </tr>
-              <tr>
-                <th>휴무일</th>
-                <td>없음</td>
-              </tr>
-              <tr>
-                <th>주차공간</th>
-                <td>무료주차</td>
-              </tr>
-              <tr>
-                <th>메뉴</th>
-                <td>ddd</td>
-              </tr>
-            </tbody>
+				<tbody >
+					<%-- <c:if test="${empty list}">
+			                            <tr>
+			                                <td class="first" colspan="8">등록된 정보가 없습니다.</td>
+			                            </tr>
+			                        </c:if>
+					<c:if test="${!empty list}">
+						<c:forEach var="vo" items="${list}" varStatus="status">--%>
+		              <tr>
+		                <th>주소</th>
+		                <td>${data.r_address}</td>
+		              </tr>
+		              <tr>
+		                <th>전화번호</th>
+		                <td>${data.r_tel}</td>
+		              </tr>
+		              <tr>
+		                <th>음식 종류</th>
+		                <td>${data.r_foodtype}</td>
+		              </tr>
+		              <tr>
+		                <th>가격대</th>
+		                <td>${data.r_price}</td>
+		              </tr>
+		              <tr>
+		                <th>영업시간</th>
+		                <td>${data.r_price}</td>
+		              </tr>
+		              <tr>
+		                <th>쉬는시간</th>
+		                <td>${data.r_breaktime}</td>
+		              </tr>
+		              <tr>
+		                <th>휴무일</th>
+		                <td>${data.r_holiday}</td>
+		              </tr>
+		              <tr>
+		                <th>주차공간</th>
+		                <td>${data.r_parking}</td>
+		              </tr>
+		              <tr>
+		                <th>메뉴</th>
+		                <td>${data.r_menu}</td>
+		              </tr>
+						<%-- 
+						</c:forEach>
+							</c:if>
+							--%>
+		            </tbody>
+            	
           </table>
           <button class="fix" style="float: right;">수정/문의 하기</button>
         </div>

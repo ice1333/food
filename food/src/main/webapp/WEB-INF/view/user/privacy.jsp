@@ -1,6 +1,6 @@
 <%@ page language="java" 
     pageEncoding="utf-8"%>
-    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 	<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
@@ -20,7 +20,7 @@
                         <li><a href="">최근 본 매장</a></li>
                         <li><a href="">찜 목록</a></li>
                         <li><a href="">개인 정보 수정</a></li>
-                        <li><a href="">내가 쓴 댓글</a></li>
+                        <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
                     </ul>
                 </div>
             </div>
