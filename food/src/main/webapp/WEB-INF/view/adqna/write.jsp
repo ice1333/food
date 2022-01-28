@@ -37,13 +37,17 @@ function getCheckboxValue(event)  {
 
 $(document).ready(function() {
  $('input[type="checkbox"][name="checkmain"]').click(function(){
+	 console.log($(this).val());
   if($(this).prop('checked')){
      $('input[type="checkbox"][name="checkmain"]').prop('checked',false);
      $(this).prop('checked',true);
+     
     }
    });
  });
-   
+
+ 
+    
 </script>
 <html>
 <body> 
@@ -60,10 +64,8 @@ $(document).ready(function() {
                         <h2 class="menu_title">고객센터</h2>
                         <div class="inner_sub">
                             <ul id="adlist">
-                                <li><a href="">공지사항</a></li>
-                                <li><a href="">광고 문의</a></li>
-                                <li><a href=""></a></li>
-                                <li><a href=""></a></li>
+                                <li><a href="<%=request.getContextPath()%>/user/noticeindex.do">공지사항</a></li>
+                                <li><a href="index.do">광고 문의</a></li>
                             </ul>
                         </div>
                 </div>
@@ -104,16 +106,17 @@ $(document).ready(function() {
                                                                                         <strong class="th" id='result'></strong>
                                                                                         <span class="td" style="padding:0;">
                                                                                         <p> &nbsp신청 항목의 유형을 하나만 골라주세요.</p>
-                                                                                        <input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test="${this.checked}">checked</c:if>메인
-                                                                                        <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test=""></c:if>사이드
-                                                                                        <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test=""></c:if>메인,사이드
+                                                                                        <input type="checkbox" id="check1" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)" autocomplete="on"/><c:if test="">checked</c:if>메인
+                                                                                        <input type="checkbox" id="check2" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test="">checked</c:if>사이드
+                                                                                        <input type="checkbox" id="check3" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test="">checked</c:if>메인,사이드
                                                                                         
                                                                                         </span>
                                                                                     </li>
                                                                                     <li class="file">
                                                                                         <strong class="th">첨부파일</strong>
                                                                                         <span class="td"><input multiple="multiple"type="file" id="file" name="file" title="첨부파일을 올려주세요"/></span>
-                                                                                    
+                                                                                    	<span class="td"><input multiple="multiple"type="file" id="file" name="file2" title="첨부파일을 올려주세요"/></span>
+                                                                                    	
                                                                                     </li>
                                                                                 </ul>
                                                                             </td>

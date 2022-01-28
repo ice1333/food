@@ -59,10 +59,8 @@ $(document).ready(function() {
                         <h2 class="menu_title">고객센터</h2>
                         <div class="inner_sub">
                             <ul id="adlist">
-                                <li><a href="">공지사항</a></li>
-                                <li><a href="">찜 목록</a></li>
-                                <li><a href="">광고 문의</a></li>
-                                <li><a href="">오시는 길</a></li>
+                                <li><a href="<%=request.getContextPath()%>/user/noticeindex.do">공지사항</a></li>
+                                <li><a href="index.do">광고 문의</a></li>
                             </ul>
                         </div>
                 </div>
@@ -112,10 +110,16 @@ $(document).ready(function() {
                                                                                         <span class="td">
                                                                                             <input type="file" id="file" name="file" title="첨부파일을 올려주세요"/>
                                                                                             <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org}&real=${vo.filename_real}" 
-																							target="_blank">${vo.filename_org } </a></span></li>
-																						<li>
-                                                                                            <input type="checkbox" name="delCheck" value="1">기존파일삭제(${vo.filename_org})
+																							target="_blank">${vo.filename_org } </a> <br>
+																							 <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org2}&real=${vo.filename_real2}" 
+																							target="_blank">${vo.filename_org2} </a>
+																							</span></li>
+																							
+																						<li class="td">
+                                                                                            <input type="checkbox" name="delCheck" value="1">삭제(${vo.filename_org})<br>
+                                                                                            <input type="checkbox" name="delCheck" value="1">삭제(${vo.filename_org2})         
                                                                                         </li>
+                                                                                       
                                                                                 </ul>
                                                                             </td>
                                                                         </tr>

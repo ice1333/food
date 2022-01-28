@@ -57,12 +57,15 @@ function del(){
 }
 $(document).ready(function() {
 	 $('input[type="checkbox"][name="checkmain"]').click(function(){
+		 console.log($(this).val);
 	  if($(this).prop('checked')){
 	     $('input[type="checkbox"][name="checkmain"]').prop('checked',false);
 	     $(this).prop('checked',true);
 	    }
 	   });
 	 });
+
+	 
 </script>
 
 
@@ -80,10 +83,8 @@ $(document).ready(function() {
                         <h2 class="menu_title">고객센터</h2>
                         <div class="inner_sub">
                             <ul id="adlist">
-                                <li><a href="">공지사항</a></li>
-                                <li><a href="">찜 목록</a></li>
-                                <li><a href="">광고 문의</a></li>
-                                <li><a href="">오시는 길</a></li>
+                                <li><a href="<%=request.getContextPath()%>/user/noticeindex.do">공지사항</a></li>
+                                <li><a href="index.do">광고 문의</a></li>
                             </ul>
                         </div>
                 </div>
@@ -134,6 +135,10 @@ $(document).ready(function() {
                                                                                         
                                                                                          <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org}&real=${vo.filename_real}" 
 																							target="_blank">${vo.filename_org } </a>
+																					</li>
+																					<li>
+																						<a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org2}&real=${vo.filename_real2}" 
+																							target="_blank">${vo.filename_org2} </a> 
                                                                                     </li>
                                                                                 </ul>
                                                                             </td>
@@ -162,6 +167,7 @@ $(document).ready(function() {
                                     <div class="btnRight">
                                         <a href="index.do" class="btns"><strong>목록</strong></a>
                                         <a href="edit.do?adqna_no=${vo.adqna_no}" class="btns"><strong>수정</strong></a>
+                                        
                                         <a href="javascript:del()" class="btns"><strong>삭제</strong></a>
                                     </div>
                                 </div>

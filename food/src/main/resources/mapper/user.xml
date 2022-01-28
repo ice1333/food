@@ -5,4 +5,25 @@
 	<select id="login" parameterType="user.UserVo" resultType="user.UserVo">
 		SELECT * FROM user WHERE u_uemail = #{u_uemail} AND u_pwd = md5(#{u_pwd})
 	</select>
+	
+	<insert id ="insert" parameterType="user.UserVo" useGeneratedKeys="true">
+		INSERT INTO user (
+			u_uemail, u_pwd, u_name, u_gender, u_tel, u_regdate, u_status, u_zuocide , u_addr1 ,u_addr2
+		) VALUES (
+			#{u_uemail},md5(#{u_pwd}),#{u_name},#{u_gender},#{u_tel},#{u_regdate},{0},#{u_zuocide},#{u_addr1},#{u_addr2}
+		)
+		
+	<selectKey keyProperty="u_no" resultType="int" order="AFTER">
+		SELECT last_insert_id()
+	</selectKey>	
+		
+	</insert>
+	
+	<select id="emailCheck" parameterType="String" resultType="int">
+		SELECT COUNT(*) FROM user WHERE email = #{email}
+	</select>
+	
+	
+	
+	
 </mapper>

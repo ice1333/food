@@ -24,8 +24,8 @@
                         <h2 class="menu_title">고객센터</h2>
                         <div class="inner_sub">
                             <ul id="adlist">
-                                <li><a href="noticeindex.do">공지사항</a></li>
-                                <li><a href="">광고문의</a></li>
+                                <li><a href="<%=request.getContextPath()%>/user/noticeindex.do">공지사항</a></li>
+                                <li><a href="index.do">광고 문의</a></li>
                             </ul>
                         </div>
                 </div>

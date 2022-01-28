@@ -64,10 +64,14 @@ public class UserController {
 	public String join() {
 		return "user/join";
 	}
+	
+	
 	@GetMapping("user/privacy.do")
 	public String privacy() {
 		return "user/privacy";
 	}
+	
+	
 	@GetMapping("user/adqnaindex.do")
 	public String adqnaindex() {
 		return "adqna/index";
