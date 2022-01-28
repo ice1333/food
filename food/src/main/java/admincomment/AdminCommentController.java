@@ -15,8 +15,6 @@ import admin.UserVo;
 import adqna.AdQnaVo;
 import util.CommonUtil;
 
-
-
 @Controller
 public class AdminCommentController {
 			
@@ -33,7 +31,6 @@ public class AdminCommentController {
 		int startIdx = (vo.getPage()-1)*10;
 		vo.setStartIdx(startIdx);
 		
-
 		List<AdminCommentVo> list = service.selectList(vo);
 		model.addAttribute("list",list);
 		model.addAttribute("totPage",totPage);
@@ -59,5 +56,5 @@ public class AdminCommentController {
 		model.addAttribute("vo",service.delete(vo));
 		return "admin/comment/index";
 	}
-
+	
 }	

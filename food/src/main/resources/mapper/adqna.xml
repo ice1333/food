@@ -74,6 +74,8 @@
 	
 	-->
 	
+	<!--                           admin               -->
+	
 	<!-- 중복된 코드   -->
 	<sql id="adqnaWhere">
 	<where>
@@ -102,9 +104,12 @@
 		<include refid="adqnaWhere"/>
 	</select>
 	
+	
+	<!--                       admin                        -->	
+
 	<!-- 누른글 상세페이지 -->
 	<select id="no_select" parameterType="int" resultType="adqna.AdQnaVo">
-		SELECT * FROM shop.adqna WHERE adqna_no = #{xxx} 
+		SELECT *,(SELECT u_name from user where u_no=adqna.u_no) u_name FROM shop.adqna WHERE adqna_no = #{xxx} 
 	</select>
 	
 	<!-- 목록 -->
@@ -122,30 +127,38 @@
 	
 	<!-- 사용자가 광고문의글 작성-->
 	<insert id="adqnainsert" parameterType="adqna.AdQnaVo">
-		INSERT INTO adqna (
-		aq_title ,aq_contents , aq_regdate , aq_status , u_no , aq_filename_org , aq_filename_real
+		INSERT INTO shop.adqna (
+		aq_title ,aq_contents , aq_regdate , aq_status , u_no , filename_org , filename_real
 		) values (
-		#{aq_title} , #{aq_contents} , NOW() , #{aq_status} , #{u_no} , #{aq_filename_org} , #{aq_filename_real}
+		#{aq_title} , #{aq_contents} , NOW() , #{aq_status} , #{u_no} , #{filename_org} , #{filename_real}
 		)
 	</insert>
 	
 	<!-- 사용자가 광고문의글 업데이트 -->
-	<update id="adqnaUpdate" parameterType="adqna.AdQnaVo"> 사용자가? 업데이트 
-		UPDATE adqna SET
+	<update id="adqnaUpdate" parameterType="adqna.AdQnaVo"> 
+		UPDATE shop.adqna SET
 		 aq_title = #{aq_title},
 		 aq_contents = #{aq_contents}
+		 
 		 <if test="filename_org !=null">
-		 , aq_filename_org=#{aq_filename_org},
-		 aq_filename_real=#{aq_filename_real}
+		 , filename_org=#{filename_org}
+		 , filename_real=#{filename_real}
 		 </if>
 		WHERE adqna_no=#{adqna_no}
 	</update>
 	
-	<select id="adqna" resultType="adqna.AdQnaVo" parameterType="adqna.AdQnaVo">
-	SELECT *,(SELECT COUNT(*)FROM) from shop.adqna
-	<include refid="adqnaWhere"/>
-	ORDER BY aq_redate ASC LIMIT ${startIdx},10
+	<select id="adqnaOne" parameterType="int" resultType="adqna.AdQnaVo">
+		SELECT * From shop.adqna WHERE adqna_no = #{x}
 	</select>
+	
+	<!--  유저 이름 가져오기 -->
+	<select id="adqnaName" parameterType="String" resultType="adqna.AdQnaVo">
+		SELECT u_name FROM shop.user WHERE u_no=#{u_no}
+	</select>
+	
+	
+	
+	
 	
 	
 	

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,8 +10,8 @@
 <body>
 	
 <header class="header">
-    <a class="mainlogo">
-        <img class="mainlogoicon" src="/res/img/user/headerlogo.png">
+    <a class="mainlogo" href="/res/user/main.do" >
+        <img class="mainlogoicon" src="/res/img/user/headerlogo.png" >
     </a>
     <a class="filter">
         <span>
@@ -18,22 +19,36 @@
         </span>
     </a>
     <label class="headersearch">
-        <input type="text" class="headersearchinput" placeholder="검색어를 입력해주세요.">
+        <input id="headersearchinput" type="text" class="headersearchinput" placeholder="검색어를 입력해주세요.">
     </label>
     <button class="header_searchbutton"></button> 
     <ul class="headermenulist">
+    	<c:if  test="${empty userInfo }">
+	        <li class="menulistheader">
+	            <a href="/res/user/join.do" class="menulink">
+	                <span class="menutext">회원가입</span>
+	            </a>
+	        </li>
+	        <li class="menulistheader">
+	            <a href="/res/user/login.do" class="menulink">
+	                <span class="menutext">로그인</span>
+	            </a>
+	        </li>
+        </c:if>
+        <c:if  test="${!empty userInfo }">
+        	<li class="menulistheader">
+	            <a href="privacy.do" class="menulink">
+	                <span class="menutext">마이페이지</span>
+	            </a>
+	        </li>
+	        <li class="menulistheader">
+	            <a href="/res/user/logout.do" class="menulink">
+	                <span class="menutext">로그아웃</span>
+	            </a>
+	        </li>
+        </c:if>
         <li class="menulistheader">
-            <a href="" class="menulink">
-                <span class="menutext">회원가입</span>
-            </a>
-        </li>
-        <li class="menulistheader">
-            <a href="" class="menulink">
-                <span class="menutext">로그인</span>
-            </a>
-        </li>
-        <li class="menulistheader">
-            <a href="" class="menulink">
+            <a href="/res/adqna/index.do" class="menulink">
                 <span class="menutext">고객센터</span>
             </a>
         </li>

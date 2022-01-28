@@ -17,9 +17,15 @@
 	</sql>
 	
 	 <select id="selectList" resultType = "admincomment.AdminCommentVo" parameterType="admincomment.AdminCommentVo">
-		SELECT * FROM shop.adcomment
-		<include refid = "admincommentWhere"/>
-		ORDER BY c_regdate DESC    
+		select * 
+			, (select u_name from user where user.u_no=adcomment.u_no)as u_name
+			, (select content from comment where comment.c_no=adcomment.c_no)as content
+	        , (select stars from comment where comment.c_no=adcomment.c_no)as stars
+	        , (select regdate from comment where comment.c_no=adcomment.c_no)as regdate
+	        , (select r_name from restaurant where restaurant.r_no=adcomment.r_no)as r_name
+		FROM adcomment
+	<include refid = "admincommentWhere"/>
+		ORDER BY adc_no DESC    
 		LIMIT ${startIdx},10
 	</select>
 

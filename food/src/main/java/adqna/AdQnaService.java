@@ -20,4 +20,14 @@ public interface AdQnaService {
 	//상세
 	AdQnaVo no_select(int adqna_no);
 	
+	
+	AdQnaVo edit(int adqna_no);
+	
+	//유저이름 가져오기
+	AdQnaVo adqnaName(String u_no);
+	
+	int adqnaUpdate(AdQnaVo vo);
+	
+	int adqnainsert(AdQnaVo vo);
+	
 }

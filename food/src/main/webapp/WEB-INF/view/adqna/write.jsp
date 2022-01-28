@@ -6,6 +6,45 @@
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <link href="<%=request.getContextPath()%>/css/adqna/write.css" rel="stylesheet" type="text/css"/>
 <link href="<%=request.getContextPath()%>/css/user/user_common.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="<%=request.getContextPath()%>/smarteditor/js/HuskyEZCreator.js"></script>
+<script src="/res/js/common.js"></script>
+<script>
+var oEditors;
+$(function(){
+	oEditors = setEditor("aq_contents");
+});
+function Save() {
+	if($("#aq_title").val()==''){
+		alert("제목을 입력해주세요");
+		$("#aq_title").focus();
+		return;
+	}
+	oEditors.getById['aq_contents'].exec("UPDATE_CONTENTS_FIELD",[]);
+	$("#frm").submit();	
+}
+
+function getCheckboxValue(event)  {
+	  let result = '';
+	  if(event.target.checked)  {
+	    result = event.target.value;
+	  }else {
+	    result = '';
+	  }
+	  
+	  document.getElementById('result').innerText
+	    = result;
+	}
+
+$(document).ready(function() {
+ $('input[type="checkbox"][name="checkmain"]').click(function(){
+  if($(this).prop('checked')){
+     $('input[type="checkbox"][name="checkmain"]').prop('checked',false);
+     $(this).prop('checked',true);
+    }
+   });
+ });
+   
+</script>
 <html>
 <body> 
 	
@@ -55,8 +94,9 @@
                                                                         </tr>
                                                                         <tr>
                                                                             <th scope="row">작성자</th>
-                                                                            <td><input type="text"/> </td>
+                                                                            <td>${userInfo.u_name}</td>
                                                                         </tr>
+                                                                        
                                                                         <tr class="etcArea">
                                                                             <td colspan="4">
                                                                                 <ul>
@@ -64,15 +104,15 @@
                                                                                         <strong class="th" id='result'></strong>
                                                                                         <span class="td" style="padding:0;">
                                                                                         <p> &nbsp신청 항목의 유형을 하나만 골라주세요.</p>
-                                                                                        <input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)"/>메인
-                                                                                        <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)"/>사이드
-                                                                                        <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)"/>메인,사이드
+                                                                                        <input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test="${this.checked}">checked</c:if>메인
+                                                                                        <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test=""></c:if>사이드
+                                                                                        <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test=""></c:if>메인,사이드
                                                                                         
                                                                                         </span>
                                                                                     </li>
                                                                                     <li class="file">
                                                                                         <strong class="th">첨부파일</strong>
-                                                                                        <span class="td"><input type="file" id="file" name="file" title="첨부파일을 올려주세요"/></span>
+                                                                                        <span class="td"><input multiple="multiple"type="file" id="file" name="file" title="첨부파일을 올려주세요"/></span>
                                                                                     
                                                                                     </li>
                                                                                 </ul>
@@ -99,9 +139,8 @@
                                 </div>
                                 <div class="btn">
                                     <div class="btnRight">
-                                        <a href="" class="btns"><strong>목록</strong></a>
-                                        <a href="" class="btns"><strong>수정</strong></a>
-                                        <a href="location.href" class="btns" ><strong>저장</strong> </a>
+                                        <a href="index.do" class="btns"><strong>목록</strong></a>
+                                        <a href="javascript:Save()" class="btns" ><strong>저장</strong> </a>
                                     </div>
                                 </div>
                                 <!--//btn-->

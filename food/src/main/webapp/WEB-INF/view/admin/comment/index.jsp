@@ -85,7 +85,7 @@
 								<thead>
 									<tr>
 										<th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" onClick="check(this, document.frm.no)"/></th>
-										<th scope="col">상호번호</th>
+										<th scope="col">상호이름</th>
 										<th scope="col">작성자</th> 
 										<th scope="col">댓글내용</th> 
 										<th scope="col">작성일</th> 
@@ -99,14 +99,14 @@
 			                            </tr>
 									</c:if>	
 									<c:if test="${!empty list}">
-										<c:forEach var="vo" items="${list}" varStatus="status" >
+										<c:forEach var="list" items="${list}" varStatus="status" >
 												<tr>									
-													<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adc_no }"/></td>
-													<td>${vo.r_no}</td>
-													<td>${vo.u_name }</td>										
-													<td>${vo.c_contents }</td>
-													<td>${vo.c_regdate}</td>
-													<td class="last">${vo.c_stars }</td>
+													<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.adc_no }"/></td>
+													<td>${list.r_name }</td>										
+													<td>${list.u_name }</td>																			
+													<td>${list.content }</td>
+													<td>${list.regdate}</td>
+													<td class="last">${list.stars }</td>
 												</tr>
 										</c:forEach>
 									</c:if>									

@@ -43,4 +43,31 @@ public class AdQnaDao {
 		return sst.delete("adqna.adqnadelete", adqna_no);
 	}
 	
+	
+	public AdQnaVo adqnaOne(int adqna_no) {
+		return sst.selectOne("adqna.adqnaOne",adqna_no);
+	}
+	
+	//유저이름가져오기
+	public AdQnaVo adqnaName(String u_name) {
+		return sst.selectOne("adqna.adqnaName",u_name);
+	}
+	
+	//사용자 업데이트
+	public int adqnaUpdate(AdQnaVo vo) {
+		return sst.update("adqna.adqnaUpdate",vo);
+	}
+	//사용자 광고등록
+	public int adqnainsert(AdQnaVo vo) {
+		int r=-1;
+		try {
+			r=sst.insert("adqna.adqnainsert",vo);
+		} catch (Exception e) {
+			r=0;
+			System.out.println(e.getMessage());
+		}
+		return r;
+	}
+	
+	
 }

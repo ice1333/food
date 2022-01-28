@@ -23,7 +23,7 @@
                 <div class="l_list">
                     <p class="notice_title">공지사항</p>
                     <ul>
-                        <li ><a href="" id="notice_a">&nbsp 공지사항</a></li>
+                        <li ><a href="notice.do" id="notice_a">&nbsp 공지사항</a></li>
                         <li ><a href="" id="notice_a">&nbsp 광고문의</a></li>
                     </ul>
                 </div>

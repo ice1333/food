@@ -5,7 +5,9 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <link href="<%=request.getContextPath()%>/css/adqna/edit.css" rel="stylesheet" type="text/css"/>
+<script src="/res/js/common.js"></script>
 <link href="<%=request.getContextPath()%>/css/user/user_common.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="<%=request.getContextPath()%>/smarteditor/js/HuskyEZCreator.js"></script>
 <script>
     
 function getCheckboxValue(event)  {
@@ -19,6 +21,27 @@ function getCheckboxValue(event)  {
   document.getElementById('result').innerText
     = result;
 }
+var oEditors;
+$(function(){
+	oEditors = setEditor("aq_contents");
+});
+function Save() { 
+	if($("#aq_title").val()==''){
+		alert("제목을 입력하세요");
+		$("#aq_title").focus();
+		return;
+	}
+	oEditors.getById['aq_contents'].exec("UPDATE_CONTENTS_FIELD",[]);
+	$("#frm").submit();	
+}
+$(document).ready(function() {
+	 $('input[type="checkbox"][name="checkmain"]').click(function(){
+	  if($(this).prop('checked')){
+	     $('input[type="checkbox"][name="checkmain"]').prop('checked',false);
+	     $(this).prop('checked',true);
+	    }
+	   });
+	 });
 
 </script>
 
@@ -54,7 +77,7 @@ function getCheckboxValue(event)  {
                         <div id="bbs">
                             <div id="blist">
                                 <form method="post" name="frm" id="frm" action="update.do" enctype="multipart/form-data" >
-                                <input type="hidden" name="adqna_no" value="${data.adqna_no }">
+                                <input type="hidden" name="adqna_no" value="${vo.adqna_no}">
                                 <table width="100%" align="center" cellpadding="0" cellspacing="0">
                                     <tbody>
                                         <tr>
@@ -67,11 +90,11 @@ function getCheckboxValue(event)  {
                                                                     <tbody>
                                                                         <tr>
                                                                             <th scope="row" style="border:none;">제목</th>
-                                                                            <td><input type="text" id="aq_title" name="aq_title" value=""/></td>
+                                                                            <td><input type="text" id="aq_title" name="aq_title" value="${vo.aq_title }"/></td>
                                                                         </tr>
                                                                         <tr>
                                                                             <th scope="row">작성자</th>
-                                                                            <td><input type="text"/> </td>
+                                                                            <td>${vo.u_name}</td>
                                                                         </tr>
                                                                         <tr class="etcArea">
                                                                             <td id="he" colspan="4">
@@ -88,10 +111,11 @@ function getCheckboxValue(event)  {
                                                                                         <strong class="th">첨부파일</strong>
                                                                                         <span class="td">
                                                                                             <input type="file" id="file" name="file" title="첨부파일을 올려주세요"/>
-                                                                                            <input type="checkbox" name="" value="1">기존파일삭제
-                                                                                        </span>
-                                                                                    
-                                                                                    </li>
+                                                                                            <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org}&real=${vo.filename_real}" 
+																							target="_blank">${vo.filename_org } </a></span></li>
+																						<li>
+                                                                                            <input type="checkbox" name="delCheck" value="1">기존파일삭제(${vo.filename_org})
+                                                                                        </li>
                                                                                 </ul>
                                                                             </td>
                                                                         </tr>
@@ -101,7 +125,7 @@ function getCheckboxValue(event)  {
                                                         </tr>
                                                         <tr>
                                                             <td align="right" class="eng" style="padding:5px;">
-                                                                <textarea id="aq_contents" name="aq_contents" style="width:100%; height:100%"></textarea> 
+                                                                <textarea id="aq_contents" name="aq_contents" style="width:100%; height:100%">${vo.aq_contents}</textarea> 
                                                             </td>
                                                         </tr>
                                                     </tbody>
@@ -116,8 +140,8 @@ function getCheckboxValue(event)  {
                                 </div>
                                 <div class="btn">
                                     <div class="btnRight">
-                                        <a href="" class="btns"><strong>목록</strong></a>
-                                        <a href="location.href" class="btns" ><strong>저장</strong> </a>
+                                        <a href="index.do" class="btns"><strong>목록</strong></a>
+                                        <a href="javascript:Save()" class="btns" ><strong>저장</strong> </a>
                                     </div>
                                 </div>
                                 <!--//btn-->
