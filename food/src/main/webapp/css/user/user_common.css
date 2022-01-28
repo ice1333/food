@@ -304,13 +304,13 @@ a:link {
  }
  .f_container >.price_wrap > .price_box > .price_text{
      margin: 0 50px;
+     float: left;
  }
  #price {
      margin-top: -55px;
  }
  ul, li {
      list-style-type: none;
-     float: left;
  }
  .f_container2 {
      height: 150px;
@@ -327,6 +327,7 @@ a:link {
  }
  .f_container2 >.food_wrap > .food_box > .food_text {
      margin: 0 30px;
+     float: left;
  }
  .f_container3 {
      height: 150px;
@@ -343,6 +344,7 @@ a:link {
  }
  .f_container3 >.park_wrap > .park_box > .park_text{
      margin: 0 110px;
+     float: left;
  }
  #park {
      margin-top: -55px;
