@@ -58,6 +58,7 @@ public class UserController {
 	public String notice() {
 		return "user/notice";
 	}
+
 	//수연 페이지 끝 
 	
 	@GetMapping("user/join.do")
@@ -89,5 +90,6 @@ public class UserController {
 		return "adqna/write";
 	}
 	
+
 }
 	

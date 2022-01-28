@@ -14,7 +14,7 @@
     <div id="wrap">
     	<%@ include file="/WEB-INF/view/include/user_header.jsp" %>
         <!-- canvas -->
-        <div id="canvas" style="margin-top:50px; padding:50px 0px 0px 0px;" >
+        <div id="canvas" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden;">
             <!-- S T A R T :: headerArea-->
             
             <!-- E N D :: headerArea--> 
@@ -24,8 +24,13 @@
                         <h2 class="menu_title">고객센터</h2>
                         <div class="inner_sub">
                             <ul id="adlist">
+<<<<<<< HEAD
                                 <li><a href="<%=request.getContextPath()%>/user/noticeindex.do">공지사항</a></li>
                                 <li><a href="index.do">광고 문의</a></li>
+=======
+                                <li><a href="">공지사항</a></li>
+                                <li><a href="">광고문의</a></li>
+>>>>>>> branch 'master' of https://github.com/ice1333/food.git
                             </ul>
                         </div>
                 </div>
@@ -33,12 +38,12 @@
                     <!-- //con_tit -->
                     <div class="con">
                         <div class="con_tit">
-                            <h3 class="con_title">공지사항</h3>
+                            <h3 class="con_title">고객센터</h3>
                         </div>
                         <!-- 내용 : s -->
                         <div id="bbs">
                             <div id="blist">
-                                <form name="frm" id="frm" action="" method="post">
+                                <form name="frm" id="frm" action="delAjax.do" method="post">
                                 <table width="60%" border="0" cellspacing="0" cellpadding="0" summary="">
                                     <colgroup>
                                         <col width="10%"/>
@@ -64,31 +69,31 @@
                                         <c:forEach var="vo" items="${list}" varStatus="status">
                                         <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
                                             <td>${vo.n_no}</td>   
-                                            <td class="title"><a href="noticeview2.do?n_no=${vo.n_no}">${vo.n_title }</a></td>
+                                            <td class="title"><a href="noticeview.do?n_no=${vo.n_no}">${vo.n_title }</a></td>
                                             <td><fmt:formatDate value="${vo.n_regdate}" pattern="yyyy-MM-dd"/></td>
-                                            <td class="last">${vo.n_readcount }
+                                            <td class="last">${vo.n_readcount }</td>                                   
                                         </tr>
                                         </c:forEach>
                                     </c:if>
                                     </tbody>
                                 </table>
                                 </form>
-                                
+                             
                                 <!--//btn-->
                                 <!-- 페이징 처리 -->
                                 ${PageArea}
                                 <!-- //페이징 처리 -->
                                 <form name="searchForm" id="searchForm" action="noticeindex.do"  method="get">
-                                    <div class="search">
-                                        <select id="stype" name="searchType" title="검색분류 선택">
-                                            <option value="">전체</option>
-											<option value="n_title">제목</option>
-											<option value="n_content">내용</option>
-                                        </select>
-                                        <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
-                                        <input type="image" src="<%=request.getContextPath()%>/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
-                                    </div>
-                                </form>
+								<div class="search">
+									<select name="searchType" title="검색을 선택해주세요">
+										<option value="">전체</option>
+										<option value="n_title">제목</option>
+										<option value="n_content">내용</option>
+									</select>
+									<input type="text" name="searchWord" value="" title="검색할 내용을 입력해주세요" />
+									<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />
+								</div>
+								</form>
                                 <!-- //search --> 
                             </div>
                             <!-- //blist -->
