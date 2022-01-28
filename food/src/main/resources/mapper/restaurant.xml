@@ -104,4 +104,5 @@
 	<select id="no_select" parameterType="int" resultType="restaurant.RestaurantQnaVo">
 		SELECT * FROM shop.restqna WHERE rqna_no = #{xxx} 
 	</select>
+	
 </mapper>

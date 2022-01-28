@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="/res/css/user/user_content.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-    <script src="/res/js/user/user_main.js"></script>
+    <script src="/res/js/user_main.js"></script>
+    <script src="/res/js/user_common.js"></script>
 	
 </head>
 <body>

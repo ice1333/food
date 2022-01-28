@@ -7,6 +7,7 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
+<script src="/res/js/user/user_main.js"></script>
 <body>
 	
 <header class="header">
