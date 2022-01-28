@@ -48,7 +48,7 @@ public class RestaurantServiceImpl implements RestaurantService {
 
 	@Override
 	public RestaurantQnaVo no_select(int rqna_no) {
-		return dao.no_select(rqna_no);
+		return dao.selectonno_selecte(rqna_no);
 	}
 
 	@Override

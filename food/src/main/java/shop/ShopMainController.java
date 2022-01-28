@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import restaurant.RestaurantService;
+import restaurant.RestaurantVo;
 
 @Controller
 public class ShopMainController {
@@ -16,7 +17,11 @@ public class ShopMainController {
 	
 	@GetMapping("shop/shopmain")
 	public String main(Model model, @RequestParam int r_no) {
+		RestaurantVo vo = new RestaurantVo();
+		
 		model.addAttribute("data", service.selectone(r_no));
+		
+		System.out.println(vo.getR_address());
 		return "shop/shopmain";
 	}
 	

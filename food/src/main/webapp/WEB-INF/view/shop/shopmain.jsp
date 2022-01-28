@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page import="util.MapUtil" %>
+<%@ page import="restaurant.RestaurantService" %>
+
 <!DOCTYPE html>
 
 <html>
-<head>
+ <head>
 <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -98,7 +101,11 @@
           <button class="fix" style="float: right;">수정/문의 하기</button>
         </div>
         <div class="no1__right">
-          <img src="img/map.png" style="width: 321px;">
+         <%--  	<%  MapUtil mapUtil = new MapUtil();
+          	RestaurantService vo = new RestaurantService();
+          	%>
+       		<%= mapUtil.getMap( )%>
+       		--%>
         </div>
       </div>
 
