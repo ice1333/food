@@ -19,4 +19,14 @@ public class UserService {
 		}
 		return false;
 	}
+	
+	public int emailCheck(String u_uemail) {
+		return dao.emailCheck(u_uemail);
+	}
+	
+	public int insert(UserVo vo) {
+		return dao.insert(vo);
+	}
+	
+	
 }
