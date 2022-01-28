@@ -66,7 +66,7 @@
 		<div id="container">
 			<div id="content">    
 				<div class="con_tit">
-					<h2>매장관리 - [목록]</h2>
+					<h2>매장등록요청 - [목록]</h2>
 				</div>
 				<!-- //con_tit -->
 				<div class="con">
@@ -115,9 +115,6 @@
 										<td><fmt:formatDate value="${vo.rqna_regdate}" pattern="yyyy-MM-dd"/></td>
 										<td>${vo.u_name}</td>
 										<td>${vo.rqna_status}</td>
-										
-										
-										
 									</tr>
 									</c:forEach>
 								</c:if>

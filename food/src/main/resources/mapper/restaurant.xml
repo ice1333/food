@@ -100,8 +100,12 @@
 			#{r_name},#{r_zipcode},#{r_address},#{r_tel},#{r_menu},#{r_week},#{r_breaktime},#{r_holiday}, #{r_parking}, #{r_price}, #{r_foodtype},#{r_side},#{a_no},NOW()
 		)
 	</insert>
-	<!-- 상세페이지 -->
+	<!-- 매장등록요청 상세 -->
 	<select id="no_select" parameterType="int" resultType="restaurant.RestaurantQnaVo">
 		SELECT * FROM shop.restqna WHERE rqna_no = #{xxx} 
+	</select>
+	<!-- 매장 상세 -->
+	<select id="shopDetail" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
+		SELECT * FROM shop.restaurant WHERE r_no = #{xxx}
 	</select>
 </mapper>
