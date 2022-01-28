@@ -14,8 +14,4 @@ public interface NoticeService {
 	//체크삭제
 	int checkDelete(String n_no);
 	
-	//유저
-	List<NoticeVo> selectList2(NoticeVo vo);
-	int count2(NoticeVo vo);
-	NoticeVo view2(int n_no);
 }

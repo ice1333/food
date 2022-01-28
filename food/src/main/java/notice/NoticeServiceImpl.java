@@ -48,20 +48,4 @@ public class NoticeServiceImpl implements NoticeService {
 		return noticeDao.checkDelete(n_no);
 	}
 	
-	//유저
-	@Override
-	public int count2(NoticeVo vo) {
-		return noticeDao.count2(vo);
-	}
-	
-	@Override
-	public List<NoticeVo> selectList2(NoticeVo vo) {
-		return noticeDao.selectList2(vo);	
-	}
-	@Override
-	public NoticeVo view2(int n_no) {
-		noticeDao.updateN_readcount2(n_no);
-		return noticeDao.selectOne2(n_no);
-	}
-	
 }

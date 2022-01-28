@@ -64,36 +64,4 @@
 		DELETE FROM notice WHERE n_no=#{n_no}
 	</delete>
 	
-	<!-- 코드의 중복을 줄이기 위해 -->
-	<sql id="noticeWhere2">
-		<where>
-				<if test="searchType == '' ">
-					(n_title LIKE '%${searchWord}%' OR n_content LIKE '%${searchWord}%')
-				</if>
-				<if test="searchType != null and searchType !=''">
-					${searchType} LIKE '%${searchWord}%'
-				</if>
-				<if test="n_no > 0">
-					AND n_no = ${n_no}
-				</if>		
-			</where>
-	</sql>
-	<select id="count2" resultType="int" parameterType="notice.NoticeVo">
-		SELECT COUNT(*) FROM notice
-		<include refid="noticeWhere2"/>
-	</select>
-	
-	<select id="selectList2" resultType="notice.NoticeVo" parameterType="notice.NoticeVo">
-		SELECT * FROM notice
-		<include refid="noticeWhere2"/>
-		ORDER BY n_regdate DESC		
-		LIMIT ${startIdx}, 10
-	</select>
-	<select id="selectOne2" parameterType="int" resultType="notice.NoticeVo">
-		SELECT * FROM notice WHERE n_no = #{xxx}
-	</select>
-	<update id="updateN_readcount2" parameterType="int">
-		UPDATE notice SET n_readcount=n_readcount+1 WHERE n_no=#{n_no}
-	</update>
-	
 </mapper>

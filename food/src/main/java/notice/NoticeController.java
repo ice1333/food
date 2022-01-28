@@ -178,7 +178,7 @@ public class NoticeController {
 	}
 	@GetMapping("/user/noticeview.do")
 	public String view2(Model model,@RequestParam int n_no) {
-		model.addAttribute("data", noticeService.view2(n_no));
+		model.addAttribute("data", noticeService.view(n_no));
 		return "notice/view";
 	}
 	
