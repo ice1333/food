@@ -13,6 +13,9 @@
 			 <if test="adc_no > 0">    
 			 	AND adc_no = ${adc_no}
 			 </if>
+			 <if test="u_no > 0">
+			 	(u_no = ${u_no} )
+			 </if>
 		</where>     
 	</sql>
 	

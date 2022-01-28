@@ -34,7 +34,7 @@
                                <li><a href="">최근 본 매장</a></li>
                                <li><a href="">찜 목록</a></li>
                                <li><a href="">개인 정보 수정</a></li>
-                               <li><a href="">내가 쓴 댓글</a></li>
+                               <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
                            </ul>
                        </div>
                </div>
