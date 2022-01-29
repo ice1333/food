@@ -55,6 +55,18 @@ function del(){
 
 	}
 }
+function commentList(tablename, adqna_no, a_no){
+	$.ajax({
+		url:'/res/comment/adqlist2.do',
+		data:{tablename:tablename, adqna_no:adqna_no , a_no:a_no},
+			success:function(res) {
+				$("#commentArea").html(res);
+			}
+		})
+	}
+	$(function(){ //페이지가 열리자마자
+		commentList('adqna',${vo.adqna_no});
+	})
 $(document).ready(function() {
 	 $('input[type="checkbox"][name="checkmain"]').click(function(){
 		 console.log($(this).val);

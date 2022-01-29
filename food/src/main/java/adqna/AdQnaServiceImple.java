@@ -15,7 +15,7 @@ public class AdQnaServiceImple implements AdQnaService {
 
 
 	@Override //해당페이지 10개씩 만보이게
-	public List<AdQnaVo> selectList(AdQnaVo vo) {
+	public List<AdQnaVo> adqnalist(AdQnaVo vo) {
 		
 		return adqnaDao.adqnalist(vo);
 	}

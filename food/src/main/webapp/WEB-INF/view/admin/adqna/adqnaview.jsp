@@ -37,10 +37,10 @@
 			}
 		})
 	}
-	function commentList(tablename, adqna_no){
+	function commentList(tablename, adqna_no, a_no){
 	$.ajax({
 		url:'/res/comment/adqlist.do',
-		data:{tablename:tablename, adqna_no:adqna_no},
+		data:{tablename:tablename, adqna_no:adqna_no , a_no:a_no},
 			success:function(res) {
 				$("#commentArea").html(res);
 			}
