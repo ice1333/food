@@ -22,6 +22,14 @@
 		SELECT COUNT(*) FROM user WHERE u_uemail = #{u_uemail}
 	</select>
 	
+	<select id="getPrivacylist" parameterType="int" resultType="user.UserVo">
+		SELECT * FROM user WHERE u_no=#{u_no}
+	</select>
+	
+	<!-- <update id="" parameterType="">
+	
+	</update>
+	 -->
 	
 	
 	

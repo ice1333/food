@@ -81,12 +81,11 @@ public class AdQnaController {
 
 	
 	
-	
-	
-	
+	//사용자 페이지 시작
 	
 	@GetMapping("adqna/index.do")
 	public String index(Model model, HttpServletRequest req, AdQnaVo vo,HttpSession sess) {
+		
 		
 		
 		int totCount = adqnaService.adqnacount(vo); //총갯수
@@ -130,11 +129,9 @@ public class AdQnaController {
 	}
 	
 	
-	
-	
 	@PostMapping("adqna/insert.do")
 	public String insert(HttpServletRequest req, MultipartFile file,HttpSession ses,AdQnaVo vo,MultipartFile file2) {
-		
+
 		user.UserVo uv = (user.UserVo)ses.getAttribute("userInfo");
 		int u_no = uv.getU_no();
 		String u_name=uv.getU_name();
@@ -180,8 +177,7 @@ public class AdQnaController {
 
 	}
 	
-	
-	
+
 	@PostMapping("adqna/update.do")
 	public String update(Model model, HttpSession ses,MultipartFile file,HttpServletRequest req,AdQnaVo vo,MultipartFile file2) {
 		
@@ -233,7 +229,6 @@ public class AdQnaController {
 		}
 		return "include/return";
 	}
-	
 	
 	
 	@GetMapping("adqna/Udelete.do")

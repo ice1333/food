@@ -6,19 +6,12 @@
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <link href="<%=request.getContextPath()%>/css/adqna/index.css" rel="stylesheet" type="text/css" />
 <link href="<%=request.getContextPath()%>/css/user/user_common.css" rel="stylesheet" type="text/css"/>
-
-
 <html>
 <head>
 <body> 
     <div id="wrap">
     	<%@ include file="/WEB-INF/view/include/user_header.jsp" %>
-        <!-- canvas -->
         <div id="canvas" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden;">
-            <!-- S T A R T :: headerArea-->
-            
-            <!-- E N D :: headerArea--> 
-            <!-- S T A R T :: containerArea-->
             <div id="container">
                 <div class="menulist">
                         <h2 class="menu_title">고객센터</h2>
@@ -35,7 +28,6 @@
                         <div class="con_tit">
                             <h3 class="con_title">광고 문의</h3>
                         </div>
-                        <!-- 내용 : s -->
                         <div id="bbs">
                             <div id="blist">
                                 <form name="frm" id="frm" action="delAjax.do" method="post">
@@ -81,14 +73,15 @@
                                 </form>
                                 <div class="btn">
                                     <div class="btnRight">
-                                    	
+                                    <c:if test="${!empty userInfo}">
                                         <a href="write.do" class="btns" ><strong>글작성</strong> </a>
+                                    </c:if>
+                                    <c:if test="${empty userInfo}">
+	                        			<a href="javascript:alert('로그인후 사용가능합니다.');location.href='/res/user/login.do';"><strong>글작성</strong></a>
+	                        		</c:if>
                                     </div>
                                 </div>
-                                <!--//btn-->
-                                <!-- 페이징 처리 -->
                                 ${pageArea}
-                                <!-- //페이징 처리 -->
                                 <form name="searchForm" id="searchForm" action="index.do"  method="get">
                                     <div class="search">
                                         <select id="stype" name="searchType" title="검색분류 선택">
@@ -100,24 +93,13 @@
                                         <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
                                     </div>
                                 </form>
-                                <!-- //search --> 
                             </div>
-                            <!-- //blist -->
                         </div>
-                        <!-- //bbs --> 
-                        <!-- 내용 : e -->
                     </div>
-                    <!--//con -->
                 </div>
-                <!--//content -->
             </div>
-            <!--//container --> 
-            <!-- E N D :: containerArea-->
         </div>
         <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
-        <!--//canvas -->
     </div>
-    <!--//wrap -->
-    
     </body>
     </html>

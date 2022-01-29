@@ -1,5 +1,7 @@
 package user;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -86,30 +89,18 @@ public class UserController {
 	
 	
 	@GetMapping("user/privacy.do")
-	public String privacy() {
+	public String privacy(Model model,UserVo vo,HttpServletRequest req,HttpSession ses) {
+		user.UserVo uv= (user.UserVo)ses.getAttribute("userInfo");
+		List<UserVo> list = service.getPrivacy(vo);
+		model.addAttribute("list",list);
+		
 		return "user/privacy";
 	}
 	
-	
-	@GetMapping("user/adqnaindex.do")
-	public String adqnaindex() {
-		return "adqna/index";
+	@RequestMapping("user/update.do")
+	public String update() {
+		return "";
 	}
-	@GetMapping("user/adqnaedit.do")
-	public String adqnaedit() {
-		return "adqna/edit";
-	}
-	@GetMapping("user/adqnaview.do")
-	public String adqnaview() {
-		return "adqna/view";
-	}
-	@GetMapping("user/adqnawrite.do")
-	public String adqnawrite() {
-		return "adqna/write";
-	}
-	
- 
-   
 
 }
    

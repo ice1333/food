@@ -1,5 +1,7 @@
 package user;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,5 +30,8 @@ public class UserService {
 		return dao.insert(vo);
 	}
 	
+	public List<UserVo> getPrivacy(UserVo vo){
+		return dao.getPrivacylist(vo);
+	}
 	
 }

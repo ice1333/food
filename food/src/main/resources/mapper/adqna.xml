@@ -128,9 +128,9 @@
 	<!-- 사용자가 광고문의글 작성-->
 	<insert id="adqnainsert" parameterType="adqna.AdQnaVo">
 		INSERT INTO shop.adqna (
-		aq_title ,aq_contents , aq_regdate , aq_status , u_no , filename_org , filename_real ,filename_org2,filename_real2
+		aq_title ,aq_contents , checkmain, aq_regdate , aq_status , u_no , filename_org , filename_real ,filename_org2,filename_real2
 		) values (
-		#{aq_title} , #{aq_contents} , NOW() , #{aq_status} , #{u_no} , #{filename_org} , #{filename_real},#{filename_org2},#{filename_real2}
+		#{aq_title} , #{aq_contents} ,#{checkmain}, NOW() , #{aq_status} , #{u_no} , #{filename_org} , #{filename_real},#{filename_org2},#{filename_real2}
 		
 		)
 	</insert>
@@ -139,7 +139,8 @@
 	<update id="adqnaUpdate" parameterType="adqna.AdQnaVo"> 
 		UPDATE shop.adqna SET
 		 aq_title = #{aq_title},
-		 aq_contents = #{aq_contents}
+		 aq_contents = #{aq_contents},
+		 checkmain = #{checkmain}
 		 
 		 <if test="filename_org !=null">
 		 , filename_org=#{filename_org}

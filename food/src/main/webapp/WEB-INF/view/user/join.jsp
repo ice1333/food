@@ -226,7 +226,7 @@ function goSave(){
                                             </td>
                                         </tr>
                                         <tr>
-                                            <th>주소<span class="ico">*<span class="screen_out">필수항목</span></span></th>
+                                            <th>주소<span class="ico"><span class="screen_out"></span></span></th>
                                             <td class="field_address">
                                                 <div id="selectAddress">
                                                     <input type="text" name="u_zuocide" id="u_zuocide" value=""  label="주소" style="width:40%; margin-bottom: 12px;">

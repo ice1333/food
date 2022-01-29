@@ -42,12 +42,11 @@ $(document).ready(function() {
      $('input[type="checkbox"][name="checkmain"]').prop('checked',false);
      $(this).prop('checked',true);
      
+     
     }
+  $("input[type='checkbox'][name='checkmain']").push(this.value);
    });
- });
-
- 
-    
+ }); 
 </script>
 <html>
 <body> 
@@ -55,10 +54,6 @@ $(document).ready(function() {
     <div id="wrap">
         <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
         <div id="canvas" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden;">
-            <!-- S T A R T :: headerArea-->
-            
-            <!-- E N D :: headerArea--> 
-            <!-- S T A R T :: containerArea-->
             <div id="container">
                 <div class="menulist">
                         <h2 class="menu_title">고객센터</h2>
@@ -70,13 +65,11 @@ $(document).ready(function() {
                         </div>
                 </div>
                 <div id="content">
-                    <!-- //con_tit -->
                     <div class="con">
                         <div class="con_tit">
                             <h2 class="con_title">광고 문의</h2>
                             <p class="tit_sub">홈페이지에 광고를 직접 신청하세요.</p>
                         </div>
-                        <!-- 내용 : s -->
                         <div id="bbs">
                             <div id="blist">
                                 <form method="post" name="frm" id="frm" action="insert.do" enctype="multipart/form-data" >
@@ -106,9 +99,9 @@ $(document).ready(function() {
                                                                                         <strong class="th" id='result'></strong>
                                                                                         <span class="td" style="padding:0;">
                                                                                         <p> &nbsp신청 항목의 유형을 하나만 골라주세요.</p>
-                                                                                        <input type="checkbox" id="check1" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)" autocomplete="on"/><c:if test="">checked</c:if>메인
-                                                                                        <input type="checkbox" id="check2" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test="">checked</c:if>사이드
-                                                                                        <input type="checkbox" id="check3" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)"/><c:if test="">checked</c:if>메인,사이드
+                                                                                        <input type="checkbox" id="check1" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)" />메인
+                                                                                        <input type="checkbox" id="check2" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)"/>사이드
+                                                                                        <input type="checkbox" id="check3" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)"/>메인,사이드
                                                                                         
                                                                                         </span>
                                                                                     </li>
@@ -146,29 +139,14 @@ $(document).ready(function() {
                                         <a href="javascript:Save()" class="btns" ><strong>저장</strong> </a>
                                     </div>
                                 </div>
-                                <!--//btn-->
-                                <!-- 페이징 처리 -->
                                 ${pageArea}
-                                <!-- //페이징 처리 -->
-                                <!-- //search --> 
                             </div>
-                            <!-- //blist -->
                         </div>
                     </form>
-                        <!-- //bbs --> 
-                        <!-- 내용 : e -->
                     </div>
-                    <!--//con -->
                 </div>
-                <!--//content -->
             </div>
-            <!--//container --> 
-            <!-- E N D :: containerArea-->
         </div>
-        <!--//canvas -->
         <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
-    
-    <!--//wrap -->
-    
     </body>
     </html>

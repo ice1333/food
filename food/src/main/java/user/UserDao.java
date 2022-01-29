@@ -1,5 +1,7 @@
 package user;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -27,6 +29,10 @@ public class UserDao {
 	//마이페이지 회원정보 수정
 	public int updateTemp(UserVo vo) {
 		return sst.update("user.updateTemp",vo);
+	}
+	
+	public List<UserVo> getPrivacylist(UserVo vo){
+		return sst.selectList("user.getPrivacylist",vo);
 	}
 	
 }

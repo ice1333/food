@@ -39,7 +39,8 @@ $(document).ready(function() {
 	  if($(this).prop('checked')){
 	     $('input[type="checkbox"][name="checkmain"]').prop('checked',false);
 	     $(this).prop('checked',true);
-	    }
+	  }
+	  $("input[type='checkbox'][name='checkmain']").push(this.value);
 	   });
 	 });
 
@@ -48,12 +49,7 @@ $(document).ready(function() {
 <body> 
     <div id="wrap">
     	<%@ include file="/WEB-INF/view/include/user_header.jsp" %>
-        <!-- canvas -->
         <div id="canvas" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden;">
-            <!-- S T A R T :: headerArea-->
-            
-            <!-- E N D :: headerArea--> 
-            <!-- S T A R T :: containerArea-->
             <div id="container">
                 <div class="menulist">
                         <h2 class="menu_title">고객센터</h2>
@@ -65,13 +61,11 @@ $(document).ready(function() {
                         </div>
                 </div>
                 <div id="content">
-                    <!-- //con_tit -->
                     <div class="con">
                         <div class="con_tit">
                             <h2 class="con_title">광고 문의</h2>
                             <p class="tit_sub">홈페이지에 광고를 직접 신청하세요.</p>
                         </div>
-                        <!-- 내용 : s -->
                         <div id="bbs">
                             <div id="blist">
                                 <form method="post" name="frm" id="frm" action="update.do" enctype="multipart/form-data" >
@@ -100,15 +94,16 @@ $(document).ready(function() {
                                                                                     <li class="date">
                                                                                         <strong class="th" id='result'></strong>
                                                                                         <span class="td">
-                                                                                        <input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)"/>메인
-                                                                                        <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)"/>사이드
-                                                                                        <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)"/>메인,사이드
+                                                                                        <input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)" <c:if test="${vo.checkmain == '[메인]'}">checked</c:if>/>메인
+                                                                                        <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)" <c:if test="${vo.checkmain == '[사이드]'}">checked</c:if>/>사이드
+                                                                                        <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)" <c:if test="${vo.checkmain == '[메인과사이드]'}">checked</c:if>/>메인,사이드
                                                                                         </span>
                                                                                     </li>
                                                                                     <li class="file">
                                                                                         <strong class="th">첨부파일</strong>
                                                                                         <span class="td">
-                                                                                            <input type="file" id="file" name="file" title="첨부파일을 올려주세요"/>
+                                                                                            <input multiple="multiple" type="file" id="file" name="file" title="첨부파일을 올려주세요"/>
+                                                                                            <input multiple="multiple" type="file" id="file" name="file2" title="첨부파일을 올려주세요"/>
                                                                                             <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org}&real=${vo.filename_real}" 
 																							target="_blank">${vo.filename_org } </a> <br>
 																							 <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org2}&real=${vo.filename_real2}" 
@@ -148,29 +143,14 @@ $(document).ready(function() {
                                         <a href="javascript:Save()" class="btns" ><strong>저장</strong> </a>
                                     </div>
                                 </div>
-                                <!--//btn-->
-                                <!-- 페이징 처리 -->
                                 ${pageArea}
-                                <!-- //페이징 처리 -->
-                                <!-- //search --> 
                             </div>
-                            <!-- //blist -->
                         </div>
                     </form>
-                        <!-- //bbs --> 
-                        <!-- 내용 : e -->
                     </div>
-                    <!--//con -->
                 </div>
-                <!--//content -->
             </div>
-            <!--//container --> 
-            <!-- E N D :: containerArea-->
             <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
         </div>
-        <!--//canvas -->
-    
-    <!--//wrap -->
-    
     </body>
     </html>
