@@ -61,14 +61,15 @@ public class AdQnaController {
 		return "admin/adqna/adqnaview";
 	}
 	
-	@RequestMapping("admin/delAjax.do")
-	public String delAjax(HttpServletRequest req, Model model, AdQnaVo vo) {
+	@RequestMapping(value="admin/delAjax.do")
+	public String delAjax(HttpServletRequest req,Model model) {
 		
 		String[] Msg = req.getParameterValues("valueArr");
 		int size = Msg.length;
 		for(int i=0; i<size; i++) {
 			adqnaService.adqnadelete(Msg[i]);
 		}
+		
 		return "admin/include/result";
 	}
 	

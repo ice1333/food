@@ -37,8 +37,8 @@
 		}
 	if (valueArr.length==0){
 		alert('하나 이상 선택하세요.')
-		} else {
-			var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+		} 
+	if(confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?")){
 			$.ajax({
 				url: url,
 				type : 'POST',
@@ -46,28 +46,24 @@
 				data:{
 					valueArr : valueArr
 				},
-				success:function(){
-					//if(res.trim()=='1'){
+				success:function(res){
+					if(res=1){
 						alert("삭제 성공입니다.");
 						location.reload();
-					//} else {
-					//	alert("삭제 오류입니다.");
-					//}
+					} else {
+						alert("삭제 오류입니다.");
+						location.reload();
+						return false;	
+						
+					}
 				}
+			
 			});
-		}
+	} else {
+		location.reload();
 	}
-	function go(){
-		var chk = document.getElementsByName("Rchk");
-		var row = chk.length;
-		$("input[name='Rchk']").click(function(){
-			if($("input[name='Rchk']:checked").length >= 2) {
-				alert('답변 등록은 하나이상 선택할 수 없습니다.');
-			} else {
-				location.href("adqnaindex.do");
-			}
-		});
 	}
+	
 	
 		
 	
