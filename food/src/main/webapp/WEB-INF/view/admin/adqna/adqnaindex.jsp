@@ -50,7 +50,7 @@
 					if(res=1){
 						alert("삭제 성공입니다.");
 						location.reload();
-					} else {
+					} else { 
 						alert("삭제 오류입니다.");
 						location.reload();
 						return false;	
