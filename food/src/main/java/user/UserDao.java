@@ -27,8 +27,8 @@ public class UserDao {
 	}
 	
 	//마이페이지 회원정보 수정
-	public int updateTemp(UserVo vo) {
-		return sst.update("user.updateTemp",vo);
+	public int updatePrivacy(UserVo vo) {
+		return sst.update("user.updatePrivacy",vo);
 	}
 	
 	public List<UserVo> getPrivacylist(UserVo vo){

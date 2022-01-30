@@ -98,8 +98,16 @@ public class UserController {
 	}
 	
 	@RequestMapping("user/update.do")
-	public String update() {
-		return "";
+	public String update(UserVo vo,HttpServletRequest req,HttpSession ses) {
+		user.UserVo uv=(user.UserVo)ses.getAttribute("userInfo");
+		//세션에서 가져와서 여기다가 셋해야대
+		if(service.updatePrivacy(vo) > 0) {
+			req.setAttribute("msg", "정상적으로 수정되었습니다.");
+			req.setAttribute("url", "/res/user/main.do");
+		} else {
+			req.setAttribute("msg", "수정오류입니다.");
+		}
+		return "include/return";
 	}
 
 }

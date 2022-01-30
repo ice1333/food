@@ -45,7 +45,24 @@
     			}
     		});
     	});
-    
+    	$(function(){
+    		$("#alerts").hide();
+    		$("#alertw").hide();
+    		$("input").keyup(function(){ 
+    		var pwd1=$("#u_pwd").val();
+    		var pwd2=$("#pw_check").val();
+    		if(pwd1 != "" || pwd2 != ""){ if(pwd1 == pwd2){
+    			$("#alerts").show();
+    			$("#alertw").hide();
+    			$("#submit").removeAttr("disabled");
+    			}else{ 
+    				$("#alerts").hide();
+    				$("#alertw").show();
+    				$("#submit").attr("disabled", "disabled");
+    				}
+    		}
+    		});
+    		});
     </script>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
@@ -175,7 +192,7 @@ function goSave(){
                                             </th>
                                             <td>
                                                 <input type="text" name="u_uemail" value="" id="u_uemail" size="30" label="이메일" >
-                                                <a href="#;" id="emailCheckBtn" class="btn default">중복확인</a>
+                                                <a href="#;" id="emailCheckBtn" class="btn default" style="position:absolute;">중복확인</a>
                                             </td>
                                     
                                     </tr>
@@ -195,10 +212,9 @@ function goSave(){
                                         <th>비밀번호확인<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                             <td>
                                                 <input type="password" name="pw_check" id="pw_check" label="비밀번호" maxlength="16" class="confirm_pw" placeholder="비밀번호를 한번 더 입력해주세요">
-                                                <p class="txt_guide square">
-                                                <span class="txt txt_case1">동일한 비밀번호를 입력해주세요.</span>
-                                                </p>
                                             </td>
+                                            <th class="" id="alerts">비밀번호 일치</th>
+                                            <th class="" id="alertw">비밀번호 불일치.</th>
                         
                                     </tr>
                                         <tr>

@@ -10,7 +10,7 @@
 		INSERT INTO user (
 			u_uemail, u_pwd, u_name, u_gender, u_tel, u_regdate, u_status, u_zuocide , u_addr1 ,u_addr2
 		) VALUES (
-			#{u_uemail},md5(#{u_pwd}),#{u_name},#{u_gender},#{u_tel},NOW(),0,#{u_zuocide},#{u_addr1},#{u_addr2}
+			#{u_uemail},md5(#{u_pwd}),#{u_name},#{u_gender},#{u_tel},NOW(),1,#{u_zuocide},#{u_addr1},#{u_addr2}
 		)
 		
 	<selectKey keyProperty="u_no" resultType="int" order="AFTER">
@@ -26,10 +26,20 @@
 		SELECT * FROM user WHERE u_no=#{u_no}
 	</select>
 	
-	<!-- <update id="" parameterType="">
-	
+	<update id="updatePrivacy" parameterType="user.UserVo">
+		UPDATE user SET 
+		u_uemail = #{u_uemail},
+		u_pwd = md5(#{u_pwd}),
+		u_name= #{u_name},
+		u_gender=#{u_gender},
+		u_tel= #{u_tel},
+		u_status=1,
+		u_zuocide=#{u_zuocide},
+		u_addr1=#{u_addr1},
+		u_addr2=#{u_addr2}
+		WHERE u_no =#{u_no} 
 	</update>
-	 -->
+	
 	
 	
 	

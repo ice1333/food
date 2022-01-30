@@ -34,4 +34,8 @@ public class UserService {
 		return dao.getPrivacylist(vo);
 	}
 	
+	public int updatePrivacy(UserVo vo) {
+		return dao.updatePrivacy(vo);
+	}
+	
 }

@@ -58,6 +58,103 @@
 	        }
 	    }).open();
 	}
+$(function(){
+		$("#emailCheckBtn").click(function(){
+			if ($("#u_uemail").val().trim() == ''){
+				alert('이메일을 입력해주세요.');
+				$("#u_uemail").focus();
+			} else {
+				$.ajax({
+					url: '/res/user/emailCheck.do',
+					data : {
+						u_uemail : $("#u_uemail").val()
+					},
+					async:false,
+					success:function(aaa) {
+					 if(aaa.trim()=='1'){
+						 alert('중복된 이메일입니다.');
+						 $("#u_uemail").focus();
+					 }	else {
+						 alert("사용가능한 이메일 입니다.");
+						
+					 }
+					}
+				})
+			}
+		});
+	});
+
+$(function(){
+	$("#alerts").hide();
+	$("#alertw").hide();
+	$("input").keyup(function(){ 
+	var pwd1=$("#u_pwd").val();
+	var pwd2=$("#pw_check").val();
+	if(pwd1 != "" || pwd2 != ""){ if(pwd1 == pwd2){
+		$("#alerts").show();
+		$("#alertw").hide();
+		$("#submit").removeAttr("disabled");
+		}else{ 
+			$("#alerts").hide();
+			$("#alertw").show();
+			$("#submit").attr("disabled", "disabled");
+			}
+	}
+	});
+	});
+
+
+function goSave(){
+	if($("#u_uemail").val()==''){
+		alert('이메일 입력하세요');
+		$("#u_uemail").focus();
+		return;
+	}
+	var con =true; 
+	$.ajax({
+		url: '/res/user/update.do',
+		data : {
+			u_uemail : $("#u_uemail").val()
+		},
+		async:false, // true가되면 순서가 아무거나시작댐
+		success:function(res) {
+		 if(res.trim()=='1'){
+			 alert('중복된 이메일입니다.');
+			 $("#u_uemail").val("");
+			 $("#u_uemail").focus();
+			 con =false;
+		  }	
+		}
+	})
+	if(con==false) return;
+	if ($("#u_pwd").val().trim()==''){
+	 alert('비밀번호를 입력');
+	 $("#u_pwd").focus();
+	 return; // 리턴은 값을가지고 돌아감 리턴폴스는 폼에 온서브밋떄문에 그냥넘어가질수도 있음
+	}
+	var reg = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+	if( !reg.test($("#u_pwd").val()) ) {
+	    alert("비밀번호는 문자+숫자 8자이상 입력");
+	    $("#u_pwd").focus();
+	    return false;
+	}
+	if ($("#u_pwd").val() != $("#pw_check").val()) {
+		alert("비밀번호가 일치하지않습니다.");
+		return;
+	}
+	if($("#u_name").val().trim()==''){
+		alert('이름을 입력하세요');
+		$("#u_name").focus();
+		return;
+	}
+	if($("#u_tel").val()==''){
+		alert('전화번호를 입력하세요');
+		$("#u_tel").focus();
+		return;
+	}
+	$("#frm").submit();
+	}
+
 </script>
 <html>
 <body>
@@ -94,7 +191,7 @@
                                                 </th>
                                                 <td>
                                                     <input type="text" name="u_uemail" value="${userInfo.u_uemail}" size="30"  label="이메일" >
-                                                    <a href="#;" id="emailCheckBtn" class="btn default">중복확인</a>
+                                                    <a href="#;" id="emailCheckBtn" class="btn default" style="position:absolute;">중복확인</a>
                                                 </td>
                                                 
                                             </tr>
@@ -106,16 +203,15 @@
                                                     </span>
                                                 </th>
                                                 <td>
-                                                    <input type="password" name="u_pwd" id="u_pwd" label="비밀번호" maxlength="16" class="reg_pw" value="${userInfo.u_pwd}">
+                                                    <input type="password" name="u_pwd" id="u_pwd" label="비밀번호" maxlength="16" class="reg_pw" value="">
                                                     </td>
                                             </tr>
                                             <tr class="member_pwd">
                                                 <th>비밀번호확인<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                                     <td>
-                                                        <input type="password" name="pw_check" id="pw_check" label="비밀번호" maxlength="16" class="confirm_pw" value="">
-                                                        <p class="txt_guide square">
-                                                        <span class="txt txt_case1">동일한 비밀번호를 입력해주세요.</span>
-                                                        </p>
+                                                       <input type="password" name="pw_check" id="pw_check" label="비밀번호" maxlength="16" class="confirm_pw" value="">
+                                                       <th class="" id="alerts">비밀번호가 일치합니다.</th>
+                                                       <th class="" id="alertw">비밀번호가 일치하지 않습니다.</th>
                                                     </td>
                                             </tr>
                                                 <tr>
@@ -171,11 +267,11 @@
                                         </tbody>
                                     </table>
                                     <div id="formSubmit" class="abc">
-                                        <button type="button" class="btn default" onclick="" style="width: 240px;
+                                        <button type="button" class="btn default" onclick="history.back();" style="width: 240px;
                                         height: 56px;
                                         font-size: 16px;
                                         line-height: 54px;">취소</button>
-                                        <button type="button" class="btn active btn_join" onclick="">확인</button>
+                                        <button type="button" class="btn active btn_join" onclick="javascript:goSave();">확인</button>
                                     </div>
                                 </form>
                             </div>
