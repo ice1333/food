@@ -41,24 +41,34 @@
                console.log(list[i].value)
             }
          }
-      if (valueArr.length==0){
-         alert('하나 이상 선택하세요.')
-         } else {
-            var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
-            $.ajax({
-               url: url,
-               type : 'POST',
-               traditional:true,
-               data:{
-                  valueArr : valueArr
-               },
-               success:function(){
-                     alert("삭제 성공입니다.");
-                     location.reload();
-               }
-            });
-         }
-      }   
+     	if (valueArr.length==0){
+    		alert('하나 이상 선택하세요.')
+    		} 
+    	if(confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?")){
+    			$.ajax({
+    				url: url,
+    				type : 'POST',
+    				traditional:true,
+    				data:{
+    					valueArr : valueArr
+    				},
+    				success:function(res){
+    					if(res=1){
+    						alert("삭제 성공입니다.");
+    						location.reload();
+    					} else { 
+    						alert("삭제 오류입니다.");
+    						location.reload();
+    						return false;	
+    						
+    					}
+    				}
+    			
+    			});
+    	} else {
+    		location.reload();
+    	}
+    } 
 </script>
 <title>Insert title here</title>
 </head>
