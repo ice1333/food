@@ -1,48 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="admincomment"> <!-- mapper파일의 이름 -->
-	
+   
 <sql id = "admincommentWhere">
-		<where>
-			<if test ="searchType ==''">   
-			 	(u_name LIKE '%${searchWord}%' OR c_contents LIKE '%${searchWord}%' OR c_stars LIKE '%${searchWord}%')
-			 </if>
-			 <if test= "searchType != null and searchType != ''">
-			 	${searchType} LIKE '%${searchWord}%'
-			 </if>
-			 <if test="adc_no > 0">    
-			 	AND adc_no = ${adc_no}
-			 </if>
-			 <if test="u_no > 0">
-			 	(u_no = ${u_no} )
-			 </if>
-		</where>     
-	</sql>
-	
-	 <select id="selectList" resultType = "admincomment.AdminCommentVo" parameterType="admincomment.AdminCommentVo">
-		select * 
-			, (select u_name from user where user.u_no=adcomment.u_no)as u_name
-			, (select content from comment where comment.c_no=adcomment.c_no)as content
-	        , (select stars from comment where comment.c_no=adcomment.c_no)as stars
-	        , (select regdate from comment where comment.c_no=adcomment.c_no)as regdate
-	        , (select r_name from restaurant where restaurant.r_no=adcomment.r_no)as r_name
-		FROM adcomment
-	<include refid = "admincommentWhere"/>
-		ORDER BY adc_no DESC    
-		LIMIT ${startIdx},10
-	</select>
+      <where>
+         <if test ="searchType ==''">   
+             (u_name LIKE '%${searchWord}%' OR c_contents LIKE '%${searchWord}%' OR c_stars LIKE '%${searchWord}%')
+          </if>
+          <if test= "searchType != null and searchType != ''">
+             ${searchType} LIKE '%${searchWord}%'
+          </if>
+          <if test="adc_no > 0">    
+             AND adc_no = ${adc_no}
+          </if>
+          <if test="u_no > 0">
+             (u_no = ${u_no} )
+          </if>
+      </where>     
+   </sql>
+   
+    <select id="selectList" resultType = "admincomment.AdminCommentVo" parameterType="admincomment.AdminCommentVo">
+      select * 
+         , (select u_name from user where user.u_no=adcomment.u_no)as u_name
+         , (select content from comment where comment.c_no=adcomment.c_no)as content
+           , (select stars from comment where comment.c_no=adcomment.c_no)as stars
+           , (select regdate from comment where comment.c_no=adcomment.c_no)as regdate
+           , (select r_name from restaurant where restaurant.r_no=adcomment.r_no)as r_name
+      FROM adcomment
+   <include refid = "admincommentWhere"/>
+      ORDER BY adc_no DESC    
+      LIMIT ${startIdx},10
+   </select>
 
-	<select id="count" resultType="int" parameterType="admincomment.AdminCommentVo">
-		SELECT count(*) FROM shop.adcomment
-		<include refid="admincommentWhere"/>
-	</select>
-	
-	<delete id="delete">
-		DELETE FROM shop.adcomment WHERE adc_no=#{adc_no}
-	</delete>
-	
-	<delete id="adcdelete">
-		DELETE FROM shop.adcomment WHERE adc_no=#{adc_no}
-	</delete>
-	
+   <select id="count" resultType="int" parameterType="admincomment.AdminCommentVo">
+      SELECT count(*) FROM shop.adcomment
+      <include refid="admincommentWhere"/>
+   </select>
+   
+   <delete id="delete">
+      DELETE FROM shop.adcomment WHERE adc_no=#{adc_no}
+   </delete>
+   
+   <delete id="adcdelete">
+      DELETE FROM shop.adcomment WHERE adc_no=#{adc_no}
+   </delete>
+   
+   <delete id="mydelete">
+      DELETE FROM shop.adcomment WHERE adc_no=#{adc_no}
+   </delete>
+   
+   <delete id="mycdelete">
+      DELETE FROM shop.adcomment WHERE adc_no=#{adc_no}
+   </delete>
 </mapper>
