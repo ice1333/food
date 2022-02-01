@@ -6,7 +6,7 @@ public interface AdQnaService {
 
 	
 	//해당페이지 10개만 보이게
-	List<AdQnaVo> selectList(AdQnaVo vo);
+	List<AdQnaVo> adqnalist(AdQnaVo vo);
 	
 	//삭제
 	int delete(AdQnaVo vo);

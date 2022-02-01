@@ -4,21 +4,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-<link href="<%=request.getContextPath()%>/css/admin/index.css" rel="stylesheet" type="text/css" />
-<style type="text/css">
-.pagenate {width:100%; clear:both;}
-.pagenate {text-align:center; margin:20px auto 0;}
-.pagenate li {display:inline-block;}
-.pagenate li:first-child { margin-left:0px; }
-.pagenate li a{display:inline-block; text-decoration:none; padding:0; width:30px; height:30px; line-height:30px; border:1px solid #c7c8cc; box-sizing:border-box; margin-left:-1px; vertical-align:middle;}
-.pagenate li a:hover{background:#f6f6f6; font-weight:bold; text-decoration:none !important;}
-.pagenate li a.board { text-indent:-9999em; margin-left:4px; }
-.pagenate li a.board.first {background:#f3f3f3 url('/img/ico_first.png') no-repeat center center;}
-.pagenate li a.board.prev {margin-right:30px; background:#efefef url('/img/ico_prev.png') no-repeat center center;}
-.pagenate li a.board.next {margin-left:30px; background:#efefef url('/img/ico_next.png') no-repeat center center;}
-.pagenate li a.board.last {background:#f3f3f3 url('/img/ico_last.png') no-repeat center center;}
-.pagenate li a.current {color:#fff; background-color:#221f1f; font-weight:bold;  border:1px solid #221f1f;}
-</style>
+<link href="<%=request.getContextPath()%>/css/admin/index.css" rel="stylesheet" type="text/css"/>
 <html>
 <head>
 <script>
@@ -51,8 +37,8 @@
 		}
 	if (valueArr.length==0){
 		alert('하나 이상 선택하세요.')
-		} else {
-			var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+		} 
+	if(confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?")){
 			$.ajax({
 				url: url,
 				type : 'POST',
@@ -61,27 +47,16 @@
 					valueArr : valueArr
 				},
 				success:function(){
-					//if(res.trim()=='1'){
 						alert("삭제 성공입니다.");
 						location.reload();
-					//} else {
-					//	alert("삭제 오류입니다.");
-					//}
 				}
 			});
-		}
+	} else {
+		location.reload();  
+		return false;
 	}
-	function go(){
-		var chk = document.getElementsByName("Rchk");
-		var row = chk.length;
-		$("input[name='Rchk']").click(function(){
-			if($("input[name='Rchk']:checked").length >= 2) {
-				alert('답변 등록은 하나이상 선택할 수 없습니다.');
-			} else {
-				location.href("adqnaindex.do");
-			}
-		});
-	}
+}
+	
 	
 		
 	
@@ -114,6 +89,7 @@
 								<colgroup>
 									<col width="2.5%"/>
 									<col width="2.5%"/>
+									<col width="2.5%"/>
 									<col width="5%"/>
 									<col width="2.5%"/>
 									<col width="20%"/>
@@ -125,6 +101,7 @@
 									<tr>
 										<th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" /></th>
 										<th scope="col">번호</th>
+										<th scope="col">분류</th>
 										<th scope="col">이메일</th>
 										<th scope="col">이름</th>
 										<th scope="col">제목</th> 
@@ -144,6 +121,7 @@
 									<tr class="board_tr" data-adqna_no="${vo.adqna_no}" style="cursor:pointer;">
 										<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adqna_no}"/></td>
 										<td>${vo.adqna_no}</td>
+										<td>${vo.checkmain}</td>
 										<td>${vo.u_uemail}</td>
 										<td>${vo.u_name}</td>   
 										<td class="title"><a href="adqnaview.do?adqna_no=${vo.adqna_no}">${vo.aq_title}</a></td>

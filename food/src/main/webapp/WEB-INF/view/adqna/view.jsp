@@ -23,7 +23,6 @@ function Save() {
 	$("#frm").submit();	
 }
 
-
 function getCheckboxValue(event)  {
   let result = '';
   if(event.target.checked)  {
@@ -55,6 +54,18 @@ function del(){
 
 	}
 }
+function commentList(tablename, adqna_no, a_no){
+	$.ajax({
+		url:'/res/comment/adqlist2.do',
+		data:{tablename:tablename, adqna_no:adqna_no , a_no:a_no},
+			success:function(res) {
+				$("#commentArea").html(res);
+			}
+		})
+	}
+	$(function(){ //페이지가 열리자마자
+		commentList('adqna',${vo.adqna_no});
+	})
 $(document).ready(function() {
 	 $('input[type="checkbox"][name="checkmain"]').click(function(){
 		 console.log($(this).val);
@@ -65,19 +76,14 @@ $(document).ready(function() {
 	   });
 	 });
 
-	 
+
 </script>
 
 
 <body> 
     <div id="wrap">
     <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
-        <!-- canvas -->
         <div id="canvas" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden;">
-            <!-- S T A R T :: headerArea-->
-            
-            <!-- E N D :: headerArea--> 
-            <!-- S T A R T :: containerArea-->
             <div id="container">
                 <div class="menulist">
                         <h2 class="menu_title">고객센터</h2>
@@ -95,10 +101,8 @@ $(document).ready(function() {
                             <h2 class="con_title">광고 문의</h2>
                             <p class="tit_sub">홈페이지에 광고를 직접 신청하세요.</p>
                         </div>
-                        <!-- 내용 : s -->
                         <div id="bbs">
                             <div id="blist">
-                            
                                 <table width="100%" align="center" cellpadding="0" cellspacing="0">
                                     <tbody>
                                         <tr>
@@ -119,9 +123,9 @@ $(document).ready(function() {
                                                                         </tr>
                                                                         <tr>
                                                                             <th scope="row" id='result' style="padding: 10pxpx 2px 10px 2px;"></th>
-                                                                            <td> <input type="checkbox" value="[메인]" name="checkmain" onclick="getCheckboxValue(event)" /><c:if test="checked">checked</c:if>메인
-                                                                                <input type="checkbox" value="[사이드]" name="checkmain" onclick="getCheckboxValue(event)" /><c:if test="checked">checked</c:if>사이드
-                                                                                <input type="checkbox" value="[메인과사이드]" name="checkmain" onclick="getCheckboxValue(event)" /><c:if test="checked">checked</c:if>메인,사이드</td>
+                                                                            <td> <input type="checkbox" value="[메인]" id="check1" name="checkmain" onclick="getCheckboxValue(event)"<c:if test="${vo.checkmain == '[메인]'}">checked </c:if>/>메인
+                                                                                <input type="checkbox" value="[사이드]" id="check2" name="checkmain" onclick="getCheckboxValue(event)" <c:if test="${vo.checkmain == '[사이드]'}">checked</c:if>/>사이드
+                                                                                <input type="checkbox" value="[메인과사이드]" id="check3"name="checkmain" onclick="getCheckboxValue(event)" <c:if test="${vo.checkmain == '[메인과사이드]'}">checked</c:if>/>메인,사이드</td>
                                                                         </tr>
                                                                         <tr class="etcArea">
                                                                             <td colspan="2">
@@ -166,34 +170,20 @@ $(document).ready(function() {
                                 <div class="btn">
                                     <div class="btnRight">
                                         <a href="index.do" class="btns"><strong>목록</strong></a>
+                                        <c:if test="${vo.u_no==userInfo.u_no}">
                                         <a href="edit.do?adqna_no=${vo.adqna_no}" class="btns"><strong>수정</strong></a>
-                                        
                                         <a href="javascript:del()" class="btns"><strong>삭제</strong></a>
+                                        </c:if>
                                     </div>
                                 </div>
-                                <!--//btn-->
-                                <!-- 페이징 처리 -->
                                 ${pageArea}
-                                <!-- //페이징 처리 -->
-                                <!-- //search --> 
                             </div>
-                            <!-- //blist -->
                         </div>
-                        <!-- //bbs --> 
-                        <!-- 내용 : e -->
                     </div>
-                    <!--//con -->
                 </div>
                 <div id="commentArea"></div>
-                <!--//content -->
             </div>
-            <!--//container --> 
-            <!-- E N D :: containerArea-->
             <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
         </div>
-        <!--//canvas -->
-    
-    <!--//wrap -->
-    
     </body>
     </html>

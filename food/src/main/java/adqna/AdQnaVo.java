@@ -19,10 +19,14 @@ public class AdQnaVo extends SearchVo{
 	private String u_uemail;
 	private String filename_org2;
 	private String filename_real2;
+	private String checkmain;
 	
-	
-	
-	
+	public String getCheckmain() {
+		return checkmain;
+	}
+	public void setCheckmain(String checkmain) {
+		this.checkmain = checkmain;
+	}
 	public String getFilename_org2() {
 		return filename_org2;
 	}

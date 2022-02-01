@@ -3,6 +3,20 @@ package user;
 import java.sql.Timestamp;
 
 public class UserVo {
+	
+	
+	private int u_no;
+	private String u_uemail;
+	private String u_pwd;
+	private String u_name;
+	private int u_gender;
+	private String u_tel;
+	private Timestamp u_regdate;
+	private int u_status;
+	private String u_zuocide;
+	private String u_addr1;
+	private String u_addr2;
+	
 
 	public int getU_no() {
 		return u_no;
@@ -70,16 +84,4 @@ public class UserVo {
 	public void setU_addr2(String u_addr2) {
 		this.u_addr2 = u_addr2;
 	}
-	private int u_no;
-	private String u_uemail;
-	private String u_pwd;
-	private String u_name;
-	private int u_gender;
-	private String u_tel;
-	private Timestamp u_regdate;
-	private int u_status;
-	private String u_zuocide;
-	private String u_addr1;
-	private String u_addr2;
-	
 }

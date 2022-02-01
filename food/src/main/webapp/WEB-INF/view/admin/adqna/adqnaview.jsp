@@ -37,10 +37,10 @@
 			}
 		})
 	}
-	function commentList(tablename, adqna_no){
+	function commentList(tablename, adqna_no, a_no){
 	$.ajax({
 		url:'/res/comment/adqlist.do',
-		data:{tablename:tablename, adqna_no:adqna_no},
+		data:{tablename:tablename, adqna_no:adqna_no , a_no:a_no},
 			success:function(res) {
 				$("#commentArea").html(res);
 			}
@@ -89,7 +89,12 @@
 	                            <dt>첨부파일 </dt>
 	                            <dd>
 	                            <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org}&real=${vo.filename_real}" 
-	                            target="_blank">${vo.filename_org} </a></dd>
+								target="_blank">${vo.filename_org } </a> <br>
+								<a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org2}&real=${vo.filename_real2}" 
+								target="_blank">${vo.filename_org2} </a>
+	                            
+	                            </dd>
+	                            
 	                        </dl>
 	                       
 	                        </div>

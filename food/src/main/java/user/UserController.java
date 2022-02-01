@@ -1,5 +1,7 @@
 package user;
 
+import java.util.List;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
@@ -8,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
@@ -59,26 +62,53 @@ public class UserController {
       return "user/notice";
    }
 
-   //수연 페이지 끝 
-   
-   //창혁 회원가입 , 마이페이지시작   
-   @GetMapping("user/adqnaindex.do")
-   public String adqnaindex() {
-      return "adqna/index";
-   }
-   @GetMapping("user/adqnaedit.do")
-   public String adqnaedit() {
-      return "adqna/edit";
-   }
-   @GetMapping("user/adqnaview.do")
-   public String adqnaview() {
-      return "adqna/view";
-   }
-   @GetMapping("user/adqnawrite.do")
-   public String adqnawrite() {
-      return "adqna/write";
-   }
-   
+	//수연 페이지 끝 
+	
+	//창혁 회원가입 , 마이페이지시작
+	@GetMapping("user/join.do")
+	public String join() {
+		return "user/join";
+	}
+	
+	@PostMapping("/user/insert.do")
+	public String insert(UserVo vo, HttpServletRequest req) {
+		if(service.insert(vo) > 0) {
+		req.setAttribute("msg", "정상적으로 가입되었습니다.");
+		req.setAttribute("url", "/res/user/main.do");
+		} else {
+		req.setAttribute("msg", "가입오류");
+		}
+		return "include/return";
+	}
+	
+	@GetMapping("/user/emailCheck.do")
+	public String emailCheck(Model model,@RequestParam String u_uemail) {
+		model.addAttribute("result", service.emailCheck(u_uemail));
+		return "include/result";
+	}
+	
+	
+	@GetMapping("user/privacy.do")
+	public String privacy(Model model,UserVo vo,HttpServletRequest req,HttpSession ses) {
+		user.UserVo uv= (user.UserVo)ses.getAttribute("userInfo");
+		List<UserVo> list = service.getPrivacy(vo);
+		model.addAttribute("list",list);
+		
+		return "user/privacy";
+	}
+	
+	@RequestMapping("user/update.do")
+	public String update(UserVo vo,HttpServletRequest req,HttpSession ses) {
+		user.UserVo uv=(user.UserVo)ses.getAttribute("userInfo");
+		//세션에서 가져와서 여기다가 셋해야대
+		if(service.updatePrivacy(vo) > 0) {
+			req.setAttribute("msg", "정상적으로 수정되었습니다.");
+			req.setAttribute("url", "/res/user/main.do");
+		} else {
+			req.setAttribute("msg", "수정오류입니다.");
+		}
+		return "include/return";
+	}
 
 }
    

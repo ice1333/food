@@ -34,14 +34,19 @@ public class RestaurantDao {
 		return sqlSession.delete("restaurant.requestDelete",rqna_no);
 	}
 	public int restinsert(RestaurantVo vo) {
-		return sqlSession.insert("restaurant.insert", vo);
+		int r = -1;
+		try {
+			r = sqlSession.insert("restaurant.insert", vo);
+		}catch (Exception e) {
+			r = 0;
+			System.out.println(e.getMessage());
+		}
+		return r;
 	}
-	public RestaurantQnaVo no_select(int rqna_no) {
-		return sqlSession.selectOne("rqna.no_select",rqna_no);
+	public RestaurantQnaVo selectonno_selecte(int rqna_no) {
+		return sqlSession.selectOne("restaurant.no_select",rqna_no);
 	}
-	public RestaurantVo selectone(int r_no) {
-		return sqlSession.selectOne("restaurant.shopDetail",r_no);
+	public RestaurantVo selectone(int rqna_no) {
+		return sqlSession.selectOne("restaurant.shopDetail",rqna_no);
 	}
-	
-	
 }

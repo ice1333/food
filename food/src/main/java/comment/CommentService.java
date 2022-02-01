@@ -20,4 +20,7 @@ public class CommentService {
 	public int adqdelete(int c_no) {
 		return dao.adqdelete(c_no);
 	}
+	public List<CommentVo> restselectList(CommentVo com){
+		return dao.restselectList(com);
+	}
 }

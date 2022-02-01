@@ -57,6 +57,7 @@ public class AdQnaDao {
 	public int adqnaUpdate(AdQnaVo vo) {
 		return sst.update("adqna.adqnaUpdate",vo);
 	}
+	
 	//사용자 광고등록
 	public int adqnainsert(AdQnaVo vo) {
 		int r=-1;

@@ -42,7 +42,7 @@ public class AdQnaController {
 		int startIdx = (vo.getPage()-1)*10;
 		vo.setStartIdx(startIdx);
 		
-		List<AdQnaVo> list = adqnaService.selectList(vo);
+		List<AdQnaVo> list = adqnaService.adqnalist(vo);
 		model.addAttribute("list",list);
 		model.addAttribute("totPage", totPage);
 		model.addAttribute("totCount",totCount);
@@ -61,14 +61,15 @@ public class AdQnaController {
 		return "admin/adqna/adqnaview";
 	}
 	
-	@RequestMapping("admin/delAjax.do")
-	public String delAjax(HttpServletRequest req, Model model, AdQnaVo vo) {
+	@RequestMapping(value="admin/delAjax.do")
+	public String delAjax(HttpServletRequest req,Model model) {
 		
 		String[] Msg = req.getParameterValues("valueArr");
 		int size = Msg.length;
 		for(int i=0; i<size; i++) {
 			adqnaService.adqnadelete(Msg[i]);
 		}
+		
 		return "admin/include/result";
 	}
 	
@@ -81,12 +82,13 @@ public class AdQnaController {
 
 	
 	
-	
-	
-	
+	//사용자 페이지 시작
 	
 	@GetMapping("adqna/index.do")
-	public String index(Model model, HttpServletRequest req, AdQnaVo vo) {
+	public String index(Model model, HttpServletRequest req, AdQnaVo vo,HttpSession sess) {
+		
+		
+		
 		int totCount = adqnaService.adqnacount(vo); //총갯수
 		int totPage = totCount / 10;		//총페이지
 		if (totCount % 10 > 0 ) totPage++; 
@@ -94,7 +96,7 @@ public class AdQnaController {
 		int startIdx = (vo.getPage()-1)*10;
 		vo.setStartIdx(startIdx);
 		
-		List<AdQnaVo> list = adqnaService.selectList(vo);
+		List<AdQnaVo> list = adqnaService.adqnalist(vo);
 		model.addAttribute("list",list);
 		model.addAttribute("totPage", totPage);
 		model.addAttribute("totCount",totCount);
@@ -105,24 +107,21 @@ public class AdQnaController {
 	
 	
 	@GetMapping("adqna/edit.do")
-	public String edit(Model model,@RequestParam int adqna_no) {
+	public String edit(Model model,@RequestParam int adqna_no,HttpSession sess) {
 		model.addAttribute("vo",adqnaService.no_select(adqna_no));
 		return "adqna/edit";
 	}
 	
 	@GetMapping("adqna/view.do")
-	public String view(Model model,@RequestParam int adqna_no) {
+	public String view(Model model,@RequestParam int adqna_no,HttpSession sess,AdQnaVo vo) {
+		
 		model.addAttribute("vo",adqnaService.no_select(adqna_no));
 		return "adqna/view";
 	}
 	
 	@GetMapping("adqna/write.do") // 로그인 완성후 다시
-	public String write(HttpSession sess,AdQnaVo vo) {
-//		UserVo uv= (UserVo)sess.getAttribute("userInfo");
-		UserVo uv= new UserVo();
-		uv.setU_no(1);
-		uv.setU_name("전창혁");
-		
+	public String write(HttpSession sess,AdQnaVo vo,HttpServletRequest req) {
+		user.UserVo uv= (user.UserVo)sess.getAttribute("userInfo");
 		int u_no=uv.getU_no();
 		String u_name=uv.getU_name();
 		vo.setU_no(u_no);
@@ -131,11 +130,16 @@ public class AdQnaController {
 	}
 	
 	
-	
-	
 	@PostMapping("adqna/insert.do")
 	public String insert(HttpServletRequest req, MultipartFile file,HttpSession ses,AdQnaVo vo,MultipartFile file2) {
-		
+
+		user.UserVo uv = (user.UserVo)ses.getAttribute("userInfo");
+		int u_no = uv.getU_no();
+		String u_name=uv.getU_name();
+		String u_uemail=uv.getU_uemail();
+		vo.setU_uemail(u_uemail);
+		vo.setU_name(u_name);
+		vo.setU_no(u_no);
 		
 		if (!file.isEmpty()) {//사용자가 파일을 첨부했다면
 			try {
@@ -174,10 +178,18 @@ public class AdQnaController {
 
 	}
 	
-	
-	
+
 	@PostMapping("adqna/update.do")
-	public String update(Model model, HttpSession sess,MultipartFile file,HttpServletRequest req,AdQnaVo vo,MultipartFile file2) {
+	public String update(Model model, HttpSession ses,MultipartFile file,HttpServletRequest req,AdQnaVo vo,MultipartFile file2) {
+		
+		user.UserVo uv = (user.UserVo)ses.getAttribute("userInfo");
+		int u_no = uv.getU_no();
+		String u_name=uv.getU_name();
+		String u_uemail=uv.getU_uemail();
+		vo.setU_uemail(u_uemail);
+		vo.setU_name(u_name);
+		vo.setU_no(u_no);
+		
 		if("1".equals(req.getParameter("delCheck"))) {
 			AdQnaVo av = adqnaService.edit(vo.getAdqna_no());
 			File f = new File(req.getRealPath("/upload/")+av.getFilename_org());
@@ -218,7 +230,6 @@ public class AdQnaController {
 		}
 		return "include/return";
 	}
-	
 	
 	
 	@GetMapping("adqna/Udelete.do")

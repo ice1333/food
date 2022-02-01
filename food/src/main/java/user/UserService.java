@@ -1,5 +1,7 @@
 package user;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,4 +21,21 @@ public class UserService {
 		}
 		return false;
 	}
+	
+	public int emailCheck(String u_uemail) {
+		return dao.emailCheck(u_uemail);
+	}
+	
+	public int insert(UserVo vo) {
+		return dao.insert(vo);
+	}
+	
+	public List<UserVo> getPrivacy(UserVo vo){
+		return dao.getPrivacylist(vo);
+	}
+	
+	public int updatePrivacy(UserVo vo) {
+		return dao.updatePrivacy(vo);
+	}
+	
 }

@@ -9,6 +9,7 @@ public class RestaurantVo extends CommonVo{
 	private int r_no;
 	private String r_name;
 	private String r_address;
+	private String r_address2;
 	private String r_tel;
 	private String r_menu;
 	private String r_week;
@@ -25,107 +26,77 @@ public class RestaurantVo extends CommonVo{
 	private int r_wishcount;
 	private int r_stars;
 	private int a_no;
-	private Timestamp r_regdate;
 	private int r_status;
-	private String a;
-	private String b;
-	private String c;
-	private String d;
-	private String f_han;
-	private String f_bun;
-	private String f_il;
-	private String f_jung;
-	private String f_go;
-	private String f_tang;
-	private String f_don;
-	private String f_yang;
-	private String park_no;
-	private String park_yes;
+	private int u_no;
+	private String r_filename_org;
+	private String r_filename_real;
+	private String r_filename_org1;
+	public String getR_filename_org() {
+		return r_filename_org;
+	}
+	public void setR_filename_org(String r_filename_org) {
+		this.r_filename_org = r_filename_org;
+	}
+	public String getR_filename_real() {
+		return r_filename_real;
+	}
+	public void setR_filename_real(String r_filename_real) {
+		this.r_filename_real = r_filename_real;
+	}
+	public String getR_filename_org1() {
+		return r_filename_org1;
+	}
+	public void setR_filename_org1(String r_filename_org1) {
+		this.r_filename_org1 = r_filename_org1;
+	}
+	public String getR_filename_real1() {
+		return r_filename_real1;
+	}
+	public void setR_filename_real1(String r_filename_real1) {
+		this.r_filename_real1 = r_filename_real1;
+	}
+	public String getR_filename_org2() {
+		return r_filename_org2;
+	}
+	public void setR_filename_org2(String r_filename_org2) {
+		this.r_filename_org2 = r_filename_org2;
+	}
+	public String getR_filename_real2() {
+		return r_filename_real2;
+	}
+	public void setR_filename_real2(String r_filename_real2) {
+		this.r_filename_real2 = r_filename_real2;
+	}
+	public String getR_filename_org3() {
+		return r_filename_org3;
+	}
+	public void setR_filename_org3(String r_filename_org3) {
+		this.r_filename_org3 = r_filename_org3;
+	}
+	public String getR_filename_real3() {
+		return r_filename_real3;
+	}
+	public void setR_filename_real3(String r_filename_real3) {
+		this.r_filename_real3 = r_filename_real3;
+	}
+	private String r_filename_real1;
+	private String r_filename_org2;
+	private String r_filename_real2;
+	private String r_filename_org3;
+	private String r_filename_real3;
+	private Timestamp r_regdate;
+	public int getU_no() {
+		return u_no;
+	}
+	public void setU_no(int u_no) {
+		this.u_no = u_no;
+	}
 	
-	
-	public String getA() {
-		return a;
+	public String getR_address2() {
+		return r_address2;
 	}
-	public void setA(String a) {
-		this.a = a;
-	}
-	public String getB() {
-		return b;
-	}
-	public void setB(String b) {
-		this.b = b;
-	}
-	public String getC() {
-		return c;
-	}
-	public void setC(String c) {
-		this.c = c;
-	}
-	public String getD() {
-		return d;
-	}
-	public void setD(String d) {
-		this.d = d;
-	}
-	public String getF_han() {
-		return f_han;
-	}
-	public void setF_han(String f_han) {
-		this.f_han = f_han;
-	}
-	public String getF_bun() {
-		return f_bun;
-	}
-	public void setF_bun(String f_bun) {
-		this.f_bun = f_bun;
-	}
-	public String getF_il() {
-		return f_il;
-	}
-	public void setF_il(String f_il) {
-		this.f_il = f_il;
-	}
-	public String getF_jung() {
-		return f_jung;
-	}
-	public void setF_jung(String f_jung) {
-		this.f_jung = f_jung;
-	}
-	public String getF_go() {
-		return f_go;
-	}
-	public void setF_go(String f_go) {
-		this.f_go = f_go;
-	}
-	public String getF_tang() {
-		return f_tang;
-	}
-	public void setF_tang(String f_tang) {
-		this.f_tang = f_tang;
-	}
-	public String getF_don() {
-		return f_don;
-	}
-	public void setF_don(String f_don) {
-		this.f_don = f_don;
-	}
-	public String getF_yang() {
-		return f_yang;
-	}
-	public void setF_yang(String f_yang) {
-		this.f_yang = f_yang;
-	}
-	public String getPark_no() {
-		return park_no;
-	}
-	public void setPark_no(String park_no) {
-		this.park_no = park_no;
-	}
-	public String getPark_yes() {
-		return park_yes;
-	}
-	public void setPark_yes(String park_yes) {
-		this.park_yes = park_yes;
+	public void setR_address2(String r_address2) {
+		this.r_address2 = r_address2;
 	}
 	public int getR_no() {
 		return r_no;

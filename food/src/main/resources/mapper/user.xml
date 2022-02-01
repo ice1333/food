@@ -10,18 +10,35 @@
 		INSERT INTO user (
 			u_uemail, u_pwd, u_name, u_gender, u_tel, u_regdate, u_status, u_zuocide , u_addr1 ,u_addr2
 		) VALUES (
-			#{u_uemail},md5(#{u_pwd}),#{u_name},#{u_gender},#{u_tel},#{u_regdate},{0},#{u_zuocide},#{u_addr1},#{u_addr2}
+			#{u_uemail},md5(#{u_pwd}),#{u_name},#{u_gender},#{u_tel},NOW(),1,#{u_zuocide},#{u_addr1},#{u_addr2}
 		)
 		
 	<selectKey keyProperty="u_no" resultType="int" order="AFTER">
 		SELECT last_insert_id()
 	</selectKey>	
-		
 	</insert>
 	
 	<select id="emailCheck" parameterType="String" resultType="int">
-		SELECT COUNT(*) FROM user WHERE email = #{email}
+		SELECT COUNT(*) FROM user WHERE u_uemail = #{u_uemail}
 	</select>
+	
+	<select id="getPrivacylist" parameterType="int" resultType="user.UserVo">
+		SELECT * FROM user WHERE u_no=#{u_no}
+	</select>
+	
+	<update id="updatePrivacy" parameterType="user.UserVo">
+		UPDATE user SET 
+		u_uemail = #{u_uemail},
+		u_pwd = md5(#{u_pwd}),
+		u_name= #{u_name},
+		u_gender=#{u_gender},
+		u_tel= #{u_tel},
+		u_status=1,
+		u_zuocide=#{u_zuocide},
+		u_addr1=#{u_addr1},
+		u_addr2=#{u_addr2}
+		WHERE u_no =#{u_no} 
+	</update>
 	
 	
 	<select id="list" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
