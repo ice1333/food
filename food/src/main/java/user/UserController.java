@@ -69,7 +69,7 @@ public class UserController {
 	public String join() {
 		return "user/join";
 	}
-	
+	//회원가입
 	@PostMapping("/user/insert.do")
 	public String insert(UserVo vo, HttpServletRequest req) {
 		if(service.insert(vo) > 0) {
@@ -80,35 +80,48 @@ public class UserController {
 		}
 		return "include/return";
 	}
-	
+	//이메일체크
 	@GetMapping("/user/emailCheck.do")
 	public String emailCheck(Model model,@RequestParam String u_uemail) {
 		model.addAttribute("result", service.emailCheck(u_uemail));
 		return "include/result";
 	}
 	
-	
+	//개인정보페이지 값 
 	@GetMapping("user/privacy.do")
 	public String privacy(Model model,UserVo vo,HttpServletRequest req,HttpSession ses) {
 		user.UserVo uv= (user.UserVo)ses.getAttribute("userInfo");
 		List<UserVo> list = service.getPrivacy(vo);
 		model.addAttribute("list",list);
-		
 		return "user/privacy";
 	}
-	
+	//마이페이지 개인정보수정
 	@RequestMapping("user/update.do")
 	public String update(UserVo vo,HttpServletRequest req,HttpSession ses) {
 		user.UserVo uv=(user.UserVo)ses.getAttribute("userInfo");
 		//세션에서 가져와서 여기다가 셋해야대
 		if(service.updatePrivacy(vo) > 0) {
+			ses.invalidate();
 			req.setAttribute("msg", "정상적으로 수정되었습니다.");
 			req.setAttribute("url", "/res/user/main.do");
+			
 		} else {
 			req.setAttribute("msg", "수정오류입니다.");
 		}
 		return "include/return";
 	}
-
+	//사용자 회원상태 (탈퇴)
+	@RequestMapping("user/logupdate.do")
+	public String logupdate(UserVo vo,HttpSession ses,HttpServletRequest req) {
+		user.UserVo uv=(user.UserVo)ses.getAttribute("userInfo");
+		if(service.logupdate(vo)>0) {
+			ses.invalidate();
+			req.setAttribute("msg", "정상적으로 탈퇴되었습니다.");
+			req.setAttribute("url", "/res/user/login.do");
+		} else {
+			req.setAttribute("msg", "탈퇴오류 입니다.");
+		}
+		return "include/return";
+	}
 }
    

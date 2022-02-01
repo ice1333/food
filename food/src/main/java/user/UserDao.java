@@ -34,5 +34,9 @@ public class UserDao {
 	public List<UserVo> getPrivacylist(UserVo vo){
 		return sst.selectList("user.getPrivacylist",vo);
 	}
+	//마이페이지 회원탈퇴
+	public int logupdate(UserVo vo) {
+		return sst.update("user.logupdate",vo);
+	}
 	
 }
