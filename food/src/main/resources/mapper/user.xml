@@ -24,6 +24,12 @@
 	</select>
 	
 	
+	<select id="list" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
+		SELECT * FROM restaurant WHERE
+		if 
+			
+					
+	</select>
 	
 	
 	
