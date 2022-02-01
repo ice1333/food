@@ -25,10 +25,10 @@
     	<%@ include file="/WEB-INF/view/include/user_header.jsp" %>
 	<main>
       <div class="mainimg">
-        <div><img class="mainimg_size" src="img/woman_1.jpg"></div>
-        <div><img class="mainimg_size" src="img/woman_2.jpg"></div>
-        <div><img class="mainimg_size" src="img/woman_3.jpg"></div>
-        <div><img class="mainimg_size" src="img/woman_4.jpg"></div>
+        <div><img class="mainimg_size" src="/res/upload/${data.r_filename_real }"></div>
+        <div><img class="mainimg_size" src="/res/upload/${data.r_filename_real1 }"></div>
+        <div><img class="mainimg_size" src="/res/upload/${data.r_filename_real2 }"></div>
+        <div><img class="mainimg_size" src="/res/upload/${data.r_filename_real3 }"></div>
       </div>
       <div class="no1">
         <div class="no1__left">

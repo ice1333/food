@@ -26,8 +26,73 @@ public class RestaurantVo extends CommonVo{
 	private int r_wishcount;
 	private int r_stars;
 	private int a_no;
-	private Timestamp r_regdate;
 	private int r_status;
+	private int u_no;
+	private String r_filename_org;
+	private String r_filename_real;
+	private String r_filename_org1;
+	public String getR_filename_org() {
+		return r_filename_org;
+	}
+	public void setR_filename_org(String r_filename_org) {
+		this.r_filename_org = r_filename_org;
+	}
+	public String getR_filename_real() {
+		return r_filename_real;
+	}
+	public void setR_filename_real(String r_filename_real) {
+		this.r_filename_real = r_filename_real;
+	}
+	public String getR_filename_org1() {
+		return r_filename_org1;
+	}
+	public void setR_filename_org1(String r_filename_org1) {
+		this.r_filename_org1 = r_filename_org1;
+	}
+	public String getR_filename_real1() {
+		return r_filename_real1;
+	}
+	public void setR_filename_real1(String r_filename_real1) {
+		this.r_filename_real1 = r_filename_real1;
+	}
+	public String getR_filename_org2() {
+		return r_filename_org2;
+	}
+	public void setR_filename_org2(String r_filename_org2) {
+		this.r_filename_org2 = r_filename_org2;
+	}
+	public String getR_filename_real2() {
+		return r_filename_real2;
+	}
+	public void setR_filename_real2(String r_filename_real2) {
+		this.r_filename_real2 = r_filename_real2;
+	}
+	public String getR_filename_org3() {
+		return r_filename_org3;
+	}
+	public void setR_filename_org3(String r_filename_org3) {
+		this.r_filename_org3 = r_filename_org3;
+	}
+	public String getR_filename_real3() {
+		return r_filename_real3;
+	}
+	public void setR_filename_real3(String r_filename_real3) {
+		this.r_filename_real3 = r_filename_real3;
+	}
+	private String r_filename_real1;
+	private String r_filename_org2;
+	private String r_filename_real2;
+	private String r_filename_org3;
+	private String r_filename_real3;
+	
+	
+	private Timestamp r_regdate;
+	public int getU_no() {
+		return u_no;
+	}
+	public void setU_no(int u_no) {
+		this.u_no = u_no;
+	}
 	
 	public String getR_address2() {
 		return r_address2;

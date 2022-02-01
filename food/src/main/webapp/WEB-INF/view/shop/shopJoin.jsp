@@ -158,7 +158,9 @@ function goSave(){
                         
                         </div><br>
                         <div class="type_form member_join">
-                        <form name="frm" id="frm" action="insert.hensu" method="post">
+                        <form name="frm" id="frm" action="insert.do" method="post" enctype="multipart/form-data">
+                        <input type="hidden" name="u_no" value="${userInfo.u_no }">
+                        <input type="hidden" name="r_status" value="0">
                         <p class="page_sub"><span class="ico">*</span>필수입력사항</p>
                             <table class="tbl_comm">
                                 <tbody>
@@ -287,15 +289,13 @@ function goSave(){
                                         </th>
                                         <td>
                                         <div><input type="file" name="file" id="picture1"> 메인사진</div>
-                                        <div><input type="file" name="file2" id="picture2"> 1번 사진</div>
-                                        <div><input type="file" name="file3" id="picture3"> 2번 사진</div>
-                                        <div><input type="file" name="file4" id="picture4"> 3번 사진</div>
+                                        <div><input type="file" name="file1" id="picture2"> 1번 사진</div>
+                                        <div><input type="file" name="file2" id="picture3"> 2번 사진</div>
+                                        <div><input type="file" name="file3" id="picture4"> 3번 사진</div>
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
-                            <input type="hidden" name="cmd" value="write.do"/>
-                        	<input type="hidden" name="checkEmail" id="checkEmail" value="0"/>
                             <div id="formSubmit" class="abc">
                                 <button type="button" class="btn active btn_join" onclick="goSave();" style="height:56px;">업체 등록 승인요청</button>
                             </div>
