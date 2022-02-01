@@ -13,11 +13,25 @@ public class CommentVo {
 	private int adqna_no;
 	private Timestamp regdate;
 	private String u_name;
+	private int r_no;
+	private int r_stars;
 	
 	
 	
 	
 	
+	public int getR_stars() {
+		return r_stars;
+	}
+	public void setR_stars(int r_stars) {
+		this.r_stars = r_stars;
+	}
+	public int getR_no() {
+		return r_no;
+	}
+	public void setR_no(int r_no) {
+		this.r_no = r_no;
+	}
 	public int getAdqna_no() {
 		return adqna_no;
 	}

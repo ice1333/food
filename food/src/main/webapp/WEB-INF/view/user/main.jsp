@@ -25,10 +25,10 @@
         <div class="visual">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-                  <div class="swiper-slide" style="background-image: url('/res/img/user/main12.jpg') ; "></div>
-                  <!-- <div class="swiper-slide" style="background-image: url('/res/img/user/main2.jpg'); "></div>
-                  <div class="swiper-slide" style="background-image: url('/res/img/user/main3.jpg'); "></div>
-                  <div class="swiper-slide" style="background-image: url('/res/img/user/main4.jpg'); "></div> -->
+               	  <div class="swiper-slide" style="background-image: url('/res/img/user/main_1.jpg');"></div>
+                  <div class="swiper-slide" style="background-image: url('/res/img/user/main_2.jpg');"></div>
+                  <div class="swiper-slide" style="background-image: url('/res/img/user/main_3.jpg');"></div>
+                  <div class="swiper-slide" style="background-image: url('/res/img/user/main_4.jpg');"></div>
                 </div>
                 <div class="swiper-button-next"></div>
                 <div class="swiper-button-prev"></div>

@@ -76,7 +76,8 @@ table {
   justify-content: center;
   width: 1200px;
   margin: 0 auto;
-  
+  margin-top: 50px;
+  margin-bottom: 100px;
 }
 
 /* pagination */

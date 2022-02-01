@@ -20,4 +20,13 @@ public class CommentService {
 	public int adqdelete(int c_no) {
 		return dao.adqdelete(c_no);
 	}
+	public List<CommentVo> restselectList(CommentVo com){
+		return dao.restselectList(com);
+	}
+	public int restinsert(CommentVo com) {
+		return dao.restinsert(com);
+	}
+	public int restdelete(int c_no) {
+		return dao.restdelete(c_no);
+	}
 }
