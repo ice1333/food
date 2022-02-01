@@ -6,8 +6,7 @@
 
  <table class="list">
     <colgroup>
-        <col width="50px" />
-        <col width="100" />
+        <col width="150" />
         <col width="700px" />
         <col width="150px" />
         <col width="100px"/>
@@ -24,15 +23,16 @@
                      	<c:forEach var="vo" items="${list}" >     
                        <tr>
                             <!-- 사용자할때는 가리고 그래야 번호가 안나오니깐-->
-                           <td>${vo.c_no}</td>
+                           <td class="writer">${vo.u_name}</td>
                            <td class="txt_l" style="text-align:left;">
                                ${vo.content}
                            </td>
                            <td class="date"><fmt:formatDate value="${vo.regdate}" pattern="yyyy-MM-dd"/></td>
-                           <td class="writer">
-                              	${vo.u_no}
+                           <td>${vo.r_stars}</td>
+                           <%--<c:if test="${vo.u_no == userInfo.u_no }"> --%>
+                           <td>
+                           <a class="btn" href="javascript:goDel();">삭제</a>
                            </td>
-                           
                        </tr>
                      	</c:forEach>
                      </c:if>

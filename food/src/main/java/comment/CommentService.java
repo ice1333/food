@@ -23,4 +23,10 @@ public class CommentService {
 	public List<CommentVo> restselectList(CommentVo com){
 		return dao.restselectList(com);
 	}
+	public int restinsert(CommentVo com) {
+		return dao.restinsert(com);
+	}
+	public int restdelete(int c_no) {
+		return dao.restdelete(c_no);
+	}
 }

@@ -38,8 +38,20 @@
 	</select>-->
 	
 	<select id="restselectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
-		SELECT * FROM shop.comment WHERE tablename=#{tablename} AND r_no=#{r_no}
+		SELECT *,(SELECT u_name FROM shop.user WHERE u_no=comment.u_no) u_name, (SELECT r_stars FROM shop.restaurant WHERE r_no=comment.r_no) r_stars FROM shop.comment WHERE tablename=#{tablename} AND r_no=#{r_no}
 	</select>
+	
+	<insert id="restinsert" parameterType="comment.CommentVo">
+		INSERT INTO shop.comment (
+		c_no, tablename, content, adqna_no , regdate , a_no ,u_no, r_no 
+		) values(
+		#{c_no}, #{tablename}, #{content}, #{adqna_no} , NOW() ,#{a_no} ,#{u_no} ,${r_no} 
+		)
+	</insert>
+	
+	<delete id="restdelete" parameterType="int">
+		DELETE FROM comment WHERE c_no=#{c_no} 
+	</delete>
 	
 
 </mapper>

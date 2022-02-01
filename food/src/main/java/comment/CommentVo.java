@@ -14,11 +14,18 @@ public class CommentVo {
 	private Timestamp regdate;
 	private String u_name;
 	private int r_no;
+	private int r_stars;
 	
 	
 	
 	
 	
+	public int getR_stars() {
+		return r_stars;
+	}
+	public void setR_stars(int r_stars) {
+		this.r_stars = r_stars;
+	}
 	public int getR_no() {
 		return r_no;
 	}
