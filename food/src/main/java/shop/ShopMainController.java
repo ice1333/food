@@ -25,5 +25,8 @@ public class ShopMainController {
 		return "shop/shopmain";
 	}
 	
-	
+	@GetMapping("shop/join.do")
+	public String shopJoin() {
+		return "shop/shopJoin";
+	}
 }

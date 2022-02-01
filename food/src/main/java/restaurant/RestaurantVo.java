@@ -9,6 +9,7 @@ public class RestaurantVo extends CommonVo{
 	private int r_no;
 	private String r_name;
 	private String r_address;
+	private String r_address2;
 	private String r_tel;
 	private String r_menu;
 	private String r_week;
@@ -27,6 +28,13 @@ public class RestaurantVo extends CommonVo{
 	private int a_no;
 	private Timestamp r_regdate;
 	private int r_status;
+	
+	public String getR_address2() {
+		return r_address2;
+	}
+	public void setR_address2(String r_address2) {
+		this.r_address2 = r_address2;
+	}
 	
 	public int getR_no() {
 		return r_no;
