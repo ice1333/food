@@ -295,7 +295,7 @@ function goUpdate(){
                                         line-height: 54px;">취소</button>
                                         <button type="button" class="btn active btn_join" onclick="goSave();">확인</button>
                                     </div>
-                                </form>
+                                </form> 
                                 <form name="logfrm" id="logfrm" action="logupdate.do" method="get">
                                 	<div id="formSubmit" class="abc">
                                 		<a href="javascript:goUpdate();" class="btn default">회원 탈퇴</a>
