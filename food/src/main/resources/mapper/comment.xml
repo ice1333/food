@@ -12,7 +12,7 @@
 	
 	<insert id="adqcominsert" parameterType="comment.CommentVo">
 		INSERT INTO shop.comment (
-		c_no, tablename, content, adqna_no , regdate , a_no ,u_no
+		c_no, tablename, content, adqna_no , regdate , a_no ,u_no 
 		) values(
 		#{c_no}, #{tablename}, #{content}, #{adqna_no} , NOW() ,#{a_no} ,#{u_no} 
 		)
@@ -37,6 +37,9 @@
 		where tablename=#{tablename} and adqna_no=#{adqna_no}
 	</select>-->
 	
+	<select id="restselectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
+		SELECT * FROM shop.comment WHERE tablename=#{tablename} AND r_no=#{r_no}
+	</select>
 	
 
 </mapper>

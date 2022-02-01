@@ -24,4 +24,7 @@ public class CommentDao {
 	public int aqstatus(int aq_status) {
 		return sst.selectOne("comment.aqstatus",aq_status);
 	}
+	public List<CommentVo> restselectList(CommentVo com){
+		return sst.selectList("comment.restselectList", com);
+	}
 }

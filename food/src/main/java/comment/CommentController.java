@@ -43,5 +43,17 @@ public class CommentController {
 		return "admin/include/usercommentlist";
 	}
 	
+	// 레스토랑 상세페이지 댓글
+	@GetMapping("/comment/restlist.do")
+	public String restlist(Model model, CommentVo com,HttpSession sess) {
+		/*
+		 * user.UserVo vo = (user.UserVo)sess.getAttribute("userInfo");
+		 *  int u_no = vo.getU_no();
+			com.setU_no(u_no);
+		 */
+		model.addAttribute("list",service.restselectList(com));
+		return "admin/include/restCommentList";
+	}
+	
 	
 }

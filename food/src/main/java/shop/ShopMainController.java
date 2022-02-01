@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
+import comment.CommentService;
+import comment.CommentVo;
 import restaurant.RestaurantService;
 import restaurant.RestaurantVo;
 import user.UserVo;
@@ -21,15 +23,18 @@ import user.UserVo;
 public class ShopMainController {
 
 	@Autowired
+	CommentService cService;
+	@Autowired
 	RestaurantService service; 
 	
 	@GetMapping("shop/shopmain.do")
 	public String main(Model model, @RequestParam int r_no) {
-		RestaurantVo vo = new RestaurantVo();
-		
 		model.addAttribute("data", service.selectone(r_no));
-		
-		System.out.println(vo.getR_address());
+		comment.CommentVo cv = new comment.CommentVo();
+		cv.setR_no(r_no);
+		cv.setTablename("restaurant");
+		System.out.println(cv.getR_no());
+		model.addAttribute("list",cService.restselectList(cv));
 		return "shop/shopmain";
 	}
 	
