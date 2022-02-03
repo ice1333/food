@@ -1,10 +1,15 @@
 package hensuUserMypage;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+
+import restaurant.RestaurantVo;
+import util.CommonUtil;
 
 @Controller
 public class HensuUserController {
@@ -18,12 +23,20 @@ public class HensuUserController {
 		return "user/myLove";
 	}
 	@GetMapping("user/mypage/mylist.do")
-	public String list() {
-		return "user/mylist";
-	}
-	@GetMapping("user/foot.do")
-	public String sad() {
-		return "include/user_footer";
+	public String restaurantList(VisitVo vo, Model model) {
+		int totCount = service.restaurantCount(vo);
+		int totPage = totCount / 10; //총페이지수 
+		if(totCount % 10 > 0) totPage++;
+		
+		int startIdx = (vo.getPage()-1)*10;
+		vo.setStartIdx(startIdx);
+		 
+		List<VisitVo> list = service.mylist(vo);
+		model.addAttribute("list",list);
+		model.addAttribute("totPage",totPage);
+		model.addAttribute("totCount",totCount);
+		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
+		return "user/myLove";
 	}
 	
 }

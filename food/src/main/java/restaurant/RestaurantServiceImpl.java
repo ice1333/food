@@ -60,5 +60,10 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public int update(RestaurantVo vo) {
 		return dao.update(vo);
 	}
+
+	@Override
+	public List<RestaurantVo> lists(RestaurantVo vo) {
+		return dao.lists(vo);
+	}
 	
 }

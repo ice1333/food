@@ -7,6 +7,8 @@ import javax.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import restaurant.RestaurantVo;
+
 @Service
 public class UserService {
 
@@ -40,6 +42,9 @@ public class UserService {
 	
 	public int logupdate(UserVo vo) {
 		return dao.logupdate(vo);
+	}
+	public List<RestaurantVo> listselect(RestaurantVo vo){
+		return dao.listselect(vo);
 	}
 	
 }

@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import restaurant.RestaurantVo;
+
 @Repository
 public class UserDao {
 	
@@ -37,6 +39,9 @@ public class UserDao {
 	//마이페이지 회원탈퇴
 	public int logupdate(UserVo vo) {
 		return sst.update("user.logupdate",vo);
+	}
+	public List<RestaurantVo> listselect(RestaurantVo vo){
+		return sst.selectList("user.listselect",vo);
 	}
 	
 }

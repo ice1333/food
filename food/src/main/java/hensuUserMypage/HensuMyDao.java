@@ -1,5 +1,7 @@
 package hensuUserMypage;
 
+import java.util.List;
+
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -16,4 +18,14 @@ public class HensuMyDao {
 	public UserVo selectone(int rqna_no) {
 		return sst.selectOne("hensuUser.Detail",rqna_no);
 	}
+	public int insert(VisitVo vo) {
+		return sst.insert("hensuUser.visitInsert", vo);
+	}
+	public List<VisitVo> myList(VisitVo vo) {
+		return sst.selectList("hensuUser.myList", vo);
+	}
+	public int myListCount(VisitVo vo) {
+		return sst.selectOne("hensuUser.myListCount",vo);
+	}
 }
+    

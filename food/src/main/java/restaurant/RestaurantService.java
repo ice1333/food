@@ -22,4 +22,7 @@ public interface RestaurantService {
 	
 	public RestaurantVo selectone(int r_no);
 	int update(RestaurantVo vo);
+	
+	public List<RestaurantVo> lists(RestaurantVo vo);
+	
 }

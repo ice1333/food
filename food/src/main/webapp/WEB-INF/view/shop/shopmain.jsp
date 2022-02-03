@@ -77,7 +77,7 @@ function goSave(){
           <div class="table__head">
             <h2>${data.r_name}</h2>
             <c:if test="${data.r_status==0 }">
-				<div><h1 style="text-align: center; padding: ">테스트 페이지 입니다</h1></div>
+				<div><h1 style="text-align: center; padding: "></h1></div>
 			</c:if>
             <button>찜하기</button>
           </div>
@@ -147,20 +147,24 @@ function goSave(){
         </div>
         <div class="no1__right">
              ${MapUtil.getMap(data.r_address,data.r_name) }
-             
         </div>
       </div>
 	      <div class="no2"><br>
 	    	 <div id="commentArea">
-      <input type="hidden" name="r_no" value="${data.r_no}">
-      <input type="hidden" name="tablename" value="restaurant">
+<<<<<<< HEAD
+=======
 	    	 
+>>>>>>> branch 'master' of https://github.com/ice1333/food.git
 	    	 </div>
 	     </div>
 	     <div class="text">
 			<tr>
               <td>
-                  <textarea name="content" id="content" style="height:50px;"></textarea>
+              <form action="" id="frm">
+              	<input type="hidden" name="r_no" value="${data.r_no}">
+   				<input type="hidden" name="tablename" value="restaurant">
+                  <textarea name="content" id="content"></textarea>
+              </form>
               </td>
               <td>
                   <div class="btnSet"  style="text-align:right;">
