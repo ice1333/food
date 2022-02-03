@@ -58,31 +58,33 @@
 	        }
 	    }).open();
 	}
-$(function(){
-		$("#emailCheckBtn").click(function(){
-			if ($("#u_uemail").val().trim() == ''){
-				alert('이메일을 입력해주세요.');
-				$("#u_uemail").focus();
-			} else {
-				$.ajax({
-					url: '/res/user/emailCheck.do',
-					data : {
-						u_uemail : $("#u_uemail").val()
-					},
-					async:false,
-					success:function(aaa) {
-					 if(aaa.trim()=='1'){
-						 alert('중복된 이메일입니다.');
-						 $("#u_uemail").focus();
-					 }	else {
-						 alert("사용가능한 이메일 입니다.");
-						
-					 }
-					}
-				})
-			}
+</script>
+<script>
+	$(function(){
+			$("#emailCheckBtn").click(function(){
+				if ($("#u_uemail").val().trim() == ''){
+					alert('이메일을 입력해주세요.');
+					$("#u_uemail").focus();
+				} else {
+					$.ajax({
+						url: '/res/user/emailCheck.do',
+						data : {
+							u_uemail : $("#u_uemail").val()
+						},
+						async:false,
+						success:function(aaa) {
+						 if(aaa.trim()=='1'){
+							 alert('중복된 이메일입니다.');
+							 $("#u_uemail").focus();
+						 }	else {
+							 alert("사용가능한 이메일 입니다.");
+							
+						 }
+						}
+					})
+				}
+			});
 		});
-	});
 
 $(function(){
 	$("#alerts").hide();
@@ -156,6 +158,25 @@ function goSave(){
 	}
 
 </script>
+<script>
+function goUpdate(){
+	if(confirm("정말 탈퇴하시겠습니까?")){
+	$.ajax({
+		url: '/res/user/logdate.do',
+		data : {
+			u_no : $("#u_no").val()
+		},
+		async:false, 
+		success:function() {
+			 alert('정상적으로 탈퇴되었습니다.');
+		}
+	});
+	$("#logfrm").submit();
+	} else {
+		alert("잘했다.")
+	}
+}
+</script>
 <html>
 <body>
     <div class="wrap">
@@ -165,10 +186,11 @@ function goSave(){
                 <h2 class="menu_title">마이페이지</h2>
                 <div class="inner_sub">
                     <ul id="adlist">
-                        <li><a href="">최근 본 매장</a></li>
-                        <li><a href="">찜 목록</a></li>
-                        <li><a href="">개인 정보 수정</a></li>
+                        <li><a href="/res/user/mypage/mylist.do">최근 본 매장</a></li>
+                        <li><a href="/res/user/mypage/myLove.do">찜 목록</a></li>
+                        <li><a href="/res/user/privacy.do">개인 정보 수정</a></li>
                         <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
+                        <li><a href="/res/shop/join.do">매장등록</a></li>
                     </ul>
                 </div>
             </div>
@@ -180,6 +202,7 @@ function goSave(){
                             <h2 class="sub_title">개인정보 수정</h2>
                                 <div class="type_form member_join">
                                 <form name="frm" id="frm" action="update.do" method="post">
+                                <input type="hidden" name="u_no" value="${userInfo.u_no}"/>
                                 <p class="page_sub"><span class="ico">*</span>필수입력사항</p>
                                     <table class="tbl_comm">
                                         <tbody>
@@ -190,7 +213,7 @@ function goSave(){
                                                     </span>
                                                 </th>
                                                 <td>
-                                                    <input type="text" name="u_uemail" value="${userInfo.u_uemail}" size="30"  label="이메일" >
+                                                    <input type="text" name="u_uemail" id="u_uemail" value="${userInfo.u_uemail}" size="30"  label="이메일 / 아이디" >
                                                     <a href="#;" id="emailCheckBtn" class="btn default" style="position:absolute;">중복확인</a>
                                                 </td>
                                                 
@@ -271,9 +294,15 @@ function goSave(){
                                         height: 56px;
                                         font-size: 16px;
                                         line-height: 54px;">취소</button>
-                                        <button type="button" class="btn active btn_join" onclick="javascript:goSave();">확인</button>
+                                        <button type="button" class="btn active btn_join" onclick="goSave();">확인</button>
                                     </div>
-                                </form>
+                                </form> 
+                                <form name="logfrm" id="logfrm" action="logupdate.do" method="get">
+                                	<div id="formSubmit" class="abc">
+                                		<a href="javascript:goUpdate();" class="btn default">회원 탈퇴</a>
+                                		<input type="hidden" name="u_no" id="u_no" value="${userInfo.u_no}"/>
+                                	</div>
+                               	</form>
                             </div>
                     	</div>
                 	</div>

@@ -107,8 +107,7 @@ $(document).ready(function() {
                                                                                     </li>
                                                                                     <li class="file">
                                                                                         <strong class="th">첨부파일</strong>
-                                                                                        <span class="td"><input multiple="multiple"type="file" id="file" name="file" title="첨부파일을 올려주세요"/></span>
-                                                                                    	<span class="td"><input multiple="multiple"type="file" id="file" name="file2" title="첨부파일을 올려주세요"/></span>
+                                                                                        <span class="td"><input multiple="multiple"type="file" id="file" name="file" title="첨부파일을 올려주세요"/></span>                               	
                                                                                     	
                                                                                     </li>
                                                                                 </ul>

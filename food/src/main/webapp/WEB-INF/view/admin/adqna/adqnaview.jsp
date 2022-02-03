@@ -68,7 +68,6 @@
 </script>
 <body>
     <div class="wrap">
-    
     <%@ include file="/WEB-INF/view/admin/include/top.jsp" %>
         	<div class="sub">
 	            <div class="size">
@@ -90,13 +89,9 @@
 	                            <dd>
 	                            <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org}&real=${vo.filename_real}" 
 								target="_blank">${vo.filename_org } </a> <br>
-								<a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org2}&real=${vo.filename_real2}" 
-								target="_blank">${vo.filename_org2} </a>
-	                            
+								
 	                            </dd>
-	                            
 	                        </dl>
-	                       
 	                        </div>
 	                        <div class="btnSet clear">
 	                            <div class="fl_l">
@@ -105,7 +100,6 @@
 	                          	</div>
 	                        </div>
 	                		<div>
-	                			
 			                    <form method="post" name="frm" id="frm" action="" enctype="multipart/form-data" >
 			                    <input type="hidden" name="tablename" value="adqna">
 			                    <!--<input type="hidden" name="a_no" value="${vo.a_no}"> 여기현수형이 -->
@@ -129,16 +123,11 @@
 			                            </tbody>
 			                        </table>
 			                        </form>
-							
 			                    <div id="commentArea"></div>
-			                   
                     		</div>
 	                    </div>
-	                    
 	                </div>
 	            </div>
-	           
         </div>
-    
 </body>
 </html>

@@ -99,9 +99,38 @@
 			r_filename_org,r_filename_real,r_filename_org1,r_filename_real1,r_filename_org2,r_filename_real2,r_filename_org3,r_filename_real3,r_status,u_no
 		) VALUES (
 			#{r_name},#{r_zipcode},#{r_address},#{r_address2},#{r_tel},#{r_menu},#{r_week},#{r_breaktime},#{r_holiday}, #{r_parking}, #{r_price}, #{r_foodtype},#{r_side},#{a_no},NOW()
-			,#{r_filename_org},#{r_filename_real},#{r_filename_org1},#{r_filename_real1},#{r_filename_org2},#{r_filename_real2},#{r_filename_org3},#{r_filename_real3},#{r_status},#{u_no}
+			,#{r_filename_org},#{r_filename_real},#{r_filename_org1},#{r_filename_real1},#{r_filename_org2},#{r_filename_real2},#{r_filename_org3},#{r_filename_real3},${0},#{u_no}
 		)
 	</insert>
+	
+	<update id="update" parameterType="restaurant.RestaurantVo">
+      UPDATE restaurant SET 
+         r_name=#{r_name} 
+         , r_zipcode=#{r_zipcode} 
+         , r_address=#{r_address}
+         , r_address2=#{r_address2}
+         , r_tel=#{r_tel} 
+         , r_menu=#{r_menu} 
+         , r_week=#{r_week}
+         , r_breaktime=#{r_breaktime}
+         , r_holiday=#{r_holiday} 
+         , r_parking=#{r_parking} 
+         , r_price=#{r_price}
+         , r_foodtype=#{r_foodtype}
+         , r_side=#{r_side}
+         , a_no=#{a_no}
+         , r_filename_org=#{r_filename_org}
+         , r_filename_real=#{r_filename_real}
+         , r_filename_org1=#{r_filename_org1}
+         , r_filename_real1=#{r_filename_real1}
+         , r_filename_org2=#{r_filename_org2}
+         , r_filename_real2=#{r_filename_real2}
+         , r_filename_org3=#{r_filename_org3}
+         , r_filename_real3=#{r_filename_real3}
+         , r_status=#{r_status}
+      WHERE r_no = #{r_no}
+   </update>
+	
 	<!-- 매장등록요청 상세 -->
 	<select id="no_select" parameterType="int" resultType="restaurant.RestaurantQnaVo">
 		SELECT * FROM shop.restqna WHERE rqna_no = #{xxx} 

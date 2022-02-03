@@ -136,14 +136,10 @@ $(document).ready(function() {
                                                                                     </li>
                                                                                     <li class="file">
                                                                                         <strong class="th">첨부파일</strong>
-                                                                                        
                                                                                          <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org}&real=${vo.filename_real}" 
-																							target="_blank">${vo.filename_org } </a>
+																							target="_blank">${vo.filename_org } </a>			
 																					</li>
-																					<li>
-																						<a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org2}&real=${vo.filename_real2}" 
-																							target="_blank">${vo.filename_org2} </a> 
-                                                                                    </li>
+																					
                                                                                 </ul>
                                                                             </td>
                                                                         </tr>

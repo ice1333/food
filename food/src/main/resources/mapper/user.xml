@@ -3,9 +3,10 @@
 <mapper namespace="user"> <!-- mapper파일의 이름 -->
 	
 	<select id="login" parameterType="user.UserVo" resultType="user.UserVo">
-		SELECT * FROM user WHERE u_uemail = #{u_uemail} AND u_pwd = md5(#{u_pwd})
+		SELECT * FROM user WHERE u_uemail = #{u_uemail} AND u_pwd = md5(#{u_pwd}) AND u_status=1
 	</select>
 	
+	<!--  회원가입 -->
 	<insert id ="insert" parameterType="user.UserVo" useGeneratedKeys="true">
 		INSERT INTO user (
 			u_uemail, u_pwd, u_name, u_gender, u_tel, u_regdate, u_status, u_zuocide , u_addr1 ,u_addr2
@@ -18,14 +19,17 @@
 	</selectKey>	
 	</insert>
 	
+	<!-- 이메일 체크 -->
 	<select id="emailCheck" parameterType="String" resultType="int">
-		SELECT COUNT(*) FROM user WHERE u_uemail = #{u_uemail}
+		SELECT COUNT(*) FROM user WHERE u_uemail = #{u_uemail} AND u_status=1
 	</select>
 	
+	<!--  마이페이지 개인정보수정시 값 불러오기 -->
 	<select id="getPrivacylist" parameterType="int" resultType="user.UserVo">
 		SELECT * FROM user WHERE u_no=#{u_no}
 	</select>
 	
+	<!-- 마이페이지 개인정보수정 -->
 	<update id="updatePrivacy" parameterType="user.UserVo">
 		UPDATE user SET 
 		u_uemail = #{u_uemail},
@@ -33,11 +37,15 @@
 		u_name= #{u_name},
 		u_gender=#{u_gender},
 		u_tel= #{u_tel},
-		u_status=1,
 		u_zuocide=#{u_zuocide},
 		u_addr1=#{u_addr1},
 		u_addr2=#{u_addr2}
 		WHERE u_no =#{u_no} 
+	</update>
+	
+	<!-- 마이페이지 회원탈퇴 -->
+	<update id="logupdate" parameterType="user.UserVo">
+		UPDATE user SET u_status = 0 WHERE u_no=#{u_no}
 	</update>
 	
 	

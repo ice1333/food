@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
@@ -31,10 +32,11 @@
                        <h2 class="menu_title">내정보</h2>
                        <div class="inner_sub">
                            <ul id="adlist">
-                               <li><a href="">최근 본 매장</a></li>
-                               <li><a href="">찜 목록</a></li>
-                               <li><a href="">개인 정보 수정</a></li>
-                               <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
+                                <li><a href="/res/user/mypage/mylist.do">최근 본 매장</a></li>
+		                        <li><a href="/res/user/mypage/myLove.do">찜 목록</a></li>
+		                        <li><a href="/res/user/privacy.do">개인 정보 수정</a></li>
+		                        <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
+		                        <li><a href="/res/shop/join.do">매장등록</a></li>
                            </ul>
                        </div>
                </div>
@@ -78,7 +80,6 @@
                                        </tr>
                                    </c:if>
                                    <c:if test="${!empty list}">
-                                       <c:forEach var="vo" items="${list}" varStatus="status">
                                        <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
                                        	   <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adc_no }"/></td>
                                            <td>1</td>
@@ -86,10 +87,8 @@
                                                <img id="blist_img_size" src="img/section_1.jpg" >
                                             </td>   
                                            <td class="title">상호명 : ㅇㄹ <br>업태 : ㅇㄹ </td>
-                                           <td class="last">⭐️ 5.0<c:choose>						
-                                       </c:choose></td>
+                                           <td class="last">⭐️ 5.0</td>						
                                        </tr>
-                                       </c:forEach>
                                    </c:if>
                                    </tbody>
                                </table>

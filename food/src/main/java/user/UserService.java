@@ -38,4 +38,8 @@ public class UserService {
 		return dao.updatePrivacy(vo);
 	}
 	
+	public int logupdate(UserVo vo) {
+		return dao.logupdate(vo);
+	}
+	
 }

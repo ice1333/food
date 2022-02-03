@@ -17,8 +17,7 @@ public class AdQnaVo extends SearchVo{
 	private String status;
 	private String u_name;
 	private String u_uemail;
-	private String filename_org2;
-	private String filename_real2;
+	
 	private String checkmain;
 	
 	public String getCheckmain() {
@@ -26,18 +25,6 @@ public class AdQnaVo extends SearchVo{
 	}
 	public void setCheckmain(String checkmain) {
 		this.checkmain = checkmain;
-	}
-	public String getFilename_org2() {
-		return filename_org2;
-	}
-	public void setFilename_org2(String filename_org2) {
-		this.filename_org2 = filename_org2;
-	}
-	public String getFilename_real2() {
-		return filename_real2;
-	}
-	public void setFilename_real2(String filename_real2) {
-		this.filename_real2 = filename_real2;
 	}
 	public String getU_name() {
 		return u_name;

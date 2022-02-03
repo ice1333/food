@@ -191,7 +191,7 @@ function goSave(){
                                                 </span>
                                             </th>
                                             <td>
-                                                <input type="text" name="u_uemail" value="" id="u_uemail" size="30" label="이메일" >
+                                                <input type="text" name="u_uemail" value="" id="u_uemail" size="30" label="이메일 / 아이디" >
                                                 <a href="#;" id="emailCheckBtn" class="btn default" style="position:absolute;">중복확인</a>
                                             </td>
                                     

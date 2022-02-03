@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="/res/js/user_common.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
@@ -141,7 +142,7 @@
         </c:if>
         <c:if  test="${!empty userInfo }">
         	<li class="menulistheader">
-	            <a href="privacy.do" class="menulink">
+	            <a href="/res/user/privacy.do" class="menulink">
 	                <span class="menutext">마이페이지</span>
 	            </a>
 	        </li>

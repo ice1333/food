@@ -54,6 +54,18 @@ public class CommentController {
 		model.addAttribute("list",service.restselectList(com));
 		return "admin/include/restCommentList";
 	}
-	
+	@GetMapping("/comment/restinsert.do")
+	public String restinsert(Model model, CommentVo com, HttpSession sess) {
+		user.UserVo uv= (user.UserVo)sess.getAttribute("userInfo");
+		int u_no = uv.getU_no();
+		com.setU_no(u_no);
+		model.addAttribute("vo",service.restinsert(com));
+		return "admin/include/result";
+	}
+	@GetMapping("/comment/restdelete.do")
+	public String restdelete(Model model, CommentVo com) {
+		model.addAttribute("result",service.restdelete(com.getC_no()));
+		return "admin/include/result";
+	}
 	
 }

@@ -22,11 +22,11 @@
 <script>
 function goSave(){
 	$.ajax({
-		url:'/res/comment/',
+		url:'/res/comment/restinsert.do',
 		type:'get',
 		data:$("#frm").serialize(), // serialize() 값을 넣어준다
 		success:function(){
-				alert("답변이 완료되었습니다."); //댓글이 등록되었을때
+				alert("댓글 작성 완료"); //댓글이 등록되었을때
 				$("#content").val("");
 				commentList('restaurant',${data.r_no});
 		
@@ -45,6 +45,22 @@ function goSave(){
 	$(function(){ //페이지가 열리자마자
 		commentList('restaurant',${data.r_no});
 	})
+	function goDel(c_no){
+		if(confirm('댓글을 삭제하시겠습니까?')){
+			$.ajax({
+				url:"/res/comment/restdelete.do",
+				data:{c_no:c_no},
+				success:function(res){
+					if(res.trim()=='1'){
+						alert('정상적으로 삭제되었습니다.');
+						commentList('restaurant', ${vo.r_no});
+					} else {
+						alert('삭제 오류입니다. 확인하세요');
+					}
+				}
+			})
+		}
+	} 
 </script>
 <body>
 <div id="wrap">
@@ -60,6 +76,9 @@ function goSave(){
         <div class="no1__left">
           <div class="table__head">
             <h2>${data.r_name}</h2>
+            <c:if test="${data.r_status==0 }">
+				<div><h1 style="text-align: center; padding: ">테스트 페이지 입니다</h1></div>
+			</c:if>
             <button>찜하기</button>
           </div>
           <table class="table__top">
@@ -83,7 +102,7 @@ function goSave(){
                   <c:forEach var="vo" items="${list}" varStatus="status">--%>
                     <tr>
                       <th>주소</th>
-                      <td>${data.r_address}</td>
+                      <td>${data.r_address},${data.r_address2}</td>
                     </tr>
                     <tr>
                       <th>전화번호</th>
@@ -124,19 +143,34 @@ function goSave(){
                   </tbody>
                
           </table>
-          <button class="fix" style="float: right;">수정/문의 하기</button>
+          <button class="fix" style="float: right;">문의 하기</button>
         </div>
         <div class="no1__right">
              ${MapUtil.getMap(data.r_address,data.r_name) }
              
         </div>
       </div>
-      <input type="hidden" name="tablename" value="restaurant">
+	      <div class="no2"><br>
+	    	 <div id="commentArea">
       <input type="hidden" name="r_no" value="${data.r_no}">
-	      <div class="no2">
-	    	 <div id="commentArea"></div>
+      <input type="hidden" name="tablename" value="restaurant">
+	    	 
+	    	 </div>
 	     </div>
+	     <div class="text">
+			<tr>
+              <td>
+                  <textarea name="content" id="content" style="height:50px;"></textarea>
+              </td>
+              <td>
+                  <div class="btnSet"  style="text-align:right;">
+                      <a class="btn" href="javascript:goSave();">저장 </a>
+                  </div>
+              </td>
+            </tr>
+		</div>
     </main>
+	
   <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
      <!--//canvas -->
  </div>
