@@ -381,10 +381,6 @@ a:link {
     margin:5px;
     max-width: 1200px
 }
-.quickMenu {
-    position: absolute;
-    z-index:9900; 
-    top: 100px;
-}
+
 
 /* �뫖�꽣 �걹 */

@@ -104,6 +104,8 @@
 				$("#p2").attr("value","0");
 			}
 		})
+	})
+	$(function(){
 		
 	})
 </script>
@@ -140,8 +142,8 @@
                                 <p>가격/1인당</p>
                             </div>
                             <ul class="price_box">
-                                <li id="f_a1" class="price_text">
-                                    <img src="/res/img/user/circle.png" style="height: 80px; width: 80px;" >
+                                <li class="price_text">
+                                    <img id="f_a1" src="/res/img/user/circle.png" style="height: 80px; width: 80px;" >
                                     <p id="price" >만원미만</p>
                                 </li>
                                 <li class="price_text">
