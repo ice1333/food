@@ -23,15 +23,10 @@
         <div class="container">
             <div class="lcontainer">
                 <div class="inner_wrap">
-<<<<<<< HEAD
-=======
-                    
->>>>>>> branch 'master' of https://github.com/ice1333/food.git
                     <c:forEach var="vo" items="${list}" varStatus="status">
                     <div class="search_list_restarants">
                         <div class="restarant">
-                            <a href="/res/shop/shopmain.do?r_no=${vo.r_n
-                            o}">
+                            <a href="/res/shop/shopmain.do?r_no=${vo.r_no}">
                             <img src="" ></a>
                             <div class="restrant_info">
                                 <a href="/res/shop/shopmain.do?r_no=${vo.r_no}">

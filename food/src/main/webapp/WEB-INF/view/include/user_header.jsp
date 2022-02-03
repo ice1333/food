@@ -274,11 +274,7 @@ $(function() {
                 <select id="stype" name="searchType" title="검색분류 선택">
                     <option value="">전체</option>
                     <option value="r_name" <c:if test="${param.searchType == 'r_name'}">selected</c:if>>매장이름</option>
-<<<<<<< HEAD
                     <option value="r_foodtype" <c:if test="${param.searchType == 'r_foodtype'}">selected</c:if>>음식종류</option>
-=======
-                    <option value="r_foodtype" <c:if test="${param.searchType == 'r_menu'}">selected</c:if>>음식종류</option>
->>>>>>> branch 'master' of https://github.com/ice1333/food.git
                 </select>
                 <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
                 <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
