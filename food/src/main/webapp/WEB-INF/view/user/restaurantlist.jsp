@@ -23,6 +23,10 @@
         <div class="container">
             <div class="lcontainer">
                 <div class="inner_wrap">
+<<<<<<< HEAD
+=======
+                    
+>>>>>>> branch 'master' of https://github.com/ice1333/food.git
                     <c:forEach var="vo" items="${list}" varStatus="status">
                     <div class="search_list_restarants">
                         <div class="restarant">
@@ -42,10 +46,7 @@
                     </div>
                 </div>
             </div>
-            <div class="rcontainer">
-            <div id="map" style="width:100%;height:500px;"></div>
-        	
-            </div>
+            
         
 
         <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>   
