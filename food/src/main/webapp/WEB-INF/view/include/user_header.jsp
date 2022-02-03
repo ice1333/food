@@ -4,6 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
+<script src="/res/js/user_common.js"></script>
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
