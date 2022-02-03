@@ -131,7 +131,7 @@ public class AdQnaController {
 	
 	
 	@PostMapping("adqna/insert.do")
-	public String insert(HttpServletRequest req, MultipartFile file,HttpSession ses,AdQnaVo vo,MultipartFile file2) {
+	public String insert(HttpServletRequest req, MultipartFile file,HttpSession ses,AdQnaVo vo) {
 
 		user.UserVo uv = (user.UserVo)ses.getAttribute("userInfo");
 		int u_no = uv.getU_no();
@@ -145,18 +145,11 @@ public class AdQnaController {
 			try {
 				String path= req.getRealPath("/upload/");
 				String filename = file.getOriginalFilename();
-				String filename2 = file2.getOriginalFilename();
 				String ext = filename.substring(filename.lastIndexOf("."));
-				String ext2 = filename2.substring(filename2.lastIndexOf("."));//확장자 .jpg
 				String filename_real = System.currentTimeMillis() + ext;
-				String filename_real2 = System.currentTimeMillis() +1 + ext2;
-				
 				file.transferTo(new File(path+filename_real)); // 경로에 파일 저장
-				file2.transferTo(new File(path+filename_real2));
 				vo.setFilename_org(filename);
 				vo.setFilename_real(filename_real);
-				vo.setFilename_org2(filename2);
-				vo.setFilename_real2(filename_real2);
 				
 				
 			} catch (Exception e) {
@@ -180,7 +173,7 @@ public class AdQnaController {
 	
 
 	@PostMapping("adqna/update.do")
-	public String update(Model model, HttpSession ses,MultipartFile file,HttpServletRequest req,AdQnaVo vo,MultipartFile file2) {
+	public String update(Model model, HttpSession ses,MultipartFile file,HttpServletRequest req,AdQnaVo vo) {
 		
 		user.UserVo uv = (user.UserVo)ses.getAttribute("userInfo");
 		int u_no = uv.getU_no();
@@ -196,25 +189,22 @@ public class AdQnaController {
 			f.delete();
 			vo.setFilename_org("");
 			vo.setFilename_real("");
-			vo.setFilename_org2("");
-			vo.setFilename_real2("");
+			
 		}
 		if (file!=null&&!file.isEmpty()) {
 			try {
 				String path = req.getRealPath("/upload/");
 				String filename = file.getOriginalFilename();
-				String filename2 = file.getOriginalFilename();
+				
 				String ext = filename.substring(filename.lastIndexOf("."));
-				String ext2 = filename2.substring(filename2.lastIndexOf("."));// 뒤에서부터 . 까지 잘라옴(.jpg)
+				
 				String filename_real = System.currentTimeMillis() + ext;
-				String filename_real2 = System.currentTimeMillis() +1 + ext;
+				
 				// 
 				file.transferTo(new File(path+filename_real));
-				file.transferTo(new File(path+filename_real2));// 경로에 파일을 저장 서버에저장할떄 한글로저장x
 				vo.setFilename_org(filename);
 				vo.setFilename_real(filename_real);
-				vo.setFilename_org2(filename2);
-				vo.setFilename_real2(filename_real2);
+				
 			} catch (Exception e) {
 				System.out.println(e.getMessage());
 			}

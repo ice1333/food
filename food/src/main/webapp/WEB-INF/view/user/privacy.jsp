@@ -186,9 +186,9 @@ function goUpdate(){
                 <h2 class="menu_title">마이페이지</h2>
                 <div class="inner_sub">
                     <ul id="adlist">
-                        <li><a href="">최근 본 매장</a></li>
-                        <li><a href="">찜 목록</a></li>
-                        <li><a href="">개인 정보 수정</a></li>
+                        <li><a href="/res/user/">최근 본 매장</a></li>
+                        <li><a href="/res/user/">찜 목록</a></li>
+                        <li><a href="#;">개인 정보 수정</a></li>
                         <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
                     </ul>
                 </div>
@@ -212,7 +212,7 @@ function goUpdate(){
                                                     </span>
                                                 </th>
                                                 <td>
-                                                    <input type="text" name="u_uemail" id="u_uemail" value="${userInfo.u_uemail}" size="30"  label="이메일" >
+                                                    <input type="text" name="u_uemail" id="u_uemail" value="${userInfo.u_uemail}" size="30"  label="이메일 / 아이디" >
                                                     <a href="#;" id="emailCheckBtn" class="btn default" style="position:absolute;">중복확인</a>
                                                 </td>
                                                 

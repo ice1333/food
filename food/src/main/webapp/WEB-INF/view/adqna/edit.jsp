@@ -103,16 +103,14 @@ $(document).ready(function() {
                                                                                         <strong class="th">첨부파일</strong>
                                                                                         <span class="td">
                                                                                             <input multiple="multiple" type="file" id="file" name="file" title="첨부파일을 올려주세요"/>
-                                                                                            <input multiple="multiple" type="file" id="file" name="file2" title="첨부파일을 올려주세요"/>
+                                                                                           
                                                                                             <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org}&real=${vo.filename_real}" 
 																							target="_blank">${vo.filename_org } </a> <br>
-																							 <a href="/res/common/download.jsp?path=/upload/&org=${vo.filename_org2}&real=${vo.filename_real2}" 
-																							target="_blank">${vo.filename_org2} </a>
 																							</span></li>
 																							
 																						<li class="td">
                                                                                             <input type="checkbox" name="delCheck" value="1">삭제(${vo.filename_org})<br>
-                                                                                            <input type="checkbox" name="delCheck" value="1">삭제(${vo.filename_org2})         
+                                                                                                  
                                                                                         </li>
                                                                                        
                                                                                 </ul>
