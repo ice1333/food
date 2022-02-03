@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 
 <html>
@@ -78,7 +79,6 @@
                                        </tr>
                                    </c:if>
                                    <c:if test="${!empty list}">
-                                       <c:forEach var="vo" items="${list}" varStatus="status">
                                        <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
                                        	   <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adc_no }"/></td>
                                            <td>1</td>
@@ -86,10 +86,8 @@
                                                <img id="blist_img_size" src="img/section_1.jpg" >
                                             </td>   
                                            <td class="title">상호명 : ㅇㄹ <br>업태 : ㅇㄹ </td>
-                                           <td class="last">⭐️ 5.0<c:choose>						
-                                       </c:choose></td>
+                                           <td class="last">⭐️ 5.0</td>						
                                        </tr>
-                                       </c:forEach>
                                    </c:if>
                                    </tbody>
                                </table>
