@@ -200,9 +200,21 @@
 	</where>
 </sql>
 
+		<sql id="Where">
+			<where>
+				<if test="searchType ==''">
+					(r_name LIKE '%${searchWord}%' OR r_menu LIKE '%${searchWord}%')
+				</if>
+				<if test= "searchType != null and searchType !=''">
+					${searchType} LIKE '%${searchWord}%'
+				</if>
+			</where>
+			</sql>
+
 	<select id="lists" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
 		select * from shop.restaurant
-		
+		<include refid = "Where"/>
+		<include refid= "mainwhere"/>
 	</select>
 
 	
