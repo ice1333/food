@@ -160,8 +160,8 @@ public class ShopMainController {
 					
 					file3.transferTo(new File(path+filename_real3)); // 경로에 파일을 저장 
 					
-					vo.setR_filename_org2(filename3);
-					vo.setR_filename_real2(filename_real3);
+					vo.setR_filename_org3(filename3);
+					vo.setR_filename_real3(filename_real3);
 					
 				} catch(Exception e) {
 					System.out.println(e.getMessage());
