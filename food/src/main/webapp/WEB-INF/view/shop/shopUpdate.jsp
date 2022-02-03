@@ -120,6 +120,26 @@ function goSave(){
 		$("#r_foodtype").focus();
 		return;
 	}
+	if($("#picture1").val().trim()==''){
+		alert('메인사진을 추가해주세요');
+		$("#picture1").focus();
+		return;
+	}
+	if($("#picture2").val().trim()==''){
+		alert('1번사진을 추가해주세요');
+		$("#picture2").focus();
+		return;
+	}
+	if($("#picture3").val().trim()==''){
+		alert('2번사진을 추가해주세요');
+		$("#picture3").focus();
+		return;
+	}
+	if($("#picture4").val().trim()==''){
+		alert('3번사진을 추가해주세요');
+		$("#picture4").focus();
+		return;
+	}
 	$("#frm").submit();
 	}
 

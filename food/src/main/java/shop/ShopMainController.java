@@ -142,7 +142,7 @@ public class ShopMainController {
 					String ext2 = filename2.substring(filename2.lastIndexOf(".")); // 확장자 (.jpg)
 					String filename_real2 = System.currentTimeMillis()-2 + ext2;
 					
-					file3.transferTo(new File(path+filename_real2)); // 경로에 파일을 저장 
+					file2.transferTo(new File(path+filename_real2)); // 경로에 파일을 저장 
 					
 					vo.setR_filename_org2(filename2);
 					vo.setR_filename_real2(filename_real2);
