@@ -23,32 +23,21 @@
         <div class="container">
             <div class="lcontainer">
                 <div class="inner_wrap">
-                    <p class="search_title">대학로 맛집 인기 검색순위</p>
-                   
                     <c:forEach var="vo" items="${list}" varStatus="status">
-                    
                     <div class="search_list_restarants">
                         <div class="restarant">
-                            <a href=""><img src="" ></a>
+                            <a href="/res/shop/shopmain.do?r_no=${vo.r_n
+                            o}">
+                            <img src="" ></a>
                             <div class="restrant_info">
-                                <a href="">
+                                <a href="/res/shop/shopmain.do?r_no=${vo.r_no}">
                                     <h3>${vo.r_name}<h3>
                                 </a>
-                                <strong class="star"></strong>
+                                <strong class="star">${vo.r_stars}</strong>
                             </div>
                         </div>
-                        <div class="restarant">
-                            <a href=""><img src="/res/img/user/woman_1.jpg" ></a>
-                            <div class="restrant_info">
-                                <a href="">
-                                    <h3>고치비<h3>
-                                </a>
-                                <strong class="star"></strong>
-                            </div>
-                        </div>      
                     </div>
                     </c:forEach>
-                    
                         </div>      
                     </div>
                 </div>

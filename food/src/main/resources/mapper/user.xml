@@ -16,7 +16,7 @@
 		
 	<selectKey keyProperty="u_no" resultType="int" order="AFTER">
 		SELECT last_insert_id()
-	</selectKey>	
+	</selectKey>	 
 	</insert>
 	
 	<!-- 이메일 체크 -->

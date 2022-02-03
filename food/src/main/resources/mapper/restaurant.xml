@@ -86,7 +86,7 @@
 	<!-- 삭제 -->
 	<delete id="restaurantDelete" >
 		DELETE FROM restaurant WHERE r_no=#{r_no}
-	</delete>
+	</delete> 
 	<delete id="requestDelete" >
 		DELETE FROM restqna WHERE rqna_no=#{rqna_no}
 	</delete>
@@ -146,13 +146,13 @@
 		<if test="a1 == 1 or a2 == 1 or a3==1 or a4==1">
 		and(
 			<if test= "a1 ==1">
-				or 10000 > r_price 
+				or r_price ] 10000 
 			</if>
 			<if test="a2 ==1">
-				or r_price between 10000 and 20000
+				or r_price (between 10000 and 20000)
 			</if>
 			<if test="a3 ==1">
-				or r_price between 20000 and 30000
+				or r_price (between 20000 and 30000)
 			</if>
 			<if test="a4 ==1">
 				or r_price > 30000
@@ -203,7 +203,7 @@
 		<sql id="Where">
 			<where>
 				<if test="searchType ==''">
-					(r_name LIKE '%${searchWord}%' OR r_menu LIKE '%${searchWord}%')
+					(r_name LIKE '%${searchWord}%' OR r_foodtype LIKE '%${searchWord}%')
 				</if>
 				<if test= "searchType != null and searchType !=''">
 					${searchType} LIKE '%${searchWord}%'
