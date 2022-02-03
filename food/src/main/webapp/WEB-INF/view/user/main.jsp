@@ -117,7 +117,7 @@
                             <li class="list_restrants2">
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/man_1.jpg" ></a>
+                                        <a href="/res/shop/shopmain.do?r_no=86"><img src="/res/img/user/man_1.jpg" ></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/man_2.jpg" ></a>
+                                        <a href="/res/shop/shopmain.do?r_no=28"><img src="/res/img/user/man_2.jpg" ></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/man_3.jpg" ></a>
+                                        <a href="/res/shop/shopmain.do?r_no=42"><img src="/res/img/user/man_3.jpg" ></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">

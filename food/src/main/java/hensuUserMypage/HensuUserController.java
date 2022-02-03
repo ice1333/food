@@ -21,9 +21,5 @@ public class HensuUserController {
 	public String list() {
 		return "user/mylist";
 	}
-	@GetMapping("user/foot.do")
-	public String sad() {
-		return "include/user_footer";
-	}
 	
 }

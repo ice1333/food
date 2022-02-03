@@ -4,4 +4,19 @@
 	<select id="Detail" parameterType="user.UserVo" resultType="user.UserVo">
 		SELECT * FROM shop.user WHERE u_no = #{xxx}
 	</select>
+	
+	<select id="visitList" parameterType="hensuUserMypage.VisitVo" resultType="hensuUserMypage.VisitVo">
+		SELECT * FROM visit
+		ORDER BY r_regdate DESC    
+		LIMIT ${startIdx},10
+	</select>
+	
+	<insert id="visitInsert" parameterType="hensuUserMypage.VisitVo">
+		INSERT INTO visit (
+			v_date, r_no, u_no
+		) VALUES (
+			NOW(),#{r_no},#{u_no}
+		)
+	
+	</insert>
 </mapper>

@@ -151,6 +151,10 @@ function goSave(){
       </div>
 	      <div class="no2"><br>
 	    	 <div id="commentArea">
+<<<<<<< HEAD
+=======
+	    	 
+>>>>>>> branch 'master' of https://github.com/ice1333/food.git
 	    	 </div>
 	     </div>
 	     <div class="text">
