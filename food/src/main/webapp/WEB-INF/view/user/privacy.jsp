@@ -190,6 +190,7 @@ function goUpdate(){
                         <li><a href="/res/user/">찜 목록</a></li>
                         <li><a href="#;">개인 정보 수정</a></li>
                         <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
+                        <li><a href="/res/shop/join.do">매장등록</a></li>
                     </ul>
                 </div>
             </div>

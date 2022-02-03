@@ -141,6 +141,7 @@ function goSave(){
                         <form name="frm" id="frm" action="update.do" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="u_no" value="${userInfo.u_no }">
                         <input type="hidden" name="r_status" value="0">
+                        <input type="hidden" name="r_no" value="${data.r_no }">
                         <p class="page_sub"><span class="ico">*</span>필수입력사항</p>
                             <table class="tbl_comm">
                                 <tbody>

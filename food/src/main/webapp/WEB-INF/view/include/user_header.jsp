@@ -141,7 +141,7 @@
         </c:if>
         <c:if  test="${!empty userInfo }">
         	<li class="menulistheader">
-	            <a href="privacy.do" class="menulink">
+	            <a href="/res/user/privacy.do" class="menulink">
 	                <span class="menutext">마이페이지</span>
 	            </a>
 	        </li>
