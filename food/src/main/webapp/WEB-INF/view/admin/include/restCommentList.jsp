@@ -31,7 +31,7 @@
                            <td>${vo.r_stars}</td>
                            <%--<c:if test="${vo.u_no == userInfo.u_no }"> --%>
                            <td>
-                           <a class="btn" href="javascript:goDel();">삭제</a>
+                           <a class="btn" href="javascript:goDel(${vo.c_no});">삭제</a>
                            </td>
                        </tr>
                      	</c:forEach>
