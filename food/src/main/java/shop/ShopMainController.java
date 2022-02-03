@@ -124,7 +124,7 @@ public class ShopMainController {
 					String path = req.getRealPath("/upload/");
 					String filename1 = file1.getOriginalFilename(); // 사용자가 업로드한 원본 파일
 					String ext1 = filename1.substring(filename1.lastIndexOf(".")); // 확장자 (.jpg)
-					String filename_real1 = System.currentTimeMillis()-1 + ext1;
+					String filename_real1 = System.currentTimeMillis()-100 + ext1;
 					
 					file1.transferTo(new File(path+filename_real1)); // 경로에 파일을 저장 
 					
@@ -140,7 +140,7 @@ public class ShopMainController {
 					String path = req.getRealPath("/upload/");
 					String filename2 = file2.getOriginalFilename(); // 사용자가 업로드한 원본 파일
 					String ext2 = filename2.substring(filename2.lastIndexOf(".")); // 확장자 (.jpg)
-					String filename_real2 = System.currentTimeMillis()-2 + ext2;
+					String filename_real2 = System.currentTimeMillis()-200 + ext2;
 					
 					file2.transferTo(new File(path+filename_real2)); // 경로에 파일을 저장 
 					
@@ -156,7 +156,7 @@ public class ShopMainController {
 					String path = req.getRealPath("/upload/");
 					String filename3 = file3.getOriginalFilename(); // 사용자가 업로드한 원본 파일
 					String ext3 = filename3.substring(filename3.lastIndexOf(".")); // 확장자 (.jpg)
-					String filename_real3 = System.currentTimeMillis()-3 + ext3;
+					String filename_real3 = System.currentTimeMillis()-300 + ext3;
 					
 					file3.transferTo(new File(path+filename_real3)); // 경로에 파일을 저장 
 					

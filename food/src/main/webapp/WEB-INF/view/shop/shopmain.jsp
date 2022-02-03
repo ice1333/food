@@ -152,8 +152,6 @@ function goSave(){
       </div>
 	      <div class="no2"><br>
 	    	 <div id="commentArea">
-      <input type="hidden" name="r_no" value="${data.r_no}">
-      <input type="hidden" name="tablename" value="restaurant">
 	    	 
 	    	 </div>
 	     </div>
