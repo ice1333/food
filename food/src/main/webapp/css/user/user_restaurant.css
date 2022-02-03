@@ -5,44 +5,21 @@
         }
         .container > .lcontainer {
             flex-basis: 1400px;
-            /* background-color: burlywood; */
             margin: auto;
         }
         .container > .lcontainer > .inner_wrap {
-            display: flex;
-            flex-direction: column;
-            flex-wrap: nowrap;
-            /* background-color:chartreuse; */
-            width: 1000px;
-            margin: auto;
-        }
-        .container > .lcontainer > .inner_wrap > .search_title {
-            font-size: 24px;
-            color: blueviolet;
-            font-weight: bold;
-            margin: 20px 115px;
+            width: 1400px;
+            margin-top:100px;
         }
         .container > .lcontainer > .inner_wrap > .search_list_restarants {
-            display: flex;
-            flex-direction: row;
-            flex-wrap: nowrap;
-            /* background-color: cyan; */
-            margin: auto;
-        }
-        .container > .lcontainer > .inner_wrap > .search_list_restarants > .restarant {
-            margin-right: 50px;
-            /* background-color:grey; */
+            float:left;
+            margin: 5px 50px;
         }
         .container > .lcontainer > .inner_wrap > .search_list_restarants > .restarant img {
         	height: 240px; 
         	width: 360px; 
         	object-fit: cover;
         }
-        .container > .rcontainer {
-            flex-basis: 800px;
-            /* background-color: cadetblue; */
-        }
-        
         ul, li {
             list-style: none;
         }

@@ -23,8 +23,7 @@
         <div class="container">
             <div class="lcontainer">
                 <div class="inner_wrap">
-                    <p class="search_title">대학로 맛집 인기 검색순위</p>
-                   
+                    
                     <c:forEach var="vo" items="${list}" varStatus="status">
                     
                     <div class="search_list_restarants">
@@ -37,15 +36,6 @@
                                 <strong class="star"></strong>
                             </div>
                         </div>
-                        <div class="restarant">
-                            <a                                                                                                                            href=""><img src="/res/img/user/woman_1.jpg" ></a>
-                            <div class="restrant_info">
-                                <a href="">
-                                    <h3>고치비<h3>
-                                </a>
-                                <strong class="star"></strong>
-                            </div>
-                        </div>      
                     </div>
                     </c:forEach>
                     
@@ -53,10 +43,7 @@
                     </div>
                 </div>
             </div>
-            <div class="rcontainer">
-            <div id="map" style="width:100%;height:500px;"></div>
-        	
-            </div>
+            
         
 
         <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>   

@@ -203,7 +203,7 @@
 		<sql id="Where">
 			<where>
 				<if test="searchType ==''">
-					(r_name LIKE '%${searchWord}%' OR r_menu LIKE '%${searchWord}%')
+					(r_name LIKE '%${searchWord}%' OR r_foodtype LIKE '%${searchWord}%')
 				</if>
 				<if test= "searchType != null and searchType !=''">
 					${searchType} LIKE '%${searchWord}%'
@@ -213,8 +213,9 @@
 
 	<select id="lists" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
 		select * from shop.restaurant
-		<include refid = "Where"/>
 		<include refid= "mainwhere"/>
+		<include refid = "Where"/>
+		
 	</select>
 
 	
