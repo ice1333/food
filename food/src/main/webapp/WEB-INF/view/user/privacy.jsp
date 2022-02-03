@@ -186,8 +186,8 @@ function goUpdate(){
                 <h2 class="menu_title">마이페이지</h2>
                 <div class="inner_sub">
                     <ul id="adlist">
-                        <li><a href="/res/user/mypage/mylist">최근 본 매장</a></li>
-                        <li><a href="/res/user/mypage/myLove">찜 목록</a></li>
+                        <li><a href="/res/user/mypage/mylist.do">최근 본 매장</a></li>
+                        <li><a href="/res/user/mypage/myLove.do">찜 목록</a></li>
                         <li><a href="/res/user/privacy.do">개인 정보 수정</a></li>
                         <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
                         <li><a href="/res/shop/join.do">매장등록</a></li>

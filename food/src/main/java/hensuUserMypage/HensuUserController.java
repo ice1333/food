@@ -10,11 +10,11 @@ public class HensuUserController {
 
 	
 	
-	@GetMapping("user/mypage/myLove")
+	@GetMapping("user/mypage/myLove.do")
 	public String love() {
 		return "user/myLove";
 	}
-	@GetMapping("user/mypage/mylist")
+	@GetMapping("user/mypage/mylist.do")
 	public String list() {
 		return "user/mylist";
 	}
