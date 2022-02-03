@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <div class="restarant">
-                            <a href=""><img src="/res/img/user/woman_1.jpg" ></a>
+                            <a                                                                                                                            href=""><img src="/res/img/user/woman_1.jpg" ></a>
                             <div class="restrant_info">
                                 <a href="">
                                     <h3>고치비<h3>
