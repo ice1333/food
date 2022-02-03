@@ -152,7 +152,7 @@
 	        </li>
         </c:if>
         <li class="menulistheader">
-            <a href="/res/adqna/index.do" class="menulink">
+            <a href="/res/user/noticeindex.do" class="menulink">
                 <span class="menutext">고객센터</span>
             </a>
         </li>

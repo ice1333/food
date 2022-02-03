@@ -34,7 +34,7 @@
                     <!-- //con_tit -->
                     <div class="con">
                         <div class="con_tit">
-                            <h3 class="con_title">고객센터</h3>
+                            <h3 class="con_title">공지사항</h3>
                         </div>
                         <!-- 내용 : s -->
                         <div id="bbs">
