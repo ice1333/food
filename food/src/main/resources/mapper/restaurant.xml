@@ -140,4 +140,70 @@
 	<select id="shopDetail" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
 		SELECT * FROM shop.restaurant WHERE r_no = #{xxx}
 	</select>
+	
+<sql id= "mainwhere">
+	<where>
+		<if test="a1 == 1 or a2 == 1 or a3==1 or a4==1">
+		and(
+			<if test= "a1 ==1">
+				or 10000 > r_price 
+			</if>
+			<if test="a2 ==1">
+				or r_price between 10000 and 20000
+			</if>
+			<if test="a3 ==1">
+				or r_price between 20000 and 30000
+			</if>
+			<if test="a4 ==1">
+				or r_price > 30000
+			</if>
+		)	
+		</if>
+		<if test="f1==1 or f2==1 or f3==1 or f4==1 or f5==1 or f6==1 or f7==1 or f8==1 ">
+		and (
+			<if test="f1 == 1">
+				or r_foodtype=="한식(한정식)" 
+			</if>
+			<if test="f2 == 1">
+				or r_foodtype=="분식" 
+			</if>
+			<if test="f3 == 1">
+				or r_foodtype=="일식" 
+			</if>
+			<if test="f4 == 1">
+				or r_foodtype=="중식" 
+			</if>
+			<if test="f5 == 1">
+				or r_foodtype=="고기" or r_foodtype=="족발, 보쌈"
+			</if>
+			<if test="f6 == 1">
+				or r_foodtype=="찜, 탕" or r_foodtype=="한식(탕, 찌개, 국밥)"
+			</if>
+			<if test="f7 == 1">
+				or r_foodtype=="돈까스"
+			</if>
+			<if test="f8 == 1">
+				or r_foodtype=="양식"
+			</if>
+			)
+		</if>
+		<if test="p1==1 or p2==1 ">
+		and(
+			<if test="p1 ==1">
+				or r_parking==0
+			</if>
+			<if test="p2 ==1">
+				or r_parking==1
+			</if>
+		)
+		</if>	
+	</where>
+</sql>
+
+	<select id="lists" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
+		select * from shop.restaurant
+		
+	</select>
+
+	
 </mapper>
