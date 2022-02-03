@@ -2,12 +2,43 @@ package hensuUserMypage;
 
 import java.sql.Timestamp;
 
-public class VisitVo {
+import util.CommonVo;
+
+public class VisitVo extends CommonVo {
 
 	private int visitno;
 	private int r_no;
 	private int u_no;
 	private Timestamp v_date;
+	private String r_foodtype;
+	private int r_stars;
+	private String r_name;
+	private String r_filename_real;
+	
+	public String getR_foodtype() {
+		return r_foodtype;
+	}
+	public void setR_foodtype(String r_foodtype) {
+		this.r_foodtype = r_foodtype;
+	}
+	public int getR_stars() {
+		return r_stars;
+	}
+	public void setR_stars(int r_stars) {
+		this.r_stars = r_stars;
+	}
+	public String getR_name() {
+		return r_name;
+	}
+	public void setR_name(String r_name) {
+		this.r_name = r_name;
+	}
+	public String getR_filename_real() {
+		return r_filename_real;
+	}
+	public void setR_filename_real(String r_filename_real) {
+		this.r_filename_real = r_filename_real;
+	}
 	public int getVisitno() {
 		return visitno;
 	}

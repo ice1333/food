@@ -80,15 +80,17 @@
                                        </tr>
                                    </c:if>
                                    <c:if test="${!empty list}">
+                                   		<c:forEach var="list" items="${list}" > 
                                        <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
-                                       	   <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adc_no }"/></td>
-                                           <td>1</td>
+                                       	   <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.adc_no }"/></td>
+                                           <td>${list.v_no }</td>
                                            <td id="blist_img">
-                                               <img id="blist_img_size" src="img/section_1.jpg" >
+                                               ${list.filename_real }
                                             </td>   
-                                           <td class="title">상호명 : ㅇㄹ <br>업태 : ㅇㄹ </td>
-                                           <td class="last">⭐️ 5.0</td>						
+                                           <td class="title">상호명 : ${list.r_name } <br>업태 : ${list.r_foodtype } </td>
+                                           <td class="last">⭐️ ${list.stars }</td>						
                                        </tr>
+                                       </c:forEach>
                                    </c:if>
                                    </tbody>
                                </table>
