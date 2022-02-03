@@ -39,9 +39,9 @@ public class MvcConfig implements WebMvcConfigurer{
 	public BasicDataSource dataSource() {
 		BasicDataSource ds = new BasicDataSource();
 		ds.setDriverClassName("com.mysql.cj.jdbc.Driver");
-		ds.setUrl("jdbc:mysql://15.165.161.89:3306/shop");
+		ds.setUrl("jdbc:mysql://3.34.177.203:3306/shop");
 		ds.setUsername("root");
-		ds.setPassword("root1234");
+		ds.setPassword("123456789");
 		return ds;
 	}
 		
