@@ -55,5 +55,10 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public RestaurantVo selectone(int r_no) {
 		return dao.selectone(r_no);
 	}
+
+	@Override
+	public int update(RestaurantVo vo) {
+		return dao.update(vo);
+	}
 	
 }

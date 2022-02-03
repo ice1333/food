@@ -21,4 +21,5 @@ public interface RestaurantService {
 	RestaurantQnaVo no_select(int rqna_no);
 	
 	public RestaurantVo selectone(int r_no);
+	int update(RestaurantVo vo);
 }

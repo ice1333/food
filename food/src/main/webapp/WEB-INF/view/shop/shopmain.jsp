@@ -76,6 +76,9 @@ function goSave(){
         <div class="no1__left">
           <div class="table__head">
             <h2>${data.r_name}</h2>
+            <c:if test="${data.r_status==0 }">
+				<div><h1 style="text-align: center; padding: ">테스트 페이지 입니다</h1></div>
+			</c:if>
             <button>찜하기</button>
           </div>
           <table class="table__top">
@@ -99,7 +102,7 @@ function goSave(){
                   <c:forEach var="vo" items="${list}" varStatus="status">--%>
                     <tr>
                       <th>주소</th>
-                      <td>${data.r_address}</td>
+                      <td>${data.r_address},${data.r_address2}</td>
                     </tr>
                     <tr>
                       <th>전화번호</th>
@@ -147,10 +150,12 @@ function goSave(){
              
         </div>
       </div>
-      <input type="hidden" name="tablename" value="restaurant">
-      <input type="hidden" name="r_no" value="${data.r_no}">
 	      <div class="no2"><br>
-	    	 <div id="commentArea"></div>
+	    	 <div id="commentArea">
+      <input type="hidden" name="r_no" value="${data.r_no}">
+      <input type="hidden" name="tablename" value="restaurant">
+	    	 
+	    	 </div>
 	     </div>
 	     <div class="text">
 			<tr>
@@ -165,6 +170,7 @@ function goSave(){
             </tr>
 		</div>
     </main>
+	
   <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
      <!--//canvas -->
  </div>

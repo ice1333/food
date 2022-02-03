@@ -6,9 +6,6 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import admin.UserVo;
-import adqna.AdQnaVo;
-
 @Repository
 public class RestaurantDao {
 	
@@ -49,4 +46,8 @@ public class RestaurantDao {
 	public RestaurantVo selectone(int rqna_no) {
 		return sqlSession.selectOne("restaurant.shopDetail",rqna_no);
 	}
+	public int update(RestaurantVo vo) {
+		return sqlSession.update("restaurant.update", vo);
+	}
+	
 }

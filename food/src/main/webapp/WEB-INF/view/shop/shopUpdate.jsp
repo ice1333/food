@@ -17,7 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     
     
-    <title>업체 등록</title>
+    <title>업체 수정</title>
 </head>
 <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
 <script>
@@ -120,26 +120,6 @@ function goSave(){
 		$("#r_foodtype").focus();
 		return;
 	}
-	if($("#picture1").val().trim()==''){
-		alert('메인사진을 추가해주세요');
-		$("#picture1").focus();
-		return;
-	}
-	if($("#picture2").val().trim()==''){
-		alert('1번사진을 추가해주세요');
-		$("#picture2").focus();
-		return;
-	}
-	if($("#picture3").val().trim()==''){
-		alert('2번사진을 추가해주세요');
-		$("#picture3").focus();
-		return;
-	}
-	if($("#picture4").val().trim()==''){
-		alert('3번사진을 추가해주세요');
-		$("#picture4").focus();
-		return;
-	}
 	$("#frm").submit();
 	}
 
@@ -152,25 +132,24 @@ function goSave(){
             <div class="content">
                 <div class="sub">
                     <div class="size">
-                        <h2 class="sub_title">업체등록</h2>
+                        <h2 class="sub_title">업체수정</h2>
                             <div class="sub_line"></div>
                         <div class="image_text" >
                         
                         </div><br>
                         <div class="type_form member_join">
-                        <form name="frm" id="frm" action="insert.do" method="post" enctype="multipart/form-data">
+                        <form name="frm" id="frm" action="update.do" method="post" enctype="multipart/form-data">
                         <input type="hidden" name="u_no" value="${userInfo.u_no }">
                         <input type="hidden" name="r_status" value="0">
                         <p class="page_sub"><span class="ico">*</span>필수입력사항</p>
                             <table class="tbl_comm">
                                 <tbody>
                                     <tr class="fst">
-                                    
                                             <th>상호명<span class="ico">*
                                                 </span>
                                             </th>
                                             <td>
-                                                <input type="text" name="r_name" value="" id="r_name" size="30" label="이메일" >
+                                                <input type="text" name="r_name" value="${data.r_name }" id="r_name" size="30" label="이메일" >
                                             </td>
                                     
                                     </tr>
@@ -178,12 +157,12 @@ function goSave(){
                                             <th>주소<span class="ico"><span class="screen_out"></span></span></th>
                                             <td class="field_address">
                                                 <div id="selectAddress">
-                                                    <input type="text" name="r_zipcode" id="r_zipcode" value=""  label="주소" style="width:40%; margin-bottom: 12px;">
+                                                    <input type="text" name="r_zipcode" id="r_zipcode" value="${data.r_zipcode }"  label="주소" style="width:40%; margin-bottom: 12px;">
                                     
-                                                    <input type="text" name="r_address"id="r_address" value="" label="주소" style="margin-bottom:12px;">
+                                                    <input type="text" name="r_address"id="r_address" value="${data.r_address }" label="주소" style="margin-bottom:12px;">
                                                 </div>
                                                 <div id="selectAddressSub" style="padding-bottom:15px;">
-                                                    <input type="text" name="r_address2" id="r_address2" value="" class="byteTotext" placeholder="나머지 주소를 입력해주세요">
+                                                    <input type="text" name="r_address2" id="r_address2" value="${data.r_address2 }" class="byteTotext" placeholder="나머지 주소를 입력해주세요">
                                                     
                                                 </div>
                                                 <a href="javascript:zipcode();" id="addressSearch" class="btn default" >주소검색</a>
@@ -193,7 +172,7 @@ function goSave(){
                                             <th>휴대폰<span class="ico">*<span class="screen_out">필수항목</span></span></th>
                                             <td>
                                                 <div class="phone_num">
-                                                    <input type="text" value="" pattern="[0-9]*" name="r_tel" id="r_tel" placeholder="숫자만 입력해주세요" class="inp"> 
+                                                    <input type="text" value="${data.r_tel }" pattern="[0-9]*" name="r_tel" id="r_tel" placeholder="숫자만 입력해주세요" class="inp"> 
 
                                                 </div>
                                                 <p class="txt_guide">
@@ -209,7 +188,7 @@ function goSave(){
                                             </span>
                                         </th>
                                         <td>
-                                            <input type="text" name="r_menu" id="r_menu" label="비밀번호" maxlength="16" class="reg_pw" placeholder="대표 메뉴 하나만 기제해주십쇼">
+                                            <input type="text" name="r_menu" id="r_menu" value="${data.r_menu }" class="reg_pw" placeholder="대표 메뉴 하나만 기제해주십쇼">
                                            
                                             </td>
                                     </tr>
@@ -221,7 +200,7 @@ function goSave(){
                                             </span>
                                         </th>
                                         <td>
-                                        <input type="text" name="r_week" value="" id="r_week" label="이름" placeholder="00:00~00:00으로 표기해주세요">
+                                        <input type="text" name="r_week" value="${data.r_week }" id="r_week" label="이름" placeholder="00:00~00:00으로 표기해주세요">
                                         </td>
                                     </tr>
                                     <tr>
@@ -232,7 +211,7 @@ function goSave(){
                                             </span>
                                         </th>
                                         <td>
-                                        <input type="text" name="r_breaktime" value="" id="r_breaktime" label="이름" placeholder="00:00~00:00으로 표기해주세요">
+                                        <input type="text" name="r_breaktime" value="${data.r_breaktime }" id="r_breaktime" label="이름" placeholder="00:00~00:00으로 표기해주세요">
                                         </td>
                                     </tr>
                                     <tr>
@@ -243,7 +222,7 @@ function goSave(){
                                             </span>
                                         </th>
                                         <td>
-                                        <input type="text" name="r_holiday" value="" id="r_holiday" label="이름" placeholder="ex)월,">
+                                        <input type="text" name="r_holiday" value="${data.r_holiday }" id="r_holiday" label="이름" placeholder="ex)월,">
                                         </td>
                                     </tr>
                                     <tr>
@@ -266,7 +245,7 @@ function goSave(){
                                             </span>
                                         </th>
                                         <td>
-                                        <input type="text" name="r_price" value="" id="r_price" label="이름" placeholder="숫자만 입력해주세요">
+                                        <input type="text" name="r_price" value="${data.r_price }" id="r_price" label="이름" placeholder="숫자만 입력해주세요">
                                         </td>
                                     </tr>
                                     <tr>
@@ -277,7 +256,7 @@ function goSave(){
                                             </span>
                                         </th>
                                         <td>
-                                        <input type="text" name="r_foodtype" value="" id="r_foodtype" label="이름" placeholder="업태명을 입력해주세요">
+                                        <input type="text" name="r_foodtype" value="${data.r_foodtype }" id="r_foodtype" label="이름" placeholder="업태명을 입력해주세요">
                                         </td>
                                     </tr>
                                     <tr>
@@ -288,10 +267,10 @@ function goSave(){
                                             </span>
                                         </th>
                                         <td>
-                                        <div><input type="file" name="file" id="picture1"> 메인사진</div>
-                                        <div><input type="file" name="file1" id="picture2"> 1번 사진</div>
-                                        <div><input type="file" name="file2" id="picture3"> 2번 사진</div>
-                                        <div><input type="file" name="file3" id="picture4"> 3번 사진</div>
+                                        <div><input type="file" name="file" id="picture1" value="${data.r_filename_real }"> 메인사진</div>
+                                        <div><input type="file" name="file1" id="picture2" value="${data.r_filename_real1 }"> 1번 사진</div>
+                                        <div><input type="file" name="file2" id="picture3" value="${data.r_filename_real2 }"> 2번 사진</div>
+                                        <div><input type="file" name="file3" id="picture4" value="${data.r_filename_real3 }"> 3번 사진</div>
                                         </td>
                                     </tr>
                                 </tbody>
