@@ -1,119 +1,146 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
-<html>
-<head>
+
 <script>
-	$(function() {
-		//$("#a1").val('1');
-		$("#f_a1").click(function() {
-			if ($("#a1").val() == '0') {
-				$("#a1").attr("value","1");
-			} else {
-				$("#a1").attr("value","0");
-			}
-		})
-		$("#f_a2").click(function() {
+$(function() {
+	//$("#a1").val('1');
+	$("#f_a1").click(function() {
+		if ($("#a1").val() == '0') {
+			$("#a1").val('1');
+			$(this).css('border',"1px solid red");
+		} else {
+			$("#a1").val('0');
+			$(this).css("border","none");
+		}
+	})
+	$("#f_a2").click(function() {
 			if ($("#a2").val() == '0') {
 				$("#a2").attr("value","1");
+				$(this).css('border',"1px solid red");
 			} else {
 				$("#a2").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_a3").click(function() {
 			if ($("#a3").val() == '0') {
 				$("#a3").attr("value","1");
+				$(this).css('border',"1px solid red");
 			} else {
 				$("#a3").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_a4").click(function() {
 			if ($("#a4").val() == '0') {
 				$("#a4").attr("value","1");
+				$(this).css('border',"1px solid red");
 			} else {
 				$("#a4").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_f1").click(function() {
 			if ($("#f1").val() == '0') {
 				$("#f1").attr("value","1");
+				$(this).css('border',"1px solid black");
 			} else {
 				$("#f1").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_f2").click(function() {
 			if ($("#f2").val() == '0') {
 				$("#f2").attr("value","1");
+				$(this).css('border',"1px solid black");
 			} else {
 				$("#f2").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_f3").click(function() {
 			if ($("#f3").val() == '0') {
 				$("#f3").attr("value","1");
+				$(this).css('border',"1px solid black");
 			} else {
 				$("#f3").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_f4").click(function() {
 			if ($("#f4").val() == '0') {
 				$("#f4").attr("value","1");
+				$(this).css('border',"1px solid black");
 			} else {
 				$("#f4").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_f5").click(function() {
 			if ($("#f5").val() == '0') {
 				$("#f5").attr("value","1");
+				$(this).css('border',"1px solid black");
 			} else {
 				$("#f5").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_f6").click(function() {
 			if ($("#f6").val() == '0') {
 				$("#f6").attr("value","1");
+				$(this).css('border',"1px solid black");
 			} else {
 				$("#f6").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_f7").click(function() {
 			if ($("#f7").val() == '0') {
 				$("#f7").attr("value","1");
+				$(this).css('border',"1px solid black");
 			} else {
 				$("#f7").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_f8").click(function() {
 			if ($("#f8").val() == '0') {
 				$("#f8").attr("value","1");
+				$(this).css('border',"1px solid black");
 			} else {
 				$("#f8").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 		$("#f_p1").click(function() {
 			if ($("#p1").val() == '0') {
 				$("#p1").attr("value","1");
+				$(this).css('border',"3px solid black");
 			} else {
 				$("#p1").attr("value","0");
+				$(this).css("border","none");
 			}
-		})$("#f_p2").click(function() {
+		})
+		$("#f_p2").click(function() {
 			if ($("#p2").val() == '0') {
 				$("#p2").attr("value","1");
+				$(this).css('border',"3px solid black");
 			} else {
 				$("#p2").attr("value","0");
+				$(this).css("border","none");
 			}
 		})
 	})
 	$(function(){
 		
-	})
+})
+	
 </script>
 <script src="/res/js/user_common.js"></script>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<html>
+<head>
 </head>
-
 <body>
 	
 <header class="header">
@@ -170,28 +197,28 @@
                             </div>
                             <ul class="food_box">
                                 <li class="food_text" >
-                                    <img src="/res/img/user/icon_1.png" style="height: 80px; width: auto;" >
+                                    <img id="f_f1" src="/res/img/user/icon_1.png" style="height: 80px; width: auto;" >
                                 </li>
                                 <li class="food_text" >
-                                   <img src="/res/img/user/icon_2.png" style="height: 80px; width: auto;" >
+                                   <img  id="f_f2" src="/res/img/user/icon_2.png" style="height: 80px; width: auto;" >
                                 </li>
                                 <li class="food_text" >
-                                    <img src="/res/img/user/icon_3.png" style="height: 80px; width: auto;" >
+                                    <img id="f_f3" src="/res/img/user/icon_3.png" style="height: 80px; width: auto;" >
                                 </li>
                                 <li class="food_text">
-                                    <img src="/res/img/user/icon_4.png" style="height: 80px; width: auto;" >
+                                    <img id="f_f4" src="/res/img/user/icon_4.png" style="height: 80px; width: auto;" >
                                 </li>
                                 <li class="food_text" >
-                                    <img src="/res/img/user/icon_5.png" style="height: 80px; width: auto;" >
+                                    <img id="f_f5" src="/res/img/user/icon_5.png" style="height: 80px; width: auto;" >
                                 </li>
                                 <li class="food_text" >
-                                    <img src="/res/img/user/icon_6.png" style="height: 80px; width: auto;" >
+                                    <img id="f_f6" src="/res/img/user/icon_6.png" style="height: 80px; width: auto;" >
                                 </li>
                                 <li class="food_text">
-                                    <img src="/res/img/user/icon_7.png" style="height: 80px; width: auto;" >
+                                    <img id="f_f7" src="/res/img/user/icon_7.png" style="height: 80px; width: auto;" >
                                 </li>
                                 <li class="food_text" >
-                                    <img src="/res/img/user/icon_8.png" style="height: 80px; width: auto;" >
+                                    <img id="f_f8" src="/res/img/user/icon_8.png" style="height: 80px; width: auto;" >
                                 </li>
                             </ul>
                         </div>
@@ -205,11 +232,11 @@
                             </div>
                             <ul class="park_box">
                                 <li class="park_text">
-                                    <img src="/res/img/user/park.png" style="height: 80px; width: 230px;" >
+                                    <img id="f_p1"src="/res/img/user/park.png" style="height: 80px; width: 230px;" >
                                     <p id="park">상관없음</p>
                                 </li>
                                 <li class="park_text">
-                                    <img src="/res/img/user/park.png" style="height: 80px; width: 230px;" >
+                                    <img id="f_p2" src="/res/img/user/park.png" style="height: 80px; width: 230px;" >
                                     <p id="park">가능한 곳만</p>
                                 </li>
                             </ul>
@@ -229,20 +256,20 @@
     <div class="headersearch">
         <form name="searchForm" id="searchForm" action="list.do"  method="get">
         <input id="headersearchinput" type="text" class="headersearchinput" placeholder="검색어를 입력해주세요.">
-        <input type="text" name="a1" id="a1" value="0">
-        <input type="text" name="a2" id="a2" value="0">
-        <input type="text" name="a3" id="a3" value="0">
-        <input type="text" name="a4" id="a4" value="0">
-        <input type="text" name="f1" id="f1" value="0">
-        <input type="text" name="f2" id="f2" value="0">
-        <input type="text" name="f3" id="f3" value="0">
-        <input type="text" name="f4" id="f4" value="0">
-        <input type="text" name="f5" id="f5" value="0">
-        <input type="text" name="f6" id="f6" value="0">
-        <input type="text" name="f7" id="f7" value="0">
-        <input type="text" name="f8" id="f8" value="0">
-        <input type="text" name="p1" id="p1" value="0">
-        <input type="text" name="p2" id="p2" value="0">
+        <input type="hidden" name="a1" id="a1" value="0">
+        <input type="hidden" name="a2" id="a2" value="0">
+        <input type="hidden" name="a3" id="a3" value="0">
+        <input type="hidden" name="a4" id="a4" value="0">
+        <input type="hidden" name="f1" id="f1" value="0">
+        <input type="hidden" name="f2" id="f2" value="0">
+        <input type="hidden" name="f3" id="f3" value="0">
+        <input type="hidden" name="f4" id="f4" value="0">
+        <input type="hidden" name="f5" id="f5" value="0">
+        <input type="hidden" name="f6" id="f6" value="0">
+        <input type="hidden" name="f7" id="f7" value="0">
+        <input type="hidden" name="f8" id="f8" value="0">
+        <input type="hidden" name="p1" id="p1" value="0">
+        <input type="hidden" name="p2" id="p2" value="0">
             <div class="search">
                 <select id="stype" name="searchType" title="검색분류 선택">
                     <option value="">전체</option>
