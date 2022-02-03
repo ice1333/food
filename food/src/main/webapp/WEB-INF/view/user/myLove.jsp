@@ -25,7 +25,7 @@
        <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
        <!-- canvas -->
        <div id="canvas" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden; height: 925PX;">
-       <input type="hidden" name="u_no" value="${userInfo.u_no }">
+       <input type="hidden" name="u_no" value="${data.u_no }">
            <!-- S T A R T :: headerArea-->
            <!-- E N D :: headerArea--> 
            <!-- S T A R T :: containerArea-->

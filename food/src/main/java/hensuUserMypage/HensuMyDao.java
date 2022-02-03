@@ -16,4 +16,8 @@ public class HensuMyDao {
 	public UserVo selectone(int rqna_no) {
 		return sst.selectOne("hensuUser.Detail",rqna_no);
 	}
+	public int insert(VisitVo vo) {
+		return sst.insert("hensuUser.visitInsert", vo);
+	}
 }
+    

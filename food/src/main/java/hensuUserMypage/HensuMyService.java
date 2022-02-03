@@ -15,4 +15,7 @@ public class HensuMyService {
 		return dao.selectone(rqna_no);
 	
 	}
+	public int insert(VisitVo vo) {
+		return dao.insert(vo);
+	}
 }

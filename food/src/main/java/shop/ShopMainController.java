@@ -15,6 +15,8 @@ import org.springframework.web.multipart.MultipartFile;
 
 import comment.CommentService;
 import comment.CommentVo;
+import hensuUserMypage.HensuMyService;
+import hensuUserMypage.VisitVo;
 import restaurant.RestaurantService;
 import restaurant.RestaurantVo;
 import user.UserVo;
@@ -26,9 +28,18 @@ public class ShopMainController {
 	CommentService cService;
 	@Autowired
 	RestaurantService service; 
+	@Autowired
+	HensuMyService hservice;
 	
 	@GetMapping("shop/shopmain.do")
-	public String main(Model model, @RequestParam int r_no) {
+	public String main(Model model, @RequestParam int r_no,HttpSession sess) {
+		
+		if(sess.getAttribute("userInfo") != null) {
+			VisitVo vo = new VisitVo();
+			vo.setR_no(r_no);
+			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+			hservice.insert(vo);
+		}
 		model.addAttribute("data", service.selectone(r_no));
 		comment.CommentVo cv = new comment.CommentVo();
 		cv.setR_no(r_no);
