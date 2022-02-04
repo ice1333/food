@@ -151,7 +151,7 @@ function goSave(){
       </div>
 	      <div class="no2"><br>
 	    	 <div id="commentArea">
-
+ 
 	    	 </div>
 	     </div>
 	     <div class="text">
