@@ -27,7 +27,7 @@
                     <div class="search_list_restarants">
                         <div class="restarant">
                             <a href="/res/shop/shopmain.do?r_no=${vo.r_no}">
-                            <img src="" ></a>
+                            `<img src="" ></a>
                             <div class="restrant_info">
                                 <a href="/res/shop/shopmain.do?r_no=${vo.r_no}">
                                     <h3>${vo.r_name}<h3>

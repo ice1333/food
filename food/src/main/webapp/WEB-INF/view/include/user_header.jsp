@@ -9,6 +9,7 @@ $(function() {
 		if ($("#a1").val() == '0') {
 			$("#a1").val('1');
 			$(this).css('border',"1px solid red");
+			
 		} else {
 			$("#a1").val('0');
 			$(this).css("border","none");
@@ -132,7 +133,7 @@ $(function() {
 			}
 		})
 	})
-	$(function(){
+	
 		
 })
 	

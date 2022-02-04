@@ -143,70 +143,66 @@
 	
 <sql id= "mainwhere">
 	<where>
+		1=1
 		<if test="a1 == 1 or a2 == 1 or a3==1 or a4==1">
-		and(
+		and( 1=0
 			<if test= "a1 ==1">
-				or r_price ] 10000 
+				<![CDATA[ or r_price < 10000 ]]> 
 			</if>
 			<if test="a2 ==1">
-				or r_price (between 10000 and 20000)
+				or r_price between 10000 and 20000
 			</if>
 			<if test="a3 ==1">
-				or r_price (between 20000 and 30000)
+				or r_price between 20000 and 30000
 			</if>
 			<if test="a4 ==1">
-				or r_price > 30000
-			</if>
+				<![CDATA[ or r_price > 30000 ]]> 
+			</if>  
 		)	
 		</if>
 		<if test="f1==1 or f2==1 or f3==1 or f4==1 or f5==1 or f6==1 or f7==1 or f8==1 ">
-		and (
+		and ( 1=0
 			<if test="f1 == 1">
-				or r_foodtype=="한식(한정식)" 
+				or r_foodtype="한식(한정식)" 
 			</if>
 			<if test="f2 == 1">
-				or r_foodtype=="분식" 
+				or r_foodtype="분식" 
 			</if>
 			<if test="f3 == 1">
-				or r_foodtype=="일식" 
+				or r_foodtype="일식" 
 			</if>
 			<if test="f4 == 1">
-				or r_foodtype=="중식" 
+				or r_foodtype="중식" 
 			</if>
 			<if test="f5 == 1">
-				or r_foodtype=="고기" or r_foodtype=="족발, 보쌈"
+				or r_foodtype="고기" or r_foodtype="족발, 보쌈"
 			</if>
 			<if test="f6 == 1">
-				or r_foodtype=="찜, 탕" or r_foodtype=="한식(탕, 찌개, 국밥)"
+				or r_foodtype="찜, 탕" or r_foodtype="한식(탕, 찌개, 국밥)"
 			</if>
 			<if test="f7 == 1">
-				or r_foodtype=="돈까스"
+				or r_foodtype="돈까스"
 			</if>
 			<if test="f8 == 1">
-				or r_foodtype=="양식"
+				or r_foodtype="양식"
 			</if>
 			)
 		</if>
 		<if test="p1==1 or p2==1 ">
-		and(
+		and( 1=0
 			<if test="p1 ==1">
-				or r_parking==0
+				or r_parking=0
 			</if>
 			<if test="p2 ==1">
-				or r_parking==1
+				or r_parking=1
 			</if>
 		)
 		</if>	
-	</where>
-</sql>
-
-		<sql id="Where">
-			<where>
-				<if test="searchType ==''">
-					(r_name LIKE '%${searchWord}%' OR r_foodtype LIKE '%${searchWord}%')
+				<if test="searchType =='' and searchType !=''">
+					and (r_name LIKE '%${searchWord}%' OR r_foodtype LIKE '%${searchWord}%')
 				</if>
 				<if test= "searchType != null and searchType !=''">
-					${searchType} LIKE '%${searchWord}%'
+					and ${searchType} LIKE '%${searchWord}%'
 				</if>
 			</where>
 			</sql>
@@ -214,9 +210,7 @@
 	<select id="lists" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
 		select * from shop.restaurant
 		<include refid= "mainwhere"/>
-		<include refid = "Where"/>
-		
 	</select>
 
-	
+	  
 </mapper>
