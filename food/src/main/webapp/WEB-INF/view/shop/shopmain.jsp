@@ -53,7 +53,7 @@ function goSave(){
 				success:function(res){
 					if(res.trim()=='1'){
 						alert('정상적으로 삭제되었습니다.');
-						commentList('restaurant', ${vo.r_no});
+						commentList('restaurant', ${data.r_no});
 					} else {
 						alert('삭제 오류입니다. 확인하세요');
 					}
@@ -151,10 +151,6 @@ function goSave(){
       </div>
 	      <div class="no2"><br>
 	    	 <div id="commentArea">
-<<<<<<< HEAD
-=======
-	    	 
->>>>>>> branch 'master' of https://github.com/ice1333/food.git
 	    	 </div>
 	     </div>
 	     <div class="text">

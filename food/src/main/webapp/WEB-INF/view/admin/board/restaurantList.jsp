@@ -124,7 +124,7 @@
                            <a class="btns" href="javascript:del();"><strong>삭제</strong> </a>
                         </div>
                         <div class="btnRight">
-                           <a class="wbtn" href="restWrite.do"><strong>등록</strong> </a>
+                           <a class="wbtn" href="restWrite.do"><strong>등록</strong> </a><!-- r_stauts를 1로 바꾸는 버튼으로 바꾸기 -->
                         </div>
                      </div>
                      <!--//btn-->
