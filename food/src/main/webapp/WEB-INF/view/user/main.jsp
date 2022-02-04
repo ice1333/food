@@ -117,10 +117,10 @@
                             <li class="list_restrants2">
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='/res/shop/shopmain.do?r_no=86' target='_blank'><img src='https://ifh.cc/g/CXQuYG.jpg' border='0'></a>
+                                        <a href='/res/shop/shopmain.do?r_no=94' target='_blank'><img src='https://ifh.cc/g/CXQuYG.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="/res/shop/shopmain.do?r_no=86">
+                                        <a href="/res/shop/shopmain.do?r_no=94">
                                             <h3>신승관<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
