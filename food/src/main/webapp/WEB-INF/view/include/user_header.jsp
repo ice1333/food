@@ -1,14 +1,147 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<!DOCTYPE html>
+
+<script>
+$(function() {
+	//$("#a1").val('1');
+	$("#f_a1").click(function() {
+		if ($("#a1").val() == '0') {
+			$("#a1").val('1');
+			$(this).css('border',"1px solid red");
+			
+		} else {
+			$("#a1").val('0');
+			$(this).css("border","none");
+		}
+	})
+	$("#f_a2").click(function() {
+			if ($("#a2").val() == '0') {
+				$("#a2").attr("value","1");
+				$(this).css('border',"1px solid red");
+			} else {
+				$("#a2").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_a3").click(function() {
+			if ($("#a3").val() == '0') {
+				$("#a3").attr("value","1");
+				$(this).css('border',"1px solid red");
+			} else {
+				$("#a3").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_a4").click(function() {
+			if ($("#a4").val() == '0') {
+				$("#a4").attr("value","1");
+				$(this).css('border',"1px solid red");
+			} else {
+				$("#a4").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_f1").click(function() {
+			if ($("#f1").val() == '0') {
+				$("#f1").attr("value","1");
+				$(this).css('border',"1px solid black");
+			} else {
+				$("#f1").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_f2").click(function() {
+			if ($("#f2").val() == '0') {
+				$("#f2").attr("value","1");
+				$(this).css('border',"1px solid black");
+			} else {
+				$("#f2").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_f3").click(function() {
+			if ($("#f3").val() == '0') {
+				$("#f3").attr("value","1");
+				$(this).css('border',"1px solid black");
+			} else {
+				$("#f3").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_f4").click(function() {
+			if ($("#f4").val() == '0') {
+				$("#f4").attr("value","1");
+				$(this).css('border',"1px solid black");
+			} else {
+				$("#f4").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_f5").click(function() {
+			if ($("#f5").val() == '0') {
+				$("#f5").attr("value","1");
+				$(this).css('border',"1px solid black");
+			} else {
+				$("#f5").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_f6").click(function() {
+			if ($("#f6").val() == '0') {
+				$("#f6").attr("value","1");
+				$(this).css('border',"1px solid black");
+			} else {
+				$("#f6").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_f7").click(function() {
+			if ($("#f7").val() == '0') {
+				$("#f7").attr("value","1");
+				$(this).css('border',"1px solid black");
+			} else {
+				$("#f7").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_f8").click(function() {
+			if ($("#f8").val() == '0') {
+				$("#f8").attr("value","1");
+				$(this).css('border',"1px solid black");
+			} else {
+				$("#f8").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_p1").click(function() {
+			if ($("#p1").val() == '0') {
+				$("#p1").attr("value","1");
+				$(this).css('border',"3px solid black");
+			} else {
+				$("#p1").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+		$("#f_p2").click(function() {
+			if ($("#p2").val() == '0') {
+				$("#p2").attr("value","1");
+				$(this).css('border',"3px solid black");
+			} else {
+				$("#p2").attr("value","0");
+				$(this).css("border","none");
+			}
+		})
+	})
+	
+		
+})
+	
+</script>
+<script src="/res/js/user_common.js"></script>
 <html>
 <head>
-<script src="/res/js/user_common.js"></script>
-<meta charset="UTF-8">
-<title>Insert title here</title>
 </head>
-<script src="/res/js/user/user_main.js"></script>
 <body>
 	
 <header class="header">
@@ -27,11 +160,10 @@
                 <span class="head-title">
                   검색필터 : 평점순</span>
             </div>
-
             <div class="popup-body">
               <div class="body-content">
                 <div class="body-titlebox">
-
+					
                     <div class="f_container">
                         <div class="price_wrap">
                             <div class="price_info">
@@ -39,20 +171,20 @@
                             </div>
                             <ul class="price_box">
                                 <li class="price_text">
-                                    <a href=""><img src="/res/img/user/circle.png" style="height: 80px; width: 80px;" ></a>
-                                    <p id="price" href="">만원미만</p>
+                                    <img id="f_a1" src="/res/img/user/circle.png" style="height: 80px; width: 80px;" >
+                                    <p id="price" >만원미만</p>
                                 </li>
                                 <li class="price_text">
-                                    <a href=""><img src="/res/img/user/circle.png" style="height: 80px; width: 80px;" ></a>
-                                    <p id="price" href="">1만원대</p>
+                                    <img id="f_a2" src="/res/img/user/circle.png" style="height: 80px; width: 80px;" >
+                                    <p id="price" >1만원대</p>
                                 </li>
-                                <li class="price_text">
-                                    <a href=""><img src="/res/img/user/circle.png" style="height: 80px; width: 80px;" ></a>
-                                    <p id="price" href="">2만원대</p>
+                                <li class="price_text" >
+                                    <img id="f_a3" src="/res/img/user/circle.png" style="height: 80px; width: 80px;" >
+                                    <p id="price" >2만원대</p>
                                 </li>
-                                <li class="price_text">
-                                    <a href=""><img src="/res/img/user/circle.png" style="height: 80px; width: 80px;" ></a>
-                                    <p id="price" href="">3만원대</p>
+                                <li class="price_text" >
+                                    <img id="f_a4" src="/res/img/user/circle.png" style="height: 80px; width: 80px;" >
+                                    <p id="price" >3만원대</p>
                                 </li>
                             </ul>
                         </div>
@@ -65,29 +197,29 @@
                                 <p>음식종류</p>
                             </div>
                             <ul class="food_box">
-                                <li class="food_text">
-                                    <a href=""><img src="/res/img/user/icon_1.png" style="height: 80px; width: auto;" ></a>
+                                <li class="food_text" >
+                                    <img id="f_f1" src="/res/img/user/icon_1.png" style="height: 80px; width: auto;" >
+                                </li>
+                                <li class="food_text" >
+                                   <img  id="f_f2" src="/res/img/user/icon_2.png" style="height: 80px; width: auto;" >
+                                </li>
+                                <li class="food_text" >
+                                    <img id="f_f3" src="/res/img/user/icon_3.png" style="height: 80px; width: auto;" >
                                 </li>
                                 <li class="food_text">
-                                    <a href=""><img src="/res/img/user/icon_2.png" style="height: 80px; width: auto;" ></a>
+                                    <img id="f_f4" src="/res/img/user/icon_4.png" style="height: 80px; width: auto;" >
+                                </li>
+                                <li class="food_text" >
+                                    <img id="f_f5" src="/res/img/user/icon_5.png" style="height: 80px; width: auto;" >
+                                </li>
+                                <li class="food_text" >
+                                    <img id="f_f6" src="/res/img/user/icon_6.png" style="height: 80px; width: auto;" >
                                 </li>
                                 <li class="food_text">
-                                    <a href=""><img src="/res/img/user/icon_3.png" style="height: 80px; width: auto;" ></a>
+                                    <img id="f_f7" src="/res/img/user/icon_7.png" style="height: 80px; width: auto;" >
                                 </li>
-                                <li class="food_text">
-                                    <a href=""><img src="/res/img/user/icon_4.png" style="height: 80px; width: auto;" ></a>
-                                </li>
-                                <li class="food_text">
-                                    <a href=""><img src="/res/img/user/icon_5.png" style="height: 80px; width: auto;" ></a>
-                                </li>
-                                <li class="food_text">
-                                    <a href=""><img src="/res/img/user/icon_6.png" style="height: 80px; width: auto;" ></a>
-                                </li>
-                                <li class="food_text">
-                                    <a href=""><img src="/res/img/user/icon_7.png" style="height: 80px; width: auto;" ></a>
-                                </li>
-                                <li class="food_text">
-                                    <a href=""><img src="/res/img/user/icon_8.png" style="height: 80px; width: auto;" ></a>
+                                <li class="food_text" >
+                                    <img id="f_f8" src="/res/img/user/icon_8.png" style="height: 80px; width: auto;" >
                                 </li>
                             </ul>
                         </div>
@@ -101,32 +233,56 @@
                             </div>
                             <ul class="park_box">
                                 <li class="park_text">
-                                    <a href=""><img src="/res/img/user/park.png" style="height: 80px; width: 230px;" ></a>
-                                    <p id="park" href="">상관없음</p>
+                                    <img id="f_p1"src="/res/img/user/park.png" style="height: 80px; width: 230px;" >
+                                    <p id="park">상관없음</p>
                                 </li>
                                 <li class="park_text">
-                                    <a href=""><img src="/res/img/user/park.png" style="height: 80px; width: 230px;" ></a>
-                                    <p id="park" href="">가능한 곳만</p>
+                                    <img id="f_p2" src="/res/img/user/park.png" style="height: 80px; width: 230px;" >
+                                    <p id="park">가능한 곳만</p>
                                 </li>
                             </ul>
                         </div>
                     </div>
-
+					
                 </div>
               </div>
             </div>
             <div class="popup-foot">
-              <span class="pop-btn close" id="close">취소</span>
-              <span class="pop-btn confirm" id="confirm">적용</span>
-              
+              <span class="pop-btn close" id="close" ><a href="/res/user/main.do">취소</a></span>
+              <span class="pop-btn confirm" id="confirm" >적용</span>
             </div>
           </div>
       </div>
       </div>
-    <label class="headersearch">
+    <div class="headersearch">
+        <form name="searchForm" id="searchForm" action="list.do"  method="get">
         <input id="headersearchinput" type="text" class="headersearchinput" placeholder="검색어를 입력해주세요.">
-    </label>
+        <input type="hidden" name="a1" id="a1" value="0">
+        <input type="hidden" name="a2" id="a2" value="0">
+        <input type="hidden" name="a3" id="a3" value="0">
+        <input type="hidden" name="a4" id="a4" value="0"> 
+        <input type="hidden" name="f1" id="f1" value="0">
+        <input type="hidden" name="f2" id="f2" value="0">
+        <input type="hidden" name="f3" id="f3" value="0">
+        <input type="hidden" name="f4" id="f4" value="0">
+        <input type="hidden" name="f5" id="f5" value="0">
+        <input type="hidden" name="f6" id="f6" value="0">
+        <input type="hidden" name="f7" id="f7" value="0">
+        <input type="hidden" name="f8" id="f8" value="0">
+        <input type="hidden" name="p1" id="p1" value="0">
+        <input type="hidden" name="p2" id="p2" value="0">
+            <div class="search">
+                <select id="stype" name="searchType" title="검색분류 선택">
+                    <option value="">전체</option>
+                    <option value="r_name" <c:if test="${param.searchType == 'r_name'}">selected</c:if>>매장이름</option>
+                    <option value="r_foodtype" <c:if test="${param.searchType == 'r_foodtype'}">selected</c:if>>음식종류</option>
+                </select>
+                <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
+                <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
+            </div>
+         </form>
     <button class="header_searchbutton"></button> 
+    </div>
     <ul class="headermenulist">
     	<c:if  test="${empty userInfo }">
 	        <li class="menulistheader">
@@ -153,7 +309,7 @@
 	        </li>
         </c:if>
         <li class="menulistheader">
-            <a href="/res/adqna/index.do" class="menulink">
+            <a href="/res/user/noticeindex.do" class="menulink">
                 <span class="menutext">고객센터</span>
             </a>
         </li>

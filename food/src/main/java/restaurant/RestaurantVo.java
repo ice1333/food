@@ -33,10 +33,140 @@ public class RestaurantVo extends CommonVo{
 	private String r_filename_org1;
 	private String r_filename_real1;
 	private String r_filename_org2;
-	private String r_filename_real2;
+	private String r_filename_real2; 
 	private String r_filename_org3;
 	private String r_filename_real3;
 	private Timestamp r_regdate;
+	private String searchType;
+	private String searchWord;
+	
+	
+	
+	//  필터 // 
+	private String a1;
+	private String a2;
+	private String a3;
+	private String a4;
+	
+	private String f1;
+	private String f2;
+	private String f3;
+	private String f4;
+	private String f5;
+	private String f6;
+	private String f7;
+	private String f8;
+	
+	private String p1;
+	private String p2;
+	
+	
+	
+	
+	public String getA1() {
+		return a1;
+	}
+	public void setA1(String a1) {
+		this.a1 = a1;
+	}
+	public String getA2() {
+		return a2;
+	}
+	public void setA2(String a2) {
+		this.a2 = a2;
+	}
+	public String getA3() {
+		return a3;
+	}
+	public void setA3(String a3) {
+		this.a3 = a3;
+	}
+	public String getA4() {
+		return a4;
+	}
+	public void setA4(String a4) {
+		this.a4 = a4;
+	}
+	public String getF1() {
+		return f1;
+	}
+	public void setF1(String f1) {
+		this.f1 = f1;
+	}
+	public String getF2() {
+		return f2;
+	}
+	public void setF2(String f2) {
+		this.f2 = f2;
+	}
+	public String getF3() {
+		return f3;
+	}
+	public void setF3(String f3) {
+		this.f3 = f3;
+	}
+	public String getF4() {
+		return f4;
+	}
+	public void setF4(String f4) {
+		this.f4 = f4;
+	}
+	public String getF5() {
+		return f5;
+	}
+	public void setF5(String f5) {
+		this.f5 = f5;
+	}
+	public String getF6() {
+		return f6;
+	}
+	public void setF6(String f6) {
+		this.f6 = f6;
+	}
+	public String getF7() {
+		return f7;
+	}
+	public void setF7(String f7) {
+		this.f7 = f7;
+	}
+	public String getF8() {
+		return f8;
+	}
+	public void setF8(String f8) {
+		this.f8 = f8;
+	}
+	public String getP1() {
+		return p1;
+	}
+	public void setP1(String p1) {
+		this.p1 = p1;
+	}
+	public String getP2() {
+		return p2;
+	}
+	public void setP2(String p2) {
+		this.p2 = p2;
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	public String getSearchType() {
+		return searchType;
+	}
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
+	public String getSearchWord() {
+		return searchWord;
+	}
+	public void setSearchWord(String searchWord) {
+		this.searchWord = searchWord;
+	}
 	public String getR_filename_org() {
 		return r_filename_org;
 	}

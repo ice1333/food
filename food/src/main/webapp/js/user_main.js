@@ -28,7 +28,7 @@ $(function(){
     });
     // 퀵메뉴
     var quick_left = $(".shop > div:first-child").position().left + 1220;
-    var quick_top = $(".shop > div:first-child").position().top + 200;
+    var quick_top = $(".shop > div:first-child").position().top - 120;
     //console.log(quick_left);
     $(".quickMenu").css({
         top : quick_top,

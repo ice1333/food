@@ -26,7 +26,7 @@
                         <div class="inner_sub">
                             <ul id="adlist">
                                 <li><a href="<%=request.getContextPath()%>/user/noticeindex.do">공지사항</a></li>
-                                <li><a href="index.do">광고 문의</a></li>
+                                <li><a href="<%=request.getContextPath()%>/adqna/index.do">광고 문의</a></li>
                             </ul>
                         </div>
                 </div>
@@ -34,7 +34,7 @@
                     <!-- //con_tit -->
                     <div class="con">
                         <div class="con_tit">
-                            <h3 class="con_title">고객센터</h3>
+                            <h3 class="con_title">공지사항</h3>
                         </div>
                         <!-- 내용 : s -->
                         <div id="bbs">

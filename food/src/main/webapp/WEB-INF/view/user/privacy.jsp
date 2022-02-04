@@ -173,7 +173,7 @@ function goUpdate(){
 	});
 	$("#logfrm").submit();
 	} else {
-		alert("잘했다.")
+		alert("취소하였습니다.")
 	}
 }
 </script>

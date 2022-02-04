@@ -13,6 +13,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import restaurant.RestaurantVo;
+
 @Controller
 public class UserController {
    
@@ -22,10 +24,6 @@ public class UserController {
    @GetMapping("user/main.do")
    public String main() {
       return "user/main";
-   }
-   @GetMapping("user/list.do")
-   public String list() {
-      return "user/restaurantlist";
    }
    @GetMapping("user/login.do")
    public String login() {
@@ -95,6 +93,7 @@ public class UserController {
 		model.addAttribute("list",list);
 		return "user/privacy";
 	}
+	
 	//마이페이지 개인정보수정
 	@RequestMapping("user/update.do")
 	public String update(UserVo vo,HttpServletRequest req,HttpSession ses) {
@@ -110,6 +109,7 @@ public class UserController {
 		}
 		return "include/return";
 	}
+	
 	//사용자 회원상태 (탈퇴)
 	@RequestMapping("user/logupdate.do")
 	public String logupdate(UserVo vo,HttpSession ses,HttpServletRequest req) {
@@ -123,5 +123,6 @@ public class UserController {
 		}
 		return "include/return";
 	}
+	
 }
    

@@ -17,6 +17,17 @@
 		) VALUES (
 			NOW(),#{r_no},#{u_no}
 		)
-	
 	</insert>
+	<select id="myList" parameterType="hensuUserMypage.VisitVo" resultType="hensuUserMypage.VisitVo">
+		select * 
+         , (select r_foodtype from restaurant where restaurant.r_no=visit.r_no)as r_foodtype
+         , (select r_stars from restaurant where restaurant.r_no=visit.r_no)as r_stars
+         , (select r_name from restaurant where restaurant.r_no=visit.r_no)as r_name
+         , (SELECT r_filename_real from restaurant where restaurant.r_no=visit.r_no)as  r_filename_real
+      FROM visit 
+	</select>
+	<select id="myListCount" resultType="int" parameterType="hensuUserMypage.VisitVo">
+		SELECT COUNT(*) FROM visit
+		where u_no = #{u_no}       
+	</select>
 </mapper>

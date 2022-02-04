@@ -130,4 +130,8 @@
         height: 150px; 
         object-fit: cover;
     }
+    .quickMenu {
+    position: absolute;
+    z-index:9900; 
+}
     /*컨테이너 끝2 */

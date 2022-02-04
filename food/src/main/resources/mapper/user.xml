@@ -16,7 +16,7 @@
 		
 	<selectKey keyProperty="u_no" resultType="int" order="AFTER">
 		SELECT last_insert_id()
-	</selectKey>	
+	</selectKey>	 
 	</insert>
 	
 	<!-- 이메일 체크 -->
@@ -49,11 +49,22 @@
 	</update>
 	
 	
-	<select id="list" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
-		SELECT * FROM restaurant WHERE
-		if 
-			
-					
+	
+	<sql id="Where">
+	<where>
+		<if test="searchType ==''">
+			(r_name LIKE '%${searchWord}%' OR r_menu LIKE '%${searchWord}%')
+		</if>
+		<if test= "searchType != null and searchType !=''">
+			${searchType} LIKE '%${searchWord}%'
+		</if>
+	</where>
+	</sql>
+	
+	
+	<select id="listselect" resultType="restaurant.RestaurantVo" parameterType="restaurant.RestaurantVo"> 
+		SELECT * From shop.restaurant
+		<include refid="Where"/>
 	</select>
 	
 	

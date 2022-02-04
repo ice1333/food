@@ -49,5 +49,7 @@ public class RestaurantDao {
 	public int update(RestaurantVo vo) {
 		return sqlSession.update("restaurant.update", vo);
 	}
-	
+	public List<RestaurantVo> lists(RestaurantVo vo) {
+		return sqlSession.selectList("restaurant.lists", vo);
+	}
 }
