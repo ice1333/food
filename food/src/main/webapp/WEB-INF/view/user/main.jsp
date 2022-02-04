@@ -150,10 +150,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='/res/shop/shopmain.do?r_no=92' target='_blank'><img src='https://ifh.cc/g/4mbAFM.jpg' border='0'></a>
+                                        <a href='/res/shop/shopmain.do?r_no=93' target='_blank'><img src='https://ifh.cc/g/4mbAFM.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="/res/shop/shopmain.do?r_no=92">
+                                        <a href="/res/shop/shopmain.do?r_no=93">
                                             <h3>엄용백돼지국밥<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
