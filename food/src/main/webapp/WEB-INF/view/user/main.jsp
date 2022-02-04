@@ -4,7 +4,7 @@
 <!DOCTYPE html >
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+   <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -16,16 +16,16 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
     <script src="/res/js/user_main.js"></script>
     <script src="/res/js/user_common.js"></script>
-	
+   
 </head>
 <body>
-	<div class="wrap">
+   <div class="wrap">
         <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
         <div class="mainad">
         <div class="visual">
             <div class="swiper mySwiper">
                 <div class="swiper-wrapper">
-               	  <div class="swiper-slide" style="background-image: url('/res/img/user/main_1.jpg');"></div>
+                    <div class="swiper-slide" style="background-image: url('/res/img/user/main_1.jpg');"></div>
                   <div class="swiper-slide" style="background-image: url('/res/img/user/main_2.jpg');"></div>
                   <div class="swiper-slide" style="background-image: url('/res/img/user/main_3.jpg');"></div>
                   <div class="swiper-slide" style="background-image: url('/res/img/user/main_4.jpg');"></div>
@@ -117,10 +117,10 @@
                             <li class="list_restrants2">
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href="/res/shop/shopmain.do?r_no=86"><img src="/res/img/user/man_1.jpg" ></a>
+                                        <a href='/res/shop/shopmain.do?r_no=86' target='_blank'><img src='https://ifh.cc/g/CXQuYG.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=86">
                                             <h3>신승관<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -128,10 +128,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href="/res/shop/shopmain.do?r_no=28"><img src="/res/img/user/man_2.jpg" ></a>
+                                        <a href='/res/shop/shopmain.do?r_no=28' target='_blank'><img src='https://ifh.cc/g/EG3SLx.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=28">
                                             <h3>정돈<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -139,10 +139,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href="/res/shop/shopmain.do?r_no=42"><img src="/res/img/user/man_3.jpg" ></a>
+                                        <a href='/res/shop/shopmain.do?r_no=42' target='_blank'><img src='https://ifh.cc/g/Lpskd8.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=42">
                                             <h3>백부장집닭한마리<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -150,10 +150,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/man_4.jpg" ></a>
+                                        <a href='/res/shop/shopmain.do?r_no=93' target='_blank'><img src='https://ifh.cc/g/4mbAFM.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=93">
                                             <h3>엄용백돼지국밥<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -164,7 +164,7 @@
                             <li class="list_restrants2">
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/man_5.jpg" ></a>
+                                        <a href='https://ifh.cc/v-tjgyDZ' target='_blank'><img src='https://ifh.cc/g/tjgyDZ.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -175,7 +175,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/man_6.jpg" ></a>
+                                        <a href='https://ifh.cc/v-bIHVPZ' target='_blank'><img src='https://ifh.cc/g/bIHVPZ.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -186,7 +186,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/man_7.jpg" ></a>
+                                        <a href='https://ifh.cc/v-BkWawX' target='_blank'><img src='https://ifh.cc/g/BkWawX.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -197,7 +197,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/man_8.jpg" ></a>
+                                        <a href='https://ifh.cc/v-B4CDe4' target='_blank'><img src='https://ifh.cc/g/B4CDe4.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -221,7 +221,7 @@
                             <li class="list_restrants2">
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/woman_1.jpg" ></a>
+                                        <a href='https://ifh.cc/v-tBzwKX' target='_blank'><img src='https://ifh.cc/g/tBzwKX.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -232,7 +232,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/woman_2.jpg" ></a>
+                                        <a href='https://ifh.cc/v-xnzjQl' target='_blank'><img src='https://ifh.cc/g/xnzjQl.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -243,7 +243,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/woman_3.jpg" ></a>
+                                        <a href='https://ifh.cc/v-vVaOY2' target='_blank'><img src='https://ifh.cc/g/vVaOY2.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -254,7 +254,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/woman_4.jpg" ></a>
+                                        <a href='https://ifh.cc/v-MH5lJ7' target='_blank'><img src='https://ifh.cc/g/MH5lJ7.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -268,7 +268,7 @@
                             <li class="list_restrants2">
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/woman_5.jpg" ></a>
+                                        <a href='https://ifh.cc/v-K4Vbgm' target='_blank'><img src='https://ifh.cc/g/K4Vbgm.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -279,7 +279,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/woman_6.jpg" ></a>
+                                        <a href='https://ifh.cc/v-Wg0dhf' target='_blank'><img src='https://ifh.cc/g/Wg0dhf.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -290,7 +290,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/woman_7.jpg" ></a>
+                                        <a href='https://ifh.cc/v-NYMNOc' target='_blank'><img src='https://ifh.cc/g/NYMNOc.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
@@ -301,7 +301,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href=""><img src="/res/img/user/woman_8.jpg" ></a>
+                                        <a href='https://ifh.cc/v-3wqeMR' target='_blank'><img src='https://ifh.cc/g/3wqeMR.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
