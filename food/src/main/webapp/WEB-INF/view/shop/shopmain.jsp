@@ -143,7 +143,10 @@ function goSave(){
                   </tbody>
                
           </table>
-          <button class="fix" style="float: right;">문의 하기</button>
+          <div class="btn">
+          	<a class="btn1" href="join.do" style="float: right;"><strong>문의 하기</strong>
+          </div>
+          
         </div>
         <div class="no1__right">
              ${MapUtil.getMap(data.r_address,data.r_name) }
