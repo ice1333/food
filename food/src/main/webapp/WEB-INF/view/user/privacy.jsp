@@ -209,7 +209,7 @@ function goUpdate(){
                                             <tr class="fst">
                                                 
                                                 <th>이메일<span class="ico">*
-                                                    <span class="screen_out">필수항목</span>
+                                                    <span class="screen_out">필수항목</span> 
                                                     </span>
                                                 </th>
                                                 <td>
