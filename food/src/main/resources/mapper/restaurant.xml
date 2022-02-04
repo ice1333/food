@@ -34,7 +34,7 @@
 		</where>     
 	</sql>
 	<select id="restaurantCount" resultType="int" parameterType="restaurant.RestaurantVo">
-		SELECT COUNT(*) FROM restaurant
+		SELECT COUNT(*) FROM restaurant 
 		<include refid="restaurantWhere"/>
 	</select>
 	
@@ -66,7 +66,7 @@
 		LIMIT ${startIdx},10
 	</select>
 	
-	<!-- 레스토랑 목록 카운트 -->
+	<!-- 등록요청 목록 카운트 -->
 	<select id="restaurantQnaCount" resultType="int" parameterType="restaurant.RestaurantQnaVo">
 		SELECT COUNT(*) /*restaurantQna.xml - restaurantCount :: 레스토랑 목록 카운트*/ 
 		FROM restqna
@@ -84,9 +84,15 @@
 		</choose>
 	</select>
 	<!-- 삭제 -->
-	<delete id="restaurantDelete" >
-		DELETE FROM restaurant WHERE r_no=#{r_no}
-	</delete> 
+	<delete id="restaurantDelete" >   <!-- 업데이트 r_status 2로 바꾸기 -->
+		UPDATE restaurant SET r_status = 2 WHERE r_no=#{r_no}
+	</delete>
+	<!-- 등록 -->
+	<update id="restRegister">
+		UPDATE restaurant SET r_status = 1 WHERE r_no=#{r_no}
+	</update> 
+	
+	
 	<delete id="requestDelete" >
 		DELETE FROM restqna WHERE rqna_no=#{rqna_no}
 	</delete>

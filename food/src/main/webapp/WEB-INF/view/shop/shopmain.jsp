@@ -53,7 +53,7 @@ function goSave(){
 				success:function(res){
 					if(res.trim()=='1'){
 						alert('정상적으로 삭제되었습니다.');
-						commentList('restaurant', ${vo.r_no});
+						commentList('restaurant', ${data.r_no});
 					} else {
 						alert('삭제 오류입니다. 확인하세요');
 					}
@@ -130,10 +130,10 @@ function goSave(){
                     </tr>
                     <tr>
                       <th>주차공간</th>
-                      <td>
-                   		<c:if test="${data.r_parking ==0}">불가능</c:if>
-                   		<c:if test="${data.r_parking ==1}">가능</c:if>
-                      </td>
+					  <td class="last"><c:choose>
+					  <c:when test="${data.r_parking == 0}">주차불가</c:when>
+					  <c:when test="${data.r_parking >= 1}">주차가능</c:when>
+					  </c:choose></td>
                     </tr>
                     <tr>
                       <th>메뉴</th>
@@ -157,7 +157,6 @@ function goSave(){
       </div>
 	      <div class="no2"><br>
 	    	 <div id="commentArea">
- 
 	    	 </div>
 	     </div>
 	     <div class="text">
@@ -171,6 +170,19 @@ function goSave(){
               </td>
               <td>
                   <div class="btnSet"  style="text-align:right;">
+                  <form name="starsForm" id="searchForm" action="index.do"  method="post">
+                        <div class="stars">
+                           <select name="stype" title="검색을 선택해주세요">
+                              <option value="">5점</option>
+                              <option value="r_name">4점</option>
+                              <option value="r_status">3점</option>
+                              <option value="">2점</option>
+                              <option value="">1점</option>
+                           </select>
+                           <input type="text" name="sval" value="" title="검색할 내용을 입력해주세요" />
+                           <input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />
+                        </div>
+                     </form>
                       <a class="btn" href="javascript:goSave();">저장 </a>
                   </div>
               </td>

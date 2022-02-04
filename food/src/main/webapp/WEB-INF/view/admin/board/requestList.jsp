@@ -77,48 +77,48 @@
 							<form name="frm" id="frm" action="process.do" method="post">
 							<table width="100%" border="0" cellspacing="0" cellpadding="0" summary="관리자 관리목록입니다.">
 								<colgroup>
-									<col width="2.5%"/>
-									<col width="2.5%"/>
-									<col width="6.5%"/>
-									<col width="6%"/>
-									<col width="15%"/>
-									<col width="5%"/>
-									<col width="2.5%"/>
-									<col width="2.5%"/>
-								</colgroup>
-								<thead>
-									<tr>
-										<th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" /></th>
-										<th scope="col">번호</th>
-										<th scope="col">이메일</th>
-										<th scope="col">제목</th>
-										<th scope="col">내용</th> 
-										<th scope="col">작성일</th> 
-										<th scope="col">작성자</th> 
-										<th scope="col" class="last">답변상태</th>
-									</tr>
-								</thead>
-								<tbody>
-									<c:if test="${empty list}">
-			                            <tr>
-			                                <td class="first" colspan="8">등록된 글이 없습니다.</td>
-			                            </tr>
-			                        </c:if>
-			                        <c:if test="${!empty list}">
-									<c:forEach var="vo" items="${list}" varStatus="status">
-									<tr class="board_tr" data-adqna_no="${vo.rqna_no}" style="cursor:pointer;">
-										<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.rqna_no}"/></td>
-										<td>${vo.rqna_no}</td>
-										<td>${vo.u_uemail}</td>
-										<td class="title"><a href="/res/admin/requestView.do?rqna_no=${vo.rqna_no}">${vo.rqna_title}</a></td>
-										<td>${vo.rqna_contents}</td>
-										<td><fmt:formatDate value="${vo.rqna_regdate}" pattern="yyyy-MM-dd"/></td>
-										<td>${vo.u_name}</td>
-										<td>${vo.rqna_status}</td>
-									</tr>
-									</c:forEach>
-								</c:if>
-								</tbody>
+                           <col class="w3" />
+                           <col class="w4" />
+                           <col class="w15" />
+                           <col class="" />
+                           <col class="w10" />
+                           <col class="w10" />
+                           <col class="w6" />
+                        </colgroup>
+                        <thead>
+                           <tr>
+                              <th scope="col" class="first"><input type="checkbox" name="allChk" id="allChk" onClick="check(this, document.frm.no)"/></th>
+                              <th scope="col">상호번호</th>
+                              <th scope="col">상호명</th>
+                              <th scope="col">주소</th>
+                              <th scope="col">업태</th> 
+                              <th scope="col">작성일</th> 
+                              <th scope="col" class="last">상태</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <c:if test="${empty list}">
+                                     <tr>
+                                         <td class="first" colspan="7">등록된 글이 없습니다.</td>
+                                     </tr>
+                                 </c:if>
+                                 <c:if test="${!empty list}">
+                              <c:forEach var="vo" items="${list}" varStatus="status" >
+                         <%//            <tr onclick="location.href=view.do?boardno=${vo.boardno}">%>
+                                 <tr>
+                                    <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.r_no}"/></td>
+                                    <td>${vo.r_no}</td>
+                                    <td class="title"><a href="/res/shop/shopmain.do?r_no=${vo.r_no}">${vo.r_name}</a></td>
+                                    <td>${vo.r_address }</td>
+                                    <td>${vo.r_foodtype }</td>
+                                    <td>${vo.r_regdate}</td>
+                                    <td class="last"><c:choose>
+									<c:when test="${vo.r_status == 0}">등록대기</c:when>
+									</c:choose></td>
+                                 </tr>
+                              </c:forEach>
+                           </c:if>
+                        </tbody>
 							</table>
 							</form>
 							<div class="btn">
@@ -126,7 +126,7 @@
 									<a class="btns" href="#" onclick=""><strong>삭제</strong> </a>
 								</div>
 								<div class="btnRight">
-									<a class="wbtn" href="restWrite.do"><strong>등록</strong> </a>
+									<a class="wbtn" href="restWrite.do"><strong>등록</strong> </a><!-- r_stauts를 1로 바꾸는 버튼으로 바꾸기 -->
 								</div>
 							</div>
 							<!--//btn-->

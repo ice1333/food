@@ -73,6 +73,16 @@ public class RestaurantController {
 		}
 		return "include/result";
 	}
+	@RequestMapping("admin/restRegisterAjax.do")
+	public String restRegister(HttpServletRequest req, Model model, RestaurantVo vo) {
+		
+		String[] Msg = req.getParameterValues("valueArr");
+		int size = Msg.length;
+		for(int i=0; i<size; i++) {
+			service.restRegister(Msg[i]);
+		}
+		return "include/result";
+	}
 
 	@RequestMapping("admin/requestDelAjax.do")
 	public String admindelAjax(HttpServletRequest req, Model model, UserVo vo) {

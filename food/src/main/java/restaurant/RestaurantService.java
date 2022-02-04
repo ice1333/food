@@ -14,6 +14,8 @@ public interface RestaurantService {
 
 	public int restaurantDelete(String r_no);
 	
+	public int restRegister(String r_no);
+	
 	public int requestDelete(String rqna_no);
 	
 	public int restinsert(RestaurantVo vo);

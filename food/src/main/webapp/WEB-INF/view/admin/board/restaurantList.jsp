@@ -36,7 +36,7 @@
    if (valueArr.length==0){
       alert('하나 이상 선택하세요.')
       } else {
-         var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+         var check = confirm("정말 삭제하시겠습니까?");
          $.ajax({
             url: url,
             type : 'POST',
@@ -45,12 +45,40 @@
                valueArr : valueArr
             },
             success: function(res){
-                     alert("삭제 성공입니다.");
+                     alert("삭제 됐습니다.");
                      location.reload();
             }
          });
       }
    }
+   function register(){
+	      var url ='/res/admin/restRegisterAjax.do';
+	      var valueArr = new Array();
+	      var list= $("input[name='Rchk']");
+	      for(var i=0; i<list.length; i++){
+	         if(list[i].checked){
+	            valueArr.push(list[i].value);
+	            console.log(list[i].value)
+	         }
+	      }
+	   if (valueArr.length==0){
+	      alert('하나 이상 선택하세요.')
+	      } else {
+	         var check = confirm("등록하시겠습니까?");
+	         $.ajax({
+	            url: url,
+	            type : 'POST',
+	            traditional:true,
+	            data : {
+	               valueArr : valueArr
+	            },
+	            success: function(res){
+	                     alert("등록 됐습니다.");
+	                     location.reload();
+	            }
+	         });
+	      }
+	   }
 </script>
 </head>
 <body> 
@@ -112,7 +140,11 @@
                                     <td>${vo.r_address }</td>
                                     <td>${vo.r_foodtype }</td>
                                     <td>${vo.r_regdate}</td>
-                                    <td class="last">${vo.r_status }</td>
+                                    <td class="last"><c:choose>
+                                    <c:when test="${vo.r_status == 0}">대기</c:when>
+									<c:when test="${vo.r_status == 1}">등록</c:when>
+									<c:when test="${vo.r_status == 2}">삭제</c:when>
+									</c:choose></td>
                                  </tr>
                               </c:forEach>
                            </c:if>
@@ -124,7 +156,7 @@
                            <a class="btns" href="javascript:del();"><strong>삭제</strong> </a>
                         </div>
                         <div class="btnRight">
-                           <a class="wbtn" href="restWrite.do"><strong>등록</strong> </a>
+                           <a class="wbtn" href="javascript:register()"><strong>등록</strong> </a><!-- r_stauts를 1로 바꾸는 버튼으로 바꾸기 -->
                         </div>
                      </div>
                      <!--//btn-->
