@@ -135,7 +135,6 @@ $(function() {
 	})
 	
 		
-})
 	
 </script>
 <script src="/res/js/user_common.js"></script>
