@@ -198,7 +198,7 @@
 			</if>
 		)
 		</if>	
-				<if test="searchType =='' and searchType !=''">
+				<if test="searchType ==''">
 					and (r_name LIKE '%${searchWord}%' OR r_foodtype LIKE '%${searchWord}%')
 				</if>
 				<if test= "searchType != null and searchType !=''">

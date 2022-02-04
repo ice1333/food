@@ -301,8 +301,8 @@ if ('${param.p2}'== '1'){
       </div>
       </div>
     <div class="headersearch">
-        <form name="searchForm" id="searchForm" action="list.do"  method="get">
-        <input id="headersearchinput" type="text" class="headersearchinput" placeholder="검색어를 입력해주세요.">
+        <form name="searchForm" id="searchForm" action="list.do"  method="POST">
+
         <input type="hidden" name="a1" id="a1" value="0">
         <input type="hidden" name="a2" id="a2" value="0">
         <input type="hidden" name="a3" id="a3" value="0">
@@ -319,15 +319,14 @@ if ('${param.p2}'== '1'){
         <input type="hidden" name="p2" id="p2" value="0">
             <div class="search">
                 <select id="stype" name="searchType" title="검색분류 선택">
-                    <option value="">전체</option>
+                    <option value=""<c:if test="${param.searchType == ''}">selected</c:if>>전체</option>
                     <option value="r_name" <c:if test="${param.searchType == 'r_name'}">selected</c:if>>매장이름</option>
                     <option value="r_foodtype" <c:if test="${param.searchType == 'r_foodtype'}">selected</c:if>>음식종류</option>
                 </select>
-                <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" class="sbtn" alt="검색"/>
-                <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
+		        <input type="text" id="sval" name="searchWord" value="" placeholder="검색어를 입력해주세요." class="sbtn" alt="검색"/>
+		        <input type="image" src="/res/img/admin/btn_search.gif" class="header_searchbutton" alt="검색" title="검색" />
             </div>
          </form>
-    <button class="header_searchbutton"></button> 
     </div>
     <ul class="headermenulist">
     	<c:if  test="${empty userInfo }">
