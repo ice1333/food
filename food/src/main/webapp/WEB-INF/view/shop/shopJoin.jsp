@@ -159,7 +159,7 @@ function goSave(){
                         </div><br>
                         <div class="type_form member_join">
                         <form name="frm" id="frm" action="insert.do" method="post" enctype="multipart/form-data">
-                        <input type="hidden" name="u_no" value="${userInfo.u_no }">
+                        <input type="hidden" name="u_no" value="${userInfo.u_no }"> 
                         <input type="hidden" name="r_status" value="0">
                         <p class="page_sub"><span class="ico">*</span>필수입력사항</p>
                             <table class="tbl_comm">
