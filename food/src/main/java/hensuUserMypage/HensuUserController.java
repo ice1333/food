@@ -35,8 +35,8 @@ public class HensuUserController {
 		model.addAttribute("list",list);
 		model.addAttribute("totPage",totPage);
 		model.addAttribute("totCount",totCount);
-		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
-		return "user/myLove";
+		model.addAttribute("pageArea",CommonUtil.getPageArea("mylist.do", vo.getPage(), totPage, 3));
+		return "user/mylist";
 	}
 	
 }

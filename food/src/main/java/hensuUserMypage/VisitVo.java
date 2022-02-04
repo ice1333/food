@@ -6,7 +6,7 @@ import util.CommonVo;
 
 public class VisitVo extends CommonVo {
 
-	private int visitno;
+	private int v_no;
 	private int r_no;
 	private int u_no;
 	private Timestamp v_date;
@@ -14,6 +14,13 @@ public class VisitVo extends CommonVo {
 	private int r_stars;
 	private String r_name;
 	private String r_filename_real;
+	
+	public int getV_no() {
+		return v_no;
+	}
+	public void setV_no(int v_no) {
+		this.v_no = v_no;
+	}
 	
 	public String getR_foodtype() {
 		return r_foodtype;
@@ -38,12 +45,6 @@ public class VisitVo extends CommonVo {
 	}
 	public void setR_filename_real(String r_filename_real) {
 		this.r_filename_real = r_filename_real;
-	}
-	public int getVisitno() {
-		return visitno;
-	}
-	public void setVisitno(int visitno) {
-		this.visitno = visitno;
 	}
 	public int getR_no() {
 		return r_no;
