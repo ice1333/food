@@ -28,7 +28,7 @@ $(function(){
     });
     // 퀵메뉴
     var quick_left = $(".shop > div:first-child").position().left + 1220;
-    var quick_top = $(".shop > div:first-child").position().top - 120;
+    var quick_top = $(".shop > div:first-child").position().top - 100;
     //console.log(quick_left);
     $(".quickMenu").css({
         top : quick_top,
@@ -41,7 +41,7 @@ $(function(){
         //$(".quickMenu").css("top",newTop);
         $(".quickMenu").stop().animate({
             "top":newTop
-        }, 3000);
+        }, 2000);
     });
     // goTop클릭하면 맨위로 이동
     $(".goTop").click(function(){

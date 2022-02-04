@@ -117,10 +117,10 @@
                             <li class="list_restrants2">
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='/res/shop/shopmain.do?r_no=94' target='_blank'><img src='https://ifh.cc/g/CXQuYG.jpg' border='0'></a>
+                                        <a href='/res/shop/shopmain.do?r_no=86'><img src='https://ifh.cc/g/CXQuYG.jpg' ></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="/res/shop/shopmain.do?r_no=94">
+                                        <a href="/res/shop/shopmain.do?r_no=86">
                                             <h3>신승관<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -128,7 +128,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='/res/shop/shopmain.do?r_no=28' target='_blank'><img src='https://ifh.cc/g/EG3SLx.jpg' border='0'></a>
+                                        <a href='/res/shop/shopmain.do?r_no=28'><img src='https://ifh.cc/g/EG3SLx.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="/res/shop/shopmain.do?r_no=28">
@@ -139,7 +139,7 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='/res/shop/shopmain.do?r_no=42' target='_blank'><img src='https://ifh.cc/g/Lpskd8.jpg' border='0'></a>
+                                        <a href='/res/shop/shopmain.do?r_no=42'><img src='https://ifh.cc/g/Lpskd8.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
                                         <a href="/res/shop/shopmain.do?r_no=42">
@@ -150,10 +150,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='/res/shop/shopmain.do?r_no=93' target='_blank'><img src='https://ifh.cc/g/4mbAFM.jpg' border='0'></a>
+                                        <a href='/res/shop/shopmain.do?r_no=49'><img src='https://ifh.cc/g/4mbAFM.jpg' border='0'></a>
                                     </div> 
                                     <div class="restrant_info">
-                                        <a href="/res/shop/shopmain.do?r_no=93">
+                                        <a href="/res/shop/shopmain.do?r_no=49">
                                             <h3>엄용백돼지국밥<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -164,10 +164,10 @@
                             <li class="list_restrants2">
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-tjgyDZ' target='_blank'><img src='https://ifh.cc/g/tjgyDZ.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=62" ><img src='https://ifh.cc/g/tjgyDZ.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=62">
                                             <h3>서울식당<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -175,21 +175,21 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-bIHVPZ' target='_blank'><img src='https://ifh.cc/g/bIHVPZ.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=71"><img src='https://ifh.cc/g/bIHVPZ.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
-                                            <h3>종로족빨<h3>
+                                        <a href="/res/shop/shopmain.do?r_no=71">
+                                            <h3>족의한수<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-BkWawX' target='_blank'><img src='https://ifh.cc/g/BkWawX.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=74"><img src='https://ifh.cc/g/BkWawX.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=74">
                                             <h3>털보네해물탕<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -197,10 +197,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-B4CDe4' target='_blank'><img src='https://ifh.cc/g/B4CDe4.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=33"><img src='https://ifh.cc/g/B4CDe4.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=33">
                                             <h3>수제왕돈까스<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -221,10 +221,10 @@
                             <li class="list_restrants2">
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-tBzwKX' target='_blank'><img src='https://ifh.cc/g/tBzwKX.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=11"><img src='https://ifh.cc/g/tBzwKX.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=11">
                                             <h3>고치비<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -232,10 +232,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-xnzjQl' target='_blank'><img src='https://ifh.cc/g/xnzjQl.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=25"><img src='https://ifh.cc/g/xnzjQl.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=25">
                                             <h3>미도리스시<h3> 
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -243,10 +243,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-vVaOY2' target='_blank'><img src='https://ifh.cc/g/vVaOY2.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=41" ><img src='https://ifh.cc/g/vVaOY2.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=41">
                                             <h3>떡사롱<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -254,10 +254,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-MH5lJ7' target='_blank'><img src='https://ifh.cc/g/MH5lJ7.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=57" ><img src='https://ifh.cc/g/MH5lJ7.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=57">
                                             <h3>석파랑<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -268,10 +268,10 @@
                             <li class="list_restrants2">
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-K4Vbgm' target='_blank'><img src='https://ifh.cc/g/K4Vbgm.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=21" ><img src='https://ifh.cc/g/K4Vbgm.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=21">
                                             <h3>스시미치루<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -279,10 +279,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-Wg0dhf' target='_blank'><img src='https://ifh.cc/g/Wg0dhf.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=63" ><img src='https://ifh.cc/g/Wg0dhf.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=63">
                                             <h3>한일장<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -290,10 +290,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-NYMNOc' target='_blank'><img src='https://ifh.cc/g/NYMNOc.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=14" ><img src='https://ifh.cc/g/NYMNOc.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=14"	>
                                             <h3>핏제리아오<h3>
                                         </a>
                                         <strong class="star">4.6</strong>
@@ -301,10 +301,10 @@
                                 </div>
                                 <div class="restrant">
                                     <div class="thumb">
-                                        <a href='https://ifh.cc/v-3wqeMR' target='_blank'><img src='https://ifh.cc/g/3wqeMR.jpg' border='0'></a>
+                                        <a href="/res/shop/shopmain.do?r_no=39" ><img src='https://ifh.cc/g/3wqeMR.jpg' border='0'></a>
                                     </div>
                                     <div class="restrant_info">
-                                        <a href="">
+                                        <a href="/res/shop/shopmain.do?r_no=39">
                                             <h3>정할머니 기름떡볶이<h3>
                                         </a>
                                         <strong class="star">4.6</strong>

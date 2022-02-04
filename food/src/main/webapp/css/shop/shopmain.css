@@ -39,8 +39,8 @@ table {
 }
 
 .mainimg_size {
-  width: 375px;
-  height: 300px;
+  width: 500px;
+  height: 350px;
   align-items: center;
   object-fit: cover;
 }

@@ -77,16 +77,13 @@ public class ShopMainController {
 				file.transferTo(new File(path+filename_real)); // 경로에 파일을 저장 
 				file1.transferTo(new File(path+filename_real1)); // 경로에 파일을 저장 
 				file2.transferTo(new File(path+filename_real2)); // 경로에 파일을 저장 
-				file3.transferTo(new File(path+filename_real3)); // 경로에 파일을 저장 
 				
 				vo.setR_filename_org(filename);
 				vo.setR_filename_org1(filename1);
 				vo.setR_filename_org2(filename2);
-				vo.setR_filename_org3(filename3);
 				vo.setR_filename_real(filename_real);
 				vo.setR_filename_real1(filename_real1);
 				vo.setR_filename_real2(filename_real2);
-				vo.setR_filename_real3(filename_real3);
 				
 			} catch(Exception e) {
 				System.out.println(e.getMessage());
@@ -157,22 +154,6 @@ public class ShopMainController {
 					
 					vo.setR_filename_org2(filename2);
 					vo.setR_filename_real2(filename_real2);
-					
-				} catch(Exception e) {
-					System.out.println(e.getMessage());
-				}
-			}
-			if ((file3 != null && !file3.isEmpty())) { // 사용자가 파일을 첨부했다면 
-				try {
-					String path = req.getRealPath("/upload/");
-					String filename3 = file3.getOriginalFilename(); // 사용자가 업로드한 원본 파일
-					String ext3 = filename3.substring(filename3.lastIndexOf(".")); // 확장자 (.jpg)
-					String filename_real3 = System.currentTimeMillis()-300 + ext3;
-					
-					file3.transferTo(new File(path+filename_real3)); // 경로에 파일을 저장 
-					
-					vo.setR_filename_org3(filename3);
-					vo.setR_filename_real3(filename_real3);
 					
 				} catch(Exception e) {
 					System.out.println(e.getMessage());

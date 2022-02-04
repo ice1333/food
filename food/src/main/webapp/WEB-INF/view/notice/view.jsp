@@ -40,7 +40,7 @@ function getCheckboxValue(event)  {
                         <div class="inner_sub">
                             <ul id="adlist">
                                 <li><a href="<%=request.getContextPath()%>/user/noticeindex.do">공지사항</a></li>
-                                <li><a href="">광고문의</a></li>
+                                <li><a href="<%=request.getContextPath()%>/adqna/index.do">광고문의</a></li>
                             </ul>
                         </div>
                 </div>

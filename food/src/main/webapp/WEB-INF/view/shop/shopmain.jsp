@@ -70,7 +70,6 @@ function goSave(){
         <div><img class="mainimg_size" src="/res/upload/${data.r_filename_real }"></div>
         <div><img class="mainimg_size" src="/res/upload/${data.r_filename_real1 }"></div>
         <div><img class="mainimg_size" src="/res/upload/${data.r_filename_real2 }"></div>
-        <div><img class="mainimg_size" src="/res/upload/${data.r_filename_real3 }"></div>
       </div>
       <div class="no1">
         <div class="no1__left">
@@ -102,7 +101,7 @@ function goSave(){
                   <c:forEach var="vo" items="${list}" varStatus="status">--%>
                     <tr>
                       <th>주소</th>
-                      <td>${data.r_address},${data.r_address2}</td>
+                      <td>${data.r_address} ${data.r_address2}</td>
                     </tr>
                     <tr>
                       <th>전화번호</th>

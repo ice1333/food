@@ -131,8 +131,6 @@
          , r_filename_real1=#{r_filename_real1}
          , r_filename_org2=#{r_filename_org2}
          , r_filename_real2=#{r_filename_real2}
-         , r_filename_org3=#{r_filename_org3}
-         , r_filename_real3=#{r_filename_real3}
          , r_status=#{r_status}
       WHERE r_no = #{r_no}
    </update>
@@ -169,7 +167,7 @@
 		<if test="f1==1 or f2==1 or f3==1 or f4==1 or f5==1 or f6==1 or f7==1 or f8==1 ">
 		and ( 1=0
 			<if test="f1 == 1">
-				or r_foodtype="한식(한정식)" 
+				or r_foodtype="한정식" 
 			</if>
 			<if test="f2 == 1">
 				or r_foodtype="분식" 
@@ -181,10 +179,10 @@
 				or r_foodtype="중식" 
 			</if>
 			<if test="f5 == 1">
-				or r_foodtype="고기" or r_foodtype="족발, 보쌈"
+				or r_foodtype="고기" or r_foodtype="족발"
 			</if>
 			<if test="f6 == 1">
-				or r_foodtype="찜, 탕" or r_foodtype="한식(탕, 찌개, 국밥)"
+				or r_foodtype="찜탕" or r_foodtype="국밥"
 			</if>
 			<if test="f7 == 1">
 				or r_foodtype="돈까스"
