@@ -8,7 +8,7 @@
 	<select id="visitList" parameterType="hensuUserMypage.VisitVo" resultType="hensuUserMypage.VisitVo">
 		SELECT * FROM visit
 		ORDER BY r_regdate DESC    
-		LIMIT ${startIdx},10
+		LIMIT ${startIdx},5
 	</select>
 	
 	<insert id="visitInsert" parameterType="hensuUserMypage.VisitVo">

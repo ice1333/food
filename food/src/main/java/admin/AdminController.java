@@ -70,7 +70,7 @@ public class AdminController {
 		model.addAttribute("list",list);
 		model.addAttribute("totPage",totPage);
 		model.addAttribute("totCount",totCount);
-		model.addAttribute("pageArea",CommonUtil.getPageArea("userList.do", vo.getPage(), totPage, 10));
+		model.addAttribute("pageArea",CommonUtil.getPageArea("userList.do", vo.getPage(), totPage, 5));
 		return "admin/board/userList";
 	}
 	@GetMapping("/admin/board/adminList.do")
