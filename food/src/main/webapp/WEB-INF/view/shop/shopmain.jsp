@@ -151,20 +151,19 @@ function goSave(){
       </div>
 	      <div class="no2"><br>
 	    	 <div id="commentArea">
-<<<<<<< HEAD
-=======
-	    	 
->>>>>>> branch 'master' of https://github.com/ice1333/food.git
+
 	    	 </div>
 	     </div>
 	     <div class="text">
 			<tr>
               <td>
+              <c:if test="${vo.u_no == userInfo.u_no }">
               <form action="" id="frm">
               	<input type="hidden" name="r_no" value="${data.r_no}">
    				<input type="hidden" name="tablename" value="restaurant">
                   <textarea name="content" id="content"></textarea>
               </form>
+              </c:if>
               </td>
               <td>
                   <div class="btnSet"  style="text-align:right;">
