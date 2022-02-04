@@ -32,16 +32,17 @@ table {
 .mainimg {
   display: flex;
   overflow: hidden;
-  width: 100%;
+  width: 1500px;
   height: 380px;
   position: relative;
   margin-top: 50px;
 }
 
 .mainimg_size {
-  width: 100%;
+  width: 375px;
   height: 300px;
   align-items: center;
+  object-fit: cover;
 }
 
 .no1 {
