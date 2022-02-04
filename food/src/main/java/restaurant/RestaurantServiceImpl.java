@@ -65,5 +65,10 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public List<RestaurantVo> lists(RestaurantVo vo) {
 		return dao.lists(vo);
 	}
+
+	@Override
+	public int restRegister(String r_no) {
+		return dao.restRegister(r_no);
+	}
 	
 }

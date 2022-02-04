@@ -27,6 +27,9 @@ public class RestaurantDao {
 	public int restaurantDelete(String r_no) {
 		return sqlSession.delete("restaurant.restaurantDelete",r_no);
 	}
+	public int restRegister(String r_no) {
+		return sqlSession.update("restaurant.restRegister",r_no);
+	}
 	public int requestDelete(String rqna_no) {
 		return sqlSession.delete("restaurant.requestDelete",rqna_no);
 	}

@@ -130,7 +130,10 @@ function goSave(){
                     </tr>
                     <tr>
                       <th>주차공간</th>
-                      <td>${data.r_parking}</td>
+					  <td class="last"><c:choose>
+					  <c:when test="${data.r_parking == 0}">주차불가</c:when>
+					  <c:when test="${data.r_parking >= 1}">주차가능</c:when>
+					  </c:choose></td>
                     </tr>
                     <tr>
                       <th>메뉴</th>
@@ -144,7 +147,7 @@ function goSave(){
                
           </table>
           <div class="btn">
-          	<a class="btn1" href="join.do" style="float: right;"><strong>문의 하기</strong>
+          	<a class="btn1" href="join.do" style="float: right;"><strong>문의 하기</strong></a>
           </div>
           
         </div>
@@ -154,10 +157,6 @@ function goSave(){
       </div>
 	      <div class="no2"><br>
 	    	 <div id="commentArea">
-<<<<<<< HEAD
-=======
- 
->>>>>>> branch 'master' of https://github.com/ice1333/food.git
 	    	 </div>
 	     </div>
 	     <div class="text">
@@ -173,6 +172,19 @@ function goSave(){
               </td>
               <td>
                   <div class="btnSet"  style="text-align:right;">
+                  <form name="starsForm" id="searchForm" action="index.do"  method="post">
+                        <div class="stars">
+                           <select name="stype" title="검색을 선택해주세요">
+                              <option value="">5점</option>
+                              <option value="r_name">4점</option>
+                              <option value="r_status">3점</option>
+                              <option value="">2점</option>
+                              <option value="">1점</option>
+                           </select>
+                           <input type="text" name="sval" value="" title="검색할 내용을 입력해주세요" />
+                           <input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />
+                        </div>
+                     </form>
                       <a class="btn" href="javascript:goSave();">저장 </a>
                   </div>
               </td>
