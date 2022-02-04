@@ -144,7 +144,7 @@ function goSave(){
                
           </table>
           <div class="btn">
-          	<a class="btn1" href="join.do" style="float: right;"><strong>문의 하기</strong>
+          	<a class="btn1" href="join.do" style="float: right;"><strong>문의 하기</strong></a>
           </div>
           
         </div>
@@ -160,13 +160,11 @@ function goSave(){
 	     <div class="text">
 			<tr>
               <td>
-              
               <form action="" id="frm">
               	<input type="hidden" name="r_no" value="${data.r_no}">
    				<input type="hidden" name="tablename" value="restaurant">
                   <textarea name="content" id="content"></textarea>
               </form>
-              
               </td>
               <td>
                   <div class="btnSet"  style="text-align:right;">

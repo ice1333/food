@@ -83,8 +83,8 @@
 								<div class="search">
 									<select name="searchType" title="검색을 선택해주세요">
 										<option value="">전체</option>
-										<option value="n_title">제목</option>
-										<option value="n_content">내용</option>
+										<option value="n_title" <c:if test="${param.searchType == 'n_title'}">selected</c:if>>제목</option>
+										<option value="n_content" <c:if test="${param.searchType == 'n_content'}">selected</c:if>>내용</option>
 									</select>
 									<input type="text" name="searchWord" value="" title="검색할 내용을 입력해주세요" />
 									<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />

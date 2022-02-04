@@ -80,16 +80,16 @@
                                        </tr>
                                    </c:if>
                                    <c:if test="${!empty list}">
-                                   		<c:forEach var="list" items="${list}" > 
-                                       <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
-                                       	   <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.adc_no }"/></td>
-                                           <td>${list.v_no }</td>
-                                           <td id="blist_img">
-                                               ${list.filename_real }
-                                            </td>   
-                                           <td class="title">상호명 : ${list.r_name } <br>업태 : ${list.r_foodtype } </td>
-                                           <td class="last">⭐️ ${list.stars }</td>						
-                                       </tr>
+                                         <c:forEach var="vo" items="${list}" > 
+                                          <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
+                                                <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.v_no }"/></td>
+                                              <td>${vo.v_no }</td>
+                                              <td id="blist_img">
+                                                  <img src="/res/upload/${vo.r_filename_real}">
+                                               </td>         
+                                              <td class="title">상호명 : ${vo.r_name } <br>업태 : ${vo.r_foodtype } </td>
+                                              <td class="last">️${vo.stars }</td>                  
+                                          </tr>
                                        </c:forEach>
                                    </c:if>
                                    </tbody>
