@@ -236,7 +236,7 @@
                                     </div>
                                     <div class="restrant_info">
                                         <a href="">
-                                            <h3>미도리스시<h3>
+                                            <h3>미도리스시<h3> 
                                         </a>
                                         <strong class="star">4.6</strong>
                                     </div>
