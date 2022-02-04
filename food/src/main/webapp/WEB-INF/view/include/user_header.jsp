@@ -9,11 +9,12 @@ $(function() {
 		if ($("#a1").val() == '0') {
 			$("#a1").val('1');
 			$(this).css('border',"1px solid red");
-			
 		} else {
 			$("#a1").val('0');
 			$(this).css("border","none");
 		}
+		
+		
 	})
 	$("#f_a2").click(function() {
 			if ($("#a2").val() == '0') {
@@ -133,9 +134,53 @@ $(function() {
 			}
 		})
 	})
-	
-		
+$(function(){
+if ('${param.a1}'== '1'){
+	$("#f_a1").css('border',"1px solid red");
+}
+if ('${param.a2}'== '1'){
+	$("#f_a2").css('border',"1px solid red");
+}
+if ('${param.a3}'== '1'){
+	$("#f_a3").css('border',"1px solid red");
+}
+if ('${param.a4}'== '1'){
+	$("#f_a4").css('border',"1px solid red");
+}
+if ('${param.f1}'== '1'){
+	$("#f_f1").css('border',"1px solid black");
+}
+if ('${param.f2}'== '1'){
+	$("#f_f2").css('border',"1px solid black");
+}
+if ('${param.f3}'== '1'){
+	$("#f_f3").css('border',"1px solid black");
+}
+if ('${param.f4}'== '1'){
+	$("#f_f4").css('border',"1px solid black");
+}
+if ('${param.f5}'== '1'){
+	$("#f_f5").css('border',"1px solid black");
+}
+if ('${param.f6}'== '1'){
+	$("#f_f6").css('border',"1px solid black");
+}
+if ('${param.f7}'== '1'){
+	$("#f_f7").css('border',"1px solid black");
+}
+if ('${param.f8}'== '1'){
+	$("#f_f8").css('border',"1px solid black");
+}
+if ('${param.p1}'== '1'){
+	$("#f_p1").css('border',"3px solid black");
+}
+if ('${param.p2}'== '1'){
+	$("#f_p2").css('border',"3px solid black");
+}
+
+
 })
+	
 	
 </script>
 <script src="/res/js/user_common.js"></script>
@@ -277,7 +322,7 @@ $(function() {
                     <option value="r_name" <c:if test="${param.searchType == 'r_name'}">selected</c:if>>매장이름</option>
                     <option value="r_foodtype" <c:if test="${param.searchType == 'r_foodtype'}">selected</c:if>>음식종류</option>
                 </select>
-                <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
+                <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" class="sbtn" alt="검색"/>
                 <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
             </div>
          </form>
