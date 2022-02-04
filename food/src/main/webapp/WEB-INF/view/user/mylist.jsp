@@ -85,10 +85,10 @@
                                                 <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.v_no }"/></td>
                                               <td>${vo.v_no }</td>
                                               <td id="blist_img">
-                                                  <img src="/res/upload/${vo.r_filename_real}">
+                                                  <img style="width: 100px; height: 100px" src="/res/upload/${vo.r_filename_real}">
                                                </td>         
                                               <td class="title">상호명 : ${vo.r_name } <br>업태 : ${vo.r_foodtype } </td>
-                                              <td class="last">️${vo.stars }</td>                  
+                                              <td class="last">️${vo.r_stars }</td>                  
                                           </tr>
                                        </c:forEach>
                                    </c:if>
@@ -100,10 +100,7 @@
                                        <a href="location.href" class="btns" ><strong>삭제</strong> </a>
                                    </div>
                                </div>
-                               <!--//btn-->
-                               <!-- 페이징 처리 -->
                                ${pageArea}
-                               <!-- //페이징 처리 -->
                                <form name="searchForm" id="searchForm" action="adqnaindex.do"  method="get">
                                    <div class="search">
                                        <select id="stype" name="searchType" title="검색분류 선택">
@@ -135,4 +132,18 @@
    </div>
    <!--//wrap -->   
 </body>
+<style type="text/css">
+.pagenate {width:100%; clear:both;}
+.pagenate {text-align:center; margin:20px auto 0;}
+.pagenate li {display:inline-block;}
+.pagenate li:first-child { margin-left:0px; }
+.pagenate li a{display:inline-block; text-decoration:none; padding:0; width:30px; height:30px; line-height:30px; border:1px solid #c7c8cc; box-sizing:border-box; margin-left:-1px; vertical-align:middle;}
+.pagenate li a:hover{background:#f6f6f6; font-weight:bold; text-decoration:none !important;}
+.pagenate li a.board { text-indent:-9999em; margin-left:4px; }
+.pagenate li a.board.first {background:#f3f3f3 url('/img/ico_first.png') no-repeat center center;}
+.pagenate li a.board.prev {margin-right:30px; background:#efefef url('/img/ico_prev.png') no-repeat center center;}
+.pagenate li a.board.next {margin-left:30px; background:#efefef url('/img/ico_next.png') no-repeat center center;}
+.pagenate li a.board.last {background:#f3f3f3 url('/img/ico_last.png') no-repeat center center;}
+.pagenate li a.current {color:#fff; background-color:#221f1f; font-weight:bold;  border:1px solid #221f1f;}
+</style>
 </html>

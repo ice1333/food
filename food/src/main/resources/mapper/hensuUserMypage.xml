@@ -9,6 +9,7 @@
 		SELECT * FROM visit
 		ORDER BY r_regdate DESC    
 		LIMIT ${startIdx},5
+		order by v_regdate desc;
 	</select>
 	
 	<insert id="visitInsert" parameterType="hensuUserMypage.VisitVo">
@@ -25,7 +26,9 @@
          , (select r_name from restaurant where restaurant.r_no=visit.r_no)as r_name
          , (SELECT r_filename_real from restaurant where restaurant.r_no=visit.r_no)as  r_filename_real
       FROM visit 
-	</select>
+      ORDER BY v_date DESC    
+	  LIMIT ${startIdx},3
+	</select>   
 	<select id="myListCount" resultType="int" parameterType="hensuUserMypage.VisitVo">
 		SELECT COUNT(*) FROM visit
 		where u_no = #{u_no}       

@@ -130,7 +130,10 @@ function goSave(){
                     </tr>
                     <tr>
                       <th>주차공간</th>
-                      <td>${data.r_parking}</td>
+                      <td>
+                   		<c:if test="${data.r_parking ==0}">불가능</c:if>
+                   		<c:if test="${data.r_parking ==1}">가능</c:if>
+                      </td>
                     </tr>
                     <tr>
                       <th>메뉴</th>
