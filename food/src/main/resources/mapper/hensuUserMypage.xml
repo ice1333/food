@@ -81,4 +81,7 @@
 			 </if>
 		</where>     
 	</sql>
+	<delete id="listDelete" parameterType="hensuUserMypage.VisitVo">
+		DELETE FROM shop.visit WHERE u_no=#{u_no} and r_no=#{r_no}
+	</delete>
 </mapper>

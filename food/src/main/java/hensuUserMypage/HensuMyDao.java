@@ -27,5 +27,8 @@ public class HensuMyDao {
 	public int visitCount(VisitVo vo) {
 		return sst.selectOne("hensuUser.visitCount",vo);
 	}
+	public int listDelete(VisitVo vo) {
+		return sst.delete("hensuUser.listDelete",vo);
+	}
 }
     

@@ -27,4 +27,7 @@ public class HensuMyService {
 	public int visitCount(VisitVo vo) {
 		return dao.visitCount(vo);
 	}
+	public int listDelete(VisitVo vo) {
+		return dao.listDelete(vo);
+	}
 }

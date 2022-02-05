@@ -37,7 +37,7 @@
 		});
 	});
 	function del(){
-		var url ='/res/admin/adminDelAjax.do';
+		var url ='/res/user/mypage/listDelAjax.do';
 		var valueArr = new Array();
 		var list= $("input[name='Rchk']");
 		for(var i=0; i<list.length; i++){
@@ -132,10 +132,10 @@
                                        </tr>
                                    </c:if>
                                    <c:if test="${!empty list}">
-                                         <c:forEach var="vo" items="${list}" > 
+                                         <c:forEach var="vo" items="${list}" varStatus="status" > 
                                           <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
-                                                <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.v_no }"/></td>
-                                              <td>${vo.v_no }</td>
+                                                <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.r_no }"/></td>
+                                              <td>${(totCount-status.index)-((visitVo.page-1)*5) }</td>
                                               <td id="blist_img" style="width: 100px; height: 100px">
                                                   <img style="width: 100%; height: 100%" src="/res/upload/${vo.r_filename_real}">
                                                </td>         
@@ -150,7 +150,7 @@
                                  ${pageArea}
                                <div class="btn">
                                    <div class="btnRight">
-                                       <a href="location.href" class="btns" ><strong>삭제</strong> </a>
+                                       <a href="javascript:del();" class="btns" ><strong>삭제</strong> </a>
                                    </div>
                                </div>
                                

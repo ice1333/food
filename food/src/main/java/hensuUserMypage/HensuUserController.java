@@ -2,12 +2,14 @@ package hensuUserMypage;
 
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import user.UserVo;
@@ -45,6 +47,23 @@ public class HensuUserController {
 		System.out.println(vo.getPage());
 		System.out.println(totPage);
 		return "user/mylist";
+	}
+	@RequestMapping("user/mypage/listDelAjax.do")
+	public String admindelAjax(HttpServletRequest req, Model model,VisitVo vo,HttpSession sess) {
+		if(sess.getAttribute("userInfo") != null) {
+			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+		}
+		String[] Msg = req.getParameterValues("valueArr");
+		int size = Msg.length;
+		for(int i=0; i<size; i++) {
+			if(sess.getAttribute("userInfo") != null) {
+				vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+				int r_no = Integer.parseInt(Msg[i]);
+				vo.setR_no(r_no);
+				service.listDelete(vo);
+			}
+		}
+		return "include/result";
 	}
 	
 }
