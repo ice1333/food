@@ -49,7 +49,7 @@
 			order by v_date desc
 		) t
 		where u_no = ${u_no}
-		LIMIT ${startIdx},3;
+		LIMIT ${startIdx},5;
 	</select>
 	   
 	<select id="visitCount" resultType="int" parameterType="hensuUserMypage.VisitVo">
