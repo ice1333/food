@@ -139,7 +139,7 @@
                                               <td id="blist_img" style="width: 100px; height: 100px">
                                                   <img style="width: 100%; height: 100%" src="/res/upload/${vo.r_filename_real}">
                                                </td>         
-                                              <td class="title">상호명 : ${vo.r_name } <br>업태 : ${vo.r_foodtype } </td>
+                                              <td class="title" style="text-align: center;">상호명 : ${vo.r_name } <br>업태 : ${vo.r_foodtype } </td>
                                               <td class="last">️${vo.r_stars }</td>                  
                                           </tr>
                                        </c:forEach>
