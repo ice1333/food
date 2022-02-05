@@ -48,7 +48,7 @@
 			)
 			order by v_date desc
 		) t
-		where u_no = 1
+		where u_no = ${u_no}
 		LIMIT ${startIdx},3;
 	</select>
 	   
@@ -65,8 +65,7 @@
 			)
 			order by v_date desc
 		) t
-		where u_no = 1
-		LIMIT ${startIdx},3;
+		where u_no = ${u_no}
 	</select>
 	 
 	<sql id = "userWhere">

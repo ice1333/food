@@ -10,6 +10,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import user.UserVo;
 import util.CommonUtil;
 
 @Controller
@@ -25,7 +26,9 @@ public class HensuUserController {
 	}
 	@GetMapping("user/mypage/mylist.do")
 	public String restaurantList(VisitVo vo, Model model,HttpSession sess) {
-		
+		if(sess.getAttribute("userInfo") != null) {
+			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+		}
 		
 		int totCount = service.visitCount(vo);
 		int totPage = totCount / 5; //총페이지수 
