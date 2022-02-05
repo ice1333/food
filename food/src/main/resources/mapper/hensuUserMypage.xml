@@ -9,7 +9,7 @@
 		SELECT * FROM visit
 		ORDER BY r_regdate DESC    
 		LIMIT ${startIdx},5
-		order by v_regdate desc;
+		order by v_regdate desc;    
 	</select>
 	
 	<insert id="visitInsert" parameterType="hensuUserMypage.VisitVo">
@@ -48,7 +48,7 @@
 			)
 			order by v_date desc
 		) t
-		where u_no = ${u_no}
+		<include refid="time"/>
 		LIMIT ${startIdx},5;
 	</select>
 	   
@@ -64,23 +64,35 @@
 				from shop.visit group by r_no
 			)
 			order by v_date desc
-		) t
-		where u_no = ${u_no}
+		) t   
+		<include refid="time"/>
 	</select>
-	 
-	<sql id = "userWhere">
+
+	<sql id = "time">
 		<where>
-			<if test ="searchType ==''">   
-			 	(u_uemail LIKE '%${searchWord}%' OR u_status LIKE '%${searchWord}%')
+			<if test ="visit ==''">
+			 </if>
+			 <if test ="visit =='1'">   
+			 	v_date >= date_add(now(), interval -1 month)
+			 </if>
+			 <if test ="visit =='2'">       
+			 	v_date >= date_add(now(), interval -2 month)
+			 </if>
+			 <if test ="visit =='3'">       
+			 	v_date >= date_add(now(), interval -3 month)
+			 </if>
+			 <if test ="searchType ==''">   
+			 	(t.r_name LIKE '%${searchWord}%' OR t.r_foodtype LIKE '%${searchWord}%')
 			 </if>
 			 <if test= "searchType != null and searchType != ''">
 			 	${searchType} LIKE '%${searchWord}%'
 			 </if>
 			 <if test="u_no > 0">    
-			 	AND u_no = ${u_no}
+			 	u_no = ${u_no}
 			 </if>
 		</where>     
 	</sql>
+
 	<delete id="listDelete" parameterType="hensuUserMypage.VisitVo">
 		DELETE FROM shop.visit WHERE u_no=#{u_no} and r_no=#{r_no}
 	</delete>

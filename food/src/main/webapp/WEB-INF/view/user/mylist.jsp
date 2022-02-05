@@ -36,6 +36,7 @@
 			}
 		});
 	});
+	
 	function del(){
 		var url ='/res/user/mypage/listDelAjax.do';
 		var valueArr = new Array();
@@ -46,26 +47,24 @@
 				console.log(list[i].value)
 			}
 		}
-	if (valueArr.length==0){
-		alert('하나 이상 선택하세요.')
-		} else {
-			var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
-			$.ajax({
-				url: url,
-				type : 'POST',
-				traditional:true,
-				data : {
-					valueArr : valueArr
-				},
-				success: function(res){
-	                  alert("삭제 성공입니다.");
-	                  location.reload();
-				}
-			});
-		}
+		if (valueArr.length==0){
+			alert('하나 이상 선택하세요.')
+			} else {
+				var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+				$.ajax({
+					url: url,
+					type : 'POST',
+					traditional:true,
+					data : {
+						valueArr : valueArr
+					},
+					success: function(res){
+		                  alert("삭제 성공입니다.");
+		                  location.reload();
+					}
+				});
+			}
 	}
-	
-		
 	
 	
 </script>
@@ -98,11 +97,11 @@
                        <div class="con_tit">
                            <h3 class="con_title">최근 본 매장</h3>
                        </div>
-                       <select id="con_searchlist" name="searchType" title="검색을 선택해주세요">
+                       <select id="con_searchlist" name="visit" >
                                         <option value="">전체</option>
-                                        <option value="">최근 1달</option>
-                                        <option value="">최근 2달</option>
-                                        <option value="">최근 3달</option>
+                                        <option value="1">최근 1달</option>
+                                        <option value="2">최근 2달</option>
+                                        <option value="3">최근 3달</option>
                        </select>
                        <!-- 내용 : s -->
                        <div id="bbs">
@@ -155,18 +154,17 @@
                                </div>
                                
                                
-                               <form name="searchForm" id="searchForm" action="adqnaindex.do"  method="get">
-                                   <div class="search">
-                                       <select id="stype" name="searchType" title="검색분류 선택">
-                                           <option value="">전체</option>
-                                           <option value="업소명" <c:if test="${param.searchType == '같'}">selected</c:if>>제목</option>
-                                           <option value="업소정보" <c:if test="${param.searchType == '같'}">selected</c:if>>내용</option>
-                                           <option value="별점" <c:if test="${param.searchType == '같'}">selected</c:if>>답변대기</option>
-                                       </select>
-                                       <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
-                                       <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
-                                   </div>
-                               </form>
+                               <form name="searchForm" id="searchForm" action="mylist.do"  method="get">
+									<div class="search">
+										<select name="searchType" title="검색을 선택해주세요">
+											<option value="">전체</option>
+											<option value="t.r_name">상호명</option>
+											<option value="t.r_foodtype">업태명</option>
+										</select>
+										<input type="text" name="searchWord" value="" title="검색할 내용을 입력해주세요" />
+										<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />
+									</div>
+								</form>
                                <!-- //search --> 
                            </div>
                            <!-- //blist -->
@@ -181,7 +179,6 @@
            <!--//container --> 
            <!-- E N D :: containerArea-->
        </div>
-                           ${pageArea}
        <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
        <!--//canvas -->
    </div>
