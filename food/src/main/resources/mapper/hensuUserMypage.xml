@@ -19,6 +19,7 @@
 			NOW(),#{r_no},#{u_no}
 		)
 	</insert>
+	<!--  
 	<select id="myList" parameterType="hensuUserMypage.VisitVo" resultType="hensuUserMypage.VisitVo">
 		select * 
          , (select r_foodtype from restaurant where restaurant.r_no=visit.r_no)as r_foodtype
@@ -28,9 +29,57 @@
       FROM visit 
       ORDER BY v_date DESC    
 	  LIMIT ${startIdx},3
-	</select>   
-	<select id="myListCount" resultType="int" parameterType="hensuUserMypage.VisitVo">
-		SELECT COUNT(*) FROM visit
-		where u_no = #{u_no}       
 	</select>
+	-->
+	<select id="myList" parameterType="hensuUserMypage.VisitVo" resultType="hensuUserMypage.VisitVo">
+	select
+			*
+			, (select r_foodtype from restaurant where restaurant.r_no=t.r_no)as r_foodtype
+	        , (select r_stars from restaurant where restaurant.r_no=t.r_no)as r_stars
+	        , (select r_name from restaurant where restaurant.r_no=t.r_no)as r_name
+	        , (SELECT r_filename_real from restaurant where restaurant.r_no=t.r_no)as  r_filename_real
+		from(
+			select
+				*
+			from shop.visit
+			where (r_no, v_date) in (
+				select r_no, max(v_date) as v_date
+				from shop.visit group by r_no
+			)
+			order by v_date desc
+		) t
+		where u_no = 1
+		LIMIT ${startIdx},3;
+	</select>
+	   
+	<select id="visitCount" resultType="int" parameterType="hensuUserMypage.VisitVo">
+		select
+			COUNT(*)
+		from(
+			select
+				*
+			from shop.visit
+			where (r_no, v_date) in (
+				select r_no, max(v_date) as v_date
+				from shop.visit group by r_no
+			)
+			order by v_date desc
+		) t
+		where u_no = 1
+		LIMIT ${startIdx},3;
+	</select>
+	 
+	<sql id = "userWhere">
+		<where>
+			<if test ="searchType ==''">   
+			 	(u_uemail LIKE '%${searchWord}%' OR u_status LIKE '%${searchWord}%')
+			 </if>
+			 <if test= "searchType != null and searchType != ''">
+			 	${searchType} LIKE '%${searchWord}%'
+			 </if>
+			 <if test="u_no > 0">    
+			 	AND u_no = ${u_no}
+			 </if>
+		</where>     
+	</sql>
 </mapper>

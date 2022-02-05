@@ -16,7 +16,59 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <link rel="stylesheet" href="/res/css/user/user_hensuMypage.css"/>
-
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+<script>
+	$(function(){ //전체선택 Rchk
+		var chk = document.getElementsByName("Rchk");
+		var row = chk.length;
+		$("input[name='allChk']").click(function(){ 
+			var c = $("input[name='Rchk']");
+			for (var i=0; i<c.length; i++){
+				c[i].checked = this.checked;
+			}
+		});
+		$("input[name='Rchk']").click(function(){
+			if($("input[name='Rchk']:checked").length == row) {
+				$("input[name='allChk']")[0].checked = true;
+			} else {
+				$("input[name='allChk']")[0].checked = false;
+			}
+		});
+	});
+	function del(){
+		var url ='/res/admin/adminDelAjax.do';
+		var valueArr = new Array();
+		var list= $("input[name='Rchk']");
+		for(var i=0; i<list.length; i++){
+			if(list[i].checked){
+				valueArr.push(list[i].value);
+				console.log(list[i].value)
+			}
+		}
+	if (valueArr.length==0){
+		alert('하나 이상 선택하세요.')
+		} else {
+			var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+			$.ajax({
+				url: url,
+				type : 'POST',
+				traditional:true,
+				data : {
+					valueArr : valueArr
+				},
+				success: function(res){
+	                  alert("삭제 성공입니다.");
+	                  location.reload();
+				}
+			});
+		}
+	}
+	
+		
+	
+	
+</script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -84,8 +136,8 @@
                                           <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
                                                 <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.v_no }"/></td>
                                               <td>${vo.v_no }</td>
-                                              <td id="blist_img">
-                                                  <img style="width: 100px; height: 100px" src="/res/upload/${vo.r_filename_real}">
+                                              <td id="blist_img" style="width: 100px; height: 100px">
+                                                  <img style="width: 100%; height: 100%" src="/res/upload/${vo.r_filename_real}">
                                                </td>         
                                               <td class="title">상호명 : ${vo.r_name } <br>업태 : ${vo.r_foodtype } </td>
                                               <td class="last">️${vo.r_stars }</td>                  
@@ -95,12 +147,14 @@
                                    </tbody>
                                </table>
                                </form>
+                                 ${pageArea}
                                <div class="btn">
                                    <div class="btnRight">
                                        <a href="location.href" class="btns" ><strong>삭제</strong> </a>
                                    </div>
                                </div>
-                               ${pageArea}
+                               
+                               
                                <form name="searchForm" id="searchForm" action="adqnaindex.do"  method="get">
                                    <div class="search">
                                        <select id="stype" name="searchType" title="검색분류 선택">
@@ -127,6 +181,7 @@
            <!--//container --> 
            <!-- E N D :: containerArea-->
        </div>
+                           ${pageArea}
        <%@ include file="/WEB-INF/view/include/user_footer.jsp" %>
        <!--//canvas -->
    </div>

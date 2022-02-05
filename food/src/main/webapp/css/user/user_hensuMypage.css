@@ -356,6 +356,7 @@ color: #656668;
     line-height: 35px;
     color: #333;
     letter-spacing: -1px;
+    text-align: center;
 }
 .menulist .menu_title .inner_sub{
     border: 1px solid #000000;

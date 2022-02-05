@@ -24,7 +24,7 @@ public class HensuMyService {
 	public List<VisitVo> mylist(VisitVo vo){
 		return dao.myList(vo);
 	}
-	public int restaurantCount(VisitVo vo) {
-		return dao.myListCount(vo);
+	public int visitCount(VisitVo vo) {
+		return dao.visitCount(vo);
 	}
 }

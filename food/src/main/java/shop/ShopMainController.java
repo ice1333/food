@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import comment.CommentService;
-import comment.CommentVo;
 import hensuUserMypage.HensuMyService;
 import hensuUserMypage.VisitVo;
 import restaurant.RestaurantService;

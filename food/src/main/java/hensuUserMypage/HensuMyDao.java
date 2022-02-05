@@ -24,8 +24,8 @@ public class HensuMyDao {
 	public List<VisitVo> myList(VisitVo vo) {
 		return sst.selectList("hensuUser.myList", vo);
 	}
-	public int myListCount(VisitVo vo) {
-		return sst.selectOne("hensuUser.myListCount",vo);
+	public int visitCount(VisitVo vo) {
+		return sst.selectOne("hensuUser.visitCount",vo);
 	}
 }
     
