@@ -28,7 +28,7 @@
                                ${vo.content}
                            </td>
                            <td class="date"><fmt:formatDate value="${vo.regdate}" pattern="yyyy-MM-dd"/></td>
-                           <td>${vo.r_stars}</td>
+                           <td>${vo.stars}</td>
                            <%--<c:if test="${vo.u_no == userInfo.u_no }"> --%>
                            <td>
                            <a class="btn" href="javascript:goDel(${vo.c_no});">삭제</a>
