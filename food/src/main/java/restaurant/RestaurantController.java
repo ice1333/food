@@ -3,6 +3,7 @@ package restaurant;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import admin.UserVo;
 import comment.CommentService;
 import comment.CommentVo;
+import hensuUserMypage.VisitVo;
 import util.CommonUtil;
 
 @Controller
@@ -123,4 +125,27 @@ public class RestaurantController {
 		model.addAttribute("list",list);
 		return "user/restaurantlist";
 	}
+	
+	@RequestMapping("shop/shopmain/wishlistInsertAjax.do")
+	public String wishinsert(HttpServletRequest req, Model model,WishlistVo vo,HttpSession sess) {
+		if(sess.getAttribute("userInfo") != null) {
+			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+		}
+		service.wishinsert(vo);
+		return "include/result";
+	}
+	@RequestMapping("shop/shopmain/wishlistDelAjax.do")
+	public String wishDel(HttpServletRequest req, Model model,WishlistVo vo,HttpSession sess) {
+		if(sess.getAttribute("userInfo") != null) {
+			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+		}
+		service.wishlistDelete(vo);
+		return "include/result";
+	}  
+	
+	@GetMapping("shop/shopmain/emailCheck.do")
+	public String emailCheck(Model model, WishlistVo vo) {
+		model.addAttribute("result", service.wishCount(vo));
+		return "include/result";
+	}    
 }

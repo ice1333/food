@@ -70,5 +70,20 @@ public class RestaurantServiceImpl implements RestaurantService {
 	public int restRegister(String r_no) {
 		return dao.restRegister(r_no);
 	}
+
+	@Override
+	public int wishinsert(WishlistVo vo) {
+		return dao.wishinsert(vo);
+	}
+
+	@Override
+	public int wishlistDelete(WishlistVo vo) {
+		return dao.wishlistDelete(vo);
+	}
+
+	@Override
+	public int wishCount(WishlistVo vo) {
+		return dao.wishCount(vo);
+	}
 	
 }

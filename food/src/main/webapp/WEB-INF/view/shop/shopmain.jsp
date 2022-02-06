@@ -94,7 +94,17 @@ function goSave(){
 								<h1 style="text-align: center; padding:"></h1>
 							</div>
 						</c:if>
-						<button>찜하기</button>
+						<c:if test="${!empty userInfo }">
+						<div class="btnSet"  style="text-align:right;">
+	                        <a class="btn" href="javascript:;">찜하기 </a>
+	                    </div>
+	                    </c:if>
+	                    
+						<c:if test="${!empty userInfo }">
+						<div class="btnSet"  style="text-align:right;">
+	                        <a class="btn" href="javascript:;">찜취소 </a>
+	                    </div>
+	                    </c:if>
 					</div>
 					<table class="table__top">
 						<colgroup>
@@ -173,6 +183,7 @@ function goSave(){
 				<br>
 				<div id="commentArea"></div>
 			</div>
+			<c:if test="${!empty userInfo}">
 			<div class="text">
 				<form action="" id="frm">
 					<tr>
@@ -180,11 +191,11 @@ function goSave(){
 							<input type="hidden" name="tablename" value="restaurant">
 							<textarea name="content" id="content"></textarea> <select
 							name="stars" id="stars">
-								<option value="1">1</option>
-								<option value="2">2</option>
-								<option value="3">3</option>
-								<option value="4">4</option>
-								<option value="5">5</option>
+								<option value="1">★</option>
+								<option value="2">★★</option>
+								<option value="3">★★★</option>
+								<option value="4">★★★★</option>
+								<option value="5">★★★★★</option>
 						</select></td>
 						<td>
 							<div class="btnSet" style="text-align: right;">
@@ -194,6 +205,7 @@ function goSave(){
 					</tr>
 				</form>
 			</div>
+			</c:if>
 		</main>
 
 		<%@ include file="/WEB-INF/view/include/user_footer.jsp"%>

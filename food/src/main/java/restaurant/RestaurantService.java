@@ -27,4 +27,10 @@ public interface RestaurantService {
 	
 	public List<RestaurantVo> lists(RestaurantVo vo);
 	
+	public int wishinsert(WishlistVo vo);
+	
+	public int wishlistDelete(WishlistVo vo);
+	
+	public int wishCount(WishlistVo vo);
+	
 }
