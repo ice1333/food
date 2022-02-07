@@ -13,11 +13,59 @@
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="/res/css/user/user_common.css"/>
     <link rel="stylesheet" href="/res/css/user/user_restaurant.css"/>
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <link rel="stylesheet" href="/res/css/user/user_hensuMypage.css"/>
-
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+<script>
+	$(function(){ //전체선택 Rchk
+		var chk = document.getElementsByName("Rchk");
+		var row = chk.length;
+		$("input[name='allChk']").click(function(){ 
+			var c = $("input[name='Rchk']");
+			for (var i=0; i<c.length; i++){
+				c[i].checked = this.checked;
+			}
+		});
+		$("input[name='Rchk']").click(function(){
+			if($("input[name='Rchk']:checked").length == row) {
+				$("input[name='allChk']")[0].checked = true;
+			} else {
+				$("input[name='allChk']")[0].checked = false;
+			}
+		});
+	});
+	
+	function del(){
+		var url ='/res/user/mypage/listDelAjax.do';
+		var valueArr = new Array();
+		var list= $("input[name='Rchk']");
+		for(var i=0; i<list.length; i++){
+			if(list[i].checked){
+				valueArr.push(list[i].value);
+				console.log(list[i].value)
+			}
+		}
+		if (valueArr.length==0){
+			alert('하나 이상 선택하세요.')
+			} else {
+				var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+				$.ajax({
+					url: url,
+					type : 'POST',
+					traditional:true,
+					data : {
+						valueArr : valueArr
+					},
+					success: function(res){
+		                  alert("삭제 성공입니다.");
+		                  location.reload();
+					}
+				});
+			}
+	}
+</script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -25,7 +73,6 @@
        <%@ include file="/WEB-INF/view/include/user_header.jsp" %>
        <!-- canvas -->
        <div id="canvas" style="width: 1200px; top:50px; margin: 15px auto; overflow: hidden; height: 925PX;">
-       <input type="hidden" name="u_no" value="${data.u_no }">
            <!-- S T A R T :: headerArea-->
            <!-- E N D :: headerArea--> 
            <!-- S T A R T :: containerArea-->
@@ -46,14 +93,8 @@
                    <!-- //con_tit -->
                    <div class="con">
                        <div class="con_tit">
-                           <h3 class="con_title">찜목록</h3>
+                           <h3 class="con_title">최근 본 매장</h3>
                        </div>
-                       <select id="con_searchlist" name="searchType" title="검색을 선택해주세요">
-                                        <option value="">전체</option>
-                                        <option value="">최근 1달</option>
-                                        <option value="">최근 2달</option>
-                                        <option value="">최근 3달</option>
-                       </select>
                        <!-- 내용 : s -->
                        <div id="bbs">
                            <div id="blist">
@@ -82,41 +123,37 @@
                                        </tr>
                                    </c:if>
                                    <c:if test="${!empty list}">
-                                       <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
-                                       	   <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.adc_no }"/></td>
-                                           <td>1</td>
-                                           <td id="blist_img">
-                                               <img id="blist_img_size" src="img/section_1.jpg" >
-                                            </td>   
-                                           <td class="title">상호명 : ㅇㄹ <br>업태 : ㅇㄹ </td>
-                                           <td class="last">⭐️ 5.0 </td>						
-                                       </tr>
-                                       
+                                         <c:forEach var="vo" items="${list}" varStatus="status" > 
+                                          <tr class="board_tr"  style="cursor:pointer;">
+                                              <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.r_no }"/></td>
+                                              <td id="num"><a href="/res/shop/shopmain.do?r_no=${vo.r_no }"> ${(totCount-status.index)-((wishlistVo.page-1)*5) }</a></td>
+                                              <td id="blist_img" style="width: 100px; height: 100px">
+                                               		<a href="/res/shop/shopmain.do?r_no=${vo.r_no }">
+                                               			<img style="width: 100%; height: 100%" src="/res/upload/${vo.r_filename_real}">
+                                               		</a>	
+                                               </td>         
+                                              <td id="shopInfo" class="title" style="text-align: center;">
+                                              <a href="/res/shop/shopmain.do?r_no=${vo.r_no }">
+                                              		상호명 : ${vo.r_name } <br>업태 : ${vo.r_foodtype }
+                                              </a>
+                                              	 </td>
+                                              <td id="stars" class="last">️
+                                              	<a href="/res/shop/shopmain.do?r_no=${vo.r_no }">
+                                              		${vo.r_stars }
+                                              	</a>
+                                              </td>  
+                                          </tr>
+                                       </c:forEach>
                                    </c:if>
                                    </tbody>
                                </table>
                                </form>
+                                 ${pageArea}
                                <div class="btn">
                                    <div class="btnRight">
-                                       <a href="location.href" class="btns" ><strong>삭제</strong> </a>
+                                       <a href="javascript:del();" class="btns" ><strong>삭제</strong> </a>
                                    </div>
                                </div>
-                               <!--//btn-->
-                               <!-- 페이징 처리 -->
-                               ${pageArea}
-                               <!-- //페이징 처리 -->
-                               <form name="searchForm" id="searchForm" action="adqnaindex.do"  method="get">
-                                   <div class="search">
-                                       <select id="stype" name="searchType" title="검색분류 선택">
-                                           <option value="">전체</option>
-                                           <option value="업소명" <c:if test="${param.searchType == '같'}">selected</c:if>>제목</option>
-                                           <option value="업소정보" <c:if test="${param.searchType == '같'}">selected</c:if>>내용</option>
-                                           <option value="별점" <c:if test="${param.searchType == '같'}">selected</c:if>>답변대기</option>
-                                       </select>
-                                       <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
-                                       <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
-                                   </div>
-                               </form>
                                <!-- //search --> 
                            </div>
                            <!-- //blist -->
@@ -136,4 +173,18 @@
    </div>
    <!--//wrap -->   
 </body>
+<style type="text/css">
+.pagenate {width:100%; clear:both;}
+.pagenate {text-align:center; margin:20px auto 0;}
+.pagenate li {display:inline-block;}
+.pagenate li:first-child { margin-left:0px; }
+.pagenate li a{display:inline-block; text-decoration:none; padding:0; width:30px; height:30px; line-height:30px; border:1px solid #c7c8cc; box-sizing:border-box; margin-left:-1px; vertical-align:middle;}
+.pagenate li a:hover{background:#f6f6f6; font-weight:bold; text-decoration:none !important;}
+.pagenate li a.board { text-indent:-9999em; margin-left:4px; }
+.pagenate li a.board.first {background:#f3f3f3 url('/img/ico_first.png') no-repeat center center;}
+.pagenate li a.board.prev {margin-right:30px; background:#efefef url('/img/ico_prev.png') no-repeat center center;}
+.pagenate li a.board.next {margin-left:30px; background:#efefef url('/img/ico_next.png') no-repeat center center;}
+.pagenate li a.board.last {background:#f3f3f3 url('/img/ico_last.png') no-repeat center center;}
+.pagenate li a.current {color:#fff; background-color:#221f1f; font-weight:bold;  border:1px solid #221f1f;}
+</style>
 </html>
