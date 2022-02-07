@@ -53,5 +53,41 @@
 		DELETE FROM comment WHERE c_no=#{c_no} 
 	</delete>
 	
+		<sql id = "admincommentWhere">
+      <where>
+         <if test ="searchType ==''">   
+             (u_name LIKE '%${searchWord}%' OR content LIKE '%${searchWord}%' OR stars LIKE '%${searchWord}%')
+          </if>
+          <if test= "searchType != null and searchType != ''">
+             ${searchType} LIKE '%${searchWord}%'
+          </if>
+          <if test="c_no > 0">    
+             AND c_no = ${c_no}
+          </if>
+          <if test="u_no > 0">
+             (u_no = ${u_no} )
+          </if>
+      </where>     
+   </sql>
+   
+	<select id="selectList" resultType = "comment.CommentVo" parameterType="comment.CommentVo">
+      select * 
+         , (select u_name from user where user.u_no=comment.u_no)as u_name
+         , (select r_name from restaurant where restaurant.r_no=comment.r_no)as r_name
+      FROM comment
+	<include refid = "admincommentWhere"/>
+	   ORDER BY c_no DESC    
+	   LIMIT ${startIdx},5
+	</select>
+
+   <select id="count" resultType="int" parameterType="comment.CommentVo">
+      SELECT count(*) FROM shop.comment
+      <include refid="admincommentWhere"/>
+   </select>
+   
+   <delete id="adcdelete">
+      DELETE FROM shop.comment WHERE c_no=#{c_no}
+   </delete>
+	
 
 </mapper>

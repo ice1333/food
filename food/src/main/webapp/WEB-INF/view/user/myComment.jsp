@@ -32,7 +32,7 @@
          });
       });
       function del(){
-         var url ='/res/mycomment/mycommentdelAjax.do';
+         var url ='/res/admin/admincommentdelAjax.do';
          var valueArr = new Array();
          var list= $("input[name='Rchk']");
          for(var i=0; i<list.length; i++){
@@ -129,7 +129,7 @@
                                     <c:if test="${!empty list}">
                                         <c:forEach var="list" items="${list}" varStatus="status">
                                         <tr class="board_tr" style="cursor:pointer;">
-                                           <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.adc_no }"/></td>
+                                           <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.c_no }"/></td>
                                             <td>${list.r_name}</td>   
                                             <td class="title">${list.content}</td>
                                             <td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd"/></td>
@@ -151,14 +151,14 @@
                                 <!-- //페이징 처리 -->
                                 <form name="searchForm" id="searchForm" action="myComment.do"  method="get">
                                     <div class="search">
-                                        <select id="stype" name="searchType" title="검색분류 선택">
-                                            <option value="">전체</option>
-                                            <option value="제목" <c:if test="${param.searchType == '같'}">selected</c:if>>제목</option>
-                                            <option value="댓글내용" <c:if test="${param.searchType == '같'}">selected</c:if>>내용</option>
-                                            <option value="별점" <c:if test="${param.searchType == '같'}">selected</c:if>>답변대기</option>
-                                        </select>
-                                        <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
-                                        <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
+                                        <select  name="searchType" title="검색을 선택해주세요">
+											<option value="">전체</option>
+											<option value="u_name">작성자</option>
+											<option value="content">댓글내용</option>
+											<option value="stars">별점</option>
+										</select>
+                                        <input type="text" name="searchWord" value="" title="검색할 내용을 입력해주세요" />
+										<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />
                                     </div>
                                 </form>
                                 <!-- //search --> 

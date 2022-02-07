@@ -1,14 +1,19 @@
 package comment;
 
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.AdminVo;
+import user.UserVo;
+import util.CommonUtil;
 
 @Controller
 public class CommentController {
@@ -68,4 +73,65 @@ public class CommentController {
 		return "admin/include/result";
 	}
 	
+	
+	
+	@GetMapping("admin/comment/index.do")
+	public String index(Model model, HttpServletRequest req, CommentVo vo) {
+		
+		int totCount = service.count(vo);
+		int totPage = totCount / 10; //총페이지수 
+		if(totCount % 10 > 0) totPage++;
+		
+		int startIdx = (vo.getPage()-1)*10;
+		vo.setStartIdx(startIdx);
+		
+		List<CommentVo> list = service.selectList(vo);
+		model.addAttribute("list",list);
+		model.addAttribute("totPage",totPage);
+		model.addAttribute("totCount",totCount);
+		model.addAttribute("PageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
+
+		return "admin/comment/index";
+	}
+	
+	@RequestMapping("admin/admincommentdelAjax.do")
+	public String delAjax(HttpServletRequest req, Model model, CommentVo vo) {
+		
+		String[] Msg = req.getParameterValues("valueArr");
+		int size = Msg.length;
+		for(int i=0; i<size; i++) {
+			System.out.println("Msg[i]:"+Msg[i]);
+			vo.setC_no(Integer.parseInt(Msg[i]));
+			service.adcdelete(vo);
+		}
+		return "admin/include/result";
+	}
+	
+	@GetMapping("admin/comment/delete.do") 
+	public String abcodelete(Model model, CommentVo vo) {
+		model.addAttribute("vo",service.adcdelete(vo));
+		return "admin/comment/index";
+	}
+	@GetMapping("user/mypage/myComment")
+	   public String userList1(UserVo uvo, HttpSession sess, Model model, CommentVo vo) {
+	      vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+	      System.out.println("uvo :"+uvo.getU_no());
+	      
+	      int totCount = service.count(vo);
+	      int totPage = totCount / 10; //총페이지수 
+	      if(totCount % 10 > 0) totPage++;
+	      
+	      int startIdx = (vo.getPage()-1)*10;
+	      vo.setStartIdx(startIdx);
+	      
+	      List<CommentVo> list = service.selectList(vo);
+	      model.addAttribute("list",list);
+	      model.addAttribute("totPage",totPage);      
+	      model.addAttribute("totCount",totCount);
+	      model.addAttribute("PageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
+	      
+	      return "user/myComment";      
+	   }
+	   
+
 }

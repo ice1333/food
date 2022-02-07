@@ -29,4 +29,15 @@ public class CommentService {
 	public int restdelete(int c_no) {
 		return dao.restdelete(c_no);
 	}
+	public List<CommentVo> selectList(CommentVo vo) {
+	return dao.selectList(vo);
+	}
+			  
+	public int count(CommentVo vo) {
+	return dao.count(vo);
+	}
+	
+	public int adcdelete(CommentVo vo) {
+	return dao.adcdelete(vo);
+	}
 }

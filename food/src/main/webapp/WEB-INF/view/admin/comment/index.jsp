@@ -111,10 +111,10 @@
 									<c:if test="${!empty list}">
 										<c:forEach var="list" items="${list}" varStatus="status" >
 												<tr>									
-													<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.adc_no }"/></td>
+													<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.c_no }"/></td>
 													<td>${list.r_name }</td>										
 													<td>${list.u_name }</td>																			
-													<td>${list.content }</td>
+													<td><a href="shop/shopmain.do?r_no=${list.r_no }">${list.content }</a></td>
 													<td>${list.regdate}</td>
 													<td class="last">${list.stars }</td>
 												</tr>
@@ -137,8 +137,8 @@
 									<select  name="searchType" title="검색을 선택해주세요">
 										<option value="">전체</option>
 										<option value="u_name">작성자</option>
-										<option value="c_contents">댓글내용</option>
-										<option value="c_stars">별점</option>
+										<option value="content">댓글내용</option>
+										<option value="stars">별점</option>
 									</select>
 									<input type="text" name="searchWord" value="" title="검색할 내용을 입력해주세요" />
 									<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />
