@@ -114,7 +114,7 @@ $(function() {
 		$("#f_f8").click(function() {
 			if ($("#f8").val() == '0') {
 				$("#f8").attr("value","1");
-				$(this).css('border',"2px groove red");
+				$(this).css('border',"2px groove red"); 
 			} else {
 				$("#f8").attr("value","0");
 				$(this).css("border","none");
