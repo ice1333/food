@@ -30,4 +30,13 @@ public class HensuMyService {
 	public int listDelete(VisitVo vo) {
 		return dao.listDelete(vo);
 	}
+	public List<WishlistVo> wishllist(WishlistVo vo){
+		return dao.wishList(vo);
+	}
+	public int wishlCount(WishlistVo vo) {
+		return dao.wishCount(vo);
+	}
+	public int wishlDelete(WishlistVo vo) {
+		return dao.wishDelete(vo);
+	}
 }

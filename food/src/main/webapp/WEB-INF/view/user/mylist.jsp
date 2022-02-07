@@ -65,8 +65,6 @@
 				});
 			}
 	}
-	
-	
 </script>
 <title>Insert title here</title>
 </head>
@@ -102,6 +100,7 @@
                                         <option value="1">최근 1달</option>
                                         <option value="2">최근 2달</option>
                                         <option value="3">최근 3달</option>
+                                        
                        </select>
                        <!-- 내용 : s -->
                        <div id="bbs">
@@ -132,14 +131,24 @@
                                    </c:if>
                                    <c:if test="${!empty list}">
                                          <c:forEach var="vo" items="${list}" varStatus="status" > 
-                                          <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
-                                                <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.r_no }"/></td>
-                                              <td>${(totCount-status.index)-((visitVo.page-1)*5) }</td>
+                                          <tr class="board_tr"  style="cursor:pointer;">
+                                              <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.r_no }"/></td>
+                                              <td id="num"><a href="/res/shop/shopmain.do?r_no=${vo.r_no }"> ${(totCount-status.index)-((visitVo.page-1)*5) }</a></td>
                                               <td id="blist_img" style="width: 100px; height: 100px">
-                                                  <img style="width: 100%; height: 100%" src="/res/upload/${vo.r_filename_real}">
+                                               		<a href="/res/shop/shopmain.do?r_no=${vo.r_no }">
+                                               			<img style="width: 100%; height: 100%" src="/res/upload/${vo.r_filename_real}">
+                                               		</a>	
                                                </td>         
-                                              <td class="title" style="text-align: center;">상호명 : ${vo.r_name } <br>업태 : ${vo.r_foodtype } </td>
-                                              <td class="last">️${vo.r_stars }</td>                  
+                                              <td id="shopInfo" class="title" style="text-align: center;">
+                                              <a href="/res/shop/shopmain.do?r_no=${vo.r_no }">
+                                              		상호명 : ${vo.r_name } <br>업태 : ${vo.r_foodtype }
+                                              </a>
+                                              	 </td>
+                                              <td id="stars" class="last">️
+                                              	<a href="/res/shop/shopmain.do?r_no=${vo.r_no }">
+                                              		${vo.r_stars }
+                                              	</a>
+                                              </td>  
                                           </tr>
                                        </c:forEach>
                                    </c:if>
@@ -158,8 +167,8 @@
 									<div class="search">
 										<select name="searchType" title="검색을 선택해주세요">
 											<option value="">전체</option>
-											<option value="t.r_name">상호명</option>
-											<option value="t.r_foodtype">업태명</option>
+											<option value="r_name">상호명</option>
+											<option value="r_foodtype">업태명</option>
 										</select>
 										<input type="text" name="searchWord" value="" title="검색할 내용을 입력해주세요" />
 										<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />

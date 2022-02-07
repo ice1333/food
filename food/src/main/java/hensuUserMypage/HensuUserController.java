@@ -21,11 +21,6 @@ public class HensuUserController {
 	@Autowired
 	HensuMyService service;
 	
-	@GetMapping("user/mypage/myLove.do")
-	public String love(Model model, @RequestParam int u_no) {
-		model.addAttribute("data", service.selectone(u_no));
-		return "user/myLove";
-	}
 	@GetMapping("user/mypage/mylist.do")
 	public String restaurantList(VisitVo vo, Model model,HttpSession sess) {
 		if(sess.getAttribute("userInfo") != null) {
@@ -44,8 +39,7 @@ public class HensuUserController {
 		model.addAttribute("totPage",totPage);
 		model.addAttribute("totCount",totCount);
 		model.addAttribute("pageArea",CommonUtil.getPageArea("mylist.do", vo.getPage(), totPage, 5));
-		System.out.println(vo.getPage());
-		System.out.println(totPage);
+		System.out.println(vo.getVisit());
 		return "user/mylist";
 	}
 	@RequestMapping("user/mypage/listDelAjax.do")
@@ -61,6 +55,45 @@ public class HensuUserController {
 				int r_no = Integer.parseInt(Msg[i]);
 				vo.setR_no(r_no);
 				service.listDelete(vo);
+			}
+		}
+		return "include/result";
+	}
+	
+	@GetMapping("user/mypage/myLove.do")
+	public String wishList(WishlistVo vo, Model model,HttpSession sess) {
+		if(sess.getAttribute("userInfo") != null) {
+			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+		}
+		
+		int totCount = service.wishlCount(vo);
+		int totPage = totCount / 5; //총페이지수 
+		if(totCount % 5 > 0) totPage++;
+		
+		int startIdx = (vo.getPage()-1)*5;
+		vo.setStartIdx(startIdx);
+		
+		List<WishlistVo> list = service.wishllist(vo);
+		model.addAttribute("list",list);
+		model.addAttribute("totPage",totPage);
+		model.addAttribute("totCount",totCount);
+		model.addAttribute("pageArea",CommonUtil.getPageArea("mylist.do", vo.getPage(), totPage, 5));
+		System.out.println(vo.getVisit());
+		return "user/myWish";
+	}
+	@RequestMapping("user/mypage/wishDelAjax.do")
+	public String wishdelAjax(HttpServletRequest req, Model model,WishlistVo vo,HttpSession sess) {
+		if(sess.getAttribute("userInfo") != null) {
+			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+		}
+		String[] Msg = req.getParameterValues("valueArr");
+		int size = Msg.length;
+		for(int i=0; i<size; i++) {
+			if(sess.getAttribute("userInfo") != null) {
+				vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+				int r_no = Integer.parseInt(Msg[i]);
+				vo.setR_no(r_no);
+				service.wishlDelete(vo);
 			}
 		}
 		return "include/result";

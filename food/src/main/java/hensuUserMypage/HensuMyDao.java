@@ -30,5 +30,14 @@ public class HensuMyDao {
 	public int listDelete(VisitVo vo) {
 		return sst.delete("hensuUser.listDelete",vo);
 	}
+	public List<WishlistVo> wishList(WishlistVo vo) {
+		return sst.selectList("hensuUser.myList", vo);
+	}
+	public int wishCount(WishlistVo vo) {
+		return sst.selectOne("hensuUser.visitCount",vo);
+	}
+	public int wishDelete(WishlistVo vo) {
+		return sst.delete("hensuUser.listDelete",vo);
+	}
 }
     
