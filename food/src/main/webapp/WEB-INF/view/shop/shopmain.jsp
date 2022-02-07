@@ -103,7 +103,22 @@ function goSave(){
             <c:if test="${data.r_status==0 }">
 				<div><h1 style="text-align: center; padding: "></h1></div>
 			</c:if>
-            <button>찜하기</button>
+            <c:if test="${!empty userInfo and listcount == 0}">
+			<div class="btnSet"  style="text-align:right;">
+				<form action="" id="withInsert">
+					<input type="hidden" name="r_no" value="${data.r_no}">
+                       <a class="btn" href="javascript:wishInsert();">찜하기 </a>
+                      </form>
+                  </div>
+                  </c:if>
+			<c:if test="${!empty userInfo and listcount ==1}">
+			<div class="btnSet"  style="text-align:right;">
+				<form action="" id="wishDel">
+					<input type="hidden" name="r_no" value="${data.r_no}">
+                       <a class="btn" href="javascript:wishDel();">찜취소 </a>
+                      </form>
+                  </div>
+                  </c:if>
           </div>
           <table class="table__top">
             <colgroup>

@@ -38,7 +38,7 @@
 	});
 	
 	function del(){
-		var url ='/res/user/mypage/listDelAjax.do';
+		var url ='/res/user/mypage/wishDelAjax.do';
 		var valueArr = new Array();
 		var list= $("input[name='Rchk']");
 		for(var i=0; i<list.length; i++){
@@ -119,7 +119,7 @@
                                    <tbody>
                                    <c:if test="${empty list}">
                                        <tr>
-                                           <td class="first" colspan="8">등록된 글이 없습니다.</td>
+                                           <td class="first" colspan="8">좋아요한 글이 없습니다.</td>
                                        </tr>
                                    </c:if>
                                    <c:if test="${!empty list}">
