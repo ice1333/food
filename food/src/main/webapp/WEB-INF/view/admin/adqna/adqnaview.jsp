@@ -23,7 +23,6 @@
 	
 		}
 	} 	 
-	
 	 function goSave(){
 		$.ajax({
 			url:'/res/comment/adqcominsert.do',

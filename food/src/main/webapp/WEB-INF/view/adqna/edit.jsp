@@ -8,8 +8,7 @@
 <script src="/res/js/common.js"></script>
 <link href="<%=request.getContextPath()%>/css/user/user_common.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="<%=request.getContextPath()%>/smarteditor/js/HuskyEZCreator.js"></script>
-<script>
-    
+<script> 
 function getCheckboxValue(event)  {
   let result = '';
   if(event.target.checked)  {
