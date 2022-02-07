@@ -39,8 +39,10 @@ public class ShopMainController {
 			vo.setR_no(r_no);
 			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
 			hservice.insert(vo);
+			wvo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+			wvo.setR_no(r_no);
+			model.addAttribute("listcount", service.wishCount(wvo));
 		}
-		model.addAttribute("listcount", service.wishCount(wvo));
 		model.addAttribute("data", service.selectone(r_no));
 		comment.CommentVo cv = new comment.CommentVo();
 		cv.setR_no(r_no);

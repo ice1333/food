@@ -61,9 +61,34 @@ function goSave(){
 			})
 		}
 	}
+	function wishInsert(){
+		$.ajax({
+			url:'/res/shop/shopmain/wishlistInsert.do',
+			type:'get',
+			data:$("#withInsert").serialize(), // serialize() 값을 넣어준다
+			success:function(){
+					alert("좋아요 완료"); //댓글이 등록되었을때
+					location.reload();
+					
+			}
+		})
+	}
+	function wishDel(){
+		$.ajax({
+			url:'/res/shop/shopmain/wishlistDel.do',
+			type:'get',
+			data:$("#wishDel").serialize(), // serialize() 값을 넣어준다
+			success:function(){
+					alert("좋아요 취소"); //댓글이 등록되었을때
+					location.reload();
+					
+			}
+		})
+	}
 
 </script>
 <body>
+	<input type="hidden" name="r_no" value="${data.r_no }">
 	<div id="wrap">
 		<%@ include file="/WEB-INF/view/include/user_header.jsp"%>
 		<main>
@@ -94,15 +119,21 @@ function goSave(){
 								<h1 style="text-align: center; padding:"></h1>
 							</div>
 						</c:if>
-						<c:if test="${!empty userInfo }">
+						<c:if test="${!empty userInfo and listcount == 0}">
 						<div class="btnSet"  style="text-align:right;">
-	                        <a class="btn" href="javascript:;">찜하기 </a>
+							<form action="" id="withInsert">
+								<input type="hidden" name="r_no" value="${data.r_no}">
+		                        <a class="btn" href="javascript:wishInsert();">찜하기 </a>
+	                        </form>
 	                    </div>
 	                    </c:if>
 	                    
-						<c:if test="${!empty userInfo }">
+						<c:if test="${!empty userInfo and listcount ==1}">
 						<div class="btnSet"  style="text-align:right;">
-	                        <a class="btn" href="javascript:;">찜취소 </a>
+							<form action="" id="wishDel">
+								<input type="hidden" name="r_no" value="${data.r_no}">
+		                        <a class="btn" href="javascript:wishDel();">찜취소 </a>
+	                        </form>
 	                    </div>
 	                    </c:if>
 					</div>
@@ -187,7 +218,8 @@ function goSave(){
 			<div class="text">
 				<form action="" id="frm">
 					<tr>
-						<td><input type="hidden" name="r_no" value="${data.r_no}">
+						<td>
+							<input type="hidden" name="r_no" value="${data.r_no}">
 							<input type="hidden" name="tablename" value="restaurant">
 							<textarea name="content" id="content"></textarea> <select
 							name="stars" id="stars">
