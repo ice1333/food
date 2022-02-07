@@ -38,9 +38,9 @@ table {
   margin-top: 50px;
 }
 
-.mainimg_size {
+.mainimg_size { 
   width: 500px;
-  height: 350px;
+  height: 350px; 
   align-items: center;
   object-fit: cover;
 }
