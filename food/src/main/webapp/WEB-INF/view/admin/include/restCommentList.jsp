@@ -28,7 +28,23 @@
                                ${vo.content}
                            </td>
                            <td class="date"><fmt:formatDate value="${vo.regdate}" pattern="yyyy-MM-dd"/></td>
-                           <td>${vo.r_stars}</td>
+                           <td>
+                           <c:if test="${vo.stars==1}">
+                           		★
+                           </c:if>
+                           <c:if test="${vo.stars==2}">
+                           		★★
+                           </c:if>
+                           <c:if test="${vo.stars==3}">
+                           		★★★
+                           </c:if>
+                           <c:if test="${vo.stars==4}">
+                           		★★★★
+                           </c:if>
+                           <c:if test="${vo.stars==5}">
+                           		★★★★★
+                           </c:if>
+                          	</td>
                            <%--<c:if test="${vo.u_no == userInfo.u_no }"> --%>
                            <td>
                            <a class="btn" href="javascript:goDel(${vo.c_no});">삭제</a>
@@ -36,6 +52,7 @@
                        </tr>
                      	</c:forEach>
                      </c:if>
+                     
                      
                      
                 </tbody>

@@ -43,9 +43,9 @@
 	
 	<insert id="restinsert" parameterType="comment.CommentVo">
 		INSERT INTO shop.comment (
-		c_no, tablename, content, regdate , a_no ,u_no, r_no 
+		c_no, tablename, content, regdate , a_no ,u_no, r_no ,stars
 		) values(
-		#{c_no}, #{tablename}, #{content}, NOW() ,#{a_no} ,#{u_no} ,#{r_no} 
+		#{c_no}, #{tablename}, #{content}, NOW() ,#{a_no} ,#{u_no} ,#{r_no} ,#{stars}
 		)
 	</insert>
 	

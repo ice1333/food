@@ -202,19 +202,34 @@
 			</if>
 		)
 		</if>	
-				<if test="searchType ==''">
-					and (r_name LIKE '%${searchWord}%' OR r_foodtype LIKE '%${searchWord}%')
-				</if>
-				<if test= "searchType != null and searchType !=''">
-					and ${searchType} LIKE '%${searchWord}%'
-				</if>
-			</where>
-			</sql>
+		<if test="searchType ==''">
+			and (r_name LIKE '%${searchWord}%' OR r_foodtype LIKE '%${searchWord}%')
+		</if>
+		<if test= "searchType != null and searchType !=''">
+			and ${searchType} LIKE '%${searchWord}%'
+		</if>
+	</where>
+	</sql>
 
 	<select id="lists" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
 		select * from shop.restaurant
 		<include refid= "mainwhere"/>
 	</select>
 
-	  
+	<insert id="wishInsert" parameterType="restaurant.WishlistVo">
+		INSERT INTO wishlist (
+			w_date, r_no, u_no
+		) VALUES (
+			NOW(),#{r_no},#{u_no}
+		)
+	</insert>
+	  <delete id="wishDelete" parameterType="hensuUserMypage.VisitVo">
+		DELETE FROM shop.wishlist WHERE u_no=#{u_no} and r_no=#{r_no}
+	</delete>
+	
+	<select id="wishCount" resultType="int" parameterType="hensuUserMypage.VisitVo">
+		SELECT COUNT(*) FROM wishlist
+		where u_no=#{u_no} and r_no=#{r_no}
+	</select>
+
 </mapper>

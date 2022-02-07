@@ -3,6 +3,7 @@ package restaurant;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import admin.UserVo;
+import user.UserVo;
 import comment.CommentService;
 import comment.CommentVo;
 import util.CommonUtil;
@@ -123,4 +124,31 @@ public class RestaurantController {
 		model.addAttribute("list",list);
 		return "user/restaurantlist";
 	}
+	
+	@RequestMapping("shop/shopmain/wishlistInsert.do")
+	public String wishinsert(HttpServletRequest req, Model model,WishlistVo vo,HttpSession sess) {
+		if(sess.getAttribute("userInfo") != null) {
+			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+		}
+		service.wishinsert(vo);
+		model.addAttribute("mag", "찜을 추하였습니다");
+		model.addAttribute("url", "/res/shop/shopmain.do?r_no="+vo.getR_no());
+		return "include/return";
+	}
+	@RequestMapping("shop/shopmain/wishlistDel.do")
+	public String wishDel(HttpServletRequest req, Model model,WishlistVo vo,HttpSession sess) {
+		if(sess.getAttribute("userInfo") != null) {
+			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+		}
+		service.wishlistDelete(vo);
+		model.addAttribute("mag", "찜을 삭제하였습니다");
+		model.addAttribute("url", "/res/shop/shopmain.do?r_no="+vo.getR_no());
+		return "include/return";
+	}  
+	
+	@GetMapping("shop/shopmain/wishCheck.do")
+	public String emailCheck(Model model, WishlistVo vo) {
+		model.addAttribute("result", service.wishCount(vo));
+		return "include/result";
+	}    
 }

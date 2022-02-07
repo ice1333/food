@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import hensuUserMypage.VisitVo;
+
 @Repository
 public class RestaurantDao {
 	
@@ -54,5 +56,14 @@ public class RestaurantDao {
 	}
 	public List<RestaurantVo> lists(RestaurantVo vo) {
 		return sqlSession.selectList("restaurant.lists", vo);
+	}
+	public int wishinsert(WishlistVo vo) {
+		return sqlSession.insert("restaurant.wishInsert", vo);
+	}
+	public int wishlistDelete(WishlistVo vo) {
+		return sqlSession.delete("restaurant.wishDelete",vo);
+	}
+	public int wishCount(WishlistVo vo) {
+		return sqlSession.selectOne("restaurant.wishCount",vo);
 	}
 }

@@ -4,18 +4,17 @@
 
 
 		
-	<select id="selectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
-		SELECT *, (SELECT name FROM user WHERE userno=comment.userno) name FROM comment 
-		WHERE boardno=#{boardno} AND tablename=#{tablename} 
+	<select id="adqselectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
+		SELECT * FROM shop.comment WHERE adqna_no=#{adqna_no} AND tablename=#{tablename} 
 		ORDER BY regdate DESC
 		 
 	</select>
 	
-	<insert id="insert" parameterType="comment.CommentVo">
-		INSERT INTO comment (
-		tablename, content,  userno , boardno , regdate
+	<insert id="adqcominsert" parameterType="comment.CommentVo">
+		INSERT INTO shop.comment (
+		c_no, tablename, content, adqna_no , regdate , a_no ,u_no 
 		) values(
-		#{tablename}, #{content}, #{userno}, #{boardno} , NOW()
+		#{c_no}, #{tablename}, #{content}, #{adqna_no} , NOW() ,#{a_no} ,#{u_no} 
 		)
 	</insert>
 	
@@ -24,10 +23,35 @@
 	</select> -->
 	
 	
-	<delete id="delete" parameterType="int">
+	<delete id="adqdelete" parameterType="int">
 		DELETE FROM comment WHERE c_no=#{c_no}
 	</delete>
 	
+	<!-- <select id="" resultType="" parameterType="">  지금은 ad.comment 유저쪽 생기면 유저테이블에서 이름가져와야댐
+		select u_name from ad.comment where tablename=#{tablename} and adqna_no=#{adqna_no}
+	</select> -->
+	
+	<!--  해당 댓글을 카운트해서 0보다 크면 답변완료 0보다 작으면 답변대기 
+	<select id="aqstatus" resultType="int" parameterType="comment.CommentVo">
+		select count(c_no) from ad.comment  
+		where tablename=#{tablename} and adqna_no=#{adqna_no}
+	</select>-->
+	
+	<select id="restselectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
+		SELECT *,(SELECT u_name FROM shop.user WHERE u_no=comment.u_no) u_name, (SELECT r_stars FROM shop.restaurant WHERE r_no=comment.r_no) r_stars FROM shop.comment WHERE tablename=#{tablename} AND r_no=#{r_no}
+	</select>
+	
+	<insert id="restinsert" parameterType="comment.CommentVo">
+		INSERT INTO shop.comment (
+		c_no, tablename, content, regdate , a_no ,u_no, r_no 
+		) values(
+		#{c_no}, #{tablename}, #{content}, NOW() ,#{a_no} ,#{u_no} ,#{r_no} 
+		)
+	</insert>
+	
+	<delete id="restdelete" parameterType="int">
+		DELETE FROM comment WHERE c_no=#{c_no} 
+	</delete>
 	
 
 </mapper>

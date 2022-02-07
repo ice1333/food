@@ -16,7 +16,58 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <link rel="stylesheet" href="/res/css/user/user_hensuMypage.css"/>
-
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+<script>
+	$(function(){ //전체선택 Rchk
+		var chk = document.getElementsByName("Rchk");
+		var row = chk.length;
+		$("input[name='allChk']").click(function(){ 
+			var c = $("input[name='Rchk']");
+			for (var i=0; i<c.length; i++){
+				c[i].checked = this.checked;
+			}
+		});
+		$("input[name='Rchk']").click(function(){
+			if($("input[name='Rchk']:checked").length == row) {
+				$("input[name='allChk']")[0].checked = true;
+			} else {
+				$("input[name='allChk']")[0].checked = false;
+			}
+		});
+	});
+	
+	function del(){
+		var url ='/res/user/mypage/listDelAjax.do';
+		var valueArr = new Array();
+		var list= $("input[name='Rchk']");
+		for(var i=0; i<list.length; i++){
+			if(list[i].checked){
+				valueArr.push(list[i].value);
+				console.log(list[i].value)
+			}
+		}
+		if (valueArr.length==0){
+			alert('하나 이상 선택하세요.')
+			} else {
+				var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+				$.ajax({
+					url: url,
+					type : 'POST',
+					traditional:true,
+					data : {
+						valueArr : valueArr
+					},
+					success: function(res){
+		                  alert("삭제 성공입니다.");
+		                  location.reload();
+					}
+				});
+			}
+	}
+	
+	
+</script>
 <title>Insert title here</title>
 </head>
 <body>
@@ -46,11 +97,11 @@
                        <div class="con_tit">
                            <h3 class="con_title">최근 본 매장</h3>
                        </div>
-                       <select id="con_searchlist" name="searchType" title="검색을 선택해주세요">
+                       <select id="con_searchlist" name="visit" >
                                         <option value="">전체</option>
-                                        <option value="">최근 1달</option>
-                                        <option value="">최근 2달</option>
-                                        <option value="">최근 3달</option>
+                                        <option value="1">최근 1달</option>
+                                        <option value="2">최근 2달</option>
+                                        <option value="3">최근 3달</option>
                        </select>
                        <!-- 내용 : s -->
                        <div id="bbs">
@@ -80,14 +131,14 @@
                                        </tr>
                                    </c:if>
                                    <c:if test="${!empty list}">
-                                         <c:forEach var="vo" items="${list}" > 
+                                         <c:forEach var="vo" items="${list}" varStatus="status" > 
                                           <tr class="board_tr" data-adqna_no="" style="cursor:pointer;">
-                                                <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.v_no }"/></td>
-                                              <td>${vo.v_no }</td>
-                                              <td id="blist_img">
-                                                  <img style="width: 100px; height: 100px" src="/res/upload/${vo.r_filename_real}">
+                                                <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.r_no }"/></td>
+                                              <td>${(totCount-status.index)-((visitVo.page-1)*5) }</td>
+                                              <td id="blist_img" style="width: 100px; height: 100px">
+                                                  <img style="width: 100%; height: 100%" src="/res/upload/${vo.r_filename_real}">
                                                </td>         
-                                              <td class="title">상호명 : ${vo.r_name } <br>업태 : ${vo.r_foodtype } </td>
+                                              <td class="title" style="text-align: center;">상호명 : ${vo.r_name } <br>업태 : ${vo.r_foodtype } </td>
                                               <td class="last">️${vo.r_stars }</td>                  
                                           </tr>
                                        </c:forEach>
@@ -95,24 +146,25 @@
                                    </tbody>
                                </table>
                                </form>
+                                 ${pageArea}
                                <div class="btn">
                                    <div class="btnRight">
-                                       <a href="location.href" class="btns" ><strong>삭제</strong> </a>
+                                       <a href="javascript:del();" class="btns" ><strong>삭제</strong> </a>
                                    </div>
                                </div>
-                               ${pageArea}
-                               <form name="searchForm" id="searchForm" action="adqnaindex.do"  method="get">
-                                   <div class="search">
-                                       <select id="stype" name="searchType" title="검색분류 선택">
-                                           <option value="">전체</option>
-                                           <option value="업소명" <c:if test="${param.searchType == '같'}">selected</c:if>>제목</option>
-                                           <option value="업소정보" <c:if test="${param.searchType == '같'}">selected</c:if>>내용</option>
-                                           <option value="별점" <c:if test="${param.searchType == '같'}">selected</c:if>>답변대기</option>
-                                       </select>
-                                       <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
-                                       <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
-                                   </div>
-                               </form>
+                               
+                               
+                               <form name="searchForm" id="searchForm" action="mylist.do"  method="get">
+									<div class="search">
+										<select name="searchType" title="검색을 선택해주세요">
+											<option value="">전체</option>
+											<option value="t.r_name">상호명</option>
+											<option value="t.r_foodtype">업태명</option>
+										</select>
+										<input type="text" name="searchWord" value="" title="검색할 내용을 입력해주세요" />
+										<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />
+									</div>
+								</form>
                                <!-- //search --> 
                            </div>
                            <!-- //blist -->

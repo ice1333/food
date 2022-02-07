@@ -23,7 +23,7 @@ $(window).load(function(){
 	if (curUrl.indexOf("/") > 0) {
 		curUrl = curUrl.substring(curUrl,curUrl.indexOf("/"));
 	}
-	parent.each(function(){
+	/* parent.each(function(){
 		$(this).find("span").removeClass("bg");
 
 		// 1depth 메뉴 href 담기
@@ -37,7 +37,7 @@ $(window).load(function(){
 		if(curUrl == href){
 			$(this).find("span").addClass("bg");
 		}
-	});
+	}); */
 	
 	// 방문자 통계 클릭시 메뉴 유지
 	parent.click(function(){
@@ -68,20 +68,34 @@ $(window).load(function(){
 		<!-- util : e --> 
 		
 		<div id="menu">
-  			<ul class="menu">
-  				<li><a href="<%=request.getContextPath()%>/admin/member/index.do" class="parent"><span>공지사항</span></a></li>
-				<li><a href="<%=request.getContextPath()%>/admin/product/index.do" class="parent"><span>매장관리</span></a></li>
-				<li><a href="<%=request.getContextPath()%>/admin/product/index.do" class="parent"><span>댓글관리</span></a></li>
-				<li><a href="<%=request.getContextPath()%>/admin/board/index.do" class="parent"><span>광고</span></a>
+  			<ul class="menu"> 
+				<li><a href="<%=request.getContextPath()%>/admin/board/userList.do" class="parent"><span>회원,관리자 관리</span></a>
 					<div class="standard_left">
 					<ul>
-						<li><a href="<%=request.getContextPath()%>/admin/board/index.do"><span>메인</span></a></li>
-						<li><a href="<%=request.getContextPath()%>/admin/board/index.do"><span>사이드</span></a></li>
+						<li><a href="<%=request.getContextPath()%>/admin/board/userList.do"><span>회원관리</span></a></li>
+						<li><a href="<%=request.getContextPath()%>/admin/board/adminList.do"><span>관리자관리</span></a></li>
 					</ul>
 					</div>
 				</li>
-			</ul>
-		</div>
+  				<li><a href="<%=request.getContextPath()%>/admin/noticeindex.do" class="parent"><span>공지사항관리</span></a></li>
+  				<li><a href="<%=request.getContextPath()%>/admin/board/restaurantList.do" class="parent"><span>매장관리</span></a>
+					<div class="standard_left">
+					<ul>
+						<li><a href="<%=request.getContextPath()%>/admin/board/restaurantList.do"><span>매장관리</span></a></li>
+						<li><a href="<%=request.getContextPath()%>/admin/board/requestList.do"><span>매장등록요청</span></a></li>
+					</ul>
+					</div>
+				</li>
+  				<li><a href="<%=request.getContextPath()%>/admin/comment/index.do" class="parent"><span>댓글관리</span></a></li>
+				<li><a href="<%=request.getContextPath()%>/admin/adqnaindex.do" class="parent"><span>광고관리</span></a>
+					<div class="standard_left">
+					<ul>
+						<li><a href="<%=request.getContextPath()%>/admin/adqnaindex.do"><span>광고문의</span></a></li>
+					</ul>  
+					</div>
+				</li>
+			</ul> 
+		</div> 
 		<!--//gnb-->
 	</div>
 	<!-- //header_inner -->

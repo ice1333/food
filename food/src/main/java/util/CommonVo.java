@@ -6,9 +6,18 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CommonVo {
+	public String getVisit() {
+		return visit;
+	}
+
+	public void setVisit(String visit) {
+		this.visit = visit;
+	}
+
 	private String searchType;
 	private String searchWord;
 	private String orderCond;
+	private String visit;
 	private int startIdx; //limit 시작값
 	private int page; //사용자가 요청한 페이지 
 	

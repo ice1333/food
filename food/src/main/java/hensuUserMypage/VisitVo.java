@@ -4,7 +4,7 @@ import java.sql.Timestamp;
 
 import util.CommonVo;
 
-public class VisitVo extends CommonVo {
+public class VisitVo extends CommonVo  {
 
 	private int v_no;
 	private int r_no;

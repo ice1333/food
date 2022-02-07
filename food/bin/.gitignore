@@ -2,3 +2,7 @@
 .classpath
 .project
 /.settings/
+/.DS_Store
+/.gitignore
+/pom.xml
+/src/

@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 
 import comment.CommentService;
-import comment.CommentVo;
 import hensuUserMypage.HensuMyService;
 import hensuUserMypage.VisitVo;
 import restaurant.RestaurantService;
 import restaurant.RestaurantVo;
+import restaurant.WishlistVo;
 import user.UserVo;
 
 @Controller
@@ -32,13 +32,16 @@ public class ShopMainController {
 	HensuMyService hservice;
 	
 	@GetMapping("shop/shopmain.do")
-	public String main(Model model, @RequestParam int r_no,HttpSession sess) {
+	public String main(Model model, @RequestParam int r_no,HttpSession sess,WishlistVo wvo) {
 		
 		if(sess.getAttribute("userInfo") != null) {
 			VisitVo vo = new VisitVo();
 			vo.setR_no(r_no);
 			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
 			hservice.insert(vo);
+			wvo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+			wvo.setR_no(r_no);
+			model.addAttribute("listcount", service.wishCount(wvo));
 		}
 		model.addAttribute("data", service.selectone(r_no));
 		comment.CommentVo cv = new comment.CommentVo();
