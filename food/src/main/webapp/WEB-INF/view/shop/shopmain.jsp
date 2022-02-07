@@ -105,10 +105,6 @@ function goSave(){
 					<img class="mainimg_size"
 						src="/res/upload/${data.r_filename_real2 }">
 				</div>
-				<div>
-					<img class="mainimg_size"
-						src="/res/upload/${data.r_filename_real3 }">
-				</div>
 			</div>
 			<div class="no1">
 				<div class="no1__left">

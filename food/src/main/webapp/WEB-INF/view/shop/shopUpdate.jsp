@@ -135,11 +135,6 @@ function goSave(){
 		$("#picture3").focus();
 		return;
 	}
-	if($("#picture4").val().trim()==''){
-		alert('3번사진을 추가해주세요');
-		$("#picture4").focus();
-		return;
-	}
 	$("#frm").submit();
 	}
 
@@ -291,7 +286,6 @@ function goSave(){
                                         <div><input type="file" name="file" id="picture1" value="${data.r_filename_real }"> 메인사진</div>
                                         <div><input type="file" name="file1" id="picture2" value="${data.r_filename_real1 }"> 1번 사진</div>
                                         <div><input type="file" name="file2" id="picture3" value="${data.r_filename_real2 }"> 2번 사진</div>
-                                        <div><input type="file" name="file3" id="picture4" value="${data.r_filename_real3 }"> 3번 사진</div>
                                         </td>
                                     </tr>
                                 </tbody>
