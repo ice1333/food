@@ -31,13 +31,13 @@ public class HensuMyDao {
 		return sst.delete("hensuUser.listDelete",vo);
 	}
 	public List<WishlistVo> wishList(WishlistVo vo) {
-		return sst.selectList("hensuUser.myList", vo);
+		return sst.selectList("hensuUser.wishList", vo);
 	}
 	public int wishCount(WishlistVo vo) {
-		return sst.selectOne("hensuUser.visitCount",vo);
+		return sst.selectOne("hensuUser.wishCount",vo);
 	}
 	public int wishDelete(WishlistVo vo) {
-		return sst.delete("hensuUser.listDelete",vo);
+		return sst.delete("hensuUser.wishlDelete",vo);
 	}
 }
     

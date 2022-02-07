@@ -41,9 +41,9 @@
             <div class="shop">
                 <div class="swiper mySwiper2">
                     <div class="swiper-wrapper">
-                        <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood1.jpg');">
-                            <span class="imgtitle">육즙 팡팡 터진다!!</span>
-                            <span class="imgtitle2">"둘이가서 싸우고 혼자먹는다."</span>    
+                        <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood1.jpg');" >
+                            <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EB%8F%88%EA%B9%8C%EC%8A%A4&x=0&y=0"><span class="imgtitle">육즙 팡팡 터진다!!</span>
+                            <span class="imgtitle2">"둘이가서 싸우고 혼자먹는다."</span>    </a>
                         </div>
                         <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood2.jpg');">
                             <span class="imgtitle">회식이 즐거워지는 고기집</span>
