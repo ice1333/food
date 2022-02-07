@@ -131,7 +131,7 @@
                                         <tr class="board_tr" style="cursor:pointer;">
                                            <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.c_no }"/></td>
                                             <td>${list.r_name}</td>   
-                                            <td class="title">${list.content}</td>
+                                            <td class="title"><a href="/res/shop/shopmain.do?r_no=${list.r_no }">${list.content}</td>
                                             <td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd"/></td>
                                             <td class="last">${list.stars}</td>
                                         </tr>

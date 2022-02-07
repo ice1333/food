@@ -114,7 +114,7 @@
 													<td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.c_no }"/></td>
 													<td>${list.r_name }</td>										
 													<td>${list.u_name }</td>																			
-													<td><a href="shop/shopmain.do?r_no=${list.r_no }">${list.content }</a></td>
+													<td><a href="/res/shop/shopmain.do?r_no=${list.r_no }" target="_blank">${list.content }</a></td>
 													<td>${list.regdate}</td>
 													<td class="last">${list.stars }</td>
 												</tr>
