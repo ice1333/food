@@ -117,7 +117,7 @@ public class RestaurantController {
 		return "admin/board/requestView";
 	}
 	
-	@PostMapping("user/list.do")
+	@GetMapping("user/list.do")
 	public String list(Model model, RestaurantVo vo, HttpServletRequest req) {
 		
 		List<RestaurantVo> list = service.lists(vo);
