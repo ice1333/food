@@ -75,8 +75,9 @@
 		SELECT *
 		, (select max(w_date) from wishlist where restaurant.r_no=wishlist.r_no)as w_date
 		 FROM shop.restaurant where r_no in (select r_no from wishlist where u_no=#{u_no} group by r_no)
-		order by w_date desc
+		order by w_date desc)t
 		LIMIT ${startIdx},5;
+		
 	</select>
 	   
 	<select id="wishCount" resultType="int" parameterType="hensuUserMypage.WishlistVo">
@@ -84,8 +85,8 @@
 		select * from(
 		SELECT *
 		, (select max(w_date) from wishlist where restaurant.r_no=wishlist.r_no)as w_date
-		 FROM shop.restaurant where r_no in (select r_no from visit where u_no=#{u_no} group by r_no)
-		)t
+		 FROM shop.restaurant where r_no in (select r_no from wishlist where u_no=#{u_no} group by r_no)
+		order by w_date desc)t)t
 		order by w_date desc;
 	</select>
     
