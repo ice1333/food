@@ -116,10 +116,16 @@
 												<td>${vo.u_no}</td>
 												<td class="email">${vo.u_uemail}</td>
 												<td>${vo.u_name }</td>
-												<td>${vo.u_gender }</td>
+												<td class="last"><c:choose>
+			                                    <c:when test="${vo.u_gender == 1}">남</c:when>
+												<c:when test="${vo.u_gender == 2}">여</c:when>
+												</c:choose></td>
 												<td>${vo.u_tel }</td>
 												<td>${vo.u_regdate }</td>
-												<td class="last">${vo.u_status }</td>
+												<td class="last"><c:choose>
+			                                    <c:when test="${vo.u_status == 0}">탈퇴</c:when>
+												<c:when test="${vo.u_status == 1}">가입</c:when>
+												</c:choose></td>
 											</tr>
 										</c:forEach>
 									</c:if>
