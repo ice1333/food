@@ -32,7 +32,7 @@
                                 <a href="/res/shop/shopmain.do?r_no=${vo.r_no}">
                                     <h3>${vo.r_name}<h3>
                                 </a>
-                                <strong class="star">${vo.r_stars}</strong>
+                                <strong class="star">${vo.stars}</strong>
                             </div>
                         </div>
                     </div>

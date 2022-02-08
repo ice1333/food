@@ -142,7 +142,7 @@
 
 	<!-- 매장 상세 -->
 	<select id="shopDetail" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
-		SELECT * FROM shop.restaurant WHERE r_no = #{xxx}
+		SELECT *, round((select avg(stars) from shop.comment where r_no=restaurant.r_no),1) as stars FROM shop.restaurant WHERE r_no = #{xxx}
 	</select>
 	
 <sql id= "mainwhere">
@@ -212,7 +212,7 @@
 	</sql>
 
 	<select id="lists" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
-		select * from shop.restaurant
+		select *, round((select avg(stars) from shop.comment where r_no=restaurant.r_no),1) as stars from shop.restaurant
 		<include refid= "mainwhere"/>
 	</select>
 
@@ -231,5 +231,5 @@
 		SELECT COUNT(*) FROM wishlist
 		where u_no=#{u_no} and r_no=#{r_no}
 	</select>
-
+	
 </mapper>

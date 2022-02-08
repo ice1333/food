@@ -42,27 +42,27 @@
                 <div class="swiper mySwiper2">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood1.jpg');" >
-                            <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EB%8F%88%EA%B9%8C%EC%8A%A4&x=0&y=0"><span class="imgtitle">육즙 팡팡 터진다!!</span>
+                            <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EA%B3%A0%EA%B8%B0&x=0&y=0"><span class="imgtitle">육즙 팡팡 터진다!!</span>
                             <span class="imgtitle2">"둘이가서 싸우고 혼자먹는다."</span>    </a>
                         </div>
                         <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood2.jpg');">
-                            <span class="imgtitle">회식이 즐거워지는 고기집</span>
-                            <span class="imgtitle2">"부장님옆만 아니면..ㅎㅎ"</span>
+                            <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EA%B3%A0%EA%B8%B0&x=0&y=0"><span class="imgtitle">회식이 즐거워지는 고기집</span>
+                            <span class="imgtitle2">"부장님옆만 아니면..ㅎㅎ"</span></a>
                         </div>
                         <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood3.jpg');">
-                            <span class="imgtitle">부산사나이들이 인정한 국밥</span>
-                            <span class="imgtitle2">"마 국밥 먹어봤나??"</span> 
+                            <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EA%B3%A0%EA%B8%B0&x=0&y=0"><span class="imgtitle">부산 사나이들이 인정한 국밥</span>
+                            <span class="imgtitle2">"마 국밥 먹어봤나??"</span></a> 
                         </div>
                         <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood4.jpg');">
-                            <span class="imgtitle">점심메뉴 추천 1순위</span>
+                            <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EB%8F%88%EA%B9%8C%EC%8A%A4&x=0&y=0">점심메뉴 추천 1위<span class="imgtitle"></span>
                             <span class="imgtitle2">"돈까스 ㄱ?"</span> 
                         </div>
                         <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood5.jpg');">
-                            <span class="imgtitle">해외여행 안해도 되는맛집</span>
+                            <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EC%96%91%EC%8B%9D&x=0&y=0"><span class="imgtitle">해외여행 안해도맛집</span>
                             <span class="imgtitle2">"먹는순간 언어습득가능"</span>
                         </div> 
                         <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood6.jpg');">
-                            <span class="imgtitle">잼민이들이 좋아하는 분식</span>
+                            <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EB%B6%84%EC%8B%9D&x=0&y=0"><span class="imgtitle">잼민이들이 좋아하는 분시</span>
                             <span class="imgtitle2">"어쩔티비~저쩔티비~꿀맛티비~"</span>  
                         </div>
                     </div>
@@ -76,28 +76,28 @@
                 <div class="swiper mySwiper2">
                     <div class="swiper-wrapper">
                     <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood7.jpg');">
-                        <span class="imgtitle">여친이랑 인스타 사진찍자</span>
-                        <span class="imgtitle2">"대신 사진찍기전에 먹으면 혼남"</span>  
+                        <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EC%96%91%EC%8B%9D&x=0&y=0"><span class="imgtitle">여친이랑 인스타 사진찍자</span>
+                        <span class="imgtitle2">"대신 사진찍기전에 먹으면 혼남"</span></a>  
                     </div>
                     <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood8.jpg');">
-                        <span class="imgtitle">바다를 느끼고싶나?</span>
-                        <span class="imgtitle2">"먹는 순간 바다향나는곳"</span>  
+                        <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EC%9D%BC%EC%8B%9D&x=0&y=0"><span class="imgtitle">바다를 느끼고싶나?</span>
+                        <span class="imgtitle2">"먹는 순간 바다향나는곳"</span></a>  
                     </div>
                     <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood9.jpg');">
-                        <span class="imgtitle">집들이 할때 당연히 족보</span>
-                        <span class="imgtitle2">"大는 시켜야지 사이드많이가요"</span>  
+                        <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EC%A1%B1%EB%B0%9C&x=0&y=0"><span class="imgtitle">집들이 할때 당연히 족보</span>
+                        <span class="imgtitle2">"大는 시켜야지 사이드많이가요"</span></a>  
                     </div>
                     <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood10.jpg');">
-                        <span class="imgtitle">빠른배달 맛도2배 중국집</span>
+                        <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%EC%A4%91%EC%8B%9D&x=0&y=0"><span class="imgtitle">빠른배달 맛도2배 중국집</span>
                         <span class="imgtitle2">"제트기 타고 배달하나?"</span>  
                     </div>
                     <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood11.jpg');">
-                        <span class="imgtitle">부장님 취향저격 맛집</span>
+                        <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%ED%83%95&x=0&y=0"><span class="imgtitle">부장님 취향저격 맛집</span>
                         <span class="imgtitle2">"진급전이시면.. 점수따고 최고!!"</span>  
                     </div>
                     <div class="swiper-slide" style="background-image: url('/res/img/user/mainfood12.jpg');">
-                        <span class="imgtitle">어른들 모시기 좋은 한정식</span>
-                        <span class="imgtitle2">"가격은 어마무시하당..ㅎㄷㄷ"</span>  
+                        <a href="http://localhost:8080/res/user/list.do?a1=0&a2=0&a3=0&a4=0&f1=0&f2=0&f3=0&f4=0&f5=0&f6=0&f7=0&f8=0&p1=0&p2=0&searchType=&searchWord=%ED%95%9C%EC%A0%95%EC%8B%9D&x=0&y=0"><span class="imgtitle">어른들 모시기 좋은 한정식</span>
+                        <span class="imgtitle2">"가격은 어마무시하당..ㅎㄷㄷ"</span>  </a>
                     </div>
                     </div>
                     <div class="swiper-button-next"></div>
@@ -123,7 +123,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=86">
                                             <h3>신승관<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -134,7 +133,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=28">
                                             <h3>정돈<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -145,7 +143,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=42">
                                             <h3>백부장집닭한마리<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -156,7 +153,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=49">
                                             <h3>엄용백돼지국밥<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                             </li>
@@ -170,7 +166,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=62">
                                             <h3>서울식당<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -181,7 +176,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=71">
                                             <h3>족의한수<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -192,7 +186,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=74">
                                             <h3>털보네해물탕<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -203,7 +196,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=33">
                                             <h3>수제왕돈까스<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                             </li>
@@ -227,7 +219,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=11">
                                             <h3>고치비<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -238,7 +229,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=25">
                                             <h3>미도리스시<h3> 
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -249,7 +239,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=41">
                                             <h3>떡사롱<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -260,7 +249,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=57">
                                             <h3>석파랑<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                             </li>
@@ -274,7 +262,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=21">
                                             <h3>스시미치루<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -285,7 +272,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=63">
                                             <h3>한일장<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -296,7 +282,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=14"	>
                                             <h3>핏제리아오<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                                 <div class="restrant">
@@ -307,7 +292,6 @@
                                         <a href="/res/shop/shopmain.do?r_no=39">
                                             <h3>정할머니 기름떡볶이<h3>
                                         </a>
-                                        <strong class="star">4.6</strong>
                                     </div>
                                 </div>
                             </li>

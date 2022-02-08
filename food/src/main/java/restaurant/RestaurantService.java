@@ -2,6 +2,8 @@ package restaurant;
 
 import java.util.List;
 
+import comment.CommentVo;
+
 public interface RestaurantService {
 	
 	public List<RestaurantVo> restaurantList(RestaurantVo vo);
@@ -23,6 +25,7 @@ public interface RestaurantService {
 	RestaurantQnaVo no_select(int rqna_no);
 	
 	public RestaurantVo selectone(int r_no);
+	
 	int update(RestaurantVo vo);
 	
 	public List<RestaurantVo> lists(RestaurantVo vo);

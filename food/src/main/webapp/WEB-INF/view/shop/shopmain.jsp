@@ -128,76 +128,10 @@ function goSave(){
             </colgroup>
             <thead>
               <tr>
-                조회수 찜횟수 별점
+              	${data.stars }
               </tr>
             </thead>
             <tbody >
-               <%-- <c:if test="${empty list}">
-=======
-	<input type="hidden" name="r_no" value="${data.r_no }">
-	<div id="wrap">
-		<%@ include file="/WEB-INF/view/include/user_header.jsp"%>
-		<main>
-			<div class="mainimg">
-				<div>
-					<img class="mainimg_size"
-						src="/res/upload/${data.r_filename_real }">
-				</div>
-				<div>
-					<img class="mainimg_size"
-						src="/res/upload/${data.r_filename_real1 }">
-				</div>
-				<div>
-					<img class="mainimg_size"
-						src="/res/upload/${data.r_filename_real2 }">
-				</div>
-			</div>
-			<div class="no1">
-				<div class="no1__left">
-					<div class="table__head">
-						<h2>${data.r_name}</h2>
-						<c:if test="${data.r_status==0 }">
-							<div>
-								<h1 style="text-align: center; padding:"></h1>
-							</div>
-						</c:if>
-						<c:if test="${!empty userInfo and listcount == 0}">
-						<div class="btnSet"  style="text-align:right;">
-							<form action="" id="withInsert">
-								<input type="hidden" name="r_no" value="${data.r_no}">
-		                        <a class="btn" href="javascript:wishInsert();">찜하기 </a>
-	                        </form>
-	                    </div>
-	                    </c:if>
-	                    
-						<c:if test="${!empty userInfo and listcount ==1}">
-						<div class="btnSet"  style="text-align:right;">
-							<form action="" id="wishDel">
-								<input type="hidden" name="r_no" value="${data.r_no}">
-		                        <a class="btn" href="javascript:wishDel();">찜취소 </a>
-	                        </form>
-	                    </div>
-	                    </c:if>
-					</div>
-					<table class="table__top">
-						<colgroup>
-							<col style="width: 150px" />
-							<col />
-							<col style="width: 380px" />
-						</colgroup>
-						<thead>
-							<tr>조회수 찜횟수 별점
-							</tr>
-						</thead>
-						<tbody>
-							<%-- <c:if test="${empty list}">
->>>>>>> branch 'master' of https://github.com/ice1333/food.git
-                                     <tr>
-                                         <td class="first" colspan="8">등록된 정보가 없습니다.</td>
-                                     </tr>
-                                 </c:if>
-               <c:if test="${!empty list}">
-                  <c:forEach var="vo" items="${list}" varStatus="status">--%>
                     <tr>
                       <th>주소</th>
                       <td>${data.r_address} ${data.r_address2}</td>
@@ -237,57 +171,8 @@ function goSave(){
                       <th>메뉴</th>
                       <td>${data.r_menu}</td>
                     </tr>
-<<<<<<< HEAD
-                  <%-- 
-=======
-							<tr>
-								<th>주소</th>
-								<td>${data.r_address},${data.r_address2}</td>
-							</tr>
-							<tr>
-								<th>전화번호</th>
-								<td>${data.r_tel}</td>
-							</tr>
-							<tr>
-								<th>음식 종류</th>
-								<td>${data.r_foodtype}</td>
-							</tr>
-							<tr>
-								<th>가격대</th>
-								<td>${data.r_price}</td>
-							</tr>
-							<tr>
-								<th>영업시간</th>
-								<td>${data.r_week}</td>
-							</tr>
-							<tr>
-								<th>쉬는시간</th>
-								<td>${data.r_breaktime}</td>
-							</tr>
-							<tr>
-								<th>휴무일</th>
-								<td>${data.r_holiday}</td>
-							</tr>
-							<tr>
-								<th>주차공간</th>
-								<td class="last"><c:choose>
-										<c:when test="${data.r_parking == 0}">주차불가</c:when>
-										<c:when test="${data.r_parking >= 1}">주차가능</c:when>
-									</c:choose></td>
-							</tr>
-							<tr>
-								<th>메뉴</th>
-								<td>${data.r_menu}</td>
-							</tr>
-							<%-- 
->>>>>>> branch 'master' of https://github.com/ice1333/food.git
-                  </c:forEach>
-                     </c:if>
-                     --%>
 						</tbody>
-=======
 				</tbody>
->>>>>>> branch 'master' of https://github.com/ice1333/food.git
 
 					</table>
 					<div class="btn">
@@ -330,7 +215,6 @@ function goSave(){
 		</main>
 
 		<%@ include file="/WEB-INF/view/include/user_footer.jsp"%>
-		<!--//canvas -->
 	</div>
 </body>
 

@@ -47,6 +47,5 @@ public class CommentDao {
 	public int adcdelete(CommonVo vo) {
 		return sst.delete("comment.adcdelete", vo);
 	}
-   
 
 }
