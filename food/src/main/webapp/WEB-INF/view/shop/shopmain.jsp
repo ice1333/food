@@ -128,7 +128,7 @@ function goSave(){
             </colgroup>
             <thead>
               <tr>
-              	${data.stars }
+              	★ ${data.stars } 
               </tr>
             </thead>
             <tbody >

@@ -32,10 +32,10 @@ public class AdminDao {
 	}
 	
 	public int userDelete(String u_no) {
-		return sqlSession.delete("admin.userDelete",u_no);
+		return sqlSession.update("admin.userDelete",u_no);
 	}
 	public int adminDelete(String A_no) {
-		return sqlSession.delete("admin.adminDelete",A_no);
+		return sqlSession.update("admin.adminDelete",A_no);
 	}
 		
 }

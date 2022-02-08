@@ -34,8 +34,6 @@ public class RestaurantVo extends CommonVo{
 	private String r_filename_real1;
 	private String r_filename_org2;
 	private String r_filename_real2; 
-	private String r_filename_org3;
-	private String r_filename_real3;
 	private Timestamp r_regdate;
 	private String searchType;
 	private String searchWord;
@@ -209,20 +207,7 @@ public class RestaurantVo extends CommonVo{
 	}
 	public void setR_filename_real2(String r_filename_real2) {
 		this.r_filename_real2 = r_filename_real2;
-	}
-	public String getR_filename_org3() {
-		return r_filename_org3;
-	}
-	public void setR_filename_org3(String r_filename_org3) {
-		this.r_filename_org3 = r_filename_org3;
-	}
-	public String getR_filename_real3() {
-		return r_filename_real3;
-	}
-	public void setR_filename_real3(String r_filename_real3) {
-		this.r_filename_real3 = r_filename_real3;
-	}
-	
+	}	
 	public int getU_no() {
 		return u_no;
 	}

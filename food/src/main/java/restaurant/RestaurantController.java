@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import user.UserVo;
 import comment.CommentService;
 import comment.CommentVo;
+import hensuUserMypage.VisitVo;
 import util.CommonUtil;
 
 @Controller
@@ -96,7 +97,10 @@ public class RestaurantController {
 	}
 	
 	@PostMapping("/restaurant/insert.do")
-	public String insert(RestaurantVo vo, HttpServletRequest req) {
+	public String insert(RestaurantVo vo, HttpServletRequest req,HttpSession sess) {
+		if(sess.getAttribute("userInfo") != null) {
+			vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());
+		}
 		if (service.restinsert(vo) > 0) {
 			req.setAttribute("msg", "정상적으로 등록되었습니다.");
 			req.setAttribute("url", "/res/admin/board/requestList.do");

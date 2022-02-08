@@ -116,7 +116,10 @@
 												<td>${vo.a_rank }</td>
 												<td>${vo.a_name }</td>
 												<td>${vo.a_regdate }</td>
-												<td class="last">${vo.a_status }</td>
+												<td class="last"><c:choose>
+				                                    <c:when test="${vo.a_status == 0}">이용불가</c:when>
+													<c:when test="${vo.a_status == 1}">이용가능</c:when>
+												</c:choose></td>
 											</tr>
 										</c:forEach>
 									</c:if>
@@ -125,7 +128,7 @@
 							</form>
 							<div class="btn">
 								<div class="btnLeft">
-									<a class="btns" href="javascript:del();"><strong>삭제</strong> </a>
+									<a class="btns" href="javascript:del();"><strong>상태변경</strong> </a>
 								</div>
 							</div>
 							<!--//btn-->
