@@ -2,8 +2,27 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="comment"> <!-- mapper파일의 이름 -->
 
+	<sql id = "admincommentWhere">
+      <where> 
+         <if test ="searchType ==''">   
+             (content LIKE '%${searchWord}%'OR stars LIKE '%${searchWord}%'or u_no in (select u_no from user where u_name like '%${searchWord}%')or r_no in (select r_no from restaurant where r_name like '%${searchWord}%'))
+          </if>
+          <if test= "searchType != null and searchType != ''">
+             ${searchType} LIKE '%${searchWord}%'
+          </if>
+          <if test="c_no > 0">    
+             AND c_no = ${c_no}
+          </if>
+          <if test="tablename != null and tablename != ''">
+          	 AND tablename = #{tablename}
+          </if>
+          <if test="u_no > 0">
+             (u_no = ${u_no} )
+          </if>
+      </where>     
+   </sql>
+   
 
-		
 	<select id="adqselectList" resultType="comment.CommentVo" parameterType="comment.CommentVo">
 		SELECT * FROM shop.comment WHERE adqna_no=#{adqna_no} AND tablename=#{tablename} 
 		ORDER BY regdate DESC
@@ -52,6 +71,26 @@
 	<delete id="restdelete" parameterType="int">
 		DELETE FROM comment WHERE c_no=#{c_no} 
 	</delete>
+	
+
+	<select id="selectList" resultType = "comment.CommentVo" parameterType="comment.CommentVo">
+      select * 
+         , (select u_name from user where user.u_no=comment.u_no)as u_name
+         , (select r_name from restaurant where restaurant.r_no=comment.r_no)as r_name
+      FROM comment  
+	<include refid = "admincommentWhere"/>
+	   ORDER BY c_no DESC    
+	   LIMIT ${startIdx},5
+	</select>
+
+   <select id="count" resultType="int" parameterType="comment.CommentVo">
+      SELECT count(*) FROM shop.comment
+      <include refid="admincommentWhere"/>
+   </select>
+   
+   <delete id="adcdelete">
+      DELETE FROM shop.comment WHERE c_no=#{c_no}
+   </delete>
 	
 
 </mapper>

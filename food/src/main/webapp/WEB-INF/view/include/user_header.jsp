@@ -308,7 +308,7 @@ if ('${param.p2}'== '1'){
       </div>
       </div>
     <div class="headersearch">
-        <form name="searchForm" id="searchForm" action="list.do"  method="get">
+        <form name="searchForm" id="searchForm" action="/res/user/list.do"  method="get">
 
         <input type="hidden" name="a1" id="a1" value="0">
         <input type="hidden" name="a2" id="a2" value="0">
@@ -350,7 +350,7 @@ if ('${param.p2}'== '1'){
         </c:if>
         <c:if  test="${!empty userInfo }">
         	<li class="menulistheader">
-	            <a href="/res/user/privacy.do" class="menulink">
+	            <a href="/res/user/mylist.do" class="menulink">
 	                <span class="menutext">마이페이지</span>
 	            </a>
 	        </li>

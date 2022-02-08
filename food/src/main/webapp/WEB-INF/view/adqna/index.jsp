@@ -23,7 +23,6 @@
                         </div>
                 </div>
                 <div id="content">
-                    <!-- //con_tit -->
                     <div class="con">
                         <div class="con_tit">
                             <h3 class="con_title">광고 문의</h3>
@@ -87,7 +86,7 @@
                                         <select id="stype" name="searchType" title="검색분류 선택">
                                             <option value="">전체</option>
                                             <option value="aq_title" <c:if test="${param.searchType == 'aq_title'}">selected</c:if>>제목</option>
-                                            <option value="aq_contents" <c:if test="${param.searchType == 'aq_contents'}">selected</c:if>>내용</option>
+                                            <option value="aq_contents" <c:if test="${param.searchType == 'aq_contents'}">selected</c:if>>내용</option> 
                                         </select>
                                         <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
                                         <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />

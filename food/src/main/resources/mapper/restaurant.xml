@@ -4,18 +4,7 @@
 	<!-- 레스토랑 목록 조회 -->
 	<select id="restaurantList" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
 		SELECT * FROM restaurant
-		<!--  <include refid = "restaurantWhere"/>-->
-		<where>
-			<if test ="searchType ==''">   
-			 	(r_name LIKE '%${searchWord}%' OR r_status LIKE '%${searchWord}%')
-			 </if>
-			 <if test= "searchType != null and searchType != ''">
-			 	${searchType} LIKE '%${searchWord}%'
-			 </if>
-			 <if test="r_no > 0">    
-			 	AND r_no = ${r_no}
-			 </if>
-		</where>  
+		<include refid = "restaurantWhere"/>
 		ORDER BY r_regdate DESC    
 		LIMIT ${startIdx},10
 	</select>
@@ -142,7 +131,7 @@
 
 	<!-- 매장 상세 -->
 	<select id="shopDetail" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
-		SELECT * FROM shop.restaurant WHERE r_no = #{xxx}
+		SELECT *, round((select avg(stars) from shop.comment where r_no=restaurant.r_no),1) as stars FROM shop.restaurant WHERE r_no = #{xxx}
 	</select>
 	
 <sql id= "mainwhere">
@@ -212,7 +201,7 @@
 	</sql>
 
 	<select id="lists" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
-		select * from shop.restaurant
+		select *, round((select avg(stars) from shop.comment where r_no=restaurant.r_no),1) as stars from shop.restaurant
 		<include refid= "mainwhere"/>
 	</select>
 

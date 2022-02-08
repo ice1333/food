@@ -32,7 +32,7 @@
          });
       });
       function del(){
-         var url ='/res/mycomment/mycommentdelAjax.do';
+         var url ='/res/admin/admincommentdelAjax.do';
          var valueArr = new Array();
          var list= $("input[name='Rchk']");
          for(var i=0; i<list.length; i++){
@@ -81,16 +81,17 @@
             <!-- E N D :: headerArea--> 
             <!-- S T A R T :: containerArea-->
             <div id="container">
-                <div class="menulist">
-                        <h2 class="menu_title">내정보</h2>
-                        <div class="inner_sub">
-                            <ul id="adlist">
-                                <li><a href="">최근 본 매장</a></li>
-                                <li><a href="">찜 목록</a></li>
-                                <li><a href="">개인 정보 수정</a></li>
-                                <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
-                            </ul>
-                        </div>
+               <div class="menulist">
+                       <h2 class="menu_title">내정보</h2>
+                       <div class="inner_sub">
+                           <ul id="adlist">
+                                <li><a href="/res/user/mypage/mylist.do">최근 본 매장</a></li>
+		                        <li><a href="/res/user/mypage/myLove.do">찜 목록</a></li>
+		                        <li><a href="/res/user/privacy.do">개인 정보 수정</a></li>
+		                        <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
+		                        <li><a href="/res/shop/join.do">매장등록</a></li>
+                           </ul>
+                       </div>
                 </div>
                 <div id="content">
                     <!-- //con_tit -->
@@ -129,9 +130,9 @@
                                     <c:if test="${!empty list}">
                                         <c:forEach var="list" items="${list}" varStatus="status">
                                         <tr class="board_tr" style="cursor:pointer;">
-                                           <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.adc_no }"/></td>
+                                           <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${list.c_no }"/></td>
                                             <td>${list.r_name}</td>   
-                                            <td class="title">${list.content}</td>
+                                            <td class="title"><a href="/res/shop/shopmain.do?r_no=${list.r_no }">${list.content}</td>
                                             <td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd"/></td>
                                             <td class="last">${list.stars}</td>
                                         </tr>
@@ -149,18 +150,7 @@
                                 <!-- 페이징 처리 -->
                                ${PageArea }
                                 <!-- //페이징 처리 -->
-                                <form name="searchForm" id="searchForm" action="myComment.do"  method="get">
-                                    <div class="search">
-                                        <select id="stype" name="searchType" title="검색분류 선택">
-                                            <option value="">전체</option>
-                                            <option value="제목" <c:if test="${param.searchType == '같'}">selected</c:if>>제목</option>
-                                            <option value="댓글내용" <c:if test="${param.searchType == '같'}">selected</c:if>>내용</option>
-                                            <option value="별점" <c:if test="${param.searchType == '같'}">selected</c:if>>답변대기</option>
-                                        </select>
-                                        <input type="text" id="sval" name="searchWord" value="" title="검색어 입력" />
-                                        <input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
-                                    </div>
-                                </form>
+                                
                                 <!-- //search --> 
                             </div>
                             <!-- //blist -->

@@ -2,8 +2,10 @@ package comment;
 
 import java.sql.Timestamp;
 
+import util.CommonVo;
 
-public class CommentVo {
+
+public class CommentVo extends CommonVo{
 	
 	private int c_no;
 	private int a_no;
@@ -14,7 +16,9 @@ public class CommentVo {
 	private Timestamp regdate;
 	private String u_name;
 	private int r_no;
+	private String r_name;
 	private int stars;
+	private int adc_no;
 	
 	
 	
@@ -28,6 +32,20 @@ public class CommentVo {
 	}
 	public int getR_no() {
 		return r_no;
+	}
+	
+	public int getAdc_no() {
+		return adc_no;
+	}
+	public void setAdc_no(int adc_no) {
+		this.adc_no = adc_no;
+	}
+	
+	public String getR_name() {
+		return r_name;
+	}
+	public void setR_name(String r_name) {
+		this.r_name = r_name;
 	}
 	public void setR_no(int r_no) {
 		this.r_no = r_no;

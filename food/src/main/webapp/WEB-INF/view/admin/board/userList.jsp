@@ -117,14 +117,24 @@
 												<td class="email">${vo.u_uemail}</td>
 												<td>${vo.u_name }</td>
 												<td class="last"><c:choose>
+<<<<<<< HEAD
 				                                    <c:when test="${vo.u_gender == 1}">남자</c:when>
 													<c:when test="${vo.u_gender == 2}">여자</c:when>
+=======
+			                                    <c:when test="${vo.u_gender == 1}">남</c:when>
+												<c:when test="${vo.u_gender == 2}">여</c:when>
+>>>>>>> branch 'master' of https://github.com/ice1333/food.git
 												</c:choose></td>
 												<td>${vo.u_tel }</td>
 												<td>${vo.u_regdate }</td>
 												<td class="last"><c:choose>
+<<<<<<< HEAD
 				                                    <c:when test="${vo.u_status == 0}">이용불가</c:when>
 													<c:when test="${vo.u_status == 1}">이용가능</c:when>
+=======
+			                                    <c:when test="${vo.u_status == 0}">탈퇴</c:when>
+												<c:when test="${vo.u_status == 1}">가입</c:when>
+>>>>>>> branch 'master' of https://github.com/ice1333/food.git
 												</c:choose></td>
 											</tr>
 										</c:forEach>

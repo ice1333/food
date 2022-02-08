@@ -20,15 +20,17 @@ public class UserController {
    
    @Autowired
    UserService service;
-   //수연 페이지 확인   
+   
    @GetMapping("user/main.do")
    public String main() {
       return "user/main";
    }
+   
    @GetMapping("user/login.do")
    public String login() {
       return "user/login";
    }
+   
    @PostMapping("/user/login.do")
    public String loginProcess(Model model, UserVo vo, HttpSession sess) {
       if (service.login(vo, sess)) {
@@ -40,6 +42,7 @@ public class UserController {
          return "include/return";
       }
    }
+   
    @GetMapping("/user/logout.do")
    public String logOut(Model model, HttpSession sess) {
       model.addAttribute("msg", "로그아웃되었습니다.");
@@ -47,27 +50,31 @@ public class UserController {
       sess.invalidate();
       return "include/return";
    }
+   
    @GetMapping("user/searchid.do")
    public String searchid() {
       return "user/searchId";
    }
+   
    @GetMapping("user/searchpwd.do")
    public String searchidpwd() {
       return "user/searchPwd";
    }
+   
    @GetMapping("user/notice.do")
    public String notice() {
       return "user/notice";
    }
 
-	//수연 페이지 끝 
 	
-	//창혁 회원가입 , 마이페이지시작
+	
+	//회원가입 화면
 	@GetMapping("user/join.do")
 	public String join() {
 		return "user/join";
 	}
-	//회원가입
+	
+	//회원가입 등록
 	@PostMapping("/user/insert.do")
 	public String insert(UserVo vo, HttpServletRequest req) {
 		if(service.insert(vo) > 0) {
@@ -78,6 +85,7 @@ public class UserController {
 		}
 		return "include/return";
 	}
+	
 	//이메일체크
 	@GetMapping("/user/emailCheck.do")
 	public String emailCheck(Model model,@RequestParam String u_uemail) {
@@ -98,7 +106,7 @@ public class UserController {
 	@RequestMapping("user/update.do")
 	public String update(UserVo vo,HttpServletRequest req,HttpSession ses) {
 		user.UserVo uv=(user.UserVo)ses.getAttribute("userInfo");
-		//세션에서 가져와서 여기다가 셋해야대
+		
 		if(service.updatePrivacy(vo) > 0) {
 			ses.invalidate();
 			req.setAttribute("msg", "정상적으로 수정되었습니다.");

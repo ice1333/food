@@ -127,8 +127,9 @@ function goSave(){
               <col style="width: 380px" />
             </colgroup>
             <thead>
+
               <tr>
-                조회수 찜횟수 별점
+              	★ ${data.stars }
               </tr>
             </thead>
             <tbody >
@@ -138,7 +139,7 @@ function goSave(){
                     </tr>
                     <tr>
                       <th>전화번호</th>
-                      <td>${data.r_tel}</td>
+                      <td>${data.r_tel}</td> 
                     </tr>
                     <tr>
                       <th>음식 종류</th>
@@ -171,6 +172,7 @@ function goSave(){
                       <th>메뉴</th>
                       <td>${data.r_menu}</td>
                     </tr>
+						</tbody>
 				</tbody>
 
 					</table>
@@ -214,7 +216,6 @@ function goSave(){
 		</main>
 
 		<%@ include file="/WEB-INF/view/include/user_footer.jsp"%>
-		<!--//canvas -->
 	</div>
 </body>
 
