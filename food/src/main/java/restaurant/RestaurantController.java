@@ -120,8 +120,10 @@ public class RestaurantController {
 	@GetMapping("user/list.do")
 	public String list(Model model, RestaurantVo vo, HttpServletRequest req) {
 		
+		
 		List<RestaurantVo> list = service.lists(vo);
 		model.addAttribute("list",list);
+		
 		return "user/restaurantlist";
 	}
 	

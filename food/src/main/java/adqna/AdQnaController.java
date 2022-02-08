@@ -30,7 +30,6 @@ public class AdQnaController {
 	CommentService cmService;	
 	
 	//관리자 광고 문의 페이지
-	
 	@GetMapping("admin/adqnaindex.do") 
 	public String adqnaindex(Model model, HttpServletRequest req, AdQnaVo vo) {		
 		
@@ -50,7 +49,7 @@ public class AdQnaController {
 		return "admin/adqna/adqnaindex";
 	}
 	
-	
+	//관리자 상세페이지
 	@GetMapping("admin/adqnaview.do")
 	public String adqnaview(Model model,@RequestParam int adqna_no ) {
 		model.addAttribute("vo",adqnaService.no_select(adqna_no));
@@ -61,6 +60,7 @@ public class AdQnaController {
 		return "admin/adqna/adqnaview";
 	}
 	
+	//관리자 체크박스 삭제
 	@RequestMapping(value="admin/delAjax.do")
 	public String delAjax(HttpServletRequest req,Model model) {
 		
@@ -73,6 +73,7 @@ public class AdQnaController {
 		return "admin/include/result";
 	}
 	
+	//삭제
 	@GetMapping("admin/delete.do") 
 	public String delete(Model model, AdQnaVo vo) {
 		model.addAttribute("vo",adqnaService.delete(vo));
@@ -83,7 +84,7 @@ public class AdQnaController {
 	
 	
 	//사용자 페이지 시작
-	
+	//사용자 광고문의 게시판 목록
 	@GetMapping("adqna/index.do")
 	public String index(Model model, HttpServletRequest req, AdQnaVo vo,HttpSession sess) {
 		
@@ -105,13 +106,14 @@ public class AdQnaController {
 		
 	}
 	
-	
+	//사용자 광고문의 게시판 수정페이지
 	@GetMapping("adqna/edit.do")
 	public String edit(Model model,@RequestParam int adqna_no,HttpSession sess) {
 		model.addAttribute("vo",adqnaService.no_select(adqna_no));
 		return "adqna/edit";
 	}
 	
+	//사용자 광고문의 게시판 상세페이지
 	@GetMapping("adqna/view.do")
 	public String view(Model model,@RequestParam int adqna_no,HttpSession sess,AdQnaVo vo) {
 		
@@ -119,6 +121,7 @@ public class AdQnaController {
 		return "adqna/view";
 	}
 	
+	//사용자 광고문의 게시판 작성
 	@GetMapping("adqna/write.do") // 로그인 완성후 다시
 	public String write(HttpSession sess,AdQnaVo vo,HttpServletRequest req) {
 		user.UserVo uv= (user.UserVo)sess.getAttribute("userInfo");
@@ -129,7 +132,7 @@ public class AdQnaController {
 		return "adqna/write";
 	}
 	
-	
+	//사용자 광고문의 게시판 등록
 	@PostMapping("adqna/insert.do")
 	public String insert(HttpServletRequest req, MultipartFile file,HttpSession ses,AdQnaVo vo) {
 
@@ -171,7 +174,7 @@ public class AdQnaController {
 
 	}
 	
-
+	//사용자 광고문의 게시판 수정
 	@PostMapping("adqna/update.do")
 	public String update(Model model, HttpSession ses,MultipartFile file,HttpServletRequest req,AdQnaVo vo) {
 		
@@ -221,7 +224,7 @@ public class AdQnaController {
 		return "include/return";
 	}
 	
-	
+	//사용자 광고문의 게시판 삭제
 	@GetMapping("adqna/Udelete.do")
 	public String Udelete(Model model,AdQnaVo vo) {
 		int r = adqnaService.delete(vo);

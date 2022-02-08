@@ -72,14 +72,11 @@ $(document).ready(function() {
 	  if($(this).prop('checked')){
 	     $('input[type="checkbox"][name="checkmain"]').prop('checked',false);
 	     $(this).prop('checked',true);
+	     
 	    }
 	   });
 	 });
-
-
 </script>
-
-
 <body> 
     <div id="wrap">
     <%@ include file="/WEB-INF/view/include/user_header.jsp" %>

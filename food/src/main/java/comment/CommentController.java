@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import admin.AdminVo;
-import adqna.AdQnaVo;
 import user.UserVo;
 import util.CommonUtil;
 
@@ -22,12 +21,14 @@ public class CommentController {
 	@Autowired
 	CommentService service;
 	
+	//관리자 답변 
 	@GetMapping("/comment/adqlist.do")
 	public String list(Model model, CommentVo com,HttpSession sess) {
 		model.addAttribute("list",service.adqselectList(com));
 		return "admin/include/commentList";
 	}
 	
+	//관리자 답변 작성
 	@GetMapping("/comment/adqcominsert.do")
 	public String insert(Model model, CommentVo com, HttpSession sess) {
 		AdminVo av = (AdminVo)sess.getAttribute("adminInfo");
@@ -37,17 +38,20 @@ public class CommentController {
 		return "admin/include/result";
 	}
 	
+	
 	@GetMapping("/comment/adqdelete.do")
 	public String delete(Model model, CommentVo com) {
 		model.addAttribute("result",service.adqdelete(com.getC_no()));
 		return "admin/include/result";
 	}
 	
+	
 	@GetMapping("/comment/adqlist2.do")
 	public String ulist(Model model, CommentVo com) {
 		model.addAttribute("list",service.adqselectList(com));
 		return "admin/include/usercommentlist";
 	}
+	
 	
 	// 레스토랑 상세페이지 댓글
 	@GetMapping("/comment/restlist.do")
@@ -60,6 +64,7 @@ public class CommentController {
 		model.addAttribute("list",service.restselectList(com));
 		return "admin/include/restCommentList";
 	}
+	
 	@GetMapping("/comment/restinsert.do")
 	public String restinsert(Model model, CommentVo com, HttpSession sess) {
 		user.UserVo uv= (user.UserVo)sess.getAttribute("userInfo");
@@ -68,14 +73,13 @@ public class CommentController {
 		model.addAttribute("vo",service.restinsert(com));
 		return "admin/include/result";
 	}
+	
 	@GetMapping("/comment/restdelete.do")
 	public String restdelete(Model model, CommentVo com) {
 		model.addAttribute("result",service.restdelete(com.getC_no()));
 		return "admin/include/result";
 	}
 	
-	
-
 	@GetMapping("admin/comment/index.do")
 	public String index(Model model, HttpServletRequest req, CommentVo vo) {
 		vo.setTablename("restaurant");
@@ -112,6 +116,7 @@ public class CommentController {
 		model.addAttribute("vo",service.adcdelete(vo));
 		return "admin/comment/index";
 	}
+	
 	@GetMapping("user/mypage/myComment")
 	   public String userList1(UserVo uvo, HttpSession sess, Model model, CommentVo vo) {
 	      vo.setU_no(((UserVo)sess.getAttribute("userInfo")).getU_no());

@@ -39,9 +39,16 @@ public class RestaurantVo extends CommonVo{
 	private Timestamp r_regdate;
 	private String searchType;
 	private String searchWord;
+	private double stars;
 	
 	
 	
+	public double getStars() {
+		return stars;
+	}
+	public void setStars(double stars) {
+		this.stars = stars;
+	}
 	//  필터 // 
 	private String a1;
 	private String a2;
