@@ -139,7 +139,7 @@
                                     <td class="first"><input type="checkbox" name="Rchk" id="Rchk" value="${vo.r_no}"/></td>
                                     <td>${vo.r_no}</td>
                                     <td class="title"><a href="/res/shop/shopmain.do?r_no=${vo.r_no}">${vo.r_name}</a></td>
-                                    <td>${vo.r_address }</td>
+                                    <td class="title"><a href="/res/shop/shopmain.do?r_no=${vo.r_no}">${vo.r_address }</a></td>
                                     <td>${vo.r_foodtype }</td>
                                     <td>${vo.r_regdate}</td>
                                     <td class="last"><c:choose>
