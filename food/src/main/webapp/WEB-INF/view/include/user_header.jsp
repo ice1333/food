@@ -3,50 +3,55 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <script>
+$(document).ready(function(){
+	changeIMG();
+})
 $(function() {
 	//$("#a1").val('1');
 	$("#f_a1").click(function() {
 		if ($("#a1").val() == '0') {
 			$("#a1").val('1');
-			$(this).css('border',"1px solid red");
+			$(this).attr("src", "/res/img/user/circle2.png");
+			$(this).css("height: 80px; width: auto;");
 		} else {
 			$("#a1").val('0');
-			$(this).css("border","none");
+			$(this).attr("src", "/res/img/user/circle.png");
 		}
-		
-		
 	})
 	$("#f_a2").click(function() {
 			if ($("#a2").val() == '0') {
 				$("#a2").attr("value","1");
-				$(this).css('border',"1px solid red");
+				$(this).attr("src", "/res/img/user/circle2.png");
+				$(this).css("height: 80px; width: auto;");
 			} else {
 				$("#a2").attr("value","0");
-				$(this).css("border","none");
+				$(this).attr("src", "/res/img/user/circle.png");
 			}
 		})
 		$("#f_a3").click(function() {
 			if ($("#a3").val() == '0') {
 				$("#a3").attr("value","1");
-				$(this).css('border',"1px solid red");
+				$(this).attr("src", "/res/img/user/circle2.png");
+				$(this).css("height: 80px; width: auto;");
 			} else {
 				$("#a3").attr("value","0");
-				$(this).css("border","none");
+				$(this).attr("src", "/res/img/user/circle.png");
 			}
 		})
 		$("#f_a4").click(function() {
 			if ($("#a4").val() == '0') {
 				$("#a4").attr("value","1");
-				$(this).css('border',"1px solid red");
+				$(this).attr("src", "/res/img/user/circle2.png");
+				$(this).css("height: 80px; width: auto;");
 			} else {
 				$("#a4").attr("value","0");
-				$(this).css("border","none");
+				$(this).attr("src", "/res/img/user/circle.png");
 			}
 		})
 		$("#f_f1").click(function() {
 			if ($("#f1").val() == '0') {
 				$("#f1").attr("value","1");
-				$(this).css('border',"1px solid black");
+				$(this).css('border',"2px groove red");
 			} else {
 				$("#f1").attr("value","0");
 				$(this).css("border","none");
@@ -55,7 +60,7 @@ $(function() {
 		$("#f_f2").click(function() {
 			if ($("#f2").val() == '0') {
 				$("#f2").attr("value","1");
-				$(this).css('border',"1px solid black");
+				$(this).css('border',"2px groove red");
 			} else {
 				$("#f2").attr("value","0");
 				$(this).css("border","none");
@@ -64,7 +69,7 @@ $(function() {
 		$("#f_f3").click(function() {
 			if ($("#f3").val() == '0') {
 				$("#f3").attr("value","1");
-				$(this).css('border',"1px solid black");
+				$(this).css('border',"2px groove red");
 			} else {
 				$("#f3").attr("value","0");
 				$(this).css("border","none");
@@ -73,7 +78,7 @@ $(function() {
 		$("#f_f4").click(function() {
 			if ($("#f4").val() == '0') {
 				$("#f4").attr("value","1");
-				$(this).css('border',"1px solid black");
+				$(this).css('border',"2px groove red");
 			} else {
 				$("#f4").attr("value","0");
 				$(this).css("border","none");
@@ -82,7 +87,7 @@ $(function() {
 		$("#f_f5").click(function() {
 			if ($("#f5").val() == '0') {
 				$("#f5").attr("value","1");
-				$(this).css('border',"1px solid black");
+				$(this).css('border',"2px groove red");
 			} else {
 				$("#f5").attr("value","0");
 				$(this).css("border","none");
@@ -91,7 +96,7 @@ $(function() {
 		$("#f_f6").click(function() {
 			if ($("#f6").val() == '0') {
 				$("#f6").attr("value","1");
-				$(this).css('border',"1px solid black");
+				$(this).css('border',"2px groove red");
 			} else {
 				$("#f6").attr("value","0");
 				$(this).css("border","none");
@@ -100,7 +105,7 @@ $(function() {
 		$("#f_f7").click(function() {
 			if ($("#f7").val() == '0') {
 				$("#f7").attr("value","1");
-				$(this).css('border',"1px solid black");
+				$(this).css('border',"2px groove red");
 			} else {
 				$("#f7").attr("value","0");
 				$(this).css("border","none");
@@ -109,7 +114,7 @@ $(function() {
 		$("#f_f8").click(function() {
 			if ($("#f8").val() == '0') {
 				$("#f8").attr("value","1");
-				$(this).css('border',"1px solid black");
+				$(this).css('border',"2px groove red"); 
 			} else {
 				$("#f8").attr("value","0");
 				$(this).css("border","none");
@@ -118,19 +123,21 @@ $(function() {
 		$("#f_p1").click(function() {
 			if ($("#p1").val() == '0') {
 				$("#p1").attr("value","1");
-				$(this).css('border',"3px solid black");
+				$(this).attr("src", "/res/img/user/park2.png");
+				$(this).css("height: 80px; width: auto;");
 			} else {
 				$("#p1").attr("value","0");
-				$(this).css("border","none");
+				$(this).attr("src", "/res/img/user/park.png");
 			}
 		})
 		$("#f_p2").click(function() {
 			if ($("#p2").val() == '0') {
 				$("#p2").attr("value","1");
-				$(this).css('border',"3px solid black");
+				$(this).attr("src", "/res/img/user/park2.png");
+				$(this).css("height: 80px; width: auto;");
 			} else {
 				$("#p2").attr("value","0");
-				$(this).css("border","none");
+				$(this).attr("src", "/res/img/user/park.png");
 			}
 		})
 	})
@@ -294,14 +301,14 @@ if ('${param.p2}'== '1'){
               </div>
             </div>
             <div class="popup-foot">
-              <span class="pop-btn close" id="close" ><a href="/res/user/main.do">취소</a></span>
+              <span class="pop-btn close" id="close" href="/res/user/main.do">취소</span>
               <span class="pop-btn confirm" id="confirm" >적용</span>
             </div>
           </div>
       </div>
       </div>
     <div class="headersearch">
-        <form name="searchForm" id="searchForm" action="list.do"  method="get">
+        <form name="searchForm" id="searchForm" action="/res/user/list.do"  method="get">
 
         <input type="hidden" name="a1" id="a1" value="0">
         <input type="hidden" name="a2" id="a2" value="0">

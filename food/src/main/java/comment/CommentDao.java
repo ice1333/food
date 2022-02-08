@@ -6,6 +6,8 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import util.CommonVo;
+
 @Repository
 public class CommentDao {
 	
@@ -33,4 +35,18 @@ public class CommentDao {
 	public int restdelete(int c_no) {
 		return sst.delete("comment.restdelete",c_no);
 	}
+	
+	public int count(CommentVo vo) {
+		return sst.selectOne("comment.count",vo);
+	}
+
+	public List<CommentVo> selectList(CommentVo vo) {
+		return sst.selectList("comment.selectList",vo);
+	}
+   
+	public int adcdelete(CommonVo vo) {
+		return sst.delete("comment.adcdelete", vo);
+	}
+   
+
 }

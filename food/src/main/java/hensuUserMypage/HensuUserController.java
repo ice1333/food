@@ -10,10 +10,10 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 
 import user.UserVo;
 import util.CommonUtil;
+import util.CommonUtil2;
 
 @Controller
 public class HensuUserController {
@@ -33,12 +33,12 @@ public class HensuUserController {
 		
 		int startIdx = (vo.getPage()-1)*5;
 		vo.setStartIdx(startIdx);
-		 
+		System.out.println(vo.getVisit());
 		List<VisitVo> list = service.mylist(vo);
 		model.addAttribute("list",list);
 		model.addAttribute("totPage",totPage);
 		model.addAttribute("totCount",totCount);
-		model.addAttribute("pageArea",CommonUtil.getPageArea("mylist.do", vo.getPage(), totPage, 5));
+		model.addAttribute("pageArea",CommonUtil2.getPageArea("mylist.do", vo.getPage(), totPage, 5,vo.getVisit()));
 		System.out.println(vo.getVisit());
 		return "user/mylist";
 	}

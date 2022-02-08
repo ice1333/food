@@ -35,6 +35,10 @@
 				$("input[name='allChk']")[0].checked = false;
 			}
 		});
+		$("#con_searchlist").change(function() {
+			$("#visit").val($(this).val());
+			$("#searchForm2").submit();
+		})
 	});
 	
 	function del(){
@@ -126,7 +130,7 @@
                                    <tbody>
                                    <c:if test="${empty list}">
                                        <tr>
-                                           <td class="first" colspan="8">등록된 글이 없습니다.</td>
+                                           <td class="first" colspan="8">확인한 매장이 없습니다.</td>
                                        </tr>
                                    </c:if>
                                    <c:if test="${!empty list}">
@@ -163,7 +167,7 @@
                                </div>
                                
                                
-                               <form name="searchForm" id="searchForm" action="mylist.do"  method="get">
+                               <form name="searchForm" id="searchForm2" action="mylist.do"  method="get">
 									<div class="search">
 										<select name="searchType" title="검색을 선택해주세요">
 											<option value="">전체</option>
@@ -172,6 +176,7 @@
 										</select>
 										<input type="text" name="searchWord" value="" title="검색할 내용을 입력해주세요" />
 										<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />
+										<input type="hidden" name="visit" id="visit" value="">
 									</div>
 								</form>
                                <!-- //search --> 
