@@ -356,11 +356,13 @@ a:link {
 /* �뫖�꽣 �떆�옉 */
 .footer {
     width:100%;
+    height:225px;
     position: relative;
     margin:0 auto;
     background-color: #221f1f;
     color:#999;
     clear:both;
+    
     padding:20px 5px;
     margin: 0 auto;
 }

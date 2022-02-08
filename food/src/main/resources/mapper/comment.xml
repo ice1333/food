@@ -80,7 +80,7 @@
       FROM comment  
 	<include refid = "admincommentWhere"/>
 	   ORDER BY c_no DESC    
-	   LIMIT ${startIdx},5
+	   LIMIT ${startIdx},10
 	</select>
 
    <select id="count" resultType="int" parameterType="comment.CommentVo">
