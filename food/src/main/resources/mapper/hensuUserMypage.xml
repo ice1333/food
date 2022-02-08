@@ -26,13 +26,13 @@
 		 </if> 
 		)t
 		<if test="visit == 1">
-			and v_date >= date_add(now(), interval -1 month)
+			where v_date >= date_add(now(), interval -1 month)
 		</if>
 		<if test="visit == 2">
-			and v_date >= date_add(now(), interval -2 month)
+			where v_date >= date_add(now(), interval -2 month)
 		</if>
 		<if test="visit == 3">
-			and where v_date >= date_add(now(), interval -3 month)
+			where v_date >= date_add(now(), interval -3 month)
 		</if>
 		order by v_date desc
 		LIMIT ${startIdx},5;
@@ -52,13 +52,13 @@
 		 </if> 
 		)t
 		<if test="visit == 1">
-			and v_date >= date_add(now(), interval -1 month)
+			where v_date >= date_add(now(), interval -1 month)
 		</if>
 		<if test="visit == 2">
-			and v_date >= date_add(now(), interval -2 month)
+			where v_date >= date_add(now(), interval -2 month)
 		</if>
 		<if test="visit == 3">
-			and v_date >= date_add(now(), interval -3 month)
+			where v_date >= date_add(now(), interval -3 month)
 		</if>
 		)t
 		order by v_date desc;

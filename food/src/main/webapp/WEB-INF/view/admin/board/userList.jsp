@@ -36,7 +36,7 @@
 	if (valueArr.length==0){
 		alert('하나 이상 선택하세요.')
 		} else {
-			var check = confirm("되돌릴 수 없습니다. 정말 삭제하시겠습니까?");
+			var check = confirm("되돌릴 수 없습니다. 상태변경 하시겠습니까?");
 			$.ajax({
 				url: url,
 				type : 'POST',
@@ -45,7 +45,7 @@
 					valueArr : valueArr
 				},
 				success: function(res){
-	                  alert("삭제 성공입니다.");
+	                  alert("변경 성공입니다.");
 	                  location.reload();
 				}
 			});
@@ -116,10 +116,16 @@
 												<td>${vo.u_no}</td>
 												<td class="email">${vo.u_uemail}</td>
 												<td>${vo.u_name }</td>
-												<td>${vo.u_gender }</td>
+												<td class="last"><c:choose>
+				                                    <c:when test="${vo.u_gender == 1}">남자</c:when>
+													<c:when test="${vo.u_gender == 2}">여자</c:when>
+												</c:choose></td>
 												<td>${vo.u_tel }</td>
 												<td>${vo.u_regdate }</td>
-												<td class="last">${vo.u_status }</td>
+												<td class="last"><c:choose>
+				                                    <c:when test="${vo.u_status == 0}">이용불가</c:when>
+													<c:when test="${vo.u_status == 1}">이용가능</c:when>
+												</c:choose></td>
 											</tr>
 										</c:forEach>
 									</c:if>
@@ -128,7 +134,7 @@
 							</form>
 							<div class="btn">
 								<div class="btnLeft">
-									<a class="btns" href="javascript:del();"><strong>삭제</strong> </a>
+									<a class="btns" href="javascript:del();"><strong>상태변경</strong> </a>
 								</div>
 							</div>
 							<!--//btn-->

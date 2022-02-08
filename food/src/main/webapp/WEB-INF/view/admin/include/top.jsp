@@ -79,12 +79,6 @@ $(window).load(function(){
 				</li>
   				<li><a href="<%=request.getContextPath()%>/admin/noticeindex.do" class="parent"><span>공지사항관리</span></a></li>
   				<li><a href="<%=request.getContextPath()%>/admin/board/restaurantList.do" class="parent"><span>매장관리</span></a>
-					<div class="standard_left">
-					<ul>
-						<li><a href="<%=request.getContextPath()%>/admin/board/restaurantList.do"><span>매장관리</span></a></li>
-						<li><a href="<%=request.getContextPath()%>/admin/board/requestList.do"><span>매장등록요청</span></a></li>
-					</ul>
-					</div>
 				</li>
   				<li><a href="<%=request.getContextPath()%>/admin/comment/index.do" class="parent"><span>댓글관리</span></a></li>
 				<li><a href="<%=request.getContextPath()%>/admin/adqnaindex.do" class="parent"><span>광고관리</span></a>
