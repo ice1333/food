@@ -2,6 +2,8 @@ package restaurant;
 
 import java.util.List;
 
+import comment.CommentVo;
+
 public interface RestaurantService {
 	
 	public List<RestaurantVo> restaurantList(RestaurantVo vo);

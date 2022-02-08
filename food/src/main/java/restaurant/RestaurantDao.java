@@ -6,6 +6,7 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import comment.CommentVo;
 import hensuUserMypage.VisitVo;
 
 @Repository
@@ -66,4 +67,5 @@ public class RestaurantDao {
 	public int wishCount(WishlistVo vo) {
 		return sqlSession.selectOne("restaurant.wishCount",vo);
 	}
+	
 }

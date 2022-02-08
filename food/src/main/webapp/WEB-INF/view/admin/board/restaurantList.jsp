@@ -1,10 +1,12 @@
 <%@ page contentType="text/html; charset=utf-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.js"></script>
-<script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.9.0/jquery.js"></script>
+
 <script>
    $(function(){ //전체선택 Rchk
          var chk = document.getElementsByName("Rchk");
@@ -101,7 +103,7 @@
                <!-- 내용 : s -->
                <div id="bbs">
                   <div id="blist">
-                     <p><span><strong>총 111개</strong>  |  1/12페이지</span></p>
+                     <p><span><strong>총 ${totCount }개</strong>  |  ${commentVo.page }/${totPage }페이지</span></p>
                      <form name="frm" id="frm" action="process.do" method="post">
                      <table width="100%" border="0" cellspacing="0" cellpadding="0" summary="관리자 관리목록입니다.">
                         <colgroup>
@@ -160,15 +162,10 @@
                         </div>
                      </div>
                      <!--//btn-->
-                     <!-- 페이징 처리 -->
-                     <div class='page'>
-                        <strong>1</strong>
-                        <a href="">2</a>
-                        <a href="">3</a>
-                        <a href="">4</a>
-                     </div>
-                     <!-- //페이징 처리 -->
-                     <form name="searchForm" id="searchForm" action="index.do"  method="post">
+							<!-- 페이징 처리 -->					
+							${pageArea }										
+							<!-- //페이징 처리 -->
+                     <form name="searchForm" id="searchForm" action="restaurantList.do"  method="post">
                         <div class="search">
                            <select name="stype" title="검색을 선택해주세요">
                               <option value="">전체</option>

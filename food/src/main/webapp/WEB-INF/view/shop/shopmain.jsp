@@ -128,7 +128,6 @@ function goSave(){
             </colgroup>
             <thead>
               <tr>
-                조회수 찜횟수 별점
               </tr>
             </thead>
             <tbody >
