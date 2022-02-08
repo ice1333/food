@@ -203,7 +203,7 @@ function goSave(){
                     </tr>
                     <tr>
                       <th>전화번호</th>
-                      <td>${data.r_tel}</td>
+                      <td>${data.r_tel}</td> 
                     </tr>
                     <tr>
                       <th>음식 종류</th>
@@ -236,6 +236,7 @@ function goSave(){
                       <th>메뉴</th>
                       <td>${data.r_menu}</td>
                     </tr>
+<<<<<<< HEAD
                   <%-- 
 =======
 							<tr>
@@ -283,6 +284,9 @@ function goSave(){
                      </c:if>
                      --%>
 						</tbody>
+=======
+				</tbody>
+>>>>>>> branch 'master' of https://github.com/ice1333/food.git
 
 					</table>
 					<div class="btn">

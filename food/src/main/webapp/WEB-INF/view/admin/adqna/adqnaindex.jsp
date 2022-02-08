@@ -8,7 +8,7 @@
 <html>
 <head>
 <script>
-	$(function(){ //전체선택 Rchk
+	$(function(){ //전체선택 
 		var chk = document.getElementsByName("Rchk");
 		var row = chk.length;
 		$("input[name='allChk']").click(function(){ 
@@ -56,31 +56,19 @@
 		return false;
 	}
 }
-	
-	
-		
-	
-	
 </script>
 <%@include file="/WEB-INF/view/admin/include/headHtml.jsp"%>
 </head>
 <body> 
 <div id="wrap">
-	<!-- canvas -->
 	<div id="canvas">
-		<!-- S T A R T :: headerArea-->
 		<%@ include file="/WEB-INF/view/admin/include/top.jsp" %>
-		<!-- E N D :: headerArea--> 
-		
-		<!-- S T A R T :: containerArea-->
 		<div id="container">
 			<div id="content">
 				<div class="con_tit">
 					<h3 class="con_title">광고 문의</h3>
 				</div>
-				<!-- //con_tit -->
 				<div class="con">
-					<!-- 내용 : s -->
 					<div id="bbs">
 						<div id="blist">
 							<p><span><strong>총 ${totCount}개</strong>  ${adQnaVo.page} / ${totPage}</span></p>
@@ -131,8 +119,6 @@
 										<c:when test="${vo.status == 0}">답변대기</c:when>
 										<c:when test="${vo.status >= 1}">답변완료</c:when>
 										</c:choose></td>
-										
-										
 									</tr>
 									</c:forEach>
 								</c:if>
@@ -144,10 +130,7 @@
 									<a href="javascript:del();" class="btns" ><strong>삭제</strong> </a>
 								</div>
 							</div>
-							<!--//btn-->
-							<!-- 페이징 처리 -->
 							${pageArea}
-							<!-- //페이징 처리 -->
 							<form name="searchForm" id="searchForm" action="adqnaindex.do"  method="get">
 								<div class="search">
 									<select id="stype" name="searchType" title="검색분류 선택">
@@ -159,23 +142,12 @@
 									<input type="image" src="/res/img/admin/btn_search.gif" class="sbtn" alt="검색" title="검색" />
 								</div>
 							</form>
-							<!-- //search --> 
 						</div>
-						<!-- //blist -->
 					</div>
-					<!-- //bbs --> 
-					<!-- 내용 : e -->
 				</div>
-				<!--//con -->
 			</div>
-			<!--//content -->
 		</div>
-		<!--//container --> 
-		<!-- E N D :: containerArea-->
 	</div>
-	<!--//canvas -->
 </div>
-<!--//wrap -->
-
 </body>
 </html>
