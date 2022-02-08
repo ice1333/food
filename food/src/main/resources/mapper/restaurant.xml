@@ -220,7 +220,4 @@
 		SELECT COUNT(*) FROM wishlist
 		where u_no=#{u_no} and r_no=#{r_no}
 	</select>
-	<select id="stars" parameterType="int" resultType="comment.commentVo">
-		SELECT *, round((select avg(stars) from shop.comment where r_no=restaurant.r_no),1) as stars FROM shop.restaurant WHERE r_no = #{r_no}
-	</select>
 </mapper>
