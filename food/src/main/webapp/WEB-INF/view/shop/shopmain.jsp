@@ -204,7 +204,7 @@ function goSave(){
                     </tr>
                     <tr>
                       <th>전화번호</th>
-                      <td>${data.r_tel}</td>
+                      <td>${data.r_tel}</td> 
                     </tr>
                     <tr>
                       <th>음식 종류</th>
