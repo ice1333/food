@@ -350,7 +350,7 @@ if ('${param.p2}'== '1'){
         </c:if>
         <c:if  test="${!empty userInfo }">
         	<li class="menulistheader">
-	            <a href="/res/user/privacy.do" class="menulink">
+	            <a href="/res/user/mylist.do" class="menulink">
 	                <span class="menutext">마이페이지</span>
 	            </a>
 	        </li>

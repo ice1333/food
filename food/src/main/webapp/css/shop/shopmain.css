@@ -36,6 +36,7 @@ table {
   height: 380px;
   position: relative;
   margin-top: 50px;
+  margin:auto;
 }
 
 .mainimg_size { 

@@ -80,4 +80,5 @@ public class RestaurantDao {
 	public int wishCount(WishlistVo vo) {
 		return sqlSession.selectOne("restaurant.wishCount",vo);
 	}
+	
 }

@@ -4,18 +4,7 @@
 	<!-- 레스토랑 목록 조회 -->
 	<select id="restaurantList" parameterType="restaurant.RestaurantVo" resultType="restaurant.RestaurantVo">
 		SELECT * FROM restaurant
-		<!--  <include refid = "restaurantWhere"/>-->
-		<where>
-			<if test ="searchType ==''">   
-			 	(r_name LIKE '%${searchWord}%' OR r_status LIKE '%${searchWord}%')
-			 </if>
-			 <if test= "searchType != null and searchType != ''">
-			 	${searchType} LIKE '%${searchWord}%'
-			 </if>
-			 <if test="r_no > 0">    
-			 	AND r_no = ${r_no}
-			 </if>
-		</where>  
+		<include refid = "restaurantWhere"/>
 		ORDER BY r_regdate DESC    
 		LIMIT ${startIdx},10
 	</select>
@@ -231,5 +220,5 @@
 		SELECT COUNT(*) FROM wishlist
 		where u_no=#{u_no} and r_no=#{r_no}
 	</select>
-	
+
 </mapper>

@@ -127,8 +127,13 @@ function goSave(){
               <col style="width: 380px" />
             </colgroup>
             <thead>
+<<<<<<< HEAD
               <tr>
               	★ ${data.stars }
+=======
+              <tr>
+              	${data.stars }
+>>>>>>> branch 'master' of https://github.com/ice1333/food.git
               </tr>
             </thead>
             <tbody >

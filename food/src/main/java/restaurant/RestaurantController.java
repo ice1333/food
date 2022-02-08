@@ -34,13 +34,12 @@ public class RestaurantController {
 		
 		int startIdx = (vo.getPage()-1)*10;
 		vo.setStartIdx(startIdx);
-		 
 		
 		List<RestaurantVo> list = service.restaurantList(vo);
 		model.addAttribute("list",list);
 		model.addAttribute("totPage",totPage);
 		model.addAttribute("totCount",totCount);
-		model.addAttribute("pageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
+		model.addAttribute("pageArea",CommonUtil.getPageArea("restaurantList.do", vo.getPage(), totPage, 10));
 		return "admin/board/restaurantList";
 	}
 	@RequestMapping("/admin/board/restWrite.do")

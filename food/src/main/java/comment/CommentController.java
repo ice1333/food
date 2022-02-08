@@ -82,8 +82,8 @@ public class CommentController {
 	
 	@GetMapping("admin/comment/index.do")
 	public String index(Model model, HttpServletRequest req, CommentVo vo) {
-		
-		int totCount = service.count(vo);
+		vo.setTablename("restaurant");
+		int totCount = service.count(vo);	
 		int totPage = totCount / 10; //총페이지수 
 		if(totCount % 10 > 0) totPage++;
 		
@@ -100,8 +100,7 @@ public class CommentController {
 	}
 	
 	@RequestMapping("admin/admincommentdelAjax.do")
-	public String delAjax(HttpServletRequest req, Model model, CommentVo vo) {
-		
+	public String delAjax( HttpServletRequest req, Model model, CommentVo vo) {
 		String[] Msg = req.getParameterValues("valueArr");
 		int size = Msg.length;
 		for(int i=0; i<size; i++) {
@@ -134,7 +133,7 @@ public class CommentController {
 	      model.addAttribute("list",list);
 	      model.addAttribute("totPage",totPage);      
 	      model.addAttribute("totCount",totCount);
-	      model.addAttribute("PageArea",CommonUtil.getPageArea("index.do", vo.getPage(), totPage, 10));
+	      model.addAttribute("PageArea",CommonUtil.getPageArea("myComment.do", vo.getPage(), totPage, 10));
 	      
 	      return "user/myComment";      
 	   }
