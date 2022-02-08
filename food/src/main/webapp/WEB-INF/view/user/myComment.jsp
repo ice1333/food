@@ -81,16 +81,17 @@
             <!-- E N D :: headerArea--> 
             <!-- S T A R T :: containerArea-->
             <div id="container">
-                <div class="menulist">
-                        <h2 class="menu_title">내정보</h2>
-                        <div class="inner_sub">
-                            <ul id="adlist">
-                                <li><a href="">최근 본 매장</a></li>
-                                <li><a href="">찜 목록</a></li>
-                                <li><a href="">개인 정보 수정</a></li>
-                                <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
-                            </ul>
-                        </div>
+               <div class="menulist">
+                       <h2 class="menu_title">내정보</h2>
+                       <div class="inner_sub">
+                           <ul id="adlist">
+                                <li><a href="/res/user/mypage/mylist.do">최근 본 매장</a></li>
+		                        <li><a href="/res/user/mypage/myLove.do">찜 목록</a></li>
+		                        <li><a href="/res/user/privacy.do">개인 정보 수정</a></li>
+		                        <li><a href="/res/user/mypage/myComment">내가 쓴 댓글</a></li>
+		                        <li><a href="/res/shop/join.do">매장등록</a></li>
+                           </ul>
+                       </div>
                 </div>
                 <div id="content">
                     <!-- //con_tit -->
@@ -149,18 +150,7 @@
                                 <!-- 페이징 처리 -->
                                ${PageArea }
                                 <!-- //페이징 처리 -->
-                                <form name="searchForm" id="searchForm" action="myComment.do"  method="get">
-                                    <div class="search">
-                                        <select  name="searchType" title="검색을 선택해주세요">
-											<option value="">전체</option>
-											<option value="u_name">작성자</option>
-											<option value="content">댓글내용</option>
-											<option value="stars">별점</option>
-										</select>
-                                        <input type="text" name="searchWord" value="" title="검색할 내용을 입력해주세요" />
-										<input type="image" src="<%=request.getContextPath()%>/img/admin/btn_search.gif" class="sbtn" alt="검색" />
-                                    </div>
-                                </form>
+                                
                                 <!-- //search --> 
                             </div>
                             <!-- //blist -->
