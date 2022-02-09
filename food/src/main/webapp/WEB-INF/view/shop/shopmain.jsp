@@ -108,7 +108,7 @@ function goSave(){
 				<form action="" id="withInsert">
 					<input type="hidden" name="r_no" value="${data.r_no}">
                        <a class="btn" href="javascript:wishInsert();">찜하기 </a>
-                      </form>
+                      </form> 
                   </div>
                   </c:if>
 			<c:if test="${!empty userInfo and listcount ==1}">
@@ -127,9 +127,8 @@ function goSave(){
               <col style="width: 380px" />
             </colgroup>
             <thead>
-
               <tr>
-              	★ ${data.stars }
+              	★ ${data.stars } 
               </tr>
             </thead>
             <tbody >

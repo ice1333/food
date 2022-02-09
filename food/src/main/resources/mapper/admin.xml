@@ -3,7 +3,7 @@
 <mapper namespace="admin"> <!-- mapper파일의 이름 -->
 	
 	<select id="login" parameterType="admin.AdminVo" resultType="admin.AdminVo">
-		SELECT * FROM admin WHERE a_id = #{a_id} AND a_pw = md5(#{a_pw}) and a.status = 1
+		SELECT * FROM admin WHERE a_id = #{a_id} AND a_pw = md5(#{a_pw}) and a_status = 1
 	</select>
 
 	<select id="userList" parameterType="admin.UserVo" resultType="admin.UserVo">
