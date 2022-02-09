@@ -93,7 +93,7 @@
                    <!-- //con_tit -->
                    <div class="con">
                        <div class="con_tit">
-                           <h3 class="con_title">최근 본 매장</h3>
+                           <h3 class="con_title">찜 목록</h3>
                        </div>
                        <!-- 내용 : s -->
                        <div id="bbs">
