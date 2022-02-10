@@ -176,10 +176,16 @@ function goSave(){
 
 					</table>
 					<div class="btn">
-						<a class="btn1" href="join.do" style="float: right;"><strong>문의
+						<a class="btn1" href="join.do" style="float: right;"><strong>|등록
 								하기</strong></a>
 					</div>
-
+					<c:if test="${userInfo.u_no== data.u_no}">
+						<div class="btn">
+							<a class="btn1" href="/res/shop/edit.do?r_no=${data.r_no}" style="float: right;"><strong>수정
+									하기</strong></a>
+	
+						</div>
+					</c:if>
 				</div>
 				<div class="no1__right">
 					${MapUtil.getMap(data.r_address,data.r_name) }</div>
