@@ -291,7 +291,7 @@ function goSave(){
                                 </tbody>
                             </table>
                             <div id="formSubmit" class="abc">
-                                <button type="button" class="btn active btn_join" onclick="goSave();" style="height:56px;">업체 등록 승인요청</button>
+                                <button type="button" class="btn active btn_join" onclick="goSave();" style="height:56px;">업체 수정 승인요청</button>
                             </div>
                         </form>
                     </div>
