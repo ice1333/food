@@ -196,7 +196,7 @@ function goSave(){
 			</div>
 			<c:if test="${!empty userInfo}">
 			<div class="text">
-				<form action="" id="frm">
+				<form action="" id="frm"> 
 					<tr>
 						<td>
 							<input type="hidden" name="r_no" value="${data.r_no}">
