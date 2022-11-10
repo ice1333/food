@@ -52,6 +52,6 @@
 	<delete id="restdelete" parameterType="int">
 		DELETE FROM comment WHERE c_no=#{c_no} 
 	</delete>
-	
+	 
 
 </mapper>
